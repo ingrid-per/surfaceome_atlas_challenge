@@ -1,0 +1,20 @@
+# Environment for the surface-protein target pipeline.
+# Decision (2026-10-20): conda/mamba, Python pinned to 3.12 — see docs/decisions.md.
+name: surfprot
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python=3.12
+  # Runbook Step 0 starting packages
+  - pandas
+  - numpy
+  - scipy
+  - statsmodels
+  - matplotlib
+  - biopython
+  - requests
+  # Added: Step 1 expression matrices are far cheaper to handle as parquet than CSV
+  - pyarrow
+  # Added: the rules require a small automated check per step; this runs them
+  - pytest

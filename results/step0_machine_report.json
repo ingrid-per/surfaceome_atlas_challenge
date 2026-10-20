@@ -1,0 +1,53 @@
+{
+  "date": "2026-10-20",
+  "project_root": "/Users/REDACTED/Documents/bioinfo_tools/surface_prot_challenge",
+  "disk": {
+    "free_gb": 565.6,
+    "total_gb": 926.3,
+    "minimum_required_gb": 50,
+    "ok": true
+  },
+  "tools": {
+    "python": "Python 3.12.15",
+    "conda": "conda 26.7.2",
+    "mamba": "2.9.0",
+    "uv": "uv 0.12.3 (Homebrew 2026-08-07 aarch64-apple-darwin)",
+    "git": "git version 2.50.1 (Apple Git-155)",
+    "python executable": "/opt/homebrew/Caskroom/miniforge/base/envs/surfprot/bin/python",
+    "git user.name": "ingrid-per",
+    "git user.email": "ingridp98@gmail.com"
+  },
+  "hosts": {
+    "UniProt REST": {
+      "url": "https://rest.uniprot.org/uniprotkb/P00533.json?fields=accession",
+      "reachable": true,
+      "status": "HTTP 200"
+    },
+    "Human Protein Atlas": {
+      "url": "https://www.proteinatlas.org/",
+      "reachable": true,
+      "status": "HTTP 200"
+    },
+    "UCSC Xena": {
+      "url": "https://xenabrowser.net/datapages/",
+      "reachable": true,
+      "status": "HTTP 200"
+    },
+    "LinkedOmicsKB (CPTAC)": {
+      "url": "https://kb.linkedomics.org/",
+      "reachable": true,
+      "status": "HTTP 200"
+    },
+    "DTU Health Tech (SignalP/DeepTMHMM)": {
+      "url": "https://services.healthtech.dtu.dk/",
+      "reachable": true,
+      "status": "HTTP 200"
+    },
+    "PyPI": {
+      "url": "https://pypi.org/simple/",
+      "reachable": true,
+      "status": "HTTP 200"
+    }
+  },
+  "all_checks_passed": true
+}

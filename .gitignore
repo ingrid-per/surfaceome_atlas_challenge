@@ -1,0 +1,15 @@
+# Raw and processed data are versioned by checksum in data/MANIFEST.md, not by git.
+data/raw/**
+data/processed/**
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# results/ is deliberately NOT ignored: every number in the report must trace to a
+# committed file.
+
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+*.egg-info/
+.pytest_cache/
+.DS_Store
