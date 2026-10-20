@@ -1,0 +1,31 @@
+file,rows,columns,bytes,note
+uniprot_human_reviewed.fasta.gz,20431,1,7508673,reviewed human protein sequences
+uniprot_human_reviewed_topology.tsv.gz,20431,17,10624831,"topology annotations: {'Transmembrane': 5231, 'Topological domain': 4050, 'Signal peptide': 3616, 'Lipidation': 809}"
+proteinatlas.tsv.zip,20162,119,7460135,gene table (Step 2 spine)
+rna_tissue_hpa.tsv.zip,806480,6,6653963,normal-tissue nTPM (Step 5 HPA arm)
+normal_ihc_data.tsv.zip,1199675,7,5732831,antibody staining in normal tissue (Step 6)
+subcellular_location.tsv.zip,13603,14,252331,subcellular location calls (Step 3)
+TcgaTargetGTEX_phenotype.txt.gz,19131,7,135753,per-sample study / type / disease
+gencode.v23.annotation.gene.probemap,60498,6,3244244,Ensembl gene id -> symbol
+TcgaTargetGtex_rsem_gene_tpm.gz,60498,19132,1323254426,log2(TPM+0.001) — back-transform per D11
+BRCA_proteomics_gene_abundance_log2_reference_intensity_normalized_Tumor.txt,12022,123,21398351,BRCA tumor protein abundance
+CCRCC_proteomics_gene_abundance_log2_reference_intensity_normalized_Tumor.txt,11260,104,16629110,CCRCC tumor protein abundance
+CCRCC_proteomics_gene_abundance_log2_reference_intensity_normalized_Normal.txt,11236,81,13026061,CCRCC normal protein abundance
+COAD_proteomics_gene_abundance_log2_reference_intensity_normalized_Tumor.txt,9151,98,12293004,COAD tumor protein abundance
+COAD_proteomics_gene_abundance_log2_reference_intensity_normalized_Normal.txt,9152,101,12515956,COAD normal protein abundance
+GBM_proteomics_gene_abundance_log2_reference_intensity_normalized_Tumor.txt,12100,100,18033471,GBM tumor protein abundance
+HNSCC_proteomics_gene_abundance_log2_reference_intensity_normalized_Tumor.txt,11561,109,18184418,HNSCC tumor protein abundance
+HNSCC_proteomics_gene_abundance_log2_reference_intensity_normalized_Normal.txt,11561,63,10542735,HNSCC normal protein abundance
+LSCC_proteomics_gene_abundance_log2_reference_intensity_normalized_Tumor.txt,12760,109,20631271,LSCC tumor protein abundance
+LSCC_proteomics_gene_abundance_log2_reference_intensity_normalized_Normal.txt,12760,100,18920447,LSCC normal protein abundance
+LUAD_proteomics_gene_abundance_log2_reference_intensity_normalized_Tumor.txt,12433,111,20132337,LUAD tumor protein abundance
+LUAD_proteomics_gene_abundance_log2_reference_intensity_normalized_Normal.txt,12431,102,18491662,LUAD normal protein abundance
+OV_proteomics_gene_abundance_log2_reference_intensity_normalized_Tumor.txt,10589,84,12506387,OV tumor protein abundance
+OV_proteomics_gene_abundance_log2_reference_intensity_normalized_Normal.txt,10587,20,3007610,OV normal protein abundance
+PDAC_proteomics_gene_abundance_log2_reference_intensity_normalized_Tumor.txt,11404,106,16800925,PDAC tumor protein abundance
+PDAC_proteomics_gene_abundance_log2_reference_intensity_normalized_Normal.txt,11404,45,7177097,PDAC normal protein abundance
+UCEC_proteomics_gene_abundance_log2_reference_intensity_normalized_Tumor.txt,11894,96,16560392,UCEC tumor protein abundance
+UCEC_proteomics_gene_abundance_log2_reference_intensity_normalized_Normal.txt,11461,19,3354332,UCEC normal protein abundance
+Jiang2020_mmc3.xlsx,10,0,122973020,"GTEx proteome, Cell 2020 Table S3; sheets: readme; Sheet1; A tisse names; B protein raw abundance; C protein normalized abundance; D protein relative abundance; E protein tissue median; F protein standard z-score; G protein TS score; H comparison to other studies"
+CSPA_S2_File.xlsx,3,0,1430284,CSPA validated surfaceome; sheets: Table A; Table B; Table_C
+SURFY_table_S3_surfaceome.xlsx,2,0,6864772,SURFY predicted surfaceome; sheets: SurfaceomeMasterTable; in silico surfaceome only
