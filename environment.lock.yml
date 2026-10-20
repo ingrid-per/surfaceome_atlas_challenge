@@ -35,6 +35,7 @@ dependencies:
   - colorama=0.4.6=pyhd8ed1ab_1
   - contourpy=1.4.0=py312h67ba313_1
   - cycler=0.12.1=pyhcf101f3_2
+  - et_xmlfile=2.0.0=pyhd8ed1ab_1
   - exceptiongroup=1.3.1=pyhd8ed1ab_0
   - font-ttf-dejavu-sans-mono=2.37=hab24e00_0
   - font-ttf-inconsolata=3.000=h77eed37_0
@@ -127,6 +128,7 @@ dependencies:
   - nlohmann_json=3.12.0=h784d473_2
   - numpy=2.5.4=py312hff34920_0
   - openjpeg=2.5.4=h4d1e80c_2
+  - openpyxl=3.1.5=py312h027802a_4
   - openssl=3.6.5=h55eecbc_0
   - orc=2.3.1=hef2a647_0
   - packaging=26.3=pyhc364b38_0

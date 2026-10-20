@@ -18,6 +18,7 @@ shasum -a 256 data/raw/<file>
 | --- | --- | --- | --- | --- | --- | --- |
 | `uniprot_human_reviewed.fasta.gz` | UniProt | 2026_03 (02-September-2026) | 2026-10-20 | <https://rest.uniprot.org/uniprotkb/stream?query=%28reviewed%3Atrue%29%20AND%20%28organism_id%3A9606%29&format=fasta&compressed=true> | `dc8ef8cbf0fc1b857b3be9a559613533ec49824079fb057e31fdfcf578cb229a` | 7.16 MB |
 | `uniprot_human_reviewed_topology.tsv.gz` | UniProt | 2026_03 (02-September-2026) | 2026-10-20 | <https://rest.uniprot.org/uniprotkb/stream?query=%28reviewed%3Atrue%29%20AND%20%28organism_id%3A9606%29&format=tsv&fields=accession,id,protein_name,gene_primary,gene_names,xref_ensembl,length,reviewed,protein_existence,ft_transmem,ft_topo_dom,ft_signal,ft_lipid,ft_intramem,cc_subcellular_location,ft_carbohyd,sequence&compressed=true> | `ef44fded2ba2bdf87a65e63ffb3c784744cd6e333e4b925ed34e9f5a5e334f7f` | 10.13 MB |
+| `uniprot_human_reviewed_xrefs.tsv.gz` | UniProt | 2026_03 (02-September-2026) | 2026-10-20 | <https://rest.uniprot.org/uniprotkb/stream?query=%28reviewed%3Atrue%29%20AND%20%28organism_id%3A9606%29&format=tsv&fields=accession,gene_primary,gene_names,xref_ensembl_full,protein_existence&compressed=true> | `e52c01b3bc587a6cf394a821402dabd2d966277223e256c606048f010ef4c1e2` | 1.42 MB |
 | `proteinatlas.tsv.zip` | HPA | 25.1 (Ensembl 109) | 2026-10-20 | <https://www.proteinatlas.org/download/proteinatlas.tsv.zip> | `ad401f8519ecdee5b67b0ad3bf28175d402d1ea0ad6c542b90fcab2bee39b470` | 7.11 MB |
 | `rna_tissue_hpa.tsv.zip` | HPA | 25.1 (Ensembl 109) | 2026-10-20 | <https://www.proteinatlas.org/download/tsv/rna_tissue_hpa.tsv.zip> | `735d0f5de5374946914e74949a760457f93b9ea4ca6200e0be55f22bb0473565` | 6.35 MB |
 | `normal_ihc_data.tsv.zip` | HPA | 25.1 (Ensembl 109) | 2026-10-20 | <https://www.proteinatlas.org/download/tsv/normal_ihc_data.tsv.zip> | `fa2315e5a53ecffd9427a5bfe219c8cc41b54089ef6f6be7b5d79b5455e0677f` | 5.47 MB |
@@ -57,7 +58,7 @@ shasum -a 256 data/raw/<file>
 | `CSPA_S2_File.xlsx` | CSPA | CSPA, 2015 | 2026-10-20 | <https://wollscheidlab.org/CSPA/data/S2_File.xlsx> | `9b02c85d4c1d49847cf37e23755f07e57ea65b79cc0ebcdaeef1752dab8b5c8a` | 1.36 MB |
 | `SURFY_table_S3_surfaceome.xlsx` | SURFY | SURFY, 2018 | 2026-10-20 | <https://wollscheidlab.org/SURFY/table_S3_surfaceome.xlsx> | `2f1b8262463ce1c59a1f945d22f0e9638cb3bfbf5aabe197f43b562a62fb055a` | 6.55 MB |
 
-**40 files, 1675.08 MB total.**
+**41 files, 1676.50 MB total.**
 
 ### Deliberately not downloaded
 

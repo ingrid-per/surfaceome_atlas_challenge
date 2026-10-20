@@ -18,3 +18,5 @@ dependencies:
   - pyarrow
   # Added: the rules require a small automated check per step; this runs them
   - pytest
+  # Added in Step 2: CSPA, SURFY and the GTEx proteome ship as .xlsx
+  - openpyxl

@@ -17,12 +17,17 @@ step scripts listed below.
 | 1.2 | 1 | Dataset shapes and sample counts are plausible; no group is zero | `python src/step1_inventory.py` then `python src/step1_check.py` | Toil = 60,498 genes × 19,131 samples; TCGA tumors ≥ 9,000; GTEx normals ≥ 7,000 |
 | 1.3 | 1 | A moved URL cannot silently produce an HTML file named `.xlsx` | built into `step1_download.py` | Magic bytes checked before a download is accepted |
 | 1.4 | 1 | `data/raw` and its contents are read-only | `python src/step1_check.py` | Exit 0 |
+| 2.1 | 2 | Mapping coverage printed; a large loss is reported, not hidden | `python src/step2_check.py` | ≥90% of the 20,431 accessions carry an Ensembl gene |
+| 2.2 | 2 | Every ambiguous mapping appears in the log | `python src/step2_check.py` | 0 unexplained ambiguous accessions |
+| 2.3 | 2 | Spot-check of 11 known genes resolves correctly | `python src/step2_check.py` | EGFR, ERBB2, MSLN, TACSTD2, GAPDH, ACTB, B2M, FOLR1, NECTIN4, CLDN6, CD19 all match HPA and Xena |
+| 2.4 | 2 | Renamed-gene regression — a symbol join would lose these | `python src/step2_check.py` | NECTIN1–4 all match Xena under their legacy PVRL1–4 symbols |
+| 2.5 | 2 | No accession lost silently | `python src/step2_check.py` | mapped + unmapped = 20,431 |
+| 2.6 | 2 | `gene_map.csv` is deterministic | `python src/step2_check.py` | Two runs byte-identical |
 
 ## Pending — owned by later steps
 
 | # | Step | Check |
 | --- | --- | --- |
-| 2.x | 2 | Mapped percentage per dataset printed; no symbol maps to two Ensembl IDs without a recorded rule; spot-check of EGFR, ERBB2, MSLN, TACSTD2, GAPDH |
 | 3.x | 3 | Candidate count roughly 1,500–4,500; EGFR/ERBB2 in S1, MSLN in S3; GAPDH/ACTB absent; tier counts printed |
 | 4.x | 4 | P-value histograms sensible per cancer type; counts and group sizes printed |
 | 5.x | 5 | B2M scores low; 10 genes hand-verified against the tissue table |

@@ -119,13 +119,35 @@ def download(res: Resource, dest: Path) -> tuple[int, str]:
     return total, sha256(dest)
 
 
+FIELDS = ["id", "resource", "release", "filename", "url", "bytes",
+          "sha256", "date_retrieved", "note"]
+
+
 def write_manifest(rows: list[dict]) -> None:
-    """Rewrite the Files table in data/MANIFEST.md and the CSV mirror."""
+    """Merge these rows into data/MANIFEST.md and the CSV mirror.
+
+    Merging matters: a targeted run such as `--only U3` processes one resource,
+    and a plain overwrite here would silently delete the other 40 manifest rows
+    while leaving their files on disk.
+    """
     (ROOT / "results").mkdir(exist_ok=True)
-    with (ROOT / "results" / "step1_manifest.csv").open("w", newline="") as fh:
-        w = csv.DictWriter(fh, fieldnames=[
-            "id", "resource", "release", "filename", "url", "bytes",
-            "sha256", "date_retrieved", "note"])
+    csv_path = ROOT / "results" / "step1_manifest.csv"
+
+    merged: dict[str, dict] = {}
+    if csv_path.exists():
+        with csv_path.open() as fh:
+            for r in csv.DictReader(fh):
+                r["bytes"] = int(r["bytes"])
+                merged[r["id"]] = r
+    for r in rows:
+        merged[r["id"]] = r
+
+    # Keep the declared order so the manifest reads the same way every time.
+    order = {res.rid: i for i, res in enumerate(RESOURCES)}
+    rows = sorted(merged.values(), key=lambda r: order.get(r["id"], 10_000))
+
+    with csv_path.open("w", newline="") as fh:
+        w = csv.DictWriter(fh, fieldnames=FIELDS)
         w.writeheader()
         w.writerows(rows)
 

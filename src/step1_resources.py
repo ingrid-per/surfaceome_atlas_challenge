@@ -80,6 +80,16 @@ def _build() -> list[Resource]:
                  "Curated topology: transmembrane, topological domain, signal "
                  "peptide, lipid anchor, subcellular location",
                  UNIPROT_RELEASE),
+        # U2's `xref_ensembl` turned out to return transcript IDs (ENST), not
+        # gene IDs, so it carries no gene-level link at all. `xref_ensembl_full`
+        # does. U2 stays — its topology columns are what Step 3 needs. (D18)
+        Resource("U3", "UniProt", "uniprot_human_reviewed_xrefs.tsv.gz",
+                 f"{_UP}?{_UP_QUERY}&format=tsv"
+                 f"&fields=accession,gene_primary,gene_names,xref_ensembl_full,"
+                 f"protein_existence&compressed=true",
+                 1_487_846, "gzip",
+                 "Accession -> Ensembl GENE id (ENSG) — the join key for Step 2",
+                 UNIPROT_RELEASE),
     ]
 
     # HPA 25.1 (Ensembl 109). Only proteinatlas.tsv.zip is documented on the
