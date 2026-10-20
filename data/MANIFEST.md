@@ -60,6 +60,21 @@ shasum -a 256 data/raw/<file>
 
 **41 files, 1676.50 MB total.**
 
+### Third-party tool packages
+
+Not datasets, but inputs to a result, so they are versioned the same way. Kept in
+`tools/` and gitignored: the DeepTMHMM licence is academic and does not permit
+redistribution.
+
+| Package | Version | Date retrieved | Source | SHA-256 | Size |
+| --- | --- | --- | --- | --- | --- |
+| `DeepTMHMM-Academic-License-v1.0.zip` | 1.0 (academic) | 2026-10-20 | BioLib non-commercial request form, linked from <https://dtu.biolib.com/DeepTMHMM/> | `0a7a6c5d009e928c2e09bd0f225ad290166c6e67ebff5fb59145639484fcbd82` | 1640.1 MB |
+
+Contents: five cross-validation models, the embedded ESM-1b language model
+(2.6 GB state dict), `predict.py`, and an embedded copy of pytorch-crf. Run
+unmodified from the `deeptmhmm` conda environment
+(`environment.deeptmhmm.lock.yml`).
+
 ### Deliberately not downloaded
 
 | Resource | Why not |
