@@ -23,12 +23,20 @@ step scripts listed below.
 | 2.4 | 2 | Renamed-gene regression — a symbol join would lose these | `python src/step2_check.py` | NECTIN1–4 all match Xena under their legacy PVRL1–4 symbols |
 | 2.5 | 2 | No accession lost silently | `python src/step2_check.py` | mapped + unmapped = 20,431 |
 | 2.6 | 2 | `gene_map.csv` is deterministic | `python src/step2_check.py` | Two runs byte-identical |
+| 3.1 | 3 | Every reviewed protein accounted for | `python src/step3_check.py` | 20,431 rows |
+| 3.2 | 3 | Candidate count in the expected range | `python src/step3_check.py` | 1,500–4,500 (SURFY predicts 2,886; CSPA measured 1,492) |
+| 3.3 | 3 | Positive controls reach S1 | `python src/step3_check.py` | EGFR, ERBB2, TACSTD2, NECTIN4, CLDN6, CD19 all S1 with two sources |
+| 3.4 | 3 | GPI controls reach S3 with no numeric length | `python src/step3_check.py` | MSLN, FOLR1 = S3, extracellular `not_applicable` (D20) |
+| 3.5 | 3 | Negative controls excluded | `python src/step3_check.py` | GAPDH, ACTB, H3C1, H4C1, CALM1 not candidates |
+| 3.6 | 3 | Excluded-by-design proteins documented | `python src/step3_check.py` | B2M absent, with the reason stated (see P6b) |
+| 3.7 | 3 | S1 always has two independent sources | `python src/step3_check.py` | 0 S1 rows with `tm_sources < 2` or a missing prediction |
+| 3.8 | 3 | Every GPI call records its source | `python src/step3_check.py` | 0 GPI calls without `gpi_source`; predictor-only count reported (D22) |
+| 3.9 | 3 | Predictor gaps flagged, never silently negative | `python src/step3_check.py` | No protein reaches S1 without a prediction |
 
 ## Pending — owned by later steps
 
 | # | Step | Check |
 | --- | --- | --- |
-| 3.x | 3 | Candidate count roughly 1,500–4,500; EGFR/ERBB2 in S1, MSLN in S3; GAPDH/ACTB absent; tier counts printed |
 | 4.x | 4 | P-value histograms sensible per cancer type; counts and group sizes printed |
 | 5.x | 5 | B2M scores low; 10 genes hand-verified against the tissue table |
 | 6.x | 6 | Funnel counts monotone; 5 tier-1 genes hand-verified; unmeasured genes counted as RNA-only |
