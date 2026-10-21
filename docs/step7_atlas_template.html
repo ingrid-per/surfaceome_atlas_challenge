@@ -450,10 +450,16 @@ function detail(c, host){
           ? `<b>${esc(c.micro)}.</b> Expression falls as the tumour sample gets purer (r = ${c.r_purity!=null?c.r_purity.toFixed(2):"\u2014"} against published purity), so the signal likely comes from infiltrating immune or stromal cells rather than the tumour. A drug may meet the target on the patient's own leukocytes or fibroblasts. Not disqualifying on its own \u2014 AbbVie's ABBV-085 targets the fibroblast protein LRRC15 deliberately.`
           : `<b>Tumour-cell pattern.</b> Expression does not fall as the sample gets purer (r = ${c.r_purity!=null?c.r_purity.toFixed(2):"\u2014"}), so the signal is unlikely to come from the microenvironment.`}
         <div style="margin-top:7px;font-size:11.5px;color:var(--ink-3)">
-          Purity from Aran et&nbsp;al., <i>Nat Commun</i> 6:8971 (2015), using the
-          DNA-, methylation- and microscopy-based estimates only. Cut-off
-          r&nbsp;\u2264&nbsp;\u22120.23, set by separating 12 known microenvironment
-          genes from 10 known tumour-cell genes (92% / 100%).
+          Purity fractions published by Aran et&nbsp;al., <i>Nat Commun</i>
+          6:8971 (2015) &mdash; one number per tumour, derived by them from copy
+          number, methylation and pathologist review. We hold none of that
+          underlying data; we use their estimates because they were produced
+          <i>without</i> RNA, so correlating our expression against them is not
+          circular. Their expression-based estimate is excluded for that reason.
+          Coverage leans on the histology figure (7,434 tumours) more than copy
+          number (3,286). Cut-off r&nbsp;&le;&nbsp;&minus;0.23, set by separating
+          12 known microenvironment genes from 10 known tumour-cell genes
+          (92% / 100%).
         </div>
       </div>
     </div>`:""}

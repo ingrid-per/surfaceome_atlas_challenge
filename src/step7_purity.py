@@ -10,8 +10,10 @@ expressed by tumour cells rises as the sample gets purer; a gene expressed by
 infiltrating immune or stromal cells falls.
 
 Purity comes from Aran et al., "Systematic pan-cancer analysis of tumour
-purity", Nature Communications 6:8971 (2015), which publishes four independent
-estimates per TCGA sample plus a consensus:
+purity", Nature Communications 6:8971 (2015). We download only their published
+RESULT — one purity fraction per TCGA tumour — and hold none of the underlying
+copy-number, methylation or histology data. Their table gives four independent
+estimates per sample plus a consensus:
 
     ABSOLUTE  DNA copy number
     LUMP      DNA methylation
@@ -19,9 +21,13 @@ estimates per TCGA sample plus a consensus:
     ESTIMATE  expression-based
     CPE       consensus of the above
 
-**ABSOLUTE, LUMP and IHC are used; ESTIMATE is not.** ESTIMATE is derived from
-expression, so correlating our expression values against it would be partly
-circular. IHC in particular is an independent human measurement.
+**ABSOLUTE, LUMP and IHC are used; ESTIMATE is not.** The point is not that we
+have better data but what each number was DERIVED FROM: ESTIMATE's purity comes
+from RNA expression, so correlating our RNA against it would be the method
+talking to itself. The other three were computed from entirely different
+measurements. Note the coverage is uneven - IHC covers 7,434 of the matched
+tumours, LUMP 5,808, ABSOLUTE only 3,286 - so in practice this leans on the
+pathologist's estimate more than it combines three independent methods.
 
 The threshold is no longer chosen by eye. Known leukocyte, fibroblast and
 endothelial markers are used as positive controls and known epithelial and
