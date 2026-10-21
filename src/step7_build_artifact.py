@@ -11,6 +11,7 @@ language that must not survive.
 from __future__ import annotations
 
 import argparse
+import html
 import json
 import re
 from pathlib import Path
@@ -35,6 +36,49 @@ REQUIRED_IDS = ["knobs", "listR", "sbars", "sens", "rbMsg", "rbReset",
                 "rbGone", "rbElig", "rbN", "rbN2", "tab-robust"]
 
 
+def static_top10(payload: dict) -> str:
+    """Plain HTML for the global top 10, rendered at build time.
+
+    Visible by default and hidden by the page script on boot. A reader whose
+    browser or preview window does not run scripts still sees the answer rather
+    than an empty shell — which is what happened on iOS. Every value comes from
+    the payload, so this cannot drift from the interactive view.
+    """
+    rows = []
+    for i, c in enumerate(payload["top10"], 1):
+        flags = []
+        if c.get("existence") and c["existence"] != "Evidence at protein level":
+            flags.append(f'<b>protein existence {html.escape(c["existence"].lower())}</b>')
+        if c.get("stab") is not None and c["stab"] < 0.75:
+            flags.append(f'survives {round(c["stab"]*100)}% of threshold settings')
+        if c.get("frac10") is not None and c["frac10"] < 0.70:
+            flags.append(f'present in only {round(c["frac10"]*100)}% of tumours')
+        note = (f'<span class="sub">{" · ".join(flags)}</span>' if flags else "")
+        above = ("&mdash;" if c.get("frac_above_healthy") is None
+                 else f'{round(c["frac_above_healthy"]*100)}%')
+        rows.append(
+            f'<tr><td class="n">{i}</td>'
+            f'<td><span class="g">{html.escape(c["symbol"])}</span>'
+            f'<span class="sub">{html.escape(c["cancer"])}</span>{note}</td>'
+            f'<td class="n">{c["S"]:.2f}</td>'
+            f'<td class="n">{c["tumour_tpm"]:,.0f}</td>'
+            f'<td>{html.escape(c["worst_tissue"])}'
+            f'<span class="sub">{c["worst_tpm"]:,.1f} TPM</span></td>'
+            f'<td class="n">{above}</td></tr>')
+    return (
+        '<div class="card"><div class="card-h"><h2>Top 10 surface targets</h2>'
+        '<span class="sub">static view</span></div>'
+        '<div class="note mute" style="margin:13px 16px 0">'
+        'This is the plain version of the page. The interactive atlas &mdash; '
+        'all 30 cancer types, the evidence behind each target and the threshold '
+        'explorer &mdash; needs JavaScript, which this window is not running. '
+        'Open the file in a browser to see it.</div>'
+        '<div style="padding:13px 16px" class="scroll-x"><table class="stt">'
+        '<tr><th>#</th><th>Target</th><th>S</th><th>Tumour TPM</th>'
+        '<th>Highest healthy tissue</th><th>Tumours above it</th></tr>'
+        + "".join(rows) + '</table></div></div>')
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--out", default=str(DEFAULT_OUT))
@@ -48,6 +92,18 @@ def main() -> int:
     assert n == 1, f"expected exactly one __DATA__ placeholder, found {n}"
     html = tpl.replace("__DATA__", data)
     assert "__DATA__" not in html, "placeholder survived substitution"
+
+    n_fb = html.count("__STATIC_TOP10__")
+    assert n_fb == 1, f"expected one __STATIC_TOP10__ slot, found {n_fb}"
+    html = html.replace("__STATIC_TOP10__", static_top10(json.loads(data)))
+    assert "__STATIC_TOP10__" not in html, "fallback placeholder survived"
+
+    # the fallback is the only thing a script-less reader sees, so verify it
+    # carries every finalist rather than trusting the renderer
+    fb = html.split('<div id="static-fallback">')[1].split("<section")[0]
+    missing_fb = [c["symbol"] for c in json.loads(data)["top10"]
+                  if c["symbol"] not in fb]
+    assert not missing_fb, f"static fallback is missing {missing_fb}"
 
     for phrase in FORBIDDEN:
         assert phrase not in html, f"forbidden text present in build: {phrase!r}"

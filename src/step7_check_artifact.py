@@ -93,6 +93,10 @@ var method = document.getElementById("method").innerHTML;
 ok(method.indexOf("${") < 0, "no unresolved template expression in the method text");
 ok(method.indexOf("undefined") < 0, "no 'undefined' leaked into the method text");
 
+/* the no-JavaScript fallback must carry the answer, and vanish once we boot */
+var fb = document.getElementById("static-fallback");
+ok(fb.cls.indexOf("hidden") >= 0, "static fallback is hidden once the script runs");
+
 /* tab buttons must not have had their handlers overwritten by each other */
 var tabBtns = document.querySelectorAll("nav.tabs button");
 ok(tabBtns.length === 5, "five tabs wired");
