@@ -87,3 +87,15 @@ step scripts listed below.
 | 7.10 | `__DATA__` matched exactly once and did not survive the build | `src/step7_build_artifact.py` |
 | 7.11 | Withdrawn phrasing is absent; every tab has a section and is known to the switcher | `src/step7_build_artifact.py` |
 | 7.12 | The page's JavaScript runs to completion and renders what it claims, including that all 270 selectable settings resolve to a stored run | `src/step7_check_artifact.py` |
+
+## Extra — metric sensitivity (not a runbook step)
+
+| # | Check | Script |
+| --- | --- | --- |
+| E.1 | Ranking count matches the specification (21) | `src/extra_metric_check.py` |
+| E.2 | No duplicated (metric, reference) pair | `src/extra_metric_check.py` |
+| E.3 | M1 S (both) reproduces the Step 7 top 10 exactly | `src/extra_metric_check.py` |
+| E.4 | Stability values lie in [0, 1] | `src/extra_metric_check.py` |
+| E.5 | Stability recomputes from `extra_metric_runs.csv` | `src/extra_metric_check.py` |
+| E.6 | Every ranking returned between 1 and 20 genes | `src/extra_metric_check.py` |
+| E.7 | The strictest prevalence gate actually changes each list | `src/extra_metric_check.py` |
