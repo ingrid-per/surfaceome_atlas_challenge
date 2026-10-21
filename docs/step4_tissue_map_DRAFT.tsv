@@ -13,21 +13,21 @@ Bladder Urothelial Carcinoma	407	19	Bladder	9	direct		0	Wang2018			Direct, but o
 Liver Hepatocellular Carcinoma	369	50	Liver	110	direct		0	Wang2018			Direct.
 Cervical & Endocervical Cancer	304	3	Cervix - Ectocervix | Cervix - Endocervix	10	direct		0	Wang2018			Direct, but 6 + 4 GTEx samples. Expect this row to fail the minimum.
 Kidney Papillary Cell Carcinoma	288	32	Kidney - Cortex	28	direct		0	Wang2018			As KIRC.
-Colon Adenocarcinoma	288	41	Colon - Transverse | Colon - Sigmoid	308	direct		0	Wang2018			Both colon subsites pooled; TCGA does not record subsite consistently.
+Colon Adenocarcinoma	288	41	Colon - Transverse	167	direct		0	Wang2018+corrected			Transverse ONLY. GTEx Colon-Sigmoid is muscularis and essentially epithelium-free (EPCAM 1.03 vs 8.84 in Transverse), so pooling it halved the epithelial signal in the comparator. See D40.
 Sarcoma	258	2	Adipose - Subcutaneous | Adipose - Visceral (Omentum) | Muscle - Skeletal | Nerve - Tibial	1189	lineage_only		0	extended			SARC pools several mesenchymal lineages. These four cover the main ones, but the comparator is heterogeneous by construction.
-Esophageal Carcinoma	181	13	Esophagus - Mucosa | Esophagus - Gastroesophageal Junction	410	direct		0	Wang2018			Wang pairs ESCA to all three oesophageal subregions. Muscularis dropped: smooth muscle, not the epithelium these tumours arise from. ESCA mixes squamous (mucosa) and adenocarcinoma (GEJ) histologies.
-Uterine Corpus Endometrioid Carcinoma	180	23	Uterus	78	direct		0	Wang2018			Direct.
+Esophageal Carcinoma	181	13	Esophagus - Mucosa	273	direct		0	Wang2018+corrected			Mucosa ONLY. Wang pairs ESCA to all three subregions; muscularis was already dropped, and GEJ is also epithelium-poor (score 0.56 vs 6.48 for mucosa), so including it diluted the comparator. Removing it RAISED the hit count (69 -> 83) because real signal was being masked. ESCA still mixes squamous and adenocarcinoma histologies. D40.
+Uterine Corpus Endometrioid Carcinoma	180	23	Uterus	78	imperfect		0	Wang2018			DOWNGRADED from direct. UCEC is an ENDOMETRIAL epithelial tumour, but GTEx 'Uterus' is myometrium-dominant (epithelial score 0.58). GTEx has no endometrium, so no better comparator exists; endometrial genes will look tumour-high partly on tissue composition. D40.
 Pancreatic Adenocarcinoma	178	4	Pancreas	167	imperfect		0	Wang2018			GTEx pancreas is acinar-dominant while PDAC is ductal, and PDAC is heavily stromal. Expect a noisy comparison.
 Pheochromocytoma & Paraganglioma	177	3	Adrenal Gland	128	imperfect		0	extended			Arises from adrenal medulla and extra-adrenal paraganglia; GTEx adrenal gland is cortex-dominant. Right organ, wrong compartment.
 Glioblastoma Multiforme	153	5	Brain - Cortex | Brain - Frontal Cortex (Ba9)	207	direct		0	extended			As LGG.
 Testicular Germ Cell Tumor	148	0	Testis	165	direct		0	extended			Direct. Testis is immune-privileged with unusually broad expression, so little will look testis-specific.
 Thymoma	119	2		0	none		0	extended			GTEx has no thymus and thymic epithelium has no substitute - spleen would supply lymphocytes, the wrong cell. No differential test. Still scored in Step 5, whose specificity score needs no matched normal.
 Skin Cutaneous Melanoma	102	1	Skin - Sun Exposed (Lower Leg) | Skin - Not Sun Exposed (Suprapubic)	557	imperfect		0	extended			Melanocytes are a small minority of bulk skin, so melanocyte genes will look tumour-high on composition alone.
-Rectum Adenocarcinoma	92	10	Colon - Sigmoid	141	direct		0	Wang2018			Wang pairs rectum to colon; sigmoid is the closest subsite.
+Rectum Adenocarcinoma	92	10	Colon - Transverse	167	direct		0	Wang2018+corrected			CORRECTED from Colon-Sigmoid. Sigmoid is anatomically closer but is muscularis tissue: EPCAM 1.03, CEACAM5 0.53, against 8.84 and 8.17 in Transverse. Comparing rectal tumour epithelium to smooth muscle made every epithelial gene look elevated (263 hits -> 61). Matching the epithelial LAYER matters more than the subsite. D40.
 Mesothelioma	87	0	Adipose - Visceral (Omentum) | Lung	485	lineage_only		0	extended			GTEx has no pleura or peritoneum. The omentum carries a mesothelial lining, so visceral adipose genuinely contains the cell type MESO arises from; lung added as the usual anatomical neighbour.
 Uveal Melanoma	79	0	Skin - Sun Exposed (Lower Leg) | Skin - Not Sun Exposed (Suprapubic)	557	lineage_only		0	extended			No ocular tissue in GTEx. UVM is melanocytic and skin is the only melanocyte-containing GTEx tissue: same lineage, wrong site.
 Adrenocortical Cancer	77	0	Adrenal Gland	128	direct		0	extended			Adrenal cortex; direct.
 Kidney Chromophobe	66	25	Kidney - Cortex	28	direct		0	Wang2018			As KIRC.
-Uterine Carcinosarcoma	57	0	Uterus	78	direct		0	Wang2018			Direct.
+Uterine Carcinosarcoma	57	0	Uterus	78	imperfect		0	Wang2018			As UCEC: myometrium comparator for an endometrial tumour. D40.
 Diffuse Large B-Cell Lymphoma	47	0	Whole Blood | Spleen	437	lineage_only		0	extended			Blood lineage. Lineage-matched comparator, but tagged so it is reported separately from solid tumours per the runbook.
 Cholangiocarcinoma	36	9	Liver	110	imperfect		0	Wang2018			Bile duct, not hepatocyte. Cholangiocytes are a minority of bulk liver, so liver-high genes may look falsely tumour-low.

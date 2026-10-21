@@ -41,6 +41,7 @@ step scripts listed below.
 | 4.5 | 4 | Arm concordance reported (D34) | `python src/step4_check.py` | ρ and sign agreement printed; fails if ρ < 0.2 |
 | 4.6 | 4 | Positive controls pass somewhere | `python src/step4_check.py` | EGFR, ERBB2, TACSTD2, NECTIN4, MSLN, CLDN6, CD19, FOLR1, CEACAM5 each pass in ≥1 cancer type |
 | 4.7 | 4 | Differential results are deterministic | `python src/step4_check.py` | Two runs byte-identical |
+| 4.8 | 4 | Three-state trajectory reported (D41) | `python src/step4_trajectory.py` | Every gene × cancer-type pair with all three states classified; hits split into tumour-specific vs field-effect |
 
 ## Pending — owned by later steps
 

@@ -66,16 +66,26 @@ MAP: dict[str, dict] = {
     "Liver Hepatocellular Carcinoma": dict(
         gtex=["Liver"], grade="direct", source="Wang2018", why="Direct."),
     "Colon Adenocarcinoma": dict(
-        gtex=["Colon - Transverse", "Colon - Sigmoid"], grade="direct",
-        source="Wang2018",
-        why="Both colon subsites pooled; TCGA does not record subsite consistently."),
+        gtex=["Colon - Transverse"], grade="direct", source="Wang2018+corrected",
+        why="Transverse ONLY. GTEx Colon-Sigmoid is muscularis and essentially "
+            "epithelium-free (EPCAM 1.03 vs 8.84 in Transverse), so pooling it "
+            "halved the epithelial signal in the comparator. See D40."),
     "Rectum Adenocarcinoma": dict(
-        gtex=["Colon - Sigmoid"], grade="direct", source="Wang2018",
-        why="Wang pairs rectum to colon; sigmoid is the closest subsite."),
+        gtex=["Colon - Transverse"], grade="direct", source="Wang2018+corrected",
+        why="CORRECTED from Colon-Sigmoid. Sigmoid is anatomically closer but is "
+            "muscularis tissue: EPCAM 1.03, CEACAM5 0.53, against 8.84 and 8.17 "
+            "in Transverse. Comparing rectal tumour epithelium to smooth muscle "
+            "made every epithelial gene look elevated (263 hits -> 61). "
+            "Matching the epithelial LAYER matters more than the subsite. D40."),
     "Uterine Corpus Endometrioid Carcinoma": dict(
-        gtex=["Uterus"], grade="direct", source="Wang2018", why="Direct."),
+        gtex=["Uterus"], grade="imperfect", source="Wang2018",
+        why="DOWNGRADED from direct. UCEC is an ENDOMETRIAL epithelial tumour, "
+            "but GTEx 'Uterus' is myometrium-dominant (epithelial score 0.58). "
+            "GTEx has no endometrium, so no better comparator exists; endometrial "
+            "genes will look tumour-high partly on tissue composition. D40."),
     "Uterine Carcinosarcoma": dict(
-        gtex=["Uterus"], grade="direct", source="Wang2018", why="Direct."),
+        gtex=["Uterus"], grade="imperfect", source="Wang2018",
+        why="As UCEC: myometrium comparator for an endometrial tumour. D40."),
     "Adrenocortical Cancer": dict(
         gtex=["Adrenal Gland"], grade="direct", source="extended",
         why="Adrenal cortex; direct."),
@@ -98,11 +108,13 @@ MAP: dict[str, dict] = {
         source="Wang2018",
         why="Direct, but 6 + 4 GTEx samples. Expect this row to fail the minimum."),
     "Esophageal Carcinoma": dict(
-        gtex=["Esophagus - Mucosa", "Esophagus - Gastroesophageal Junction"],
-        grade="direct", source="Wang2018",
-        why="Wang pairs ESCA to all three oesophageal subregions. Muscularis "
-            "dropped: smooth muscle, not the epithelium these tumours arise from. "
-            "ESCA mixes squamous (mucosa) and adenocarcinoma (GEJ) histologies."),
+        gtex=["Esophagus - Mucosa"],
+        grade="direct", source="Wang2018+corrected",
+        why="Mucosa ONLY. Wang pairs ESCA to all three subregions; muscularis was "
+            "already dropped, and GEJ is also epithelium-poor (score 0.56 vs 6.48 "
+            "for mucosa), so including it diluted the comparator. Removing it "
+            "RAISED the hit count (69 -> 83) because real signal was being "
+            "masked. ESCA still mixes squamous and adenocarcinoma histologies. D40."),
     "Brain Lower Grade Glioma": dict(
         gtex=["Brain - Cortex", "Brain - Frontal Cortex (Ba9)"], grade="direct",
         source="extended",

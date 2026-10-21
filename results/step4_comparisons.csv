@@ -26,14 +26,14 @@ Cervical & Endocervical Cancer,gtex,Cervix - Ectocervix | Cervix - Endocervix,di
 Cervical & Endocervical Cancer,tcga_nat,Cervical & Endocervical Cancer adjacent normal,direct,304,3,0,0,SKIPPED,normal n=3 < 10 (D37)
 Kidney Papillary Cell Carcinoma,gtex,Kidney - Cortex,direct,288,28,3912,92,low_power,
 Kidney Papillary Cell Carcinoma,tcga_nat,Kidney Papillary Cell Carcinoma adjacent normal,direct,288,32,3912,31,ok,
-Colon Adenocarcinoma,gtex,Colon - Transverse | Colon - Sigmoid,direct,288,308,3912,199,ok,
+Colon Adenocarcinoma,gtex,Colon - Transverse,direct,288,167,3912,58,ok,
 Colon Adenocarcinoma,tcga_nat,Colon Adenocarcinoma adjacent normal,direct,288,41,3912,26,ok,
 Sarcoma,gtex,Adipose - Subcutaneous | Adipose - Visceral (Omentum) | Muscle - Skeletal | Nerve - Tibial,lineage_only,258,1189,3912,40,ok,
 Sarcoma,tcga_nat,Sarcoma adjacent normal,lineage_only,258,2,0,0,SKIPPED,normal n=2 < 10 (D37)
-Esophageal Carcinoma,gtex,Esophagus - Mucosa | Esophagus - Gastroesophageal Junction,direct,181,410,3912,69,ok,
+Esophageal Carcinoma,gtex,Esophagus - Mucosa,direct,181,273,3912,83,ok,
 Esophageal Carcinoma,tcga_nat,Esophageal Carcinoma adjacent normal,direct,181,13,3912,98,low_power,
-Uterine Corpus Endometrioid Carcinoma,gtex,Uterus,direct,180,78,3912,127,ok,
-Uterine Corpus Endometrioid Carcinoma,tcga_nat,Uterine Corpus Endometrioid Carcinoma adjacent normal,direct,180,23,3912,31,low_power,
+Uterine Corpus Endometrioid Carcinoma,gtex,Uterus,imperfect,180,78,3912,127,ok,
+Uterine Corpus Endometrioid Carcinoma,tcga_nat,Uterine Corpus Endometrioid Carcinoma adjacent normal,imperfect,180,23,3912,31,low_power,
 Pancreatic Adenocarcinoma,gtex,Pancreas,imperfect,178,167,3912,552,ok,
 Pancreatic Adenocarcinoma,tcga_nat,Pancreatic Adenocarcinoma adjacent normal,imperfect,178,4,0,0,SKIPPED,normal n=4 < 10 (D37)
 Pheochromocytoma & Paraganglioma,gtex,Adrenal Gland,imperfect,177,128,3912,249,ok,
@@ -44,14 +44,14 @@ Testicular Germ Cell Tumor,gtex,Testis,direct,148,165,3912,155,ok,
 Thymoma,tcga_nat,Thymoma adjacent normal,none,119,2,0,0,SKIPPED,normal n=2 < 10 (D37)
 Skin Cutaneous Melanoma,gtex,Skin - Sun Exposed (Lower Leg) | Skin - Not Sun Exposed (Suprapubic),imperfect,102,557,3912,89,ok,
 Skin Cutaneous Melanoma,tcga_nat,Skin Cutaneous Melanoma adjacent normal,imperfect,102,1,0,0,SKIPPED,normal n=1 < 10 (D37)
-Rectum Adenocarcinoma,gtex,Colon - Sigmoid,direct,92,141,3912,263,ok,
+Rectum Adenocarcinoma,gtex,Colon - Transverse,direct,92,167,3912,61,ok,
 Rectum Adenocarcinoma,tcga_nat,Rectum Adenocarcinoma adjacent normal,direct,92,10,3912,28,low_power,
 Mesothelioma,gtex,Adipose - Visceral (Omentum) | Lung,lineage_only,87,485,3912,62,ok,
 Uveal Melanoma,gtex,Skin - Sun Exposed (Lower Leg) | Skin - Not Sun Exposed (Suprapubic),lineage_only,79,557,3912,82,ok,
 Adrenocortical Cancer,gtex,Adrenal Gland,direct,77,128,3912,6,ok,
 Kidney Chromophobe,gtex,Kidney - Cortex,direct,66,28,3912,97,low_power,
 Kidney Chromophobe,tcga_nat,Kidney Chromophobe adjacent normal,direct,66,25,3912,31,low_power,
-Uterine Carcinosarcoma,gtex,Uterus,direct,57,78,3912,84,ok,
+Uterine Carcinosarcoma,gtex,Uterus,imperfect,57,78,3912,84,ok,
 Diffuse Large B-Cell Lymphoma,gtex,Whole Blood | Spleen,lineage_only,47,437,3912,241,ok,
 Cholangiocarcinoma,gtex,Liver,imperfect,36,110,3912,366,ok,
 Cholangiocarcinoma,tcga_nat,Cholangiocarcinoma adjacent normal,imperfect,36,9,0,0,SKIPPED,normal n=9 < 10 (D37)
