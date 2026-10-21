@@ -103,7 +103,18 @@ def main() -> int:
                     help="which DeepTMHMM run to use")
     ap.add_argument("--min-extracellular", type=int, default=MIN_EXTRA_DEFAULT,
                     help="D20 default is 20; Step 9 varies this")
+    # Step 9 re-runs this script at other cut-offs. Without a separate output
+    # name those runs would overwrite the default candidate set that every
+    # later step reads, so a non-default cut-off must be tagged.
+    ap.add_argument("--tag", default="",
+                    help="suffix for the output files; Step 9 uses it to keep "
+                         "non-default cut-offs out of the default file")
     args = ap.parse_args()
+    tag = f"_{args.tag}" if args.tag else ""
+    if args.min_extracellular != MIN_EXTRA_DEFAULT and not args.tag:
+        print("refusing to overwrite the default candidate set with a "
+              f"{args.min_extracellular} aa cut-off; pass --tag")
+        return 1
 
     uni = pd.read_csv(PROC / "step3_uniprot_topology.csv")
     dtm_path = PROC / f"step3_deeptmhmm_{args.predictor}.csv"
@@ -226,7 +237,7 @@ def main() -> int:
         "predictor_missing", "length_unknown", "compartment",
         "plasma_membrane_evidence", "cspa", "surfy", "is_candidate",
     ]].sort_values(["tier", "accession"], kind="mergesort")
-    out.to_csv(PROC / "surface_candidates.csv", index=False)
+    out.to_csv(PROC / f"surface_candidates{tag}.csv", index=False)
 
     # ------------------------------------------------------------- report --
     cand = out[out.is_candidate]
@@ -296,7 +307,7 @@ def main() -> int:
 
     report = "\n".join(lines)
     print(report)
-    (RESULTS / "step3_counts.txt").write_text(report + "\n")
+    (RESULTS / f"step3_counts{tag}.txt").write_text(report + "\n")
     print(f"\nWrote data/processed/surface_candidates.csv ({len(out):,} rows)")
     return 0
 
