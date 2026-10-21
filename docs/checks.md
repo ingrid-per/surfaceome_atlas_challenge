@@ -42,12 +42,17 @@ step scripts listed below.
 | 4.6 | 4 | Positive controls pass somewhere | `python src/step4_check.py` | EGFR, ERBB2, TACSTD2, NECTIN4, MSLN, CLDN6, CD19, FOLR1, CEACAM5 each pass in ≥1 cancer type |
 | 4.7 | 4 | Differential results are deterministic | `python src/step4_check.py` | Two runs byte-identical |
 | 4.8 | 4 | Three-state trajectory reported (D41) | `python src/step4_trajectory.py` | Every gene × cancer-type pair with all three states classified; hits split into tumour-specific vs field-effect |
+| 5.1 | 5 | Every carried-forward row has a healthy maximum and named tissue; 5 TPM floor honoured (D43) | `python src/step5_check.py` | 0 missing; no row below 5 TPM |
+| 5.2 | 5 | The maximum is never below the 90th percentile | `python src/step5_check.py` | 0 violations |
+| 5.3 | 5 | The rule-selected ubiquitous control scores near zero (D47, P6b) | `python src/step5_check.py` | Top-5 control genes all score S ≤ +2 |
+| 5.4 | 5 | Known targets characterised, never used to tune the score (D45) | `python src/step5_check.py` | All 11 reported with S and S_relaxed; no pass/fail applied |
+| 5.5 | 5 | Tissue-exclusion variants ordered S ≤ S_nobrain ≤ S_relaxed (D46) | `python src/step5_check.py` | 0 violations |
+| 5.6 | 5 | Step 5 results are deterministic | `python src/step5_check.py` | Two runs byte-identical |
 
 ## Pending — owned by later steps
 
 | # | Step | Check |
 | --- | --- | --- |
-| 5.x | 5 | B2M scores low; 10 genes hand-verified against the tissue table |
 | 6.x | 6 | Funnel counts monotone; 5 tier-1 genes hand-verified; unmeasured genes counted as RNA-only |
 | 7.x | 7 | Output deterministic across two runs; three near-miss genes explained; rule dated before the first ranking file |
 | 8.x | 8 | Every control accounted for; blood-cancer-only targets listed separately |
