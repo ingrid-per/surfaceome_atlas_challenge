@@ -26,6 +26,8 @@ FORBIDDEN = [
     "infiltrate flag",          # withdrawn with D61
     "38% of genes",             # withdrawn with D61
     "__DATA__",                 # the placeholder itself
+    "traces to a script",       # removed from the header at my request
+    "fixed before the ranking ran",
 ]
 
 # Structures the page needs. Checked here rather than discovered in the browser.
