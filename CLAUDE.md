@@ -23,6 +23,12 @@ Spec in `environment.yml`; resolved versions in `environment.lock.yml`.
 
 ## Working method
 
+**Assert that text replacements actually matched.** A silent no-op left a
+withdrawn claim live in the published deliverable after the analysis behind it
+had been removed. When editing a file by string replacement, assert the pattern
+was found before writing, and grep the result for the language you intended to
+remove. I found it, not the tooling.
+
 **Do not add new analysis without asking first (D60).** If something you notice
 suggests a new check, metric, flag or classification, describe the observation
 and what could be built, then wait for a recorded decision. Reporting what the
