@@ -559,11 +559,10 @@ function detail(c, host){
         above 10 TPM in ${homogPct}% of tumours · lower quartile ${c.tumour_q25.toLocaleString()} TPM
       </div>
       ${c.frac_above_healthy!=null?`<div class="note ${c.frac_above_healthy>=0.85?"good":c.frac_above_healthy>=0.7?"mute":"warn"}" style="margin-top:9px">
-        <b>${Math.round(c.frac_above_healthy*100)}% of tumours exceed
-        ${esc(c.worst_tissue)}</b>, the highest-expressing healthy tissue for
-        this gene. The 10 TPM threshold above is a fixed cut-off applied to
-        every gene; this figure is referenced to each target's own healthy
-        maximum.</div>`:""}
+        Among healthy tissues, ${esc(c.symbol)} is highest in
+        ${esc(c.worst_tissue)}, at <b>${c.worst_tpm.toLocaleString()} TPM</b>.
+        <b>${Math.round(c.frac_above_healthy*100)}% of these tumours are above
+        that level.</b></div>`:""}
       ${homogPct<70?`<div class="note warn" style="margin-top:9px">Expression is <b>heterogeneous</b>. A drug against this target would reach only part of the tumour population.</div>`:""}
     </div>
 
@@ -730,6 +729,8 @@ document.getElementById("method").innerHTML = `
 <p>Candidates are ranked on the <b>specificity score S</b> — tumour expression minus the single highest healthy tissue, on a log2 scale. S&nbsp;=&nbsp;0 means the tumour and the worst healthy tissue carry equal amounts.</p>
 <h3>What ranks, and what does not</h3>
 <p>Ranking uses the RNA evidence and the surface call only. Proteomics, comparator quality, neighbouring-tissue behaviour and expression homogeneity are all shown on each target but <b>never move it up or down</b>. They are there for whoever decides the next experiment.</p>
+<h3>Two different coverage figures</h3>
+<p>Each target shows how many tumours carry it in two ways. <b>Above 10 TPM</b> uses a single cut-off applied to every gene, and answers whether there is enough of the target present to bind. <b>Above the highest healthy tissue</b> uses a level that differs for every gene &mdash; 3.2 TPM for CD70, 43.9 for UPK3B, 257 for DBH &mdash; and answers whether the tumour carries more than the healthy tissue that would also be exposed. A target can score well on one and poorly on the other.</p>
 <h3>Why the worst tissue, not an average</h3>
 <p>One exposed organ is enough to make a target unsafe. Using a 90th percentile across ~50 tissues discards the top five — for mesothelin those five include lung, which is exactly where mesothelin-directed drugs show toxicity.</p>
 <h3>There is no pass mark on S</h3>
