@@ -53,7 +53,7 @@ import numpy as np
 import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from plot_style import ACCENT, apply_style, pastel_viridis, save_figure
+from plot_style import ACCENT, GREY, apply_style, save_figure
 from step7_rank import MAX_PER_FAMILY, apply_family_limit, gene_groups
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -280,8 +280,7 @@ def main() -> int:
 
     # ---------------------------------------------------------- figure --
     top = st.head(25).iloc[::-1]
-    pale = pastel_viridis(3, .42)[1]
-    cols = [ACCENT if f else pale for f in top.in_step7_top10]
+    cols = [ACCENT if f else GREY for f in top.in_step7_top10]
     fig, ax = plt.subplots(figsize=(7.6, 7.6))
     ax.barh(range(len(top)), top.stability * 100, color=cols,
             edgecolor="white", linewidth=.6)
@@ -290,7 +289,7 @@ def main() -> int:
     ax.set_xlabel(f"% of {len(rdf)} threshold settings in which the gene "
                   f"reaches the top {TOP_N}")
     ax.set_title("Which candidates survive our own threshold choices\n"
-                 "teal = currently in the top 10", loc="left")
+                 "highlighted = currently in the top 10", loc="left")
     ax.set_xlim(0, 108)
     for i, v in enumerate(top.stability * 100):
         ax.text(v + 1.4, i, f"{v:.0f}%", va="center", fontsize=8)
