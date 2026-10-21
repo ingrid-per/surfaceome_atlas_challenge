@@ -231,6 +231,11 @@ def main() -> int:
 
     out = df[[
         "accession", "symbol", "hpa_symbol", "ensembl_gene", "tier",
+        # UniProt's protein existence level. Carried through because a target
+        # whose very existence UniProt calls uncertain is a different kind of
+        # risk from one with a short ectodomain, and nothing downstream could
+        # see it before.
+        "protein_existence",
         "tm_sources", "n_tm_segments", "dtm_n_tm", "dtm_type",
         "longest_extracellular", "extracellular_reported", "extracellular_source",
         "gpi_any", "gpi_source", "has_signal_peptide", "dtm_has_signal",

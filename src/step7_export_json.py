@@ -119,6 +119,8 @@ def row_to_dict(r, surf, prof, cohort_of, counts, lin=None) -> dict:
             "gpi": bool(s.gpi_any),
             "gpi_source": str(s.gpi_source) if pd.notna(s.gpi_source) else "",
             "compartment": str(s.compartment),
+            "existence": str(s.protein_existence)
+            if pd.notna(s.protein_existence) else "",
         })
     return d
 
@@ -293,6 +295,12 @@ def main() -> int:
                     for _, r in reserve.iterrows()]
     payload_rows_global = top10_rows + reserve_rows
 
+    # Counted here so the deliverable can say how unusual a weak existence call
+    # is without anyone typing the number.
+    ex = surf.loc[surf.index.intersection(set(full.ensembl_gene)), "protein_existence"]
+    existence_counts = {str(k): int(v) for k, v in ex.value_counts().items()}
+    existence_total = int(ex.notna().sum())
+
     rob = robustness()
     # Stability is a property of the GLOBAL ranking — a gene enters the top 20
     # through its single best cancer type. Attaching it to a per-cancer-type row
@@ -305,6 +313,7 @@ def main() -> int:
     payload = {
         "generated": "2026-10-21",
         "robust": rob,
+        "existence": {"counts": existence_counts, "total": existence_total},
         "pan": pan,
         "funnel": funnel,
         "cancers": sorted(by_cancer),

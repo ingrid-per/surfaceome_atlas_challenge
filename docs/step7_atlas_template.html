@@ -437,6 +437,16 @@ const TRAJ = {
   nat_transient_up:{cls:"mute",label:"raised in adjacent tissue only",why:""}
 };
 
+// UniProt protein existence: anything short of "Evidence at protein level"
+// means the protein itself has not been directly observed.
+function weakExistence(c){
+  return c.existence && c.existence !== "Evidence at protein level";
+}
+function existenceRank(c){
+  const n = (D.existence.counts || {})[c.existence];
+  return n == null ? "a handful" : String(n);
+}
+
 function links(c){
   const sym=c.symbol, gene=c.gene, dis=c.disease_term||c.cancer, q=encodeURIComponent;
   // Progressive, narrow to broad, so a click always lands on results.
@@ -499,9 +509,22 @@ function detail(c, host){
       ${c.low_power?`<span class="chip warn">low power</span>`:""}
       ${c.cspa?`<span class="chip ok">CSPA measured</span>`:""}
       ${c.gpi?`<span class="chip t1">GPI-anchored</span>`:""}
+      ${weakExistence(c)?`<span class="chip bad">existence ${esc(c.existence.toLowerCase())}</span>`:""}
     </div>
   </div>
   <div class="d-body">
+
+    ${weakExistence(c)?`<div class="sec"><div class="note warn">
+      <b>UniProt is not certain this protein exists.</b> Its protein existence
+      level is &ldquo;${esc(c.existence)}&rdquo;, meaning the evidence is
+      ${c.existence==="Uncertain"
+        ? "insufficient to be sure the gene produces a protein at all &mdash; UniProt notes it could be the product of a pseudogene"
+        : "transcript-level or inferred, not direct observation of the protein"}.
+      Of the ${D.existence.total.toLocaleString()} genes eligible in this
+      analysis, <b>${existenceRank(c)}</b> ${existenceRank(c)==="1"?"carries":"carry"}
+      this level. Everything below is a real measurement of RNA; what is in
+      doubt is whether a drug would find a protein to bind.
+    </div></div>`:""}
 
     <div class="sec">
       <h3>The case for it</h3>
@@ -619,7 +642,7 @@ function renderList(items, host, detailHost, state){
     return `<button class="row" data-i="${i}" aria-current="${i===state.i}">
       <span class="rank">${i+1}</span>
       <span>
-        <span class="sym">${esc(c.symbol)}</span>
+        <span class="sym">${esc(c.symbol)}${weakExistence(c)?' <span class="chip bad" style="margin-left:5px">existence uncertain</span>':""}</span>
         <span class="meta">${esc(c.tier)} · ${esc(c.cancer)}${c.family?" · "+esc(c.family):""}</span>
       </span>
       <span class="score">${c.S.toFixed(2)}<small>score S</small></span>
