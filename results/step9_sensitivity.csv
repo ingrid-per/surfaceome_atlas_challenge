@@ -1,0 +1,17 @@
+axis,value,mean_overlap_with_default,axis_spread
+summary,max,0.663,0.2778
+summary,max_no_reproductive_fetal,0.6407,0.2778
+summary,max_nobrain,0.4259,0.2778
+summary,max_relaxed,0.4222,0.2778
+summary,p90,0.3852,0.2778
+source,both,0.6367,0.2311
+source,gtex,0.48,0.2311
+source,hpa,0.4056,0.2311
+min_extra,20,0.5333,0.0667
+min_extra,10,0.5222,0.0667
+min_extra,50,0.4667,0.0667
+log2fc,3.0,0.5322,0.0467
+log2fc,2.0,0.5044,0.0467
+log2fc,1.0,0.4856,0.0467
+fdr,0.01,0.5074,0.0
+fdr,0.05,0.5074,0.0

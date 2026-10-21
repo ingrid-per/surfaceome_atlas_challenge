@@ -1,4 +1,4 @@
-"""Step 9: AND-gate pairs — two surface markers a conditionally-active drug could require.
+"""EXTRA (not a runbook step): AND-gate pairs — two surface markers a conditionally-active drug could require.
 
 Asked for by me, framed around what Orionis Biosciences' A-Kine platform
 needs: cytokines engineered to act only in the presence of cancer-relevant
@@ -24,7 +24,7 @@ tissue. A pair is safe where every tissue fails at least one of the two.
 
 Reports only. No gate is applied to the main ranking.
 
-Writes results/step9_and_gates.csv and results/step9_counts.txt.
+Writes results/extra_and_gates.csv and results/extra_counts.txt.
 """
 
 from __future__ import annotations

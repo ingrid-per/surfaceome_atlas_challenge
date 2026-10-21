@@ -66,3 +66,24 @@ step scripts listed below.
 | --- | --- | --- |
 | 8.x | 8 | Every control accounted for; blood-cancer-only targets listed separately |
 | 9.x | 9 | Default run reproduces Step 7 exactly; run count matches grid size; stability values in [0, 1] |
+
+## Step 9 — robustness grid
+
+| # | Check | Script |
+| --- | --- | --- |
+| 9.1 | Run count equals the grid size (270) | `src/step9_check.py` |
+| 9.2 | Every setting appears exactly once | `src/step9_check.py` |
+| 9.3 | The default cell reproduces the Step 7 top 10 exactly | `src/step9_check.py` |
+| 9.4 | Stability values lie in [0, 1] | `src/step9_check.py` |
+| 9.5 | Stability recomputes from `step9_runs.csv` | `src/step9_check.py` |
+| 9.6 | Every run returned between 1 and 20 genes | `src/step9_check.py` |
+| 9.7 | The 20 aa re-tier is byte-identical to the committed candidate set | `src/step9_robustness.py` |
+| 9.8 | The gene-level tier collapse matches the `tier` column Step 5 stored | `src/step9_robustness.py` |
+
+## Step 7b — the published deliverable
+
+| # | Check | Script |
+| --- | --- | --- |
+| 7.10 | `__DATA__` matched exactly once and did not survive the build | `src/step7_build_artifact.py` |
+| 7.11 | Withdrawn phrasing is absent; every tab has a section and is known to the switcher | `src/step7_build_artifact.py` |
+| 7.12 | The page's JavaScript runs to completion and renders what it claims, including that all 270 selectable settings resolve to a stored run | `src/step7_check_artifact.py` |

@@ -249,13 +249,23 @@ def main() -> int:
     dtop = set(default_top20)
     lines += ["", "which choice moves the answer most",
               f"(mean overlap of a run's top {TOP_N} with the default run's):", ""]
-    spread = []
+    spread, sens_rows = [], []
     for axis in ["min_extra", "fdr", "log2fc", "source", "summary"]:
         per = {}
         for val, g in rdf.groupby(axis):
             per[val] = float(np.mean([len(dtop & set(x.split(";"))) / len(dtop)
                                       for x in g.top20]))
         spread.append((max(per.values()) - min(per.values()), axis, per))
+        rng = max(per.values()) - min(per.values())
+        for val, ov in per.items():
+            sens_rows.append({"axis": axis, "value": val,
+                              "mean_overlap_with_default": round(ov, 4),
+                              "axis_spread": round(rng, 4)})
+    # Written out so the deliverable reads these rather than restating them.
+    pd.DataFrame(sens_rows).sort_values(
+        ["axis_spread", "axis", "mean_overlap_with_default"],
+        ascending=[False, True, False]).to_csv(
+        RESULTS / "step9_sensitivity.csv", index=False)
     for rng, axis, per in sorted(spread, reverse=True):
         lines.append(f"  {axis}  (spread {rng:.0%})")
         for val, ov in sorted(per.items(), key=lambda kv: -kv[1]):
