@@ -61,6 +61,13 @@ shasum -a 256 data/raw/<file>
 
 **42 files, 1692.69 MB total.**
 
+### Added later
+
+| File | Resource | Version | Date | Source | SHA-256 | Size |
+| --- | --- | --- | --- | --- | --- | --- |
+| `hgnc_complete_set.txt` | HGNC gene groups | current | 2026-10-21 | <https://storage.googleapis.com/public-download-files/hgnc/tsv/tsv/hgnc_complete_set.txt> | see `results/step1_manifest.csv` | 16.2 MB |
+| `aran2015_tumour_purity.xlsx` | Tumour purity, 4 methods + consensus | Aran et al., Nat Commun 6:8971 (2015), Supplementary Data 1 | 2026-10-21 | <https://static-content.springer.com/esm/art%3A10.1038%2Fncomms9971/MediaObjects/41467_2015_BFncomms9971_MOESM1236_ESM.xlsx> | `fce1ba13ff3a6432b7e4f260eb516e407c967d615ca87bc8dffa7765baf97529` | 0.53 MB |
+
 ### Deliberately not downloaded
 
 | Resource | Why not |

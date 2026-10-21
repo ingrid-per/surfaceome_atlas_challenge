@@ -23,6 +23,14 @@ Spec in `environment.yml`; resolved versions in `environment.lock.yml`.
 
 ## Working method
 
+**Do not add new analysis without asking first (D60).** If something you notice
+suggests a new check, metric, flag or classification, describe the observation
+and what could be built, then wait for a recorded decision. Reporting what the
+existing data shows is always fine; adding a new column, filter or score to the
+pipeline is not something to do unilaterally. This is rule 3 of the runbook
+applied to your own ideas, not just to thresholds.
+
+
 The governing document is `Surface Target Pipeline Claude Code Runbook.md` in this
 folder. Work one numbered step per session. Start every step in plan mode. Commit
 after each step.

@@ -181,7 +181,7 @@ select{
 .lab-btn:hover{background:var(--accent-deep)}
 .lab-btn:active{transform:translateY(1px)}
 .lab-links{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:8px}
-.lab-links a:nth-child(5){grid-column:1/-1}
+
 .lab-links a{
   display:flex;flex-direction:column;gap:1px;padding:9px 11px;border-radius:7px;
   border:1px solid var(--line);background:var(--surface-2);text-decoration:none;
@@ -316,26 +316,24 @@ const TRAJ = {
 };
 
 function links(c){
-  const sym = c.symbol;
-  const gene = c.gene;
-  const dis  = c.disease_term || c.cancer;
-  const q = encodeURIComponent;
-  // Gene symbol restricted to title/abstract, paired with the term the
-  // literature actually uses. Without [tiab] and a real disease name the
-  // query returns every cancer paper that mentions the word "cancer".
-  const pm   = `https://pubmed.ncbi.nlm.nih.gov/?term=${q(sym + "[tiab] AND " + dis)}&sort=date`;
-  const pmT  = `https://pubmed.ncbi.nlm.nih.gov/?term=${q(sym + "[tiab] AND " + dis + " AND (immunotherapy OR antibody OR CAR-T OR therapeutic)")}&sort=date`;
-  const ct   = `https://clinicaltrials.gov/search?term=${q(sym)}&cond=${q(dis)}`;
-  // Open Targets and HPA are addressed by Ensembl id, so these are the gene's
-  // own page rather than a search that might land on the wrong entry.
+  const sym=c.symbol, gene=c.gene, dis=c.disease_term||c.cancer, q=encodeURIComponent;
+  // Progressive, narrow to broad, so a click always lands on results.
+  // No [tiab]: it blocks PubMed's synonym expansion. "CLDN6 AND testicular
+  // germ cell tumor" expands to claudin 6 / CLDN6 and finds twice as much as
+  // the title-abstract-restricted form.
+  const pm   = `https://pubmed.ncbi.nlm.nih.gov/?term=${q(sym+" AND "+dis)}&sort=date`;
+  const pmC  = `https://pubmed.ncbi.nlm.nih.gov/?term=${q(sym+" AND (cancer OR neoplasm OR tumor OR carcinoma)")}&sort=date`;
+  const pmA  = `https://pubmed.ncbi.nlm.nih.gov/?term=${q(sym)}&sort=date`;
+  const ct   = `https://clinicaltrials.gov/search?term=${q(sym)}`;
   const ot   = `https://platform.opentargets.org/target/${q(gene)}`;
   const hpa  = `https://www.proteinatlas.org/${q(gene)}-${q(sym)}/pathology`;
   return [
-    ["PubMed", `${sym} in ${dis}`, pm],
-    ["PubMed \u2014 therapeutic", "as a drug target specifically", pmT],
-    ["ClinicalTrials.gov", "trials in this indication", ct],
+    ["PubMed \u2014 this indication", `${sym} in ${dis}`, pm],
+    ["PubMed \u2014 any cancer", `${sym} across oncology`, pmC],
+    ["PubMed \u2014 everything", `all papers on ${sym}`, pmA],
+    ["ClinicalTrials.gov", `trials naming ${sym}`, ct],
     ["Open Targets", "tractability & competitive landscape", ot],
-    ["Protein Atlas", "antibody staining in tumour & normal", hpa]
+    ["Protein Atlas", "antibody staining, tumour & normal", hpa]
   ];
 }
 
@@ -379,7 +377,7 @@ function detail(c, host){
       ${c.low_power?`<span class="chip warn">low power</span>`:""}
       ${c.cspa?`<span class="chip ok">CSPA measured</span>`:""}
       ${c.gpi?`<span class="chip t1">GPI-anchored</span>`:""}
-      ${c.micro && c.micro!=="tumour cell"?`<span class="chip bad">${esc(c.micro)}</span>`:""}
+      ${c.micro_flag?`<span class="chip bad">${esc(c.micro)}</span>`:""}
     </div>
   </div>
   <div class="d-body">
@@ -445,12 +443,18 @@ function detail(c, host){
     ${tr && tr.why?`<div class="sec"><h3>Neighbouring tissue</h3>
       <div class="note ${tr.cls==="ok"?"good":"warn"}"><b>${tr.label}.</b> ${tr.why}</div></div>`:""}
 
-    ${c.immune_r!=null?`<div class="sec">
+    ${c.r_purity!=null?`<div class="sec">
       <h3>Tumour cells, or what surrounds them?</h3>
       <div class="note ${(c.micro&&c.micro!=="tumour cell")?"warn":"good"}">
-        ${(c.micro&&c.micro!=="tumour cell")
-          ? `<b>${esc(c.micro)}.</b> Across 9,185 tumours this gene tracks markers of the surrounding tissue rather than the tumour itself — immune r ${c.immune_r.toFixed(2)}${c.stromal_r!=null?`, fibroblast r ${c.stromal_r.toFixed(2)}`:""}. A drug may hit the patient's own leukocytes or stroma. Not automatically disqualifying: ABBV-085 targets the fibroblast protein LRRC15 on purpose.`
-          : `<b>Tumour-cell pattern.</b> Weak correlation with leukocyte, macrophage, fibroblast and endothelial markers (immune ${c.immune_r.toFixed(2)}${c.stromal_r!=null?`, fibroblast ${c.stromal_r.toFixed(2)}`:""}), so the signal is unlikely to come from the microenvironment.`}
+        ${c.micro_flag
+          ? `<b>${esc(c.micro)}.</b> Expression falls as the tumour sample gets purer (r = ${c.r_purity!=null?c.r_purity.toFixed(2):"\u2014"} against published purity), so the signal likely comes from infiltrating immune or stromal cells rather than the tumour. A drug may meet the target on the patient's own leukocytes or fibroblasts. Not disqualifying on its own \u2014 AbbVie's ABBV-085 targets the fibroblast protein LRRC15 deliberately.`
+          : `<b>Tumour-cell pattern.</b> Expression does not fall as the sample gets purer (r = ${c.r_purity!=null?c.r_purity.toFixed(2):"\u2014"}), so the signal is unlikely to come from the microenvironment.`}
+        <div style="margin-top:7px;font-size:11.5px;color:var(--ink-3)">
+          Purity from Aran et&nbsp;al., <i>Nat Commun</i> 6:8971 (2015), using the
+          DNA-, methylation- and microscopy-based estimates only. Cut-off
+          r&nbsp;\u2264&nbsp;\u22120.23, set by separating 12 known microenvironment
+          genes from 10 known tumour-cell genes (92% / 100%).
+        </div>
       </div>
     </div>`:""}
 
