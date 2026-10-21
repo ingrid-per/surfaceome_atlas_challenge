@@ -1,0 +1,567 @@
+cancer_type,sample,elevation_log2,elevated
+Breast Invasive Carcinoma,TCGA-BH-A0DD-11,-0.3648974597454071,False
+Breast Invasive Carcinoma,TCGA-AC-A23H-11,1.3598341941833496,True
+Breast Invasive Carcinoma,TCGA-BH-A1F8-11,1.5894496440887451,True
+Breast Invasive Carcinoma,TCGA-BH-A18N-11,1.8602354526519775,True
+Breast Invasive Carcinoma,TCGA-BH-A1FG-11,1.0198321342468262,True
+Breast Invasive Carcinoma,TCGA-AC-A2FM-11,1.6535183191299438,True
+Breast Invasive Carcinoma,TCGA-BH-A1EU-11,1.659893274307251,True
+Breast Invasive Carcinoma,TCGA-BH-A0HK-11,1.9786075353622437,True
+Breast Invasive Carcinoma,TCGA-BH-A1F0-11,1.4695886373519897,True
+Breast Invasive Carcinoma,TCGA-BH-A204-11,-0.006403088569641113,False
+Breast Invasive Carcinoma,TCGA-A7-A0CH-11,1.5496151447296143,True
+Breast Invasive Carcinoma,TCGA-A7-A13G-11,-0.9714410305023193,False
+Breast Invasive Carcinoma,TCGA-BH-A18S-11,1.7696075439453125,True
+Breast Invasive Carcinoma,TCGA-BH-A0BV-11,2.203850269317627,True
+Breast Invasive Carcinoma,TCGA-BH-A0DO-11,1.750138282775879,True
+Breast Invasive Carcinoma,TCGA-BH-A1EN-11,0.7976484298706055,False
+Breast Invasive Carcinoma,TCGA-BH-A1FC-11,1.9472401142120361,True
+Breast Invasive Carcinoma,TCGA-BH-A203-11,1.2183020114898682,True
+Breast Invasive Carcinoma,TCGA-BH-A209-11,1.5014138221740723,True
+Breast Invasive Carcinoma,TCGA-E9-A1ND-11,0.785568356513977,False
+Breast Invasive Carcinoma,TCGA-BH-A1FR-11,2.160274028778076,True
+Breast Invasive Carcinoma,TCGA-BH-A18U-11,2.041961193084717,True
+Breast Invasive Carcinoma,TCGA-BH-A0BW-11,1.592017412185669,True
+Breast Invasive Carcinoma,TCGA-BH-A0H9-11,-0.8939869403839111,False
+Breast Invasive Carcinoma,TCGA-BH-A1EO-11,-0.635646402835846,False
+Breast Invasive Carcinoma,TCGA-BH-A1FD-11,1.3819445371627808,True
+Breast Invasive Carcinoma,TCGA-E9-A1RF-11,-0.7840336561203003,False
+Breast Invasive Carcinoma,TCGA-E9-A1RD-11,0.5859161019325256,False
+Breast Invasive Carcinoma,TCGA-BH-A1FJ-11,1.9132055044174194,True
+Breast Invasive Carcinoma,TCGA-E2-A15M-11,1.6570649147033691,True
+Breast Invasive Carcinoma,TCGA-AC-A2FB-11,1.3631632328033447,True
+Breast Invasive Carcinoma,TCGA-BH-A0H7-11,2.0844883918762207,True
+Breast Invasive Carcinoma,TCGA-BH-A0B8-11,-0.5007506012916565,False
+Breast Invasive Carcinoma,TCGA-BH-A0DL-11,1.6655217409133911,True
+Breast Invasive Carcinoma,TCGA-E9-A1R7-11,0.3143904209136963,False
+Breast Invasive Carcinoma,TCGA-A7-A0DC-11,1.7017968893051147,True
+Breast Invasive Carcinoma,TCGA-BH-A0DH-11,1.1311609745025635,True
+Breast Invasive Carcinoma,TCGA-E2-A1BC-11,-1.3627063035964966,False
+Breast Invasive Carcinoma,TCGA-E9-A1RH-11,-0.136013925075531,False
+Breast Invasive Carcinoma,TCGA-GI-A2C8-11,-1.7988886833190918,False
+Breast Invasive Carcinoma,TCGA-A7-A13E-11,1.1192371845245361,True
+Breast Invasive Carcinoma,TCGA-BH-A0C0-11,2.165792226791382,True
+Breast Invasive Carcinoma,TCGA-E9-A1NG-11,0.7333626747131348,False
+Breast Invasive Carcinoma,TCGA-BH-A0BC-11,1.7162675857543945,True
+Breast Invasive Carcinoma,TCGA-BH-A0DP-11,2.4287614822387695,True
+Breast Invasive Carcinoma,TCGA-BH-A18P-11,0.6130161285400391,False
+Breast Invasive Carcinoma,TCGA-BH-A1FB-11,2.0947132110595703,True
+Breast Invasive Carcinoma,TCGA-E9-A1NF-11,-0.4610140323638916,False
+Breast Invasive Carcinoma,TCGA-BH-A0BZ-11,1.6733832359313965,True
+Breast Invasive Carcinoma,TCGA-E2-A1LH-11,2.3815441131591797,True
+Breast Invasive Carcinoma,TCGA-E2-A15K-11,0.8636196851730347,False
+Breast Invasive Carcinoma,TCGA-E9-A1N9-11,1.635361909866333,True
+Breast Invasive Carcinoma,TCGA-E9-A1NA-11,1.3448859453201294,True
+Breast Invasive Carcinoma,TCGA-GI-A2C9-11,1.5977717638015747,True
+Breast Invasive Carcinoma,TCGA-A7-A0CE-11,2.217740535736084,True
+Breast Invasive Carcinoma,TCGA-A7-A0DB-11,-0.39534708857536316,False
+Breast Invasive Carcinoma,TCGA-BH-A0BT-11,2.406315803527832,True
+Breast Invasive Carcinoma,TCGA-BH-A18J-11,1.9005513191223145,True
+Breast Invasive Carcinoma,TCGA-BH-A18Q-11,2.012331485748291,True
+Breast Invasive Carcinoma,TCGA-E9-A1RC-11,-0.8194071650505066,False
+Breast Invasive Carcinoma,TCGA-BH-A0BS-11,1.7389219999313354,True
+Breast Invasive Carcinoma,TCGA-BH-A1ET-11,1.9924970865249634,True
+Breast Invasive Carcinoma,TCGA-BH-A0BM-11,1.6093907356262207,True
+Breast Invasive Carcinoma,TCGA-BH-A0DV-11,1.9578657150268555,True
+Breast Invasive Carcinoma,TCGA-BH-A0B3-11,2.210465908050537,True
+Breast Invasive Carcinoma,TCGA-BH-A1F2-11,0.872515082359314,False
+Breast Invasive Carcinoma,TCGA-BH-A0E1-11,1.4957237243652344,True
+Breast Invasive Carcinoma,TCGA-E9-A1N6-11,1.3651419878005981,True
+Breast Invasive Carcinoma,TCGA-BH-A0BA-11,1.877396821975708,True
+Breast Invasive Carcinoma,TCGA-BH-A1F6-11,1.2423886060714722,True
+Breast Invasive Carcinoma,TCGA-E2-A153-11,2.190035820007324,True
+Breast Invasive Carcinoma,TCGA-BH-A18L-11,1.6302739381790161,True
+Breast Invasive Carcinoma,TCGA-BH-A18R-11,1.4020280838012695,True
+Breast Invasive Carcinoma,TCGA-BH-A0DK-11,2.722078800201416,True
+Breast Invasive Carcinoma,TCGA-BH-A18V-11,1.3631212711334229,True
+Breast Invasive Carcinoma,TCGA-BH-A208-11,1.765631914138794,True
+Breast Invasive Carcinoma,TCGA-BH-A0AZ-11,2.269895553588867,True
+Breast Invasive Carcinoma,TCGA-BH-A0C3-11,1.7651234865188599,True
+Breast Invasive Carcinoma,TCGA-BH-A1FH-11,1.3876245021820068,True
+Breast Invasive Carcinoma,TCGA-BH-A18K-11,1.7232739925384521,True
+Breast Invasive Carcinoma,TCGA-E2-A1LS-11,-1.2710293531417847,False
+Breast Invasive Carcinoma,TCGA-BH-A0AU-11,2.0512752532958984,True
+Breast Invasive Carcinoma,TCGA-BH-A0H5-11,2.2249984741210938,True
+Breast Invasive Carcinoma,TCGA-BH-A1EV-11,1.9380913972854614,True
+Breast Invasive Carcinoma,TCGA-E2-A1IG-11,1.1265888214111328,True
+Breast Invasive Carcinoma,TCGA-E9-A1N5-11,1.9062622785568237,True
+Breast Invasive Carcinoma,TCGA-A7-A13F-11,1.0198261737823486,True
+Breast Invasive Carcinoma,TCGA-BH-A1FM-11,1.629455327987671,True
+Breast Invasive Carcinoma,TCGA-BH-A1FU-11,2.1201016902923584,True
+Breast Invasive Carcinoma,TCGA-E2-A15I-11,-0.21095657348632812,False
+Breast Invasive Carcinoma,TCGA-BH-A0DZ-11,2.299431324005127,True
+Breast Invasive Carcinoma,TCGA-E2-A158-11,0.11102589964866638,False
+Breast Invasive Carcinoma,TCGA-E9-A1RI-11,-0.5880105495452881,False
+Breast Invasive Carcinoma,TCGA-BH-A0B7-11,2.0307726860046387,True
+Breast Invasive Carcinoma,TCGA-BH-A0DQ-11,2.4899110794067383,True
+Breast Invasive Carcinoma,TCGA-BH-A0BJ-11,1.953436017036438,True
+Breast Invasive Carcinoma,TCGA-BH-A0DT-11,2.1890316009521484,True
+Breast Invasive Carcinoma,TCGA-E2-A1LB-11,2.13881254196167,True
+Breast Invasive Carcinoma,TCGA-E9-A1N4-11,1.9225270748138428,True
+Breast Invasive Carcinoma,TCGA-AC-A2FF-11,2.1476850509643555,True
+Breast Invasive Carcinoma,TCGA-BH-A0B5-11,-1.330984115600586,False
+Breast Invasive Carcinoma,TCGA-E2-A1L7-11,2.2377591133117676,True
+Breast Invasive Carcinoma,TCGA-E9-A1RB-11,1.255734920501709,True
+Breast Invasive Carcinoma,TCGA-BH-A0BQ-11,2.2259950637817383,True
+Breast Invasive Carcinoma,TCGA-BH-A18M-11,1.8178927898406982,True
+Breast Invasive Carcinoma,TCGA-BH-A0E0-11,1.8252416849136353,True
+Breast Invasive Carcinoma,TCGA-BH-A1EW-11,2.767735481262207,True
+Breast Invasive Carcinoma,TCGA-A7-A0D9-11,-0.4750911593437195,False
+Breast Invasive Carcinoma,TCGA-BH-A1FN-11,1.1794822216033936,True
+Breast Invasive Carcinoma,TCGA-BH-A0HA-11,1.6782985925674438,True
+Breast Invasive Carcinoma,TCGA-BH-A1FE-11,1.4290094375610352,True
+Breast Invasive Carcinoma,TCGA-BH-A0DG-11,2.125441789627075,True
+Colon Adenocarcinoma,TCGA-A6-5659-11,1.1835887432098389,True
+Colon Adenocarcinoma,TCGA-A6-2675-11,1.3004612922668457,True
+Colon Adenocarcinoma,TCGA-AA-3697-11,1.961380124092102,True
+Colon Adenocarcinoma,TCGA-AZ-6605-11,-0.25951895117759705,False
+Colon Adenocarcinoma,TCGA-AA-3489-11,1.7032586336135864,True
+Colon Adenocarcinoma,TCGA-AZ-6599-11,1.4804651737213135,True
+Colon Adenocarcinoma,TCGA-A6-2682-11,1.5627472400665283,True
+Colon Adenocarcinoma,TCGA-AA-3655-11,1.383648157119751,True
+Colon Adenocarcinoma,TCGA-AA-3713-11,0.45833468437194824,False
+Colon Adenocarcinoma,TCGA-AZ-6601-11,1.5013022422790527,True
+Colon Adenocarcinoma,TCGA-AA-3712-11,1.5422134399414062,True
+Colon Adenocarcinoma,TCGA-AA-3511-11,1.8463737964630127,True
+Colon Adenocarcinoma,TCGA-AZ-6600-11,1.4353450536727905,True
+Colon Adenocarcinoma,TCGA-F4-6704-11,1.7021591663360596,True
+Colon Adenocarcinoma,TCGA-A6-5662-11,0.832068920135498,False
+Colon Adenocarcinoma,TCGA-AA-3663-11,1.0905039310455322,True
+Colon Adenocarcinoma,TCGA-A6-5665-11,1.1297094821929932,True
+Colon Adenocarcinoma,TCGA-AA-3496-11,0.9957938194274902,False
+Colon Adenocarcinoma,TCGA-A6-2686-11,1.2636245489120483,True
+Colon Adenocarcinoma,TCGA-AA-3662-11,1.8570129871368408,True
+Colon Adenocarcinoma,TCGA-AZ-6598-11,1.1903407573699951,True
+Colon Adenocarcinoma,TCGA-AZ-6603-11,1.632075548171997,True
+Colon Adenocarcinoma,TCGA-A6-2684-11,1.3886744976043701,True
+Colon Adenocarcinoma,TCGA-AA-3660-11,1.3349533081054688,True
+Colon Adenocarcinoma,TCGA-A6-2685-11,2.147664785385132,True
+Colon Adenocarcinoma,TCGA-A6-5667-11,1.494025707244873,True
+Esophageal Carcinoma,TCGA-L5-A4OR-11,1.3353368043899536,True
+Esophageal Carcinoma,TCGA-L5-A43C-11,1.205803394317627,True
+Esophageal Carcinoma,TCGA-L5-A4OO-11,1.5849674940109253,True
+Esophageal Carcinoma,TCGA-L5-A4OQ-11,1.9981440305709839,True
+Esophageal Carcinoma,TCGA-V5-AASX-11,4.299411773681641,True
+Esophageal Carcinoma,TCGA-L5-A4OF-11,2.592897891998291,True
+Esophageal Carcinoma,TCGA-IC-A6RE-11,0.12035703659057617,False
+Esophageal Carcinoma,TCGA-V5-A7RE-11,3.6331193447113037,True
+Esophageal Carcinoma,TCGA-L5-A4OG-11,2.2321033477783203,True
+Esophageal Carcinoma,TCGA-L5-A4OJ-11,1.5339959859848022,True
+Esophageal Carcinoma,TCGA-IC-A6RF-11,1.1399153470993042,True
+Esophageal Carcinoma,TCGA-L5-A4OM-11,4.039592742919922,True
+Esophageal Carcinoma,TCGA-IG-A3I8-11,1.3130671977996826,True
+Head & Neck Squamous Cell Carcinoma,TCGA-CV-6938-11,2.57712459564209,True
+Head & Neck Squamous Cell Carcinoma,TCGA-CV-7101-11,0.3643202781677246,False
+Head & Neck Squamous Cell Carcinoma,TCGA-CV-7432-11,2.634671449661255,True
+Head & Neck Squamous Cell Carcinoma,TCGA-CV-7437-11,1.340375542640686,True
+Head & Neck Squamous Cell Carcinoma,TCGA-CV-6943-11,1.2522560358047485,True
+Head & Neck Squamous Cell Carcinoma,TCGA-CV-6936-11,1.2229366302490234,True
+Head & Neck Squamous Cell Carcinoma,TCGA-CV-6935-11,1.6840529441833496,True
+Head & Neck Squamous Cell Carcinoma,TCGA-CV-6956-11,2.6025302410125732,True
+Head & Neck Squamous Cell Carcinoma,TCGA-CV-7235-11,3.5347487926483154,True
+Head & Neck Squamous Cell Carcinoma,TCGA-CV-7424-11,1.2858638763427734,True
+Head & Neck Squamous Cell Carcinoma,TCGA-CV-6962-11,1.159147024154663,True
+Head & Neck Squamous Cell Carcinoma,TCGA-CV-7423-11,1.6646242141723633,True
+Head & Neck Squamous Cell Carcinoma,TCGA-CV-7250-11,1.7170913219451904,True
+Head & Neck Squamous Cell Carcinoma,TCGA-CV-7434-11,2.799588203430176,True
+Head & Neck Squamous Cell Carcinoma,TCGA-CV-7245-11,0.7739689350128174,False
+Head & Neck Squamous Cell Carcinoma,TCGA-CV-6961-11,1.1095995903015137,True
+Head & Neck Squamous Cell Carcinoma,TCGA-CV-6939-11,0.32759881019592285,False
+Head & Neck Squamous Cell Carcinoma,TCGA-WA-A7GZ-11,-0.1729576587677002,False
+Head & Neck Squamous Cell Carcinoma,TCGA-CV-7261-11,0.6877135038375854,False
+Head & Neck Squamous Cell Carcinoma,TCGA-HD-A6I0-11,2.279641628265381,True
+Head & Neck Squamous Cell Carcinoma,TCGA-CV-7091-11,0.7460014820098877,False
+Head & Neck Squamous Cell Carcinoma,TCGA-CV-6933-11,-0.15774285793304443,False
+Head & Neck Squamous Cell Carcinoma,TCGA-CV-7097-11,2.7339179515838623,True
+Head & Neck Squamous Cell Carcinoma,TCGA-CV-7183-11,-0.6653952598571777,False
+Head & Neck Squamous Cell Carcinoma,TCGA-CV-6960-11,1.3811063766479492,True
+Head & Neck Squamous Cell Carcinoma,TCGA-CV-7103-11,1.2456932067871094,True
+Head & Neck Squamous Cell Carcinoma,TCGA-CV-7406-11,0.8372211456298828,False
+Head & Neck Squamous Cell Carcinoma,TCGA-CV-6959-11,1.7426210641860962,True
+Head & Neck Squamous Cell Carcinoma,TCGA-CV-7440-11,1.5113003253936768,True
+Head & Neck Squamous Cell Carcinoma,TCGA-CV-7438-11,2.507857322692871,True
+Head & Neck Squamous Cell Carcinoma,TCGA-CV-7177-11,1.8014570474624634,True
+Head & Neck Squamous Cell Carcinoma,TCGA-HD-A6HZ-11,0.004480123519897461,False
+Head & Neck Squamous Cell Carcinoma,TCGA-CV-7425-11,2.7721681594848633,True
+Head & Neck Squamous Cell Carcinoma,TCGA-CV-6955-11,2.6828465461730957,True
+Head & Neck Squamous Cell Carcinoma,TCGA-CV-7238-11,1.6538827419281006,True
+Head & Neck Squamous Cell Carcinoma,TCGA-CV-6934-11,1.641279935836792,True
+Head & Neck Squamous Cell Carcinoma,TCGA-CV-7178-11,2.4120733737945557,True
+Head & Neck Squamous Cell Carcinoma,TCGA-CV-7252-11,1.4464468955993652,True
+Head & Neck Squamous Cell Carcinoma,TCGA-HD-8635-11,1.8467535972595215,True
+Head & Neck Squamous Cell Carcinoma,TCGA-CV-7242-11,1.523186445236206,True
+Head & Neck Squamous Cell Carcinoma,TCGA-H7-A6C4-11,0.2525820732116699,False
+Head & Neck Squamous Cell Carcinoma,TCGA-CV-7255-11,2.429229736328125,True
+Head & Neck Squamous Cell Carcinoma,TCGA-CV-7416-11,2.1476387977600098,True
+Kidney Chromophobe,TCGA-KN-8430-11,1.9797263145446777,True
+Kidney Chromophobe,TCGA-KN-8428-11,1.953308343887329,True
+Kidney Chromophobe,TCGA-KL-8326-11,1.2581381797790527,True
+Kidney Chromophobe,TCGA-KL-8339-11,1.6134796142578125,True
+Kidney Chromophobe,TCGA-KN-8436-11,1.8109335899353027,True
+Kidney Chromophobe,TCGA-KN-8435-11,1.75067138671875,True
+Kidney Chromophobe,TCGA-KL-8332-11,0.9796204566955566,False
+Kidney Chromophobe,TCGA-KN-8427-11,1.8518691062927246,True
+Kidney Chromophobe,TCGA-KN-8425-11,2.267575740814209,True
+Kidney Chromophobe,TCGA-KN-8426-11,2.1826608180999756,True
+Kidney Chromophobe,TCGA-KO-8403-11,1.9895029067993164,True
+Kidney Chromophobe,TCGA-KN-8423-11,1.9555563926696777,True
+Kidney Chromophobe,TCGA-KN-8419-11,1.9523735046386719,True
+Kidney Chromophobe,TCGA-KN-8432-11,1.6060991287231445,True
+Kidney Chromophobe,TCGA-KL-8324-11,1.535006046295166,True
+Kidney Chromophobe,TCGA-KN-8434-11,1.7970514297485352,True
+Kidney Chromophobe,TCGA-KL-8329-11,1.6199560165405273,True
+Kidney Chromophobe,TCGA-KL-8336-11,1.2445602416992188,True
+Kidney Chromophobe,TCGA-KN-8433-11,1.4151620864868164,True
+Kidney Chromophobe,TCGA-KO-8415-11,2.1759228706359863,True
+Kidney Chromophobe,TCGA-KN-8424-11,1.6444520950317383,True
+Kidney Chromophobe,TCGA-KN-8437-11,1.4669623374938965,True
+Kidney Chromophobe,TCGA-KN-8429-11,1.958813190460205,True
+Kidney Chromophobe,TCGA-KN-8431-11,2.2497482299804688,True
+Kidney Chromophobe,TCGA-KN-8422-11,1.9079844951629639,True
+Kidney Clear Cell Carcinoma,TCGA-CJ-5689-11,1.933153748512268,True
+Kidney Clear Cell Carcinoma,TCGA-CZ-4864-11,1.5580216646194458,True
+Kidney Clear Cell Carcinoma,TCGA-CJ-5672-11,1.368659496307373,True
+Kidney Clear Cell Carcinoma,TCGA-CZ-5468-11,1.6394637823104858,True
+Kidney Clear Cell Carcinoma,TCGA-CZ-5462-11,1.5540316104888916,True
+Kidney Clear Cell Carcinoma,TCGA-B2-5636-11,1.8588478565216064,True
+Kidney Clear Cell Carcinoma,TCGA-B2-5641-11,1.3640921115875244,True
+Kidney Clear Cell Carcinoma,TCGA-B0-4712-11,1.062305212020874,True
+Kidney Clear Cell Carcinoma,TCGA-CZ-5463-11,1.7631627321243286,True
+Kidney Clear Cell Carcinoma,TCGA-CW-5584-11,2.137108325958252,True
+Kidney Clear Cell Carcinoma,TCGA-CZ-5451-11,1.5165724754333496,True
+Kidney Clear Cell Carcinoma,TCGA-B0-5703-11,1.4642409086227417,True
+Kidney Clear Cell Carcinoma,TCGA-CJ-5679-11,1.9844624996185303,True
+Kidney Clear Cell Carcinoma,TCGA-B0-5694-11,2.0826714038848877,True
+Kidney Clear Cell Carcinoma,TCGA-B0-5696-11,1.408826231956482,True
+Kidney Clear Cell Carcinoma,TCGA-CZ-5452-11,1.3452160358428955,True
+Kidney Clear Cell Carcinoma,TCGA-CW-6090-11,1.5178887844085693,True
+Kidney Clear Cell Carcinoma,TCGA-CZ-5453-11,1.8537958860397339,True
+Kidney Clear Cell Carcinoma,TCGA-CZ-5466-11,1.933232069015503,True
+Kidney Clear Cell Carcinoma,TCGA-B0-5701-11,2.131162643432617,True
+Kidney Clear Cell Carcinoma,TCGA-CJ-6030-11,1.6735787391662598,True
+Kidney Clear Cell Carcinoma,TCGA-B0-5402-11,2.068737030029297,True
+Kidney Clear Cell Carcinoma,TCGA-CZ-5454-11,1.7212092876434326,True
+Kidney Clear Cell Carcinoma,TCGA-CZ-5455-11,1.1494503021240234,True
+Kidney Clear Cell Carcinoma,TCGA-CJ-5678-11,1.3626996278762817,True
+Kidney Clear Cell Carcinoma,TCGA-CZ-5457-11,1.0909557342529297,True
+Kidney Clear Cell Carcinoma,TCGA-CW-6087-11,0.9606332778930664,False
+Kidney Clear Cell Carcinoma,TCGA-CZ-5986-11,1.5353463888168335,True
+Kidney Clear Cell Carcinoma,TCGA-B0-4700-11,0.9350500106811523,False
+Kidney Clear Cell Carcinoma,TCGA-CW-6088-11,1.3898850679397583,True
+Kidney Clear Cell Carcinoma,TCGA-CZ-5987-11,2.6011221408843994,True
+Kidney Clear Cell Carcinoma,TCGA-CZ-5989-11,1.9834390878677368,True
+Kidney Clear Cell Carcinoma,TCGA-B8-4619-11,1.3129581212997437,True
+Kidney Clear Cell Carcinoma,TCGA-CZ-5985-11,1.0305566787719727,True
+Kidney Clear Cell Carcinoma,TCGA-B8-4622-11,1.9596933126449585,True
+Kidney Clear Cell Carcinoma,TCGA-CZ-5456-11,0.6212584972381592,False
+Kidney Clear Cell Carcinoma,TCGA-CW-5591-11,3.219668388366699,True
+Kidney Clear Cell Carcinoma,TCGA-B0-5699-11,1.477310061454773,True
+Kidney Clear Cell Carcinoma,TCGA-B8-5549-11,1.5637825727462769,True
+Kidney Clear Cell Carcinoma,TCGA-CW-5589-11,1.6976840496063232,True
+Kidney Clear Cell Carcinoma,TCGA-CZ-5461-11,1.7766714096069336,True
+Kidney Clear Cell Carcinoma,TCGA-CW-5585-11,1.5429688692092896,True
+Kidney Clear Cell Carcinoma,TCGA-CZ-5984-11,1.5128471851348877,True
+Kidney Clear Cell Carcinoma,TCGA-B0-5697-11,1.0233724117279053,True
+Kidney Clear Cell Carcinoma,TCGA-B0-5711-11,1.801089882850647,True
+Kidney Clear Cell Carcinoma,TCGA-A3-3387-11,1.211633563041687,True
+Kidney Clear Cell Carcinoma,TCGA-CJ-5676-11,2.0315399169921875,True
+Kidney Clear Cell Carcinoma,TCGA-B0-5706-11,1.1897462606430054,True
+Kidney Clear Cell Carcinoma,TCGA-CW-5581-11,1.4731916189193726,True
+Kidney Clear Cell Carcinoma,TCGA-CZ-5458-11,1.3523285388946533,True
+Kidney Clear Cell Carcinoma,TCGA-CZ-5469-11,1.3575575351715088,True
+Kidney Clear Cell Carcinoma,TCGA-CZ-5988-11,1.2783176898956299,True
+Kidney Clear Cell Carcinoma,TCGA-CZ-5467-11,1.2567319869995117,True
+Kidney Clear Cell Carcinoma,TCGA-CZ-5465-11,1.2905704975128174,True
+Kidney Clear Cell Carcinoma,TCGA-CW-5580-11,1.485536813735962,True
+Kidney Clear Cell Carcinoma,TCGA-CZ-5470-11,1.6985809803009033,True
+Kidney Clear Cell Carcinoma,TCGA-B8-4620-11,2.006289482116699,True
+Kidney Clear Cell Carcinoma,TCGA-CZ-4865-11,1.641692876815796,True
+Kidney Clear Cell Carcinoma,TCGA-B0-5712-11,2.145557403564453,True
+Kidney Clear Cell Carcinoma,TCGA-B0-5691-11,2.1296610832214355,True
+Kidney Clear Cell Carcinoma,TCGA-B0-5705-11,1.3648089170455933,True
+Kidney Clear Cell Carcinoma,TCGA-CJ-5680-11,2.4171080589294434,True
+Kidney Clear Cell Carcinoma,TCGA-B0-5709-11,1.7115243673324585,True
+Kidney Clear Cell Carcinoma,TCGA-CW-5587-11,1.711897373199463,True
+Kidney Clear Cell Carcinoma,TCGA-CZ-5982-11,0.8439476490020752,False
+Kidney Clear Cell Carcinoma,TCGA-A3-3358-11,1.2996035814285278,True
+Kidney Clear Cell Carcinoma,TCGA-CJ-5677-11,1.600045084953308,True
+Kidney Clear Cell Carcinoma,TCGA-CJ-6033-11,1.0735478401184082,True
+Kidney Clear Cell Carcinoma,TCGA-B0-5690-11,1.457829475402832,True
+Kidney Clear Cell Carcinoma,TCGA-CZ-4863-11,1.3224564790725708,True
+Kidney Clear Cell Carcinoma,TCGA-CJ-5681-11,1.0873438119888306,True
+Kidney Clear Cell Carcinoma,TCGA-B8-5552-11,2.6605727672576904,True
+Kidney Papillary Cell Carcinoma,TCGA-GL-A59R-11,1.1812381744384766,True
+Kidney Papillary Cell Carcinoma,TCGA-BQ-7045-11,2.3722121715545654,True
+Kidney Papillary Cell Carcinoma,TCGA-BQ-7051-11,1.2689027786254883,True
+Kidney Papillary Cell Carcinoma,TCGA-GL-A9DE-11,1.1838784217834473,True
+Kidney Papillary Cell Carcinoma,TCGA-BQ-7044-11,1.6585898399353027,True
+Kidney Papillary Cell Carcinoma,TCGA-BQ-7055-11,1.4135453701019287,True
+Kidney Papillary Cell Carcinoma,TCGA-BQ-7059-11,1.7148323059082031,True
+Kidney Papillary Cell Carcinoma,TCGA-BQ-5890-11,2.176717758178711,True
+Kidney Papillary Cell Carcinoma,TCGA-DZ-6132-11,2.408210277557373,True
+Kidney Papillary Cell Carcinoma,TCGA-DZ-6134-11,1.7588950395584106,True
+Kidney Papillary Cell Carcinoma,TCGA-Y8-A8RY-11,1.2793645858764648,True
+Kidney Papillary Cell Carcinoma,TCGA-BQ-7046-11,1.7352919578552246,True
+Kidney Papillary Cell Carcinoma,TCGA-BQ-5877-11,1.7861354351043701,True
+Kidney Papillary Cell Carcinoma,TCGA-A4-A57E-11,0.7269569635391235,False
+Kidney Papillary Cell Carcinoma,TCGA-P4-A5E8-11,0.9596900939941406,False
+Kidney Papillary Cell Carcinoma,TCGA-BQ-5882-11,1.9844651222229004,True
+Kidney Papillary Cell Carcinoma,TCGA-BQ-5887-11,1.211970567703247,True
+Kidney Papillary Cell Carcinoma,TCGA-B9-4115-11,1.8297637701034546,True
+Kidney Papillary Cell Carcinoma,TCGA-GL-6846-11,1.3678990602493286,True
+Kidney Papillary Cell Carcinoma,TCGA-P4-A5ED-11,1.158846139907837,True
+Kidney Papillary Cell Carcinoma,TCGA-BQ-5894-11,1.7965742349624634,True
+Kidney Papillary Cell Carcinoma,TCGA-DZ-6131-11,1.1420154571533203,True
+Kidney Papillary Cell Carcinoma,TCGA-BQ-7061-11,1.2782073020935059,True
+Kidney Papillary Cell Carcinoma,TCGA-BQ-5878-11,1.7392958402633667,True
+Kidney Papillary Cell Carcinoma,TCGA-BQ-5888-11,2.0281758308410645,True
+Kidney Papillary Cell Carcinoma,TCGA-A4-A4ZT-11,1.207295298576355,True
+Kidney Papillary Cell Carcinoma,TCGA-BQ-5875-11,2.1244118213653564,True
+Kidney Papillary Cell Carcinoma,TCGA-DZ-6133-11,1.6372909545898438,True
+Kidney Papillary Cell Carcinoma,TCGA-BQ-5884-11,1.5958958864212036,True
+Kidney Papillary Cell Carcinoma,TCGA-BQ-5891-11,1.877995491027832,True
+Kidney Papillary Cell Carcinoma,TCGA-BQ-5879-11,2.2079012393951416,True
+Kidney Papillary Cell Carcinoma,TCGA-GL-7966-11,2.683199882507324,True
+Liver Hepatocellular Carcinoma,TCGA-DD-A39V-11,1.577950119972229,True
+Liver Hepatocellular Carcinoma,TCGA-BC-A10T-11,1.7845396995544434,True
+Liver Hepatocellular Carcinoma,TCGA-BC-A10Y-11,2.603750228881836,True
+Liver Hepatocellular Carcinoma,TCGA-DD-A1EG-11,2.108128070831299,True
+Liver Hepatocellular Carcinoma,TCGA-DD-A3A8-11,1.974012851715088,True
+Liver Hepatocellular Carcinoma,TCGA-FV-A2QR-11,3.6200456619262695,True
+Liver Hepatocellular Carcinoma,TCGA-FV-A3R2-11,3.0047221183776855,True
+Liver Hepatocellular Carcinoma,TCGA-DD-A11B-11,1.8292644023895264,True
+Liver Hepatocellular Carcinoma,TCGA-DD-A1EE-11,2.3888356685638428,True
+Liver Hepatocellular Carcinoma,TCGA-EP-A3RK-11,1.4605145454406738,True
+Liver Hepatocellular Carcinoma,TCGA-EP-A26S-11,2.2039527893066406,True
+Liver Hepatocellular Carcinoma,TCGA-BC-A10U-11,2.010089874267578,True
+Liver Hepatocellular Carcinoma,TCGA-BD-A2L6-11,2.7647383213043213,True
+Liver Hepatocellular Carcinoma,TCGA-DD-A11C-11,1.2670295238494873,True
+Liver Hepatocellular Carcinoma,TCGA-DD-A116-11,1.7421940565109253,True
+Liver Hepatocellular Carcinoma,TCGA-DD-A11A-11,1.7979850769042969,True
+Liver Hepatocellular Carcinoma,TCGA-DD-A3A1-11,2.134960174560547,True
+Liver Hepatocellular Carcinoma,TCGA-EP-A12J-11,2.6513590812683105,True
+Liver Hepatocellular Carcinoma,TCGA-ES-A2HT-11,2.984422206878662,True
+Liver Hepatocellular Carcinoma,TCGA-G3-A3CH-11,2.09696102142334,True
+Liver Hepatocellular Carcinoma,TCGA-BC-A10W-11,1.9836703538894653,True
+Liver Hepatocellular Carcinoma,TCGA-DD-A1EI-11,1.8666428327560425,True
+Liver Hepatocellular Carcinoma,TCGA-DD-A3A3-11,2.7913718223571777,True
+Liver Hepatocellular Carcinoma,TCGA-DD-A114-11,2.888334274291992,True
+Liver Hepatocellular Carcinoma,TCGA-DD-A119-11,1.8641388416290283,True
+Liver Hepatocellular Carcinoma,TCGA-DD-A3A4-11,2.3935012817382812,True
+Liver Hepatocellular Carcinoma,TCGA-DD-A1EH-11,1.3616434335708618,True
+Liver Hepatocellular Carcinoma,TCGA-DD-A1EL-11,2.0483450889587402,True
+Liver Hepatocellular Carcinoma,TCGA-FV-A3I1-11,1.6585421562194824,True
+Liver Hepatocellular Carcinoma,TCGA-DD-A39X-11,1.1821762323379517,True
+Liver Hepatocellular Carcinoma,TCGA-DD-A118-11,1.9841041564941406,True
+Liver Hepatocellular Carcinoma,TCGA-DD-A3A2-11,1.6555848121643066,True
+Liver Hepatocellular Carcinoma,TCGA-FV-A3I0-11,1.0632710456848145,True
+Liver Hepatocellular Carcinoma,TCGA-BD-A3EP-11,2.1478195190429688,True
+Liver Hepatocellular Carcinoma,TCGA-BC-A10Q-11,1.3465081453323364,True
+Liver Hepatocellular Carcinoma,TCGA-DD-A1EB-11,2.3843212127685547,True
+Liver Hepatocellular Carcinoma,TCGA-DD-A3A6-11,-0.37798774242401123,False
+Liver Hepatocellular Carcinoma,TCGA-DD-A1EJ-11,1.9939075708389282,True
+Liver Hepatocellular Carcinoma,TCGA-FV-A23B-11,2.8635334968566895,True
+Liver Hepatocellular Carcinoma,TCGA-BC-A10R-11,2.642848491668701,True
+Liver Hepatocellular Carcinoma,TCGA-DD-A3A5-11,0.33128833770751953,False
+Liver Hepatocellular Carcinoma,TCGA-BC-A10Z-11,1.6247614622116089,True
+Liver Hepatocellular Carcinoma,TCGA-BC-A216-11,0.8874673843383789,False
+Liver Hepatocellular Carcinoma,TCGA-DD-A11D-11,2.235508918762207,True
+Liver Hepatocellular Carcinoma,TCGA-DD-A113-11,1.5732083320617676,True
+Liver Hepatocellular Carcinoma,TCGA-BC-A10X-11,1.7347140312194824,True
+Liver Hepatocellular Carcinoma,TCGA-BC-A110-11,1.7028688192367554,True
+Liver Hepatocellular Carcinoma,TCGA-DD-A39Z-11,0.48876428604125977,False
+Liver Hepatocellular Carcinoma,TCGA-DD-A39W-11,1.6247241497039795,True
+Liver Hepatocellular Carcinoma,TCGA-DD-A1EC-11,1.378737449645996,True
+Lung Adenocarcinoma,TCGA-50-5939-11,1.181323528289795,True
+Lung Adenocarcinoma,TCGA-49-6745-11,1.3679240942001343,True
+Lung Adenocarcinoma,TCGA-55-6978-11,1.6085939407348633,True
+Lung Adenocarcinoma,TCGA-55-6983-11,1.9479107856750488,True
+Lung Adenocarcinoma,TCGA-91-6829-11,1.1670989990234375,True
+Lung Adenocarcinoma,TCGA-50-5932-11,1.5085086822509766,True
+Lung Adenocarcinoma,TCGA-50-5933-11,1.9358282089233398,True
+Lung Adenocarcinoma,TCGA-55-6972-11,1.2536640167236328,True
+Lung Adenocarcinoma,TCGA-49-6742-11,2.2107596397399902,True
+Lung Adenocarcinoma,TCGA-91-6828-11,2.052764415740967,True
+Lung Adenocarcinoma,TCGA-91-6831-11,1.0492968559265137,True
+Lung Adenocarcinoma,TCGA-44-2662-11,1.1601252555847168,True
+Lung Adenocarcinoma,TCGA-44-6146-11,1.4601564407348633,True
+Lung Adenocarcinoma,TCGA-55-6968-11,1.2706186771392822,True
+Lung Adenocarcinoma,TCGA-55-6975-11,1.7007489204406738,True
+Lung Adenocarcinoma,TCGA-44-6148-11,1.5830698013305664,True
+Lung Adenocarcinoma,TCGA-44-6778-11,0.8542695045471191,False
+Lung Adenocarcinoma,TCGA-50-5936-11,1.4754328727722168,True
+Lung Adenocarcinoma,TCGA-55-6980-11,1.5328493118286133,True
+Lung Adenocarcinoma,TCGA-55-6969-11,1.4134457111358643,True
+Lung Adenocarcinoma,TCGA-44-2668-11,1.32574462890625,True
+Lung Adenocarcinoma,TCGA-50-5930-11,1.4496374130249023,True
+Lung Adenocarcinoma,TCGA-73-4676-11,0.8836064338684082,False
+Lung Adenocarcinoma,TCGA-38-4632-11,0.8703603744506836,False
+Lung Adenocarcinoma,TCGA-50-5935-11,1.8266568183898926,True
+Lung Adenocarcinoma,TCGA-44-6777-11,1.8084044456481934,True
+Lung Adenocarcinoma,TCGA-49-6743-11,1.111410140991211,True
+Lung Adenocarcinoma,TCGA-91-6835-11,2.224489688873291,True
+Lung Adenocarcinoma,TCGA-55-6982-11,1.9190020561218262,True
+Lung Adenocarcinoma,TCGA-44-3398-11,1.516493797302246,True
+Lung Adenocarcinoma,TCGA-50-5931-11,1.4448456764221191,True
+Lung Adenocarcinoma,TCGA-91-6849-11,1.6834726333618164,True
+Lung Adenocarcinoma,TCGA-44-2657-11,1.2390084266662598,True
+Lung Adenocarcinoma,TCGA-44-3396-11,1.5920071601867676,True
+Lung Adenocarcinoma,TCGA-50-6595-11,1.5110902786254883,True
+Lung Adenocarcinoma,TCGA-55-6986-11,1.6008877754211426,True
+Lung Adenocarcinoma,TCGA-55-6984-11,2.0588607788085938,True
+Lung Adenocarcinoma,TCGA-44-2661-11,1.3238186836242676,True
+Lung Adenocarcinoma,TCGA-49-4512-11,1.3411321640014648,True
+Lung Adenocarcinoma,TCGA-49-6761-11,1.653214454650879,True
+Lung Adenocarcinoma,TCGA-44-6147-11,1.4031658172607422,True
+Lung Adenocarcinoma,TCGA-55-6970-11,1.3306779861450195,True
+Lung Adenocarcinoma,TCGA-38-4625-11,1.046553134918213,True
+Lung Adenocarcinoma,TCGA-44-2655-11,1.4744644165039062,True
+Lung Adenocarcinoma,TCGA-38-4627-11,0.7412080764770508,False
+Lung Adenocarcinoma,TCGA-49-6744-11,1.6720609664916992,True
+Lung Adenocarcinoma,TCGA-44-6145-11,1.559326171875,True
+Lung Adenocarcinoma,TCGA-91-6847-11,2.1398162841796875,True
+Lung Adenocarcinoma,TCGA-44-5645-11,1.2512922286987305,True
+Lung Adenocarcinoma,TCGA-44-6776-11,1.823610782623291,True
+Lung Adenocarcinoma,TCGA-55-6971-11,1.7431187629699707,True
+Lung Adenocarcinoma,TCGA-55-6979-11,1.737551212310791,True
+Lung Adenocarcinoma,TCGA-55-6985-11,1.4429597854614258,True
+Lung Adenocarcinoma,TCGA-38-4626-11,0.9062397480010986,False
+Lung Adenocarcinoma,TCGA-44-2665-11,1.3480496406555176,True
+Lung Adenocarcinoma,TCGA-55-6981-11,1.3872556686401367,True
+Lung Adenocarcinoma,TCGA-91-6836-11,1.5444660186767578,True
+Lung Adenocarcinoma,TCGA-49-4490-11,0.7372269630432129,False
+Lung Squamous Cell Carcinoma,TCGA-43-6771-11,1.6770176887512207,True
+Lung Squamous Cell Carcinoma,TCGA-56-7580-11,1.1211841106414795,True
+Lung Squamous Cell Carcinoma,TCGA-56-7582-11,1.489109992980957,True
+Lung Squamous Cell Carcinoma,TCGA-22-4609-11,1.8237228393554688,True
+Lung Squamous Cell Carcinoma,TCGA-22-5482-11,1.2729463577270508,True
+Lung Squamous Cell Carcinoma,TCGA-22-5478-11,1.553514003753662,True
+Lung Squamous Cell Carcinoma,TCGA-22-4593-11,1.3739137649536133,True
+Lung Squamous Cell Carcinoma,TCGA-43-6773-11,1.0793266296386719,True
+Lung Squamous Cell Carcinoma,TCGA-22-5471-11,1.781416416168213,True
+Lung Squamous Cell Carcinoma,TCGA-58-8386-11,0.9100527763366699,False
+Lung Squamous Cell Carcinoma,TCGA-22-5483-11,1.5323944091796875,True
+Lung Squamous Cell Carcinoma,TCGA-22-5491-11,1.2992463111877441,True
+Lung Squamous Cell Carcinoma,TCGA-56-8201-11,1.3191022872924805,True
+Lung Squamous Cell Carcinoma,TCGA-56-7730-11,1.5994071960449219,True
+Lung Squamous Cell Carcinoma,TCGA-33-6737-11,0.8937680721282959,False
+Lung Squamous Cell Carcinoma,TCGA-56-8623-11,1.3331737518310547,True
+Lung Squamous Cell Carcinoma,TCGA-34-7107-11,0.8750581741333008,False
+Lung Squamous Cell Carcinoma,TCGA-43-5670-11,1.6595582962036133,True
+Lung Squamous Cell Carcinoma,TCGA-43-6143-11,1.002704381942749,True
+Lung Squamous Cell Carcinoma,TCGA-60-2709-11,0.9600009918212891,False
+Lung Squamous Cell Carcinoma,TCGA-77-8007-11,1.0889043807983398,True
+Lung Squamous Cell Carcinoma,TCGA-77-8008-11,1.2443413734436035,True
+Lung Squamous Cell Carcinoma,TCGA-22-5472-11,1.7663028240203857,True
+Lung Squamous Cell Carcinoma,TCGA-77-7138-11,1.1072826385498047,True
+Lung Squamous Cell Carcinoma,TCGA-56-8309-11,1.2155990600585938,True
+Lung Squamous Cell Carcinoma,TCGA-51-4080-11,0.9263486862182617,False
+Lung Squamous Cell Carcinoma,TCGA-77-7337-11,1.2090239524841309,True
+Lung Squamous Cell Carcinoma,TCGA-22-5489-11,1.5545775890350342,True
+Lung Squamous Cell Carcinoma,TCGA-77-7338-11,1.1603937149047852,True
+Lung Squamous Cell Carcinoma,TCGA-90-6837-11,1.3537604808807373,True
+Lung Squamous Cell Carcinoma,TCGA-56-7222-11,1.2130465507507324,True
+Lung Squamous Cell Carcinoma,TCGA-39-5040-11,1.0390958786010742,True
+Lung Squamous Cell Carcinoma,TCGA-56-8083-11,1.0343775749206543,True
+Lung Squamous Cell Carcinoma,TCGA-90-7767-11,1.3300045728683472,True
+Lung Squamous Cell Carcinoma,TCGA-51-4081-11,0.5709543228149414,False
+Lung Squamous Cell Carcinoma,TCGA-43-3394-11,1.2279021739959717,True
+Lung Squamous Cell Carcinoma,TCGA-56-8082-11,1.4248347282409668,True
+Lung Squamous Cell Carcinoma,TCGA-43-7658-11,1.2724816799163818,True
+Lung Squamous Cell Carcinoma,TCGA-51-4079-11,1.3721518516540527,True
+Lung Squamous Cell Carcinoma,TCGA-22-5481-11,1.3245158195495605,True
+Lung Squamous Cell Carcinoma,TCGA-43-6647-11,1.5928850173950195,True
+Lung Squamous Cell Carcinoma,TCGA-43-7657-11,1.3756996393203735,True
+Lung Squamous Cell Carcinoma,TCGA-56-7731-11,1.3422050476074219,True
+Lung Squamous Cell Carcinoma,TCGA-33-4587-11,0.9920992851257324,False
+Lung Squamous Cell Carcinoma,TCGA-34-8454-11,0.8943428993225098,False
+Lung Squamous Cell Carcinoma,TCGA-77-7335-11,0.8254776000976562,False
+Lung Squamous Cell Carcinoma,TCGA-77-7142-11,1.3323564529418945,True
+Lung Squamous Cell Carcinoma,TCGA-85-7710-11,0.6133818626403809,False
+Lung Squamous Cell Carcinoma,TCGA-56-7823-11,1.350982904434204,True
+Lung Squamous Cell Carcinoma,TCGA-92-7340-11,1.4541521072387695,True
+Prostate Adenocarcinoma,TCGA-CH-5768-11,2.364236354827881,True
+Prostate Adenocarcinoma,TCGA-EJ-7317-11,2.7274701595306396,True
+Prostate Adenocarcinoma,TCGA-EJ-7782-11,2.1077775955200195,True
+Prostate Adenocarcinoma,TCGA-G9-6365-11,1.626293420791626,True
+Prostate Adenocarcinoma,TCGA-EJ-7328-11,0.9139761924743652,False
+Prostate Adenocarcinoma,TCGA-EJ-7783-11,-0.5034533739089966,False
+Prostate Adenocarcinoma,TCGA-EJ-7315-11,1.6966423988342285,True
+Prostate Adenocarcinoma,TCGA-EJ-7330-11,0.9714715480804443,False
+Prostate Adenocarcinoma,TCGA-G9-6348-11,0.756580114364624,False
+Prostate Adenocarcinoma,TCGA-J4-A83J-11,1.802290916442871,True
+Prostate Adenocarcinoma,TCGA-EJ-7794-11,1.9430636167526245,True
+Prostate Adenocarcinoma,TCGA-CH-5767-11,1.5383391380310059,True
+Prostate Adenocarcinoma,TCGA-EJ-7789-11,2.438121795654297,True
+Prostate Adenocarcinoma,TCGA-G9-6333-11,1.176370620727539,True
+Prostate Adenocarcinoma,TCGA-G9-6499-11,1.7648342847824097,True
+Prostate Adenocarcinoma,TCGA-EJ-7115-11,2.398756980895996,True
+Prostate Adenocarcinoma,TCGA-EJ-7781-11,1.2147607803344727,True
+Prostate Adenocarcinoma,TCGA-HC-7745-11,-0.08500778675079346,False
+Prostate Adenocarcinoma,TCGA-EJ-7331-11,2.0356175899505615,True
+Prostate Adenocarcinoma,TCGA-G9-6363-11,2.241475820541382,True
+Prostate Adenocarcinoma,TCGA-EJ-7784-11,2.08662748336792,True
+Prostate Adenocarcinoma,TCGA-EJ-7314-11,2.379887342453003,True
+Prostate Adenocarcinoma,TCGA-EJ-7786-11,1.5011446475982666,True
+Prostate Adenocarcinoma,TCGA-HC-7211-11,-0.1649324893951416,False
+Prostate Adenocarcinoma,TCGA-CH-5761-11,2.4202120304107666,True
+Prostate Adenocarcinoma,TCGA-EJ-7327-11,2.8970720767974854,True
+Prostate Adenocarcinoma,TCGA-G9-6342-11,2.3869996070861816,True
+Prostate Adenocarcinoma,TCGA-G9-6496-11,1.6934829950332642,True
+Prostate Adenocarcinoma,TCGA-HC-7752-11,0.9291995763778687,False
+Prostate Adenocarcinoma,TCGA-G9-6356-11,1.915982961654663,True
+Prostate Adenocarcinoma,TCGA-EJ-7123-11,0.3710455298423767,False
+Prostate Adenocarcinoma,TCGA-HC-7740-11,-0.09307551383972168,False
+Prostate Adenocarcinoma,TCGA-HC-7738-11,-0.3362729549407959,False
+Prostate Adenocarcinoma,TCGA-HC-7742-11,2.458768844604492,True
+Prostate Adenocarcinoma,TCGA-EJ-7321-11,2.337482213973999,True
+Prostate Adenocarcinoma,TCGA-G9-6362-11,2.008293628692627,True
+Prostate Adenocarcinoma,TCGA-HC-8262-11,1.273087501525879,True
+Prostate Adenocarcinoma,TCGA-HC-8258-11,-0.1853238046169281,False
+Prostate Adenocarcinoma,TCGA-HC-7737-11,0.20093035697937012,False
+Prostate Adenocarcinoma,TCGA-EJ-7785-11,2.0692667961120605,True
+Prostate Adenocarcinoma,TCGA-EJ-7792-11,1.794968843460083,True
+Prostate Adenocarcinoma,TCGA-EJ-7797-11,1.766383171081543,True
+Prostate Adenocarcinoma,TCGA-G9-6384-11,1.6340458393096924,True
+Prostate Adenocarcinoma,TCGA-HC-7819-11,2.2007617950439453,True
+Prostate Adenocarcinoma,TCGA-HC-7747-11,-0.4286141097545624,False
+Prostate Adenocarcinoma,TCGA-EJ-A8FO-11,0.8273935317993164,False
+Prostate Adenocarcinoma,TCGA-G9-6351-11,1.9269145727157593,True
+Prostate Adenocarcinoma,TCGA-HC-8259-11,1.6904555559158325,True
+Prostate Adenocarcinoma,TCGA-EJ-7793-11,1.7805659770965576,True
+Prostate Adenocarcinoma,TCGA-CH-5769-11,2.7346954345703125,True
+Prostate Adenocarcinoma,TCGA-EJ-7125-11,1.4337283372879028,True
+Prostate Adenocarcinoma,TCGA-HC-8260-11,2.0293338298797607,True
+Stomach Adenocarcinoma,TCGA-BR-7703-11,1.7314345836639404,True
+Stomach Adenocarcinoma,TCGA-IN-8462-11,1.211491584777832,True
+Stomach Adenocarcinoma,TCGA-FP-7735-11,0.1068960428237915,False
+Stomach Adenocarcinoma,TCGA-HU-A4GH-11,0.6655991077423096,False
+Stomach Adenocarcinoma,TCGA-BR-7851-11,2.6909875869750977,True
+Stomach Adenocarcinoma,TCGA-HU-A4GC-11,-0.12320929765701294,False
+Stomach Adenocarcinoma,TCGA-IP-7968-11,1.6658737659454346,True
+Stomach Adenocarcinoma,TCGA-CG-5720-11,2.715963125228882,True
+Stomach Adenocarcinoma,TCGA-BR-6457-11,2.517263412475586,True
+Stomach Adenocarcinoma,TCGA-FP-7829-11,1.0686105489730835,True
+Stomach Adenocarcinoma,TCGA-CG-5734-11,2.245518684387207,True
+Stomach Adenocarcinoma,TCGA-HU-A4HB-11,0.12197989225387573,False
+Stomach Adenocarcinoma,TCGA-IN-8663-11,0.668816328048706,False
+Stomach Adenocarcinoma,TCGA-BR-6802-11,1.3067708015441895,True
+Stomach Adenocarcinoma,TCGA-BR-7715-11,1.7464301586151123,True
+Stomach Adenocarcinoma,TCGA-BR-7717-11,1.9488840103149414,True
+Stomach Adenocarcinoma,TCGA-IN-AB1V-11,1.185713768005371,True
+Stomach Adenocarcinoma,TCGA-HU-A4GN-11,1.185084581375122,True
+Stomach Adenocarcinoma,TCGA-BR-6454-11,2.4721271991729736,True
+Stomach Adenocarcinoma,TCGA-HU-8238-11,2.1646718978881836,True
+Stomach Adenocarcinoma,TCGA-BR-6453-11,2.4861061573028564,True
+Stomach Adenocarcinoma,TCGA-HU-A4G3-11,-0.05073904991149902,False
+Stomach Adenocarcinoma,TCGA-IN-7806-11,0.7520815134048462,False
+Stomach Adenocarcinoma,TCGA-IN-AB1X-11,0.7644140720367432,False
+Stomach Adenocarcinoma,TCGA-HU-A4GY-11,0.20794090628623962,False
+Stomach Adenocarcinoma,TCGA-BR-8060-11,0.5449423789978027,False
+Stomach Adenocarcinoma,TCGA-BR-7704-11,2.4279260635375977,True
+Stomach Adenocarcinoma,TCGA-CG-5722-11,2.2198758125305176,True
+Stomach Adenocarcinoma,TCGA-BR-6852-11,1.6181182861328125,True
+Stomach Adenocarcinoma,TCGA-BR-7716-11,2.672700881958008,True
+Stomach Adenocarcinoma,TCGA-HU-A4GP-11,0.17182207107543945,False
+Stomach Adenocarcinoma,TCGA-BR-6458-11,1.617311954498291,True
+Stomach Adenocarcinoma,TCGA-BR-6564-11,2.8217387199401855,True
