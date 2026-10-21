@@ -34,12 +34,18 @@ step scripts listed below.
 | 3.9 | 3 | Predictor gaps flagged, never silently negative | `python src/step3_check.py` | No protein reaches S1 without a prediction |
 | 3.10 | 3 | Compartment filter applied and reported (D31) | `python src/step3_build_candidates.py` | Internal-membrane-only candidates excluded with evidence; unannotated kept |
 | 3.11 | 3 | A curated GPI anchor is not overridden by a predicted TM helix (D32) | `python src/step3_check.py` | Every curated-GPI protein with no UniProt TM is S3; CEACAM5, CD48, FCGR3B, TNFRSF10C, ART1 named explicitly |
+| 4.1 | 4 | Back-transform correct; no negative expression (D11) | `python src/step4_check.py` | Matrix floor −9.9658 maps to exactly 0; 3,912 × 19,131 |
+| 4.2 | 4 | No comparison ran below the sample minimum (D37) | `python src/step4_check.py` | 0 violations; skipped and low-power comparisons listed |
+| 4.3 | 4 | The heavy p<0.01 mass is power, not a batch effect | `python src/step4_check.py` | Significance tracks sample size (ρ≥0.5); dependence gone after the effect-size filter; global median log2FC ≈ 0; both directions represented |
+| 4.4 | 4 | FDR computed within each (cancer type, arm) group (D39) | `python src/step4_check.py` | Independent recomputation of one group matches |
+| 4.5 | 4 | Arm concordance reported (D34) | `python src/step4_check.py` | ρ and sign agreement printed; fails if ρ < 0.2 |
+| 4.6 | 4 | Positive controls pass somewhere | `python src/step4_check.py` | EGFR, ERBB2, TACSTD2, NECTIN4, MSLN, CLDN6, CD19, FOLR1, CEACAM5 each pass in ≥1 cancer type |
+| 4.7 | 4 | Differential results are deterministic | `python src/step4_check.py` | Two runs byte-identical |
 
 ## Pending — owned by later steps
 
 | # | Step | Check |
 | --- | --- | --- |
-| 4.x | 4 | P-value histograms sensible per cancer type; counts and group sizes printed |
 | 5.x | 5 | B2M scores low; 10 genes hand-verified against the tissue table |
 | 6.x | 6 | Funnel counts monotone; 5 tier-1 genes hand-verified; unmeasured genes counted as RNA-only |
 | 7.x | 7 | Output deterministic across two runs; three near-miss genes explained; rule dated before the first ranking file |

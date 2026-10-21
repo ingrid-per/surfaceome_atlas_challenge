@@ -1,0 +1,33 @@
+tcga_cancer_type	n_tumor	n_tcga_adjacent_normal	gtex_tissues	n_gtex_normal	comparator_grade	gtex_alt_tissues	n_gtex_alt	source	label_error	my_verdict	rationale
+Breast Invasive Carcinoma	1092	113	Breast - Mammary Tissue	179	direct		0	Wang2018			Direct tissue of origin.
+Kidney Clear Cell Carcinoma	530	72	Kidney - Cortex	28	direct		0	Wang2018			Direct, but only 28 GTEx samples - the thinnest well-matched normal.
+Head & Neck Squamous Cell Carcinoma	518	44	Esophagus - Mucosa | Minor Salivary Gland	328	direct		0	extended			DEPARTS FROM Wang2018, which pairs HNSC to salivary gland alone. HNSC is mostly squamous mucosa; oesophageal mucosa is stratified squamous epithelium and the closest match. Salivary gland retained as well. Confirmed by me 2026-10-21.
+Lung Adenocarcinoma	513	59	Lung	288	direct		0	Wang2018			Direct.
+Brain Lower Grade Glioma	509	0	Brain - Cortex | Brain - Frontal Cortex (Ba9)	207	direct		0	extended			Not in Wang2018. LGG arises in the cerebral hemispheres, so cortex is the right compartment; pooling all 13 GTEx brain regions would mix in cerebellum and basal ganglia, which differ sharply.
+Thyroid Carcinoma	504	59	Thyroid	279	direct		0	Wang2018			Direct.
+Lung Squamous Cell Carcinoma	498	50	Lung	288	direct		0	Wang2018			Direct; Wang pairs both lung subtypes to lung.
+Prostate Adenocarcinoma	495	52	Prostate	100	direct		0	Wang2018			Direct.
+Ovarian Serous Cystadenocarcinoma	419	0	Ovary	88	imperfect	Fallopian Tube	5	extended			Ovary is conventional, but high-grade serous ovarian cancer is widely thought to arise from fallopian tube epithelium. Both run as parallel arms per I 2026-10-21; fallopian tube has only 5 samples.
+Stomach Adenocarcinoma	414	36	Stomach	175	direct		0	Wang2018			Direct.
+Bladder Urothelial Carcinoma	407	19	Bladder	9	direct		0	Wang2018			Direct, but only 9 GTEx samples - too few for a stable median.
+Liver Hepatocellular Carcinoma	369	50	Liver	110	direct		0	Wang2018			Direct.
+Cervical & Endocervical Cancer	304	3	Cervix - Ectocervix | Cervix - Endocervix	10	direct		0	Wang2018			Direct, but 6 + 4 GTEx samples. Expect this row to fail the minimum.
+Kidney Papillary Cell Carcinoma	288	32	Kidney - Cortex	28	direct		0	Wang2018			As KIRC.
+Colon Adenocarcinoma	288	41	Colon - Transverse | Colon - Sigmoid	308	direct		0	Wang2018			Both colon subsites pooled; TCGA does not record subsite consistently.
+Sarcoma	258	2	Adipose - Subcutaneous | Adipose - Visceral (Omentum) | Muscle - Skeletal | Nerve - Tibial	1189	lineage_only		0	extended			SARC pools several mesenchymal lineages. These four cover the main ones, but the comparator is heterogeneous by construction.
+Esophageal Carcinoma	181	13	Esophagus - Mucosa | Esophagus - Gastroesophageal Junction	410	direct		0	Wang2018			Wang pairs ESCA to all three oesophageal subregions. Muscularis dropped: smooth muscle, not the epithelium these tumours arise from. ESCA mixes squamous (mucosa) and adenocarcinoma (GEJ) histologies.
+Uterine Corpus Endometrioid Carcinoma	180	23	Uterus	78	direct		0	Wang2018			Direct.
+Pancreatic Adenocarcinoma	178	4	Pancreas	167	imperfect		0	Wang2018			GTEx pancreas is acinar-dominant while PDAC is ductal, and PDAC is heavily stromal. Expect a noisy comparison.
+Pheochromocytoma & Paraganglioma	177	3	Adrenal Gland	128	imperfect		0	extended			Arises from adrenal medulla and extra-adrenal paraganglia; GTEx adrenal gland is cortex-dominant. Right organ, wrong compartment.
+Glioblastoma Multiforme	153	5	Brain - Cortex | Brain - Frontal Cortex (Ba9)	207	direct		0	extended			As LGG.
+Testicular Germ Cell Tumor	148	0	Testis	165	direct		0	extended			Direct. Testis is immune-privileged with unusually broad expression, so little will look testis-specific.
+Thymoma	119	2		0	none		0	extended			GTEx has no thymus and thymic epithelium has no substitute - spleen would supply lymphocytes, the wrong cell. No differential test. Still scored in Step 5, whose specificity score needs no matched normal.
+Skin Cutaneous Melanoma	102	1	Skin - Sun Exposed (Lower Leg) | Skin - Not Sun Exposed (Suprapubic)	557	imperfect		0	extended			Melanocytes are a small minority of bulk skin, so melanocyte genes will look tumour-high on composition alone.
+Rectum Adenocarcinoma	92	10	Colon - Sigmoid	141	direct		0	Wang2018			Wang pairs rectum to colon; sigmoid is the closest subsite.
+Mesothelioma	87	0	Adipose - Visceral (Omentum) | Lung	485	lineage_only		0	extended			GTEx has no pleura or peritoneum. The omentum carries a mesothelial lining, so visceral adipose genuinely contains the cell type MESO arises from; lung added as the usual anatomical neighbour.
+Uveal Melanoma	79	0	Skin - Sun Exposed (Lower Leg) | Skin - Not Sun Exposed (Suprapubic)	557	lineage_only		0	extended			No ocular tissue in GTEx. UVM is melanocytic and skin is the only melanocyte-containing GTEx tissue: same lineage, wrong site.
+Adrenocortical Cancer	77	0	Adrenal Gland	128	direct		0	extended			Adrenal cortex; direct.
+Kidney Chromophobe	66	25	Kidney - Cortex	28	direct		0	Wang2018			As KIRC.
+Uterine Carcinosarcoma	57	0	Uterus	78	direct		0	Wang2018			Direct.
+Diffuse Large B-Cell Lymphoma	47	0	Whole Blood | Spleen	437	lineage_only		0	extended			Blood lineage. Lineage-matched comparator, but tagged so it is reported separately from solid tumours per the runbook.
+Cholangiocarcinoma	36	9	Liver	110	imperfect		0	Wang2018			Bile duct, not hepatocyte. Cholangiocytes are a minority of bulk liver, so liver-high genes may look falsely tumour-low.
