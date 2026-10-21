@@ -538,13 +538,15 @@ function detail(c, host){
         ${c.stab!=null?`<dt>Survives our thresholds</dt><dd>${Math.round(c.stab*100)}% of ${D.robust.n_runs} settings</dd>`:""}
       </dl>
       ${c.stab!=null && c.stab < 0.75 ? `<div class="note warn" style="margin-top:9px">
-        This target reaches the top 20 in only <b>${Math.round(c.stab*100)}%</b> of the
-        ${D.robust.n_runs} threshold settings we tested. It is a real finding under the settings
-        the baseline uses, but it depends on them more than the others do &mdash; see
-        the Robustness tab for which choice moves it.</div>` : ""}
+        This target reaches the top 20 in <b>${Math.round(c.stab*100)}%</b> of the
+        ${D.robust.n_runs} threshold settings tested. The result holds under the
+        baseline settings but is more sensitive to them than the other
+        candidates; the Robustness tab identifies which threshold is
+        responsible.</div>` : ""}
       ${c.stab!=null && c.stab >= 0.95 ? `<div class="note good" style="margin-top:9px">
         Reaches the top 20 under <b>${Math.round(c.stab*100)}%</b> of the
-        ${D.robust.n_runs} threshold settings tested. This one does not depend on our choices.</div>` : ""}
+        ${D.robust.n_runs} threshold settings tested, indicating the result is
+        insensitive to the threshold choices.</div>` : ""}
     </div>
 
     <div class="sec">
@@ -557,10 +559,11 @@ function detail(c, host){
         above 10 TPM in ${homogPct}% of tumours · lower quartile ${c.tumour_q25.toLocaleString()} TPM
       </div>
       ${c.frac_above_healthy!=null?`<div class="note ${c.frac_above_healthy>=0.85?"good":c.frac_above_healthy>=0.7?"mute":"warn"}" style="margin-top:9px">
-        <b>${Math.round(c.frac_above_healthy*100)}% of these tumours sit above
-        ${esc(c.worst_tissue)}</b>, the worst healthy tissue for this gene.
-        The 10 TPM line above is a convention; this is the bar a drug actually
-        has to clear, and it is different for every target.</div>`:""}
+        <b>${Math.round(c.frac_above_healthy*100)}% of tumours exceed
+        ${esc(c.worst_tissue)}</b>, the highest-expressing healthy tissue for
+        this gene. The 10 TPM threshold above is a fixed cut-off applied to
+        every gene; this figure is referenced to each target's own healthy
+        maximum.</div>`:""}
       ${homogPct<70?`<div class="note warn" style="margin-top:9px">Expression is <b>heterogeneous</b>. A drug against this target would reach only part of the tumour population.</div>`:""}
     </div>
 
