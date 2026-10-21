@@ -45,6 +45,14 @@ def healthy_profiles(genes: set[str]) -> dict[str, list]:
     return out
 
 
+def lineage() -> pd.DataFrame:
+    """D55: does the gene track immune infiltrate rather than tumour cells?"""
+    try:
+        return pd.read_csv(RESULTS / "step7_lineage.csv").set_index("ensembl_gene")
+    except FileNotFoundError:
+        return pd.DataFrame()
+
+
 def surface_detail() -> pd.DataFrame:
     c = pd.read_csv(PROC / "surface_candidates.csv")
     return c[c.is_candidate].drop_duplicates("ensembl_gene").set_index("ensembl_gene")
@@ -58,7 +66,11 @@ def sample_counts() -> dict:
             for _, r in g.iterrows()}
 
 
-def row_to_dict(r, surf, prof, cohort_of, counts) -> dict:
+def row_to_dict(r, surf, prof, cohort_of, counts, lin=None) -> dict:
+    # Literature vocabulary, not TCGA's internal label. Searching PubMed for
+    # "Kidney Clear Cell Carcinoma" finds far less than "clear cell renal cell
+    # carcinoma", and the mismatch was quietly breaking the deliverable's links.
+    from step8_literature import DISEASE_TERM
     s = surf.loc[r.ensembl_gene] if r.ensembl_gene in surf.index else None
     d = {
         "gene": r.ensembl_gene,
@@ -94,7 +106,20 @@ def row_to_dict(r, surf, prof, cohort_of, counts) -> dict:
         "cspa": bool(r.cspa) if pd.notna(r.cspa) else False,
         "surfy": bool(r.surfy) if pd.notna(r.surfy) else False,
         "healthy": prof.get(r.ensembl_gene, []),
+        "disease_term": DISEASE_TERM.get(r.cancer_type, r.cancer_type),
     }
+    if lin is not None and r.ensembl_gene in lin.index:
+        L = lin.loc[r.ensembl_gene]
+        d["infiltrate"] = bool(L.likely_infiltrate)
+        d["immune_r"] = round(float(L.max_immune_r), 2)
+        d["micro"] = str(L.microenvironment) if "microenvironment" in L else None
+        d["stromal_r"] = (None if "max_stromal_r" not in L
+                          else round(float(L.max_stromal_r), 2))
+    else:
+        d["infiltrate"] = False
+        d["immune_r"] = None
+        d["micro"] = None
+        d["stromal_r"] = None
     if s is not None:
         d.update({
             "ecto": str(s.extracellular_reported),
@@ -113,6 +138,7 @@ def main() -> int:
     reserve = pd.read_csv(RESULTS / "step7_reserve.csv")
     surf = surface_detail()
     counts = sample_counts()
+    lin = lineage()
 
     from step6_protein_differential import COHORT_TO_TCGA
     cohort_of = {v: k for k, v in COHORT_TO_TCGA.items()}
@@ -124,7 +150,7 @@ def main() -> int:
 
     by_cancer = {}
     for cancer, grp in per.groupby("cancer_type"):
-        by_cancer[cancer] = [row_to_dict(r, surf, prof, cohort_of, counts)
+        by_cancer[cancer] = [row_to_dict(r, surf, prof, cohort_of, counts, lin)
                              for _, r in grp.iterrows()]
 
     # funnel, read from the committed reports rather than recomputed
@@ -144,14 +170,37 @@ def main() -> int:
          "n": int(full.ensembl_gene.nunique())},
     ]
 
+    # ---- D56: pan-cancer view, ranked by breadth ----
+    pan_src = (full.groupby(["ensembl_gene", "symbol"])
+               .agg(n_types=("cancer_type", "nunique"),
+                    S_median=("S", "median"), S_min=("S", "min"),
+                    S_max=("S", "max"),
+                    homog=("frac_tumours_above_10tpm", "median"),
+                    tier=("tier", "first"), family=("gene_group", "first"))
+               .reset_index()
+               .sort_values(["n_types", "S_median"], ascending=False)
+               .head(25))
+    pan = []
+    for _, g in pan_src.iterrows():
+        best = full[full.ensembl_gene == g.ensembl_gene].nlargest(1, "S").iloc[0]
+        d = row_to_dict(best, surf, prof, cohort_of, counts, lin)
+        d.update({"n_types": int(g.n_types),
+                  "S_median": round(float(g.S_median), 2),
+                  "S_min": round(float(g.S_min), 2),
+                  "homog_median": round(float(g.homog), 3),
+                  "types": sorted(full.loc[full.ensembl_gene == g.ensembl_gene,
+                                           "cancer_type"].unique())})
+        pan.append(d)
+
     payload = {
         "generated": "2026-10-21",
+        "pan": pan,
         "funnel": funnel,
         "cancers": sorted(by_cancer),
         "by_cancer": by_cancer,
-        "top10": [row_to_dict(r, surf, prof, cohort_of, counts)
+        "top10": [row_to_dict(r, surf, prof, cohort_of, counts, lin)
                   for _, r in top10.iterrows()],
-        "reserve": [row_to_dict(r, surf, prof, cohort_of, counts)
+        "reserve": [row_to_dict(r, surf, prof, cohort_of, counts, lin)
                     for _, r in reserve.iterrows()],
         "counts": {
             "eligible_rows": int(len(full)),

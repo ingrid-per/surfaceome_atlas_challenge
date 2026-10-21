@@ -1,0 +1,297 @@
+symbol,ensembl_gene,cancer_type,disease_term,S,tier,pubmed_gene,pubmed_gene_disease,pubmed_therapeutic
+CLDN6,ENSG00000184697,Testicular Germ Cell Tumor,testicular germ cell tumor,6.398590469991302,S1,181,3,3
+TSPAN10,ENSG00000182612,Uveal Melanoma,uveal melanoma,6.198941912971496,S1,31,0,0
+OR2I1,ENSG00000237988,Cholangiocarcinoma,cholangiocarcinoma,4.97520884336853,S1,0,0,0
+ALPG,ENSG00000163286,Testicular Germ Cell Tumor,testicular germ cell tumor,4.706156981443778,S3,13,0,0
+DCSTAMP,ENSG00000164935,Thyroid Carcinoma,thyroid carcinoma,4.3224513223846435,S1,425,5,0
+CLDN6,ENSG00000184697,Ovarian Serous Cystadenocarcinoma,ovarian serous carcinoma,4.178835369991303,S1,181,1,1
+TRPM1,ENSG00000134160,Uveal Melanoma,uveal melanoma,4.081555172829759,S1,344,0,0
+TSPAN10,ENSG00000182612,Skin Cutaneous Melanoma,melanoma,4.055276912971497,S1,31,3,2
+UPK3B,ENSG00000243566,Mesothelioma,mesothelioma,3.9803469586486817,S2,26,2,2
+LY6G6D,ENSG00000244355,Rectum Adenocarcinoma,rectal cancer,3.7996595360073457,S3,18,0,0
+CD70,ENSG00000125726,Kidney Clear Cell Carcinoma,clear cell renal cell carcinoma,3.6480960721086015,S1,1118,91,83
+DBH,ENSG00000123454,Pheochromocytoma & Paraganglioma,pheochromocytoma,3.4684417401934375,S2,3454,53,10
+LIM2,ENSG00000105370,Testicular Germ Cell Tumor,testicular germ cell tumor,3.343357899278844,S1,132,0,0
+GPR143,ENSG00000101850,Uveal Melanoma,uveal melanoma,3.3291290912815814,S1,172,0,0
+OR2I1,ENSG00000237988,Liver Hepatocellular Carcinoma,hepatocellular carcinoma,3.1274138433685303,S1,0,0,0
+OR2I1,ENSG00000237988,Diffuse Large B-Cell Lymphoma,diffuse large B-cell lymphoma,2.9072598433685304,S1,0,0,0
+OR51E2,ENSG00000167332,Prostate Adenocarcinoma,prostate cancer,2.86411324248857,S1,70,29,12
+KLRG2,ENSG00000188883,Testicular Germ Cell Tumor,testicular germ cell tumor,2.6473606314086915,S1,12,0,0
+NTRK1,ENSG00000198400,Pheochromocytoma & Paraganglioma,pheochromocytoma,2.615677581443777,S1,1303,6,1
+CD70,ENSG00000125726,Diffuse Large B-Cell Lymphoma,diffuse large B-cell lymphoma,2.5601033721086015,S1,1118,31,28
+TRPM1,ENSG00000134160,Skin Cutaneous Melanoma,melanoma,2.5530105728297587,S1,344,63,42
+RET,ENSG00000165731,Pheochromocytoma & Paraganglioma,pheochromocytoma,2.5195917754309862,S1,12217,975,172
+TMEM200C,ENSG00000206432,Uveal Melanoma,uveal melanoma,2.5185595842895507,S1,5,1,0
+SLC6A2,ENSG00000103546,Pheochromocytoma & Paraganglioma,pheochromocytoma,2.507486770110436,S1,230,1,1
+QRFPR,ENSG00000186867,Kidney Clear Cell Carcinoma,clear cell renal cell carcinoma,2.4590578486480714,S1,31,1,1
+MUC16,ENSG00000181143,Ovarian Serous Cystadenocarcinoma,ovarian serous carcinoma,2.438909,S1,902,22,14
+CDH3,ENSG00000062038,Head & Neck Squamous Cell Carcinoma,head and neck squamous cell carcinoma,2.4031151846008303,S1,306,6,4
+SEMA5B,ENSG00000082684,Kidney Clear Cell Carcinoma,clear cell renal cell carcinoma,2.3911583461578365,S1,45,5,4
+TPBGL,ENSG00000261594,Pheochromocytoma & Paraganglioma,pheochromocytoma,2.352993098205566,S1,3,0,0
+CLDN6,ENSG00000184697,Uterine Carcinosarcoma,uterine carcinosarcoma,2.3341302699913027,S1,181,0,0
+GPR143,ENSG00000101850,Skin Cutaneous Melanoma,melanoma,2.333977091281582,S1,172,14,8
+CLCNKB,ENSG00000184908,Kidney Chromophobe,chromophobe renal cell carcinoma,2.24369039819336,S1,187,3,0
+CHRNA3,ENSG00000080644,Pheochromocytoma & Paraganglioma,pheochromocytoma,2.23080232475676,S1,413,0,0
+NKAIN4,ENSG00000101198,Brain Lower Grade Glioma,low grade glioma,2.2181582209228514,S1,6,0,0
+SLC18A2,ENSG00000165646,Pheochromocytoma & Paraganglioma,pheochromocytoma,2.2151587519790787,S1,170,0,0
+DLL3,ENSG00000090932,Brain Lower Grade Glioma,low grade glioma,2.2129077746664363,S1,623,7,4
+LILRB4,ENSG00000186818,Diffuse Large B-Cell Lymphoma,diffuse large B-cell lymphoma,2.1075440724487304,S1,171,1,1
+SLC10A4,ENSG00000145248,Pheochromocytoma & Paraganglioma,pheochromocytoma,2.1007187000335694,S1,27,1,0
+PRLHR,ENSG00000119973,Pheochromocytoma & Paraganglioma,pheochromocytoma,2.1006607949371334,S1,27,0,0
+LY6E,ENSG00000160932,Ovarian Serous Cystadenocarcinoma,ovarian serous carcinoma,2.0731007445767453,S3,236,0,0
+LY6G6D,ENSG00000244355,Colon Adenocarcinoma,colorectal cancer,2.039672936007345,S3,18,10,9
+HAVCR1,ENSG00000113249,Kidney Papillary Cell Carcinoma,papillary renal cell carcinoma,2.0050462043914816,S1,197,9,5
+DLK1,ENSG00000185559,Pheochromocytoma & Paraganglioma,pheochromocytoma,1.985808049451661,S1,1250,7,4
+RNF43,ENSG00000108375,Rectum Adenocarcinoma,rectal cancer,1.979581472829758,S1,524,8,5
+OR2I1,ENSG00000237988,Kidney Clear Cell Carcinoma,clear cell renal cell carcinoma,1.9596066433685304,S1,0,0,0
+LRRC15,ENSG00000172061,Breast Invasive Carcinoma,breast cancer,1.953835572829758,S1,132,14,12
+LRRN4,ENSG00000125872,Mesothelioma,mesothelioma,1.9503899927238937,S1,17,1,1
+ULBP2,ENSG00000131015,Head & Neck Squamous Cell Carcinoma,head and neck squamous cell carcinoma,1.9096167335845944,S3,282,7,5
+RNF43,ENSG00000108375,Colon Adenocarcinoma,colorectal cancer,1.906834672829758,S1,524,196,116
+PTCHD4,ENSG00000244694,Thyroid Carcinoma,thyroid carcinoma,1.892101726387787,S1,12,1,0
+GPRC6A,ENSG00000173612,Kidney Chromophobe,chromophobe renal cell carcinoma,1.8781882536370231,S1,214,1,0
+PLPPR1,ENSG00000148123,Brain Lower Grade Glioma,low grade glioma,1.8598561820678707,S1,8,0,0
+ATP6V0A4,ENSG00000105929,Kidney Chromophobe,chromophobe renal cell carcinoma,1.842035186428612,S1,125,2,2
+TM4SF1,ENSG00000169908,Mesothelioma,mesothelioma,1.8317989726442845,S1,167,2,1
+ELFN1,ENSG00000225968,Uveal Melanoma,uveal melanoma,1.825137581443777,S1,103,1,0
+LHFPL3,ENSG00000187416,Brain Lower Grade Glioma,low grade glioma,1.8143067500509984,S1,30,1,1
+HAVCR1,ENSG00000113249,Kidney Clear Cell Carcinoma,clear cell renal cell carcinoma,1.8140764043914812,S1,197,9,5
+KLRC2,ENSG00000205809,Brain Lower Grade Glioma,low grade glioma,1.780350605112638,S1,70,2,1
+CRB2,ENSG00000148204,Mesothelioma,mesothelioma,1.7641447845004872,S1,191,0,0
+PTPRZ1,ENSG00000106278,Glioblastoma Multiforme,glioblastoma,1.746264016527049,S1,195,54,40
+FNDC10,ENSG00000228594,Uveal Melanoma,uveal melanoma,1.739937151672363,S1,0,0,0
+OR2I1,ENSG00000237988,Stomach Adenocarcinoma,gastric cancer,1.7256290433685302,S1,0,0,0
+LY6G6F,ENSG00000250641,Rectum Adenocarcinoma,rectal cancer,1.7133033669799804,S1,4,0,0
+CDH6,ENSG00000113361,Kidney Papillary Cell Carcinoma,papillary renal cell carcinoma,1.7099499260681157,S1,156,4,4
+OXGR1,ENSG00000165621,Kidney Chromophobe,chromophobe renal cell carcinoma,1.702655981443777,S1,40,0,0
+SLC3A2,ENSG00000168003,Uveal Melanoma,uveal melanoma,1.6953469199681006,S1,564,1,1
+CDH6,ENSG00000113361,Kidney Clear Cell Carcinoma,clear cell renal cell carcinoma,1.6903443260681152,S1,156,4,4
+OR2I1,ENSG00000237988,Pancreatic Adenocarcinoma,pancreatic ductal adenocarcinoma,1.6844174433685302,S1,0,0,0
+DDR1,ENSG00000204580,Brain Lower Grade Glioma,low grade glioma,1.6215594172058108,S1,808,1,1
+SLC6A3,ENSG00000142319,Kidney Clear Cell Carcinoma,clear cell renal cell carcinoma,1.581538636065674,S1,727,6,5
+CEACAM6,ENSG00000086548,Rectum Adenocarcinoma,rectal cancer,1.5793486970496495,S3,424,0,0
+CDH3,ENSG00000062038,Cervical & Endocervical Cancer,cervical cancer,1.5706531846008298,S1,306,1,1
+BTBD17,ENSG00000204347,Brain Lower Grade Glioma,low grade glioma,1.5591590920027376,S2,2,0,0
+ABCC4,ENSG00000125257,Prostate Adenocarcinoma,prostate cancer,1.5459198977444046,S1,661,19,14
+TMEFF2,ENSG00000144339,Prostate Adenocarcinoma,prostate cancer,1.545756421616182,S1,118,25,11
+SLC7A5,ENSG00000103257,Uveal Melanoma,uveal melanoma,1.5134659432501485,S1,674,0,0
+LRRN1,ENSG00000175928,Brain Lower Grade Glioma,low grade glioma,1.5077958024133098,S1,46,0,0
+TNFRSF12A,ENSG00000006327,Kidney Papillary Cell Carcinoma,papillary renal cell carcinoma,1.5002551647949218,S1,224,2,1
+LRRN4CL,ENSG00000177363,Uveal Melanoma,uveal melanoma,1.4791106752502443,S1,9,0,0
+PTPRZ1,ENSG00000106278,Brain Lower Grade Glioma,low grade glioma,1.468368016527049,S1,195,6,5
+HLA-DPB1,ENSG00000223865,Diffuse Large B-Cell Lymphoma,diffuse large B-cell lymphoma,1.463030454528809,S1,1167,0,0
+PROCR,ENSG00000101000,Mesothelioma,mesothelioma,1.4607472489562987,S1,200,1,0
+ULBP2,ENSG00000131015,Cervical & Endocervical Cancer,cervical cancer,1.4281910335845946,S3,282,7,4
+BACE2,ENSG00000182240,Kidney Chromophobe,chromophobe renal cell carcinoma,1.418434579180908,S1,297,0,0
+EPHB2,ENSG00000133216,Rectum Adenocarcinoma,rectal cancer,1.3686553067904184,S1,854,4,2
+TMEM255A,ENSG00000125355,Kidney Chromophobe,chromophobe renal cell carcinoma,1.3561655990386337,S1,3,0,0
+LYPD1,ENSG00000150551,Ovarian Serous Cystadenocarcinoma,ovarian serous carcinoma,1.348786079280308,S3,40,0,0
+EPHB2,ENSG00000133216,Colon Adenocarcinoma,colorectal cancer,1.334105606790418,S1,854,101,51
+BACE2,ENSG00000182240,Skin Cutaneous Melanoma,melanoma,1.322070079180908,S1,297,8,5
+GRIN2D,ENSG00000105464,Stomach Adenocarcinoma,gastric cancer,1.3136966223510744,S1,127,5,3
+BCAM,ENSG00000187244,Ovarian Serous Cystadenocarcinoma,ovarian serous carcinoma,1.3011387043457034,S1,265,4,3
+ENPP3,ENSG00000154269,Kidney Clear Cell Carcinoma,clear cell renal cell carcinoma,1.2906925573878167,S1,86,9,9
+CD79B,ENSG00000007312,Diffuse Large B-Cell Lymphoma,diffuse large B-cell lymphoma,1.2855794584377138,S1,819,326,280
+ABCB5,ENSG00000004846,Uveal Melanoma,uveal melanoma,1.2814114631998077,S1,317,4,1
+DDR1,ENSG00000204580,Glioblastoma Multiforme,glioblastoma,1.23786141720581,S1,808,17,13
+CD63,ENSG00000135404,Skin Cutaneous Melanoma,melanoma,1.234957124531011,S1,4707,102,69
+CLDN3,ENSG00000165215,Ovarian Serous Cystadenocarcinoma,ovarian serous carcinoma,1.232351051544189,S1,359,6,5
+LY6E,ENSG00000160932,Skin Cutaneous Melanoma,melanoma,1.2285587445767463,S3,236,3,2
+TSPAN33,ENSG00000158457,Diffuse Large B-Cell Lymphoma,diffuse large B-cell lymphoma,1.1872029117187504,S1,29,1,1
+FZD2,ENSG00000180340,Uterine Carcinosarcoma,uterine carcinosarcoma,1.1795814284881594,S1,241,0,0
+PCDHB9,ENSG00000177839,Brain Lower Grade Glioma,low grade glioma,1.1780377529158672,S1,12,0,0
+SLC45A3,ENSG00000158715,Prostate Adenocarcinoma,prostate cancer,1.1726882014103133,S1,64,44,15
+GRIN2D,ENSG00000105464,Esophageal Carcinoma,esophageal carcinoma,1.169769722351074,S1,127,0,0
+CANT1,ENSG00000171302,Prostate Adenocarcinoma,prostate cancer,1.162146841767413,S1,77,4,1
+HLA-DRA,ENSG00000204287,Diffuse Large B-Cell Lymphoma,diffuse large B-cell lymphoma,1.1502120888289458,S1,634,4,3
+UGT2A3,ENSG00000135220,Kidney Clear Cell Carcinoma,clear cell renal cell carcinoma,1.1421422509155272,S1,37,0,0
+GRIN2D,ENSG00000105464,Colon Adenocarcinoma,colorectal cancer,1.114858422351074,S1,127,4,2
+OR51E1,ENSG00000180785,Prostate Adenocarcinoma,prostate cancer,1.1009355000000005,S1,43,5,3
+TREM2,ENSG00000095970,Glioblastoma Multiforme,glioblastoma,1.0830491342785695,S1,3078,34,25
+CA12,ENSG00000074410,Kidney Chromophobe,chromophobe renal cell carcinoma,1.0743061587496603,S1,439,8,3
+TRPV2,ENSG00000187688,Skin Cutaneous Melanoma,melanoma,1.0603890306335453,S1,742,8,6
+PHB2,ENSG00000215021,Testicular Germ Cell Tumor,testicular germ cell tumor,1.0585920633056425,S2,445,0,0
+LRRN4,ENSG00000125872,Kidney Papillary Cell Carcinoma,papillary renal cell carcinoma,1.0504135927238938,S1,17,0,0
+CEACAM5,ENSG00000105388,Rectum Adenocarcinoma,rectal cancer,1.0452307971903316,S3,426,5,3
+SRD5A3,ENSG00000128039,Pancreatic Adenocarcinoma,pancreatic ductal adenocarcinoma,1.03752931942749,S1,126,0,0
+CD70,ENSG00000125726,Mesothelioma,mesothelioma,1.033956972108602,S1,1118,4,4
+UPK3B,ENSG00000243566,Ovarian Serous Cystadenocarcinoma,ovarian serous carcinoma,1.032699558648682,S2,26,0,0
+MET,ENSG00000105976,Thyroid Carcinoma,thyroid carcinoma,1.0234879112056792,S1,345700,1200,522
+MMP14,ENSG00000157227,Sarcoma,soft tissue sarcoma,1.022795646057128,S1,1959,39,21
+CD40,ENSG00000101017,Diffuse Large B-Cell Lymphoma,diffuse large B-cell lymphoma,1.0210234321348572,S1,15853,85,61
+HLA-DQA2,ENSG00000237541,Diffuse Large B-Cell Lymphoma,diffuse large B-cell lymphoma,1.0201201610717776,S1,111,0,0
+MET,ENSG00000105976,Kidney Papillary Cell Carcinoma,papillary renal cell carcinoma,1.0153859112056791,S1,345700,1195,727
+LYPD1,ENSG00000150551,Glioblastoma Multiforme,glioblastoma,1.005871579280308,S3,40,0,0
+NKAIN4,ENSG00000101198,Glioblastoma Multiforme,glioblastoma,1.005247120922852,S1,6,0,0
+SLC16A11,ENSG00000174326,Kidney Chromophobe,chromophobe renal cell carcinoma,1.0042476748046871,S1,37,0,0
+IL12RB2,ENSG00000081985,Skin Cutaneous Melanoma,melanoma,0.99231869344505,S1,207,5,3
+PLPP2,ENSG00000141934,Cholangiocarcinoma,cholangiocarcinoma,0.9880050050818356,S1,26,0,0
+TNFRSF12A,ENSG00000006327,Cholangiocarcinoma,cholangiocarcinoma,0.9877385647949222,S1,224,1,0
+HILPDA,ENSG00000135245,Kidney Clear Cell Carcinoma,clear cell renal cell carcinoma,0.9784693174065042,S2,103,6,4
+IL21R,ENSG00000103522,Diffuse Large B-Cell Lymphoma,diffuse large B-cell lymphoma,0.9747760869066138,S1,489,6,4
+CD276,ENSG00000103855,Sarcoma,soft tissue sarcoma,0.9731774256713868,S1,700,24,22
+CEACAM6,ENSG00000086548,Pancreatic Adenocarcinoma,pancreatic ductal adenocarcinoma,0.9514696970496496,S3,424,23,21
+ADORA3,ENSG00000282608,Glioblastoma Multiforme,glioblastoma,0.9508075814437772,S1,146,2,1
+VSIG10,ENSG00000176834,Testicular Germ Cell Tumor,testicular germ cell tumor,0.9424424054565428,S1,6,0,0
+UGT2A3,ENSG00000135220,Kidney Papillary Cell Carcinoma,papillary renal cell carcinoma,0.9349982509155276,S1,37,0,0
+STEAP1,ENSG00000164647,Prostate Adenocarcinoma,prostate cancer,0.9023234743437136,S1,181,135,112
+TMEM255A,ENSG00000125355,Glioblastoma Multiforme,glioblastoma,0.8928957990386337,S1,3,0,0
+CDH3,ENSG00000062038,Lung Squamous Cell Carcinoma,lung squamous cell carcinoma,0.8885891846008303,S1,306,3,2
+SLC39A6,ENSG00000141424,Breast Invasive Carcinoma,breast cancer,0.8720438903451235,S1,64,27,17
+THSD7A,ENSG00000005108,Kidney Chromophobe,chromophobe renal cell carcinoma,0.8624868184326173,S1,302,5,4
+PIGX,ENSG00000163964,Lung Squamous Cell Carcinoma,lung squamous cell carcinoma,0.8619196628064802,S1,17,0,0
+MSLN,ENSG00000102854,Mesothelioma,mesothelioma,0.8566623874465158,S3,526,100,78
+PCDHB9,ENSG00000177839,Glioblastoma Multiforme,glioblastoma,0.8480172529158669,S1,12,0,0
+GRIN2D,ENSG00000105464,Rectum Adenocarcinoma,rectal cancer,0.846313922351074,S1,127,1,1
+SRD5A3,ENSG00000128039,Ovarian Serous Cystadenocarcinoma,ovarian serous carcinoma,0.8417640194274902,S1,126,0,0
+SLC7A3,ENSG00000165349,Testicular Germ Cell Tumor,testicular germ cell tumor,0.840122552700235,S1,31,0,0
+TNFRSF12A,ENSG00000006327,Thyroid Carcinoma,thyroid carcinoma,0.827320164794922,S1,224,9,5
+KCNK15,ENSG00000124249,Ovarian Serous Cystadenocarcinoma,ovarian serous carcinoma,0.8161721230224606,S1,23,0,0
+CEACAM6,ENSG00000086548,Colon Adenocarcinoma,colorectal cancer,0.8121496970496498,S3,424,55,34
+LGALS3BP,ENSG00000108679,Skin Cutaneous Melanoma,melanoma,0.7950192710569013,S2,228,5,5
+CD70,ENSG00000125726,Kidney Papillary Cell Carcinoma,papillary renal cell carcinoma,0.7876037721086018,S1,1118,91,83
+PTPRF,ENSG00000142949,Mesothelioma,mesothelioma,0.7804885456934842,S1,114,0,0
+SCAMP3,ENSG00000116521,Cholangiocarcinoma,cholangiocarcinoma,0.7690972448120119,S1,52,0,0
+LSR,ENSG00000105699,Stomach Adenocarcinoma,gastric cancer,0.7573583467102596,S1,1451,9,7
+STEAP1B,ENSG00000105889,Skin Cutaneous Melanoma,melanoma,0.7423209196472169,S1,5,0,0
+GPX8,ENSG00000164294,Mesothelioma,mesothelioma,0.7412889073940399,S2,116,0,0
+MSLN,ENSG00000102854,Ovarian Serous Cystadenocarcinoma,ovarian serous carcinoma,0.7365253874465143,S3,526,13,11
+LSR,ENSG00000105699,Pancreatic Adenocarcinoma,pancreatic ductal adenocarcinoma,0.7341193467102594,S1,1451,1,1
+UPK1B,ENSG00000114638,Mesothelioma,mesothelioma,0.7297967944475392,S1,56,1,0
+CRIPTO,ENSG00000241186,Rectum Adenocarcinoma,rectal cancer,0.7076237373880376,S3,502,2,2
+LY6E,ENSG00000160932,Testicular Germ Cell Tumor,testicular germ cell tumor,0.7069487445767457,S3,236,0,0
+SLC39A1,ENSG00000143570,Cholangiocarcinoma,cholangiocarcinoma,0.7057367850341798,S1,61,0,0
+TRPM8,ENSG00000144481,Prostate Adenocarcinoma,prostate cancer,0.7031332668516139,S1,1838,100,58
+CEACAM5,ENSG00000105388,Colon Adenocarcinoma,colorectal cancer,0.6993367971903304,S3,426,110,70
+SLC44A3,ENSG00000143036,Cholangiocarcinoma,cholangiocarcinoma,0.6990283287145509,S1,12,0,0
+TLCD1,ENSG00000160606,Prostate Adenocarcinoma,prostate cancer,0.695469871350098,S1,14,0,0
+KRTCAP3,ENSG00000157992,Cholangiocarcinoma,cholangiocarcinoma,0.6830072744873048,S1,12,0,0
+IER3,ENSG00000137331,Colon Adenocarcinoma,colorectal cancer,0.676999988677979,S1,236,9,7
+TSPAN1,ENSG00000117472,Prostate Adenocarcinoma,prostate cancer,0.6568718077835545,S1,110,12,5
+SMIM34,ENSG00000243627,Kidney Chromophobe,chromophobe renal cell carcinoma,0.6563027043914813,S1,2,0,0
+LPAR5,ENSG00000184574,Thyroid Carcinoma,thyroid carcinoma,0.6371993673217773,S1,97,11,10
+LY6E,ENSG00000160932,Pancreatic Adenocarcinoma,pancreatic ductal adenocarcinoma,0.6261967445767453,S3,236,1,1
+TLCD1,ENSG00000160606,Uterine Corpus Endometrioid Carcinoma,endometrial carcinoma,0.6118515713500976,S1,14,0,0
+LHFPL3,ENSG00000187416,Glioblastoma Multiforme,glioblastoma,0.6057657500509981,S1,30,3,2
+TMEM140,ENSG00000146859,Kidney Papillary Cell Carcinoma,papillary renal cell carcinoma,0.605408688891969,S1,13,0,0
+GGT1,ENSG00000100031,Cholangiocarcinoma,cholangiocarcinoma,0.6032920620853233,S1,242,0,0
+SRD5A3,ENSG00000128039,Stomach Adenocarcinoma,gastric cancer,0.5970139194274902,S1,126,0,0
+TM4SF1,ENSG00000169908,Cholangiocarcinoma,cholangiocarcinoma,0.5902699726442844,S1,167,2,0
+TMEM218,ENSG00000150433,Glioblastoma Multiforme,glioblastoma,0.5894627485961914,S1,5,0,0
+MUC16,ENSG00000181143,Uterine Corpus Endometrioid Carcinoma,endometrial carcinoma,0.5652986000000002,S1,902,16,10
+FAT1,ENSG00000083857,Esophageal Carcinoma,esophageal carcinoma,0.5444257373880372,S1,1025,31,21
+F11R,ENSG00000158769,Cervical & Endocervical Cancer,cervical cancer,0.5368134747009279,S1,145,0,0
+GPR87,ENSG00000138271,Cervical & Endocervical Cancer,cervical cancer,0.53263268762207,S1,70,0,0
+CRB3,ENSG00000130545,Cholangiocarcinoma,cholangiocarcinoma,0.5284585815795895,S1,133,0,0
+NOX1,ENSG00000007952,Rectum Adenocarcinoma,rectal cancer,0.4896115800014646,S1,2157,2,0
+KRTCAP3,ENSG00000157992,Cervical & Endocervical Cancer,cervical cancer,0.4884414744873044,S1,12,0,0
+FZD1,ENSG00000157240,Kidney Papillary Cell Carcinoma,papillary renal cell carcinoma,0.4728198408508302,S1,247,4,3
+LY6E,ENSG00000160932,Stomach Adenocarcinoma,gastric cancer,0.4728047445767451,S3,236,10,6
+PTPRK,ENSG00000152894,Esophageal Carcinoma,esophageal carcinoma,0.4547627811224934,S1,128,0,0
+TM4SF1,ENSG00000169908,Pancreatic Adenocarcinoma,pancreatic ductal adenocarcinoma,0.4439529726442845,S1,167,2,1
+NECTIN2,ENSG00000130202,Pancreatic Adenocarcinoma,pancreatic ductal adenocarcinoma,0.4281057821588252,S1,333,5,3
+LY6K,ENSG00000160886,Cervical & Endocervical Cancer,cervical cancer,0.4251904041564938,S3,71,5,2
+CELSR1,ENSG00000075275,Breast Invasive Carcinoma,breast cancer,0.413216554192461,S1,210,6,3
+EPHB4,ENSG00000196411,Testicular Germ Cell Tumor,testicular germ cell tumor,0.3962371744995119,S1,900,0,0
+ATP13A3,ENSG00000133657,Esophageal Carcinoma,esophageal carcinoma,0.3848247611328128,S1,49,1,1
+LSR,ENSG00000105699,Cervical & Endocervical Cancer,cervical cancer,0.3697489467102599,S1,1451,0,0
+GPX8,ENSG00000164294,Sarcoma,soft tissue sarcoma,0.3582477073940397,S2,116,1,1
+DDR1,ENSG00000204580,Lung Squamous Cell Carcinoma,lung squamous cell carcinoma,0.3523507172058107,S1,808,4,2
+IGSF3,ENSG00000143061,Lung Squamous Cell Carcinoma,lung squamous cell carcinoma,0.3510419640502933,S1,61,1,0
+F2RL2,ENSG00000164220,Breast Invasive Carcinoma,breast cancer,0.3436072292584127,S1,54,6,3
+LSR,ENSG00000105699,Lung Squamous Cell Carcinoma,lung squamous cell carcinoma,0.3391889467102595,S1,1451,0,0
+LGALS3BP,ENSG00000108679,Esophageal Carcinoma,esophageal carcinoma,0.334732271056902,S2,228,2,1
+LGALS3BP,ENSG00000108679,Stomach Adenocarcinoma,gastric cancer,0.3106722710569016,S2,228,0,0
+LSR,ENSG00000105699,Lung Adenocarcinoma,lung adenocarcinoma,0.3069938467102595,S1,1451,4,3
+TNFSF9,ENSG00000125657,Kidney Papillary Cell Carcinoma,papillary renal cell carcinoma,0.3018663117095945,S1,128,4,3
+LAPTM4B,ENSG00000104341,Testicular Germ Cell Tumor,testicular germ cell tumor,0.2978515559831507,S1,209,0,0
+PCDH1,ENSG00000156453,Pancreatic Adenocarcinoma,pancreatic ductal adenocarcinoma,0.2950077197998046,S1,77,4,3
+SLC12A2,ENSG00000064651,Colon Adenocarcinoma,colorectal cancer,0.2936240680001916,S1,190,8,6
+KRTCAP3,ENSG00000157992,Uterine Corpus Endometrioid Carcinoma,endometrial carcinoma,0.2930149744873045,S1,12,0,0
+TNFRSF12A,ENSG00000006327,Pancreatic Adenocarcinoma,pancreatic ductal adenocarcinoma,0.2837401647949216,S1,224,1,0
+F11R,ENSG00000158769,Stomach Adenocarcinoma,gastric cancer,0.2621644747009277,S1,145,5,4
+SPINT2,ENSG00000167642,Uterine Corpus Endometrioid Carcinoma,endometrial carcinoma,0.2621450923461914,S1,111,0,0
+TMEM92,ENSG00000167105,Pancreatic Adenocarcinoma,pancreatic ductal adenocarcinoma,0.2582460706662894,S1,18,2,2
+ADAM10,ENSG00000137845,Stomach Adenocarcinoma,gastric cancer,0.2541789641784664,S1,2215,26,14
+EFNA4,ENSG00000243364,Uterine Carcinosarcoma,uterine carcinosarcoma,0.2362394145141602,S3,70,0,0
+LGR5,ENSG00000139292,Rectum Adenocarcinoma,rectal cancer,0.2302076706662896,S1,2540,23,15
+SPINT2,ENSG00000167642,Cervical & Endocervical Cancer,cervical cancer,0.2205050923461922,S1,111,1,0
+CD276,ENSG00000103855,Head & Neck Squamous Cell Carcinoma,head and neck squamous cell carcinoma,0.2204885256713868,S1,700,24,15
+ENTPD1,ENSG00000138185,Thyroid Carcinoma,thyroid carcinoma,0.2123825466308595,S1,294,6,2
+HEPHL1,ENSG00000181333,Head & Neck Squamous Cell Carcinoma,head and neck squamous cell carcinoma,0.1991088748077527,S1,18,0,0
+CHRNA5,ENSG00000169684,Lung Squamous Cell Carcinoma,lung squamous cell carcinoma,0.1809496813627027,S1,513,17,2
+DDR1,ENSG00000204580,Cervical & Endocervical Cancer,cervical cancer,0.1753384172058103,S1,808,4,3
+SDC4,ENSG00000124145,Thyroid Carcinoma,thyroid carcinoma,0.1696421390765241,S1,441,12,8
+CDH3,ENSG00000062038,Thyroid Carcinoma,thyroid carcinoma,0.1506466846008303,S1,306,5,0
+EMP3,ENSG00000142227,Sarcoma,soft tissue sarcoma,0.1298176451965922,S1,118,3,1
+TLCD1,ENSG00000160606,Breast Invasive Carcinoma,breast cancer,0.1243772713500979,S1,14,1,1
+PLPP2,ENSG00000141934,Uterine Corpus Endometrioid Carcinoma,endometrial carcinoma,0.1111395050818355,S1,26,1,1
+GPR87,ENSG00000138271,Lung Squamous Cell Carcinoma,lung squamous cell carcinoma,0.1038686876220706,S1,70,2,2
+LRRC8E,ENSG00000171017,Breast Invasive Carcinoma,breast cancer,0.098997616156006,S1,21,2,2
+KREMEN2,ENSG00000131650,Uterine Carcinosarcoma,uterine carcinosarcoma,0.092457453637023,S1,42,0,0
+MRC2,ENSG00000011028,Sarcoma,soft tissue sarcoma,0.087638592498779,S1,149,5,4
+TLCD1,ENSG00000160606,Cervical & Endocervical Cancer,cervical cancer,0.0720625713500977,S1,14,0,0
+SDC1,ENSG00000115884,Lung Squamous Cell Carcinoma,lung squamous cell carcinoma,0.069065469848633,S1,835,1,1
+TGFA,ENSG00000163235,Thyroid Carcinoma,thyroid carcinoma,0.0607538102252753,S1,513,7,4
+SPINT2,ENSG00000167642,Breast Invasive Carcinoma,breast cancer,0.052263092346191,S1,111,7,3
+TMPRSS4,ENSG00000137648,Lung Squamous Cell Carcinoma,lung squamous cell carcinoma,0.051980486663818,S1,186,6,5
+SLC6A8,ENSG00000130821,Lung Squamous Cell Carcinoma,lung squamous cell carcinoma,0.0515950107076976,S1,332,1,1
+LSR,ENSG00000105699,Uterine Corpus Endometrioid Carcinoma,endometrial carcinoma,0.0473240467102593,S1,1451,11,4
+CLDN3,ENSG00000165215,Uterine Corpus Endometrioid Carcinoma,endometrial carcinoma,0.0450550515441898,S1,359,1,1
+TMEM92,ENSG00000167105,Lung Adenocarcinoma,lung adenocarcinoma,0.0234352706662894,S1,18,0,0
+SLC2A1,ENSG00000117394,Head & Neck Squamous Cell Carcinoma,head and neck squamous cell carcinoma,0.0181726102294916,S1,1251,9,7
+TMC5,ENSG00000103534,Stomach Adenocarcinoma,gastric cancer,0.0100853792803086,S1,30,2,1
+TNFRSF12A,ENSG00000006327,Head & Neck Squamous Cell Carcinoma,head and neck squamous cell carcinoma,-0.011557135205078,S1,224,8,5
+CLDN4,ENSG00000189143,Lung Adenocarcinoma,lung adenocarcinoma,-0.0124883403869979,S1,424,6,2
+TNFRSF12A,ENSG00000006327,Adrenocortical Cancer,adrenocortical carcinoma,-0.0234108352050776,S1,224,0,0
+GPX8,ENSG00000164294,Adrenocortical Cancer,adrenocortical carcinoma,-0.03522549260596,S2,116,0,0
+CRIPTO,ENSG00000241186,Colon Adenocarcinoma,colorectal cancer,-0.0359970626119627,S3,502,38,14
+GPRC5A,ENSG00000013588,Stomach Adenocarcinoma,gastric cancer,-0.0506190634587504,S1,174,9,5
+HLA-A,ENSG00000206503,Head & Neck Squamous Cell Carcinoma,head and neck squamous cell carcinoma,-0.0614517279052737,S1,12808,48,31
+ITGA6,ENSG00000091409,Head & Neck Squamous Cell Carcinoma,head and neck squamous cell carcinoma,-0.0625900919799802,S1,538,23,16
+ERBB3,ENSG00000065361,Breast Invasive Carcinoma,breast cancer,-0.0877600068725588,S1,2659,626,436
+NETO2,ENSG00000171208,Head & Neck Squamous Cell Carcinoma,head and neck squamous cell carcinoma,-0.0900144271702423,S1,87,2,1
+LY6K,ENSG00000160886,Head & Neck Squamous Cell Carcinoma,head and neck squamous cell carcinoma,-0.1014848958435061,S3,71,5,4
+CD276,ENSG00000103855,Esophageal Carcinoma,esophageal carcinoma,-0.1052888743286128,S1,700,17,12
+LRP5,ENSG00000162337,Esophageal Carcinoma,esophageal carcinoma,-0.1238714169449659,S1,1715,3,2
+SERINC2,ENSG00000168528,Uterine Corpus Endometrioid Carcinoma,endometrial carcinoma,-0.1325530829605261,S1,46,0,0
+IGSF3,ENSG00000143061,Breast Invasive Carcinoma,breast cancer,-0.1333360359497071,S1,61,3,2
+TLCD1,ENSG00000160606,Uterine Carcinosarcoma,uterine carcinosarcoma,-0.142314428649902,S1,14,0,0
+LAPTM4B,ENSG00000104341,Uterine Corpus Endometrioid Carcinoma,endometrial carcinoma,-0.153516844016849,S1,209,5,2
+CDH3,ENSG00000062038,Colon Adenocarcinoma,colorectal cancer,-0.1591153153991698,S1,306,35,20
+LAPTM4B,ENSG00000104341,Uterine Carcinosarcoma,uterine carcinosarcoma,-0.1616725440168496,S1,209,0,0
+GXYLT2,ENSG00000172986,Sarcoma,soft tissue sarcoma,-0.1676165956085187,S2,25,0,0
+CELSR1,ENSG00000075275,Uterine Corpus Endometrioid Carcinoma,endometrial carcinoma,-0.1902550458075396,S1,210,1,1
+CANT1,ENSG00000171302,Breast Invasive Carcinoma,breast cancer,-0.2026460582325873,S1,77,4,3
+XPR1,ENSG00000143324,Esophageal Carcinoma,esophageal carcinoma,-0.224962059534886,S1,234,1,1
+CKAP4,ENSG00000136026,Sarcoma,soft tissue sarcoma,-0.2273289007211563,S1,200,2,2
+PLPP2,ENSG00000141934,Lung Adenocarcinoma,lung adenocarcinoma,-0.2334444949181646,S1,26,2,2
+ITGB4,ENSG00000132470,Esophageal Carcinoma,esophageal carcinoma,-0.2369153171386724,S1,479,9,5
+ANO1,ENSG00000131620,Esophageal Carcinoma,esophageal carcinoma,-0.2583794421874996,S1,713,15,8
+LRP4,ENSG00000134569,Thyroid Carcinoma,thyroid carcinoma,-0.2640157937622067,S1,543,9,5
+SERINC2,ENSG00000168528,Lung Adenocarcinoma,lung adenocarcinoma,-0.3582830829605266,S1,46,4,1
+MET,ENSG00000105976,Lung Adenocarcinoma,lung adenocarcinoma,-0.3642078887943203,S1,345700,1447,977
+MAL2,ENSG00000147676,Lung Adenocarcinoma,lung adenocarcinoma,-0.3663618300548661,S1,200,2,1
+CDH3,ENSG00000062038,Lung Adenocarcinoma,lung adenocarcinoma,-0.4070308153991702,S1,306,14,10
+FZD2,ENSG00000180340,Sarcoma,soft tissue sarcoma,-0.415043971511841,S1,241,2,1
+ITM2C,ENSG00000135916,Uterine Carcinosarcoma,uterine carcinosarcoma,-0.4403374640054593,S1,31,0,0
+ST14,ENSG00000149418,Lung Adenocarcinoma,lung adenocarcinoma,-0.5237781939307382,S1,601,3,3
+IGSF9,ENSG00000085552,Uterine Carcinosarcoma,uterine carcinosarcoma,-0.5821543465286956,S1,31,0,0
+STRA6,ENSG00000137868,Uterine Carcinosarcoma,uterine carcinosarcoma,-0.6678085645385741,S1,257,0,0
+HS6ST2,ENSG00000171004,Lung Adenocarcinoma,lung adenocarcinoma,-0.6741697832272551,S1,67,3,2
+SLC39A4,ENSG00000147804,Uterine Carcinosarcoma,uterine carcinosarcoma,-0.7315960758056637,S1,135,0,0
+FAP,ENSG00000078098,Sarcoma,soft tissue sarcoma,-0.8411731226806642,S1,8595,111,80
+HLA-A,ENSG00000206503,Liver Hepatocellular Carcinoma,hepatocellular carcinoma,-0.8455637279052741,S1,12808,92,58
+PTK7,ENSG00000112655,Sarcoma,soft tissue sarcoma,-0.936196811999512,S1,393,6,4
+TM4SF4,ENSG00000169903,Liver Hepatocellular Carcinoma,hepatocellular carcinoma,-1.0448161381396286,S1,39,5,4
+ROBO1,ENSG00000169855,Liver Hepatocellular Carcinoma,hepatocellular carcinoma,-1.266455655279541,S1,780,23,16
+GPC3,ENSG00000147257,Liver Hepatocellular Carcinoma,hepatocellular carcinoma,-2.1113248786769834,S3,1458,895,609
+ZACN,ENSG00000186919,Adrenocortical Cancer,adrenocortical carcinoma,-2.4136883865234373,S1,7,0,0
+KCNH2,ENSG00000055118,Adrenocortical Cancer,adrenocortical carcinoma,-2.4234261269226076,S1,1069,0,0
+HLA-DPB1,ENSG00000223865,Liver Hepatocellular Carcinoma,hepatocellular carcinoma,-2.5238705454711914,S1,1167,15,4
+LAPTM4B,ENSG00000104341,Liver Hepatocellular Carcinoma,hepatocellular carcinoma,-2.5623903440168494,S1,209,43,23
+TM4SF1,ENSG00000169908,Liver Hepatocellular Carcinoma,hepatocellular carcinoma,-2.653974027355715,S1,167,16,13
+CD74,ENSG00000019582,Liver Hepatocellular Carcinoma,hepatocellular carcinoma,-2.7049797718845667,S1,1940,35,28
+HLA-DRA,ENSG00000204287,Liver Hepatocellular Carcinoma,hepatocellular carcinoma,-2.7957494111710544,S1,634,3,2
+SYP,ENSG00000102003,Adrenocortical Cancer,adrenocortical carcinoma,-3.081281198168945,S1,1188,0,0
+APLP1,ENSG00000105290,Adrenocortical Cancer,adrenocortical carcinoma,-6.7237877484741215,S1,214,0,0

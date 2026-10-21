@@ -181,6 +181,7 @@ select{
 .lab-btn:hover{background:var(--accent-deep)}
 .lab-btn:active{transform:translateY(1px)}
 .lab-links{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:8px}
+.lab-links a:nth-child(5){grid-column:1/-1}
 .lab-links a{
   display:flex;flex-direction:column;gap:1px;padding:9px 11px;border-radius:7px;
   border:1px solid var(--line);background:var(--surface-2);text-decoration:none;
@@ -219,6 +220,7 @@ table.fun td.b{width:46%}
   <nav class="tabs" role="tablist">
     <button role="tab" aria-selected="true" data-tab="bycancer">By cancer type</button>
     <button role="tab" aria-selected="false" data-tab="global">Global top 10</button>
+    <button role="tab" aria-selected="false" data-tab="pan">Pan-cancer</button>
     <button role="tab" aria-selected="false" data-tab="method">Method &amp; limits</button>
   </nav>
 </header>
@@ -247,6 +249,25 @@ table.fun td.b{width:46%}
         <div class="list" id="listB"></div>
       </div>
       <div class="card detail" id="detailB"></div>
+    </div>
+  </section>
+
+  <section id="tab-pan" class="hidden">
+    <div class="panes">
+      <div class="card">
+        <div class="card-h">
+          <h2>Raised across many cancer types</h2>
+          <span class="sub">ranked by breadth, not by score</span>
+        </div>
+        <div class="note warn" style="margin:13px 16px 0">
+          <b>Read this list with the infiltrate flag.</b> Immune cells infiltrate
+          tumours of every kind, so ranking by breadth preferentially finds
+          leukocyte markers rather than tumour-cell proteins. 38% of genes passing
+          in 8 or more cancer types track CD45 across 9,185 tumours.
+        </div>
+        <div class="list" id="listC"></div>
+      </div>
+      <div class="card detail" id="detailC"></div>
     </div>
   </section>
 
@@ -295,16 +316,26 @@ const TRAJ = {
 };
 
 function links(c){
-  const g = encodeURIComponent(c.symbol), ca = encodeURIComponent(c.cancer);
+  const sym = c.symbol;
+  const gene = c.gene;
+  const dis  = c.disease_term || c.cancer;
+  const q = encodeURIComponent;
+  // Gene symbol restricted to title/abstract, paired with the term the
+  // literature actually uses. Without [tiab] and a real disease name the
+  // query returns every cancer paper that mentions the word "cancer".
+  const pm   = `https://pubmed.ncbi.nlm.nih.gov/?term=${q(sym + "[tiab] AND " + dis)}&sort=date`;
+  const pmT  = `https://pubmed.ncbi.nlm.nih.gov/?term=${q(sym + "[tiab] AND " + dis + " AND (immunotherapy OR antibody OR CAR-T OR therapeutic)")}&sort=date`;
+  const ct   = `https://clinicaltrials.gov/search?term=${q(sym)}&cond=${q(dis)}`;
+  // Open Targets and HPA are addressed by Ensembl id, so these are the gene's
+  // own page rather than a search that might land on the wrong entry.
+  const ot   = `https://platform.opentargets.org/target/${q(gene)}`;
+  const hpa  = `https://www.proteinatlas.org/${q(gene)}-${q(sym)}/pathology`;
   return [
-    ["PubMed", "literature on this target in this cancer",
-     `https://pubmed.ncbi.nlm.nih.gov/?term=${g}+AND+(${ca}+OR+cancer)+AND+(target+OR+therapy+OR+antibody)`],
-    ["ClinicalTrials.gov", "trials naming this target",
-     `https://clinicaltrials.gov/search?term=${g}&aggFilters=status:not%20rec`],
-    ["Open Targets", "tractability and competitive landscape",
-     `https://platform.opentargets.org/search?q=${g}`],
-    ["Human Protein Atlas", "antibody staining across tissues",
-     `https://www.proteinatlas.org/search/${g}`]
+    ["PubMed", `${sym} in ${dis}`, pm],
+    ["PubMed \u2014 therapeutic", "as a drug target specifically", pmT],
+    ["ClinicalTrials.gov", "trials in this indication", ct],
+    ["Open Targets", "tractability & competitive landscape", ot],
+    ["Protein Atlas", "antibody staining in tumour & normal", hpa]
   ];
 }
 
@@ -348,6 +379,7 @@ function detail(c, host){
       ${c.low_power?`<span class="chip warn">low power</span>`:""}
       ${c.cspa?`<span class="chip ok">CSPA measured</span>`:""}
       ${c.gpi?`<span class="chip t1">GPI-anchored</span>`:""}
+      ${c.micro && c.micro!=="tumour cell"?`<span class="chip bad">${esc(c.micro)}</span>`:""}
     </div>
   </div>
   <div class="d-body">
@@ -413,6 +445,15 @@ function detail(c, host){
     ${tr && tr.why?`<div class="sec"><h3>Neighbouring tissue</h3>
       <div class="note ${tr.cls==="ok"?"good":"warn"}"><b>${tr.label}.</b> ${tr.why}</div></div>`:""}
 
+    ${c.immune_r!=null?`<div class="sec">
+      <h3>Tumour cells, or what surrounds them?</h3>
+      <div class="note ${(c.micro&&c.micro!=="tumour cell")?"warn":"good"}">
+        ${(c.micro&&c.micro!=="tumour cell")
+          ? `<b>${esc(c.micro)}.</b> Across 9,185 tumours this gene tracks markers of the surrounding tissue rather than the tumour itself — immune r ${c.immune_r.toFixed(2)}${c.stromal_r!=null?`, fibroblast r ${c.stromal_r.toFixed(2)}`:""}. A drug may hit the patient's own leukocytes or stroma. Not automatically disqualifying: ABBV-085 targets the fibroblast protein LRRC15 on purpose.`
+          : `<b>Tumour-cell pattern.</b> Weak correlation with leukocyte, macrophage, fibroblast and endothelial markers (immune ${c.immune_r.toFixed(2)}${c.stromal_r!=null?`, fibroblast ${c.stromal_r.toFixed(2)}`:""}), so the signal is unlikely to come from the microenvironment.`}
+      </div>
+    </div>`:""}
+
     <div class="sec">
       <h3>Comparator</h3>
       <div class="note ${gr.cls==="ok"?"good":"warn"}"><b>${gr.label}.</b> ${gr.why}</div>
@@ -470,6 +511,35 @@ sel.onchange = drawA;
 sel.value = D.cancers.includes("Kidney Clear Cell Carcinoma") ? "Kidney Clear Cell Carcinoma" : D.cancers[0];
 drawA();
 
+/* ---- pan-cancer ---- */
+function renderPan(){
+  const host=document.getElementById("listC"), dh=document.getElementById("detailC");
+  const st={i:0};
+  host.innerHTML = D.pan.map((c,i)=>`
+    <button class="row" data-i="${i}" aria-current="${i===0}">
+      <span class="rank">${i+1}</span>
+      <span>
+        <span class="sym">${esc(c.symbol)}${(c.micro&&c.micro!=="tumour cell")?` <span class="chip bad" style="margin-left:4px">${esc(c.micro.split(" ")[0])}</span>`:""}</span>
+        <span class="meta">${esc(c.tier)} · median S ${c.S_median.toFixed(2)} · worst ${esc(c.worst_tissue)}</span>
+      </span>
+      <span class="score">${c.n_types}<small>cancer types</small></span>
+    </button>`).join("");
+  host.querySelectorAll(".row").forEach(b=>{
+    b.onclick=()=>{ st.i=+b.dataset.i;
+      host.querySelectorAll(".row").forEach(x=>x.setAttribute("aria-current",x===b));
+      detail(D.pan[st.i], dh);
+      const extra=document.createElement("div");
+      extra.className="sec"; extra.style.padding="0 19px 17px";
+      extra.innerHTML=`<h3>Passes in ${D.pan[st.i].n_types} cancer types</h3>
+        <div style="font-size:12.5px;color:var(--ink-2);line-height:1.6">${D.pan[st.i].types.map(esc).join(" · ")}</div>
+        <div style="font-size:12px;color:var(--ink-3);margin-top:7px">score S ranges ${D.pan[st.i].S_min.toFixed(2)} to ${D.pan[st.i].S_max!=null?D.pan[st.i].S.toFixed(2):"—"} across them</div>`;
+      dh.querySelector(".d-body").appendChild(extra);
+    };
+  });
+  host.querySelector(".row").click();
+}
+renderPan();
+
 /* ---- global ---- */
 const globalList = D.top10.concat(D.reserve);
 renderList(globalList, document.getElementById("listB"), document.getElementById("detailB"), {i:0});
@@ -505,7 +575,7 @@ document.getElementById("method").innerHTML = `
 document.querySelectorAll("nav.tabs button").forEach(b=>{
   b.onclick = () => {
     document.querySelectorAll("nav.tabs button").forEach(x=>x.setAttribute("aria-selected", x===b));
-    ["bycancer","global","method"].forEach(t=>
+    ["bycancer","global","pan","method"].forEach(t=>
       document.getElementById("tab-"+t).classList.toggle("hidden", t!==b.dataset.tab));
   };
 });

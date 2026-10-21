@@ -1,0 +1,14 @@
+checking 296 candidate x cancer-type pairs across 30 cancer types
+  25/296
+  50/296
+  75/296
+  100/296
+  125/296
+  150/296
+  175/296
+  200/296
+  225/296
+  250/296
+  275/296
+
+wrote results/step8_literature.csv and step8_redflags.csv

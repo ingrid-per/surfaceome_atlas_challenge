@@ -1,0 +1,297 @@
+symbol,cancer_type,S,n_flags,flags
+OR2I1,Kidney Clear Cell Carcinoma,1.9596066433685304,4,short exposed region (38 aa); heterogeneous (52% of tumours); few normal samples; olfactory receptor family - 7TM with small loops
+HILPDA,Kidney Clear Cell Carcinoma,0.9784693174065042,4,short exposed region (31 aa); no plasma-membrane evidence; only one source calls it transmembrane; few normal samples
+SMIM34,Kidney Chromophobe,0.6563027043914813,4,short exposed region (48 aa); no plasma-membrane evidence; heterogeneous (52% of tumours); few normal samples
+GXYLT2,Sarcoma,-0.1676165956085187,4,no plasma-membrane evidence; only one source calls it transmembrane; heterogeneous (57% of tumours); comparator is a different organ
+LIM2,Testicular Germ Cell Tumor,3.343357899278844,3,short exposed region (42 aa); no plasma-membrane evidence; heterogeneous (55% of tumours)
+OR2I1,Liver Hepatocellular Carcinoma,3.1274138433685303,3,short exposed region (38 aa); heterogeneous (70% of tumours); olfactory receptor family - 7TM with small loops
+OR2I1,Diffuse Large B-Cell Lymphoma,2.9072598433685304,3,short exposed region (38 aa); comparator is a different organ; olfactory receptor family - 7TM with small loops
+QRFPR,Kidney Clear Cell Carcinoma,2.4590578486480714,3,short exposed region (46 aa); heterogeneous (46% of tumours); few normal samples
+TM4SF1,Mesothelioma,1.8317989726442845,3,short exposed region (48 aa); no plasma-membrane evidence; comparator is a different organ
+OR2I1,Stomach Adenocarcinoma,1.7256290433685302,3,short exposed region (38 aa); heterogeneous (48% of tumours); olfactory receptor family - 7TM with small loops
+OXGR1,Kidney Chromophobe,1.702655981443777,3,short exposed region (34 aa); heterogeneous (56% of tumours); few normal samples
+OR2I1,Pancreatic Adenocarcinoma,1.6844174433685302,3,short exposed region (38 aa); heterogeneous (45% of tumours); olfactory receptor family - 7TM with small loops
+TMEM255A,Kidney Chromophobe,1.3561655990386337,3,no plasma-membrane evidence; heterogeneous (70% of tumours); few normal samples
+OR51E1,Prostate Adenocarcinoma,1.1009355000000005,3,short exposed region (32 aa); heterogeneous (60% of tumours); olfactory receptor family - 7TM with small loops
+STEAP1B,Skin Cutaneous Melanoma,0.7423209196472169,3,short exposed region (31 aa); no plasma-membrane evidence; heterogeneous (49% of tumours)
+KRTCAP3,Cervical & Endocervical Cancer,0.4884414744873044,3,short exposed region (46 aa); no plasma-membrane evidence; few normal samples
+TNFSF9,Kidney Papillary Cell Carcinoma,0.3018663117095945,3,no plasma-membrane evidence; heterogeneous (22% of tumours); few normal samples
+OR2I1,Cholangiocarcinoma,4.97520884336853,2,short exposed region (38 aa); olfactory receptor family - 7TM with small loops
+UPK3B,Mesothelioma,3.9803469586486817,2,only one source calls it transmembrane; comparator is a different organ
+DBH,Pheochromocytoma & Paraganglioma,3.4684417401934375,2,no plasma-membrane evidence; only one source calls it transmembrane
+GPR143,Uveal Melanoma,3.3291290912815814,2,short exposed region (28 aa); comparator is a different organ
+OR51E2,Prostate Adenocarcinoma,2.86411324248857,2,short exposed region (32 aa); olfactory receptor family - 7TM with small loops
+TMEM200C,Uveal Melanoma,2.5185595842895507,2,no plasma-membrane evidence; comparator is a different organ
+SEMA5B,Kidney Clear Cell Carcinoma,2.3911583461578365,2,no plasma-membrane evidence; few normal samples
+LRRN4,Mesothelioma,1.9503899927238937,2,no plasma-membrane evidence; comparator is a different organ
+GPRC6A,Kidney Chromophobe,1.8781882536370231,2,heterogeneous (35% of tumours); few normal samples
+ELFN1,Uveal Melanoma,1.825137581443777,2,no plasma-membrane evidence; comparator is a different organ
+FNDC10,Uveal Melanoma,1.739937151672363,2,no plasma-membrane evidence; comparator is a different organ
+BTBD17,Brain Lower Grade Glioma,1.5591590920027376,2,no plasma-membrane evidence; only one source calls it transmembrane
+SLC7A5,Uveal Melanoma,1.5134659432501485,2,short exposed region (28 aa); comparator is a different organ
+LRRN4CL,Uveal Melanoma,1.4791106752502443,2,no plasma-membrane evidence; comparator is a different organ
+PROCR,Mesothelioma,1.4607472489562987,2,no plasma-membrane evidence; comparator is a different organ
+ULBP2,Cervical & Endocervical Cancer,1.4281910335845946,2,heterogeneous (57% of tumours); few normal samples
+ABCB5,Uveal Melanoma,1.2814114631998077,2,short exposed region (41 aa); comparator is a different organ
+SLC45A3,Prostate Adenocarcinoma,1.1726882014103133,2,short exposed region (33 aa); no plasma-membrane evidence
+UGT2A3,Kidney Clear Cell Carcinoma,1.1421422509155272,2,no plasma-membrane evidence; few normal samples
+LRRN4,Kidney Papillary Cell Carcinoma,1.0504135927238938,2,no plasma-membrane evidence; few normal samples
+CD70,Mesothelioma,1.033956972108602,2,heterogeneous (43% of tumours); comparator is a different organ
+SLC16A11,Kidney Chromophobe,1.0042476748046871,2,short exposed region (21 aa); few normal samples
+CD276,Sarcoma,0.9731774256713868,2,no plasma-membrane evidence; comparator is a different organ
+UGT2A3,Kidney Papillary Cell Carcinoma,0.9349982509155276,2,no plasma-membrane evidence; few normal samples
+THSD7A,Kidney Chromophobe,0.8624868184326173,2,heterogeneous (70% of tumours); few normal samples
+LGALS3BP,Skin Cutaneous Melanoma,0.7950192710569013,2,no plasma-membrane evidence; only one source calls it transmembrane
+CD70,Kidney Papillary Cell Carcinoma,0.7876037721086018,2,heterogeneous (38% of tumours); few normal samples
+PTPRF,Mesothelioma,0.7804885456934842,2,no plasma-membrane evidence; comparator is a different organ
+SCAMP3,Cholangiocarcinoma,0.7690972448120119,2,short exposed region (20 aa); no plasma-membrane evidence
+GPX8,Mesothelioma,0.7412889073940399,2,only one source calls it transmembrane; comparator is a different organ
+UPK1B,Mesothelioma,0.7297967944475392,2,no plasma-membrane evidence; comparator is a different organ
+KRTCAP3,Cholangiocarcinoma,0.6830072744873048,2,short exposed region (46 aa); no plasma-membrane evidence
+LHFPL3,Glioblastoma Multiforme,0.6057657500509981,2,no plasma-membrane evidence; heterogeneous (69% of tumours)
+TMEM140,Kidney Papillary Cell Carcinoma,0.605408688891969,2,no plasma-membrane evidence; few normal samples
+TM4SF1,Cholangiocarcinoma,0.5902699726442844,2,short exposed region (48 aa); no plasma-membrane evidence
+GPR87,Cervical & Endocervical Cancer,0.53263268762207,2,short exposed region (47 aa); few normal samples
+TM4SF1,Pancreatic Adenocarcinoma,0.4439529726442845,2,short exposed region (48 aa); no plasma-membrane evidence
+GPX8,Sarcoma,0.3582477073940397,2,only one source calls it transmembrane; comparator is a different organ
+LGALS3BP,Esophageal Carcinoma,0.334732271056902,2,no plasma-membrane evidence; only one source calls it transmembrane
+LGALS3BP,Stomach Adenocarcinoma,0.3106722710569016,2,no plasma-membrane evidence; only one source calls it transmembrane
+KRTCAP3,Uterine Corpus Endometrioid Carcinoma,0.2930149744873045,2,short exposed region (46 aa); no plasma-membrane evidence
+TMEM92,Pancreatic Adenocarcinoma,0.2582460706662894,2,short exposed region (31 aa); no plasma-membrane evidence
+HEPHL1,Head & Neck Squamous Cell Carcinoma,0.1991088748077527,2,no plasma-membrane evidence; heterogeneous (50% of tumours)
+EMP3,Sarcoma,0.1298176451965922,2,short exposed region (40 aa); comparator is a different organ
+KREMEN2,Uterine Carcinosarcoma,0.092457453637023,2,no plasma-membrane evidence; heterogeneous (32% of tumours)
+MRC2,Sarcoma,0.087638592498779,2,no plasma-membrane evidence; comparator is a different organ
+TLCD1,Cervical & Endocervical Cancer,0.0720625713500977,2,short exposed region (29 aa); few normal samples
+TMEM92,Lung Adenocarcinoma,0.0234352706662894,2,short exposed region (31 aa); no plasma-membrane evidence
+FZD2,Sarcoma,-0.415043971511841,2,heterogeneous (43% of tumours); comparator is a different organ
+TM4SF1,Liver Hepatocellular Carcinoma,-2.653974027355715,2,short exposed region (48 aa); no plasma-membrane evidence
+TSPAN10,Uveal Melanoma,6.198941912971496,1,comparator is a different organ
+DCSTAMP,Thyroid Carcinoma,4.3224513223846435,1,heterogeneous (66% of tumours)
+CLDN6,Ovarian Serous Cystadenocarcinoma,4.178835369991303,1,heterogeneous (67% of tumours)
+TRPM1,Uveal Melanoma,4.081555172829759,1,comparator is a different organ
+CD70,Kidney Clear Cell Carcinoma,3.6480960721086015,1,few normal samples
+KLRG2,Testicular Germ Cell Tumor,2.6473606314086915,1,no plasma-membrane evidence
+CD70,Diffuse Large B-Cell Lymphoma,2.5601033721086015,1,comparator is a different organ
+TPBGL,Pheochromocytoma & Paraganglioma,2.352993098205566,1,no plasma-membrane evidence
+CLDN6,Uterine Carcinosarcoma,2.3341302699913027,1,heterogeneous (46% of tumours)
+GPR143,Skin Cutaneous Melanoma,2.333977091281582,1,short exposed region (28 aa)
+CLCNKB,Kidney Chromophobe,2.24369039819336,1,few normal samples
+SLC18A2,Pheochromocytoma & Paraganglioma,2.2151587519790787,1,no plasma-membrane evidence
+LILRB4,Diffuse Large B-Cell Lymphoma,2.1075440724487304,1,comparator is a different organ
+LY6G6D,Colon Adenocarcinoma,2.039672936007345,1,heterogeneous (59% of tumours)
+HAVCR1,Kidney Papillary Cell Carcinoma,2.0050462043914816,1,few normal samples
+DLK1,Pheochromocytoma & Paraganglioma,1.985808049451661,1,no plasma-membrane evidence
+PTCHD4,Thyroid Carcinoma,1.892101726387787,1,heterogeneous (27% of tumours)
+ATP6V0A4,Kidney Chromophobe,1.842035186428612,1,few normal samples
+LHFPL3,Brain Lower Grade Glioma,1.8143067500509984,1,no plasma-membrane evidence
+HAVCR1,Kidney Clear Cell Carcinoma,1.8140764043914812,1,few normal samples
+CRB2,Mesothelioma,1.7641447845004872,1,comparator is a different organ
+LY6G6F,Rectum Adenocarcinoma,1.7133033669799804,1,heterogeneous (60% of tumours)
+CDH6,Kidney Papillary Cell Carcinoma,1.7099499260681157,1,few normal samples
+SLC3A2,Uveal Melanoma,1.6953469199681006,1,comparator is a different organ
+CDH6,Kidney Clear Cell Carcinoma,1.6903443260681152,1,few normal samples
+SLC6A3,Kidney Clear Cell Carcinoma,1.581538636065674,1,few normal samples
+CDH3,Cervical & Endocervical Cancer,1.5706531846008298,1,few normal samples
+ABCC4,Prostate Adenocarcinoma,1.5459198977444046,1,short exposed region (43 aa)
+TMEFF2,Prostate Adenocarcinoma,1.545756421616182,1,no plasma-membrane evidence
+LRRN1,Brain Lower Grade Glioma,1.5077958024133098,1,no plasma-membrane evidence
+TNFRSF12A,Kidney Papillary Cell Carcinoma,1.5002551647949218,1,few normal samples
+HLA-DPB1,Diffuse Large B-Cell Lymphoma,1.463030454528809,1,comparator is a different organ
+BACE2,Kidney Chromophobe,1.418434579180908,1,few normal samples
+GRIN2D,Stomach Adenocarcinoma,1.3136966223510744,1,heterogeneous (50% of tumours)
+ENPP3,Kidney Clear Cell Carcinoma,1.2906925573878167,1,few normal samples
+CD79B,Diffuse Large B-Cell Lymphoma,1.2855794584377138,1,comparator is a different organ
+TSPAN33,Diffuse Large B-Cell Lymphoma,1.1872029117187504,1,comparator is a different organ
+PCDHB9,Brain Lower Grade Glioma,1.1780377529158672,1,heterogeneous (54% of tumours)
+GRIN2D,Esophageal Carcinoma,1.169769722351074,1,heterogeneous (45% of tumours)
+HLA-DRA,Diffuse Large B-Cell Lymphoma,1.1502120888289458,1,comparator is a different organ
+GRIN2D,Colon Adenocarcinoma,1.114858422351074,1,heterogeneous (34% of tumours)
+CA12,Kidney Chromophobe,1.0743061587496603,1,few normal samples
+PHB2,Testicular Germ Cell Tumor,1.0585920633056425,1,only one source calls it transmembrane
+SRD5A3,Pancreatic Adenocarcinoma,1.03752931942749,1,short exposed region (26 aa)
+UPK3B,Ovarian Serous Cystadenocarcinoma,1.032699558648682,1,only one source calls it transmembrane
+MMP14,Sarcoma,1.022795646057128,1,comparator is a different organ
+CD40,Diffuse Large B-Cell Lymphoma,1.0210234321348572,1,comparator is a different organ
+HLA-DQA2,Diffuse Large B-Cell Lymphoma,1.0201201610717776,1,comparator is a different organ
+MET,Kidney Papillary Cell Carcinoma,1.0153859112056791,1,few normal samples
+IL12RB2,Skin Cutaneous Melanoma,0.99231869344505,1,heterogeneous (56% of tumours)
+IL21R,Diffuse Large B-Cell Lymphoma,0.9747760869066138,1,comparator is a different organ
+ADORA3,Glioblastoma Multiforme,0.9508075814437772,1,short exposed region (28 aa)
+VSIG10,Testicular Germ Cell Tumor,0.9424424054565428,1,no plasma-membrane evidence
+STEAP1,Prostate Adenocarcinoma,0.9023234743437136,1,short exposed region (35 aa)
+TMEM255A,Glioblastoma Multiforme,0.8928957990386337,1,no plasma-membrane evidence
+MSLN,Mesothelioma,0.8566623874465158,1,comparator is a different organ
+PCDHB9,Glioblastoma Multiforme,0.8480172529158669,1,heterogeneous (43% of tumours)
+GRIN2D,Rectum Adenocarcinoma,0.846313922351074,1,heterogeneous (25% of tumours)
+SRD5A3,Ovarian Serous Cystadenocarcinoma,0.8417640194274902,1,short exposed region (26 aa)
+SLC7A3,Testicular Germ Cell Tumor,0.840122552700235,1,short exposed region (42 aa)
+KCNK15,Ovarian Serous Cystadenocarcinoma,0.8161721230224606,1,no plasma-membrane evidence
+SLC39A1,Cholangiocarcinoma,0.7057367850341798,1,short exposed region (30 aa)
+SLC44A3,Cholangiocarcinoma,0.6990283287145509,1,no plasma-membrane evidence
+TLCD1,Prostate Adenocarcinoma,0.695469871350098,1,short exposed region (29 aa)
+IER3,Colon Adenocarcinoma,0.676999988677979,1,no plasma-membrane evidence
+LPAR5,Thyroid Carcinoma,0.6371993673217773,1,short exposed region (30 aa)
+TLCD1,Uterine Corpus Endometrioid Carcinoma,0.6118515713500976,1,short exposed region (29 aa)
+SRD5A3,Stomach Adenocarcinoma,0.5970139194274902,1,short exposed region (26 aa)
+TMEM218,Glioblastoma Multiforme,0.5894627485961914,1,short exposed region (23 aa)
+MUC16,Uterine Corpus Endometrioid Carcinoma,0.5652986000000002,1,heterogeneous (68% of tumours)
+F11R,Cervical & Endocervical Cancer,0.5368134747009279,1,few normal samples
+CRB3,Cholangiocarcinoma,0.5284585815795895,1,short exposed region (33 aa)
+FZD1,Kidney Papillary Cell Carcinoma,0.4728198408508302,1,few normal samples
+LY6K,Cervical & Endocervical Cancer,0.4251904041564938,1,few normal samples
+ATP13A3,Esophageal Carcinoma,0.3848247611328128,1,short exposed region (45 aa)
+LSR,Cervical & Endocervical Cancer,0.3697489467102599,1,few normal samples
+IGSF3,Lung Squamous Cell Carcinoma,0.3510419640502933,1,no plasma-membrane evidence
+F2RL2,Breast Invasive Carcinoma,0.3436072292584127,1,heterogeneous (45% of tumours)
+LAPTM4B,Testicular Germ Cell Tumor,0.2978515559831507,1,short exposed region (29 aa)
+SPINT2,Cervical & Endocervical Cancer,0.2205050923461922,1,few normal samples
+CD276,Head & Neck Squamous Cell Carcinoma,0.2204885256713868,1,no plasma-membrane evidence
+ENTPD1,Thyroid Carcinoma,0.2123825466308595,1,no plasma-membrane evidence
+CHRNA5,Lung Squamous Cell Carcinoma,0.1809496813627027,1,heterogeneous (15% of tumours)
+DDR1,Cervical & Endocervical Cancer,0.1753384172058103,1,few normal samples
+TLCD1,Breast Invasive Carcinoma,0.1243772713500979,1,short exposed region (29 aa)
+GPR87,Lung Squamous Cell Carcinoma,0.1038686876220706,1,short exposed region (47 aa)
+LRRC8E,Breast Invasive Carcinoma,0.098997616156006,1,heterogeneous (44% of tumours)
+SDC1,Lung Squamous Cell Carcinoma,0.069065469848633,1,no plasma-membrane evidence
+SLC2A1,Head & Neck Squamous Cell Carcinoma,0.0181726102294916,1,short exposed region (33 aa)
+GPX8,Adrenocortical Cancer,-0.03522549260596,1,only one source calls it transmembrane
+GPRC5A,Stomach Adenocarcinoma,-0.0506190634587504,1,short exposed region (33 aa)
+NETO2,Head & Neck Squamous Cell Carcinoma,-0.0900144271702423,1,no plasma-membrane evidence
+CD276,Esophageal Carcinoma,-0.1052888743286128,1,no plasma-membrane evidence
+SERINC2,Uterine Corpus Endometrioid Carcinoma,-0.1325530829605261,1,short exposed region (34 aa)
+IGSF3,Breast Invasive Carcinoma,-0.1333360359497071,1,no plasma-membrane evidence
+TLCD1,Uterine Carcinosarcoma,-0.142314428649902,1,short exposed region (29 aa)
+LAPTM4B,Uterine Corpus Endometrioid Carcinoma,-0.153516844016849,1,short exposed region (29 aa)
+LAPTM4B,Uterine Carcinosarcoma,-0.1616725440168496,1,short exposed region (29 aa)
+XPR1,Esophageal Carcinoma,-0.224962059534886,1,short exposed region (31 aa)
+CKAP4,Sarcoma,-0.2273289007211563,1,comparator is a different organ
+SERINC2,Lung Adenocarcinoma,-0.3582830829605266,1,short exposed region (34 aa)
+MAL2,Lung Adenocarcinoma,-0.3663618300548661,1,short exposed region (24 aa)
+ST14,Lung Adenocarcinoma,-0.5237781939307382,1,no plasma-membrane evidence
+IGSF9,Uterine Carcinosarcoma,-0.5821543465286956,1,heterogeneous (63% of tumours)
+HS6ST2,Lung Adenocarcinoma,-0.6741697832272551,1,heterogeneous (46% of tumours)
+FAP,Sarcoma,-0.8411731226806642,1,comparator is a different organ
+PTK7,Sarcoma,-0.936196811999512,1,comparator is a different organ
+TM4SF4,Liver Hepatocellular Carcinoma,-1.0448161381396286,1,short exposed region (46 aa)
+ROBO1,Liver Hepatocellular Carcinoma,-1.266455655279541,1,heterogeneous (47% of tumours)
+ZACN,Adrenocortical Cancer,-2.4136883865234373,1,heterogeneous (51% of tumours)
+KCNH2,Adrenocortical Cancer,-2.4234261269226076,1,heterogeneous (56% of tumours)
+LAPTM4B,Liver Hepatocellular Carcinoma,-2.5623903440168494,1,short exposed region (29 aa)
+SYP,Adrenocortical Cancer,-3.081281198168945,1,no plasma-membrane evidence
+APLP1,Adrenocortical Cancer,-6.7237877484741215,1,heterogeneous (56% of tumours)
+CLDN6,Testicular Germ Cell Tumor,6.398590469991302,0,
+ALPG,Testicular Germ Cell Tumor,4.706156981443778,0,
+TSPAN10,Skin Cutaneous Melanoma,4.055276912971497,0,
+LY6G6D,Rectum Adenocarcinoma,3.7996595360073457,0,
+NTRK1,Pheochromocytoma & Paraganglioma,2.615677581443777,0,
+TRPM1,Skin Cutaneous Melanoma,2.5530105728297587,0,
+RET,Pheochromocytoma & Paraganglioma,2.5195917754309862,0,
+SLC6A2,Pheochromocytoma & Paraganglioma,2.507486770110436,0,
+MUC16,Ovarian Serous Cystadenocarcinoma,2.438909,0,
+CDH3,Head & Neck Squamous Cell Carcinoma,2.4031151846008303,0,
+CHRNA3,Pheochromocytoma & Paraganglioma,2.23080232475676,0,
+NKAIN4,Brain Lower Grade Glioma,2.2181582209228514,0,
+DLL3,Brain Lower Grade Glioma,2.2129077746664363,0,
+SLC10A4,Pheochromocytoma & Paraganglioma,2.1007187000335694,0,
+PRLHR,Pheochromocytoma & Paraganglioma,2.1006607949371334,0,
+LY6E,Ovarian Serous Cystadenocarcinoma,2.0731007445767453,0,
+RNF43,Rectum Adenocarcinoma,1.979581472829758,0,
+LRRC15,Breast Invasive Carcinoma,1.953835572829758,0,
+ULBP2,Head & Neck Squamous Cell Carcinoma,1.9096167335845944,0,
+RNF43,Colon Adenocarcinoma,1.906834672829758,0,
+PLPPR1,Brain Lower Grade Glioma,1.8598561820678707,0,
+KLRC2,Brain Lower Grade Glioma,1.780350605112638,0,
+PTPRZ1,Glioblastoma Multiforme,1.746264016527049,0,
+DDR1,Brain Lower Grade Glioma,1.6215594172058108,0,
+CEACAM6,Rectum Adenocarcinoma,1.5793486970496495,0,
+PTPRZ1,Brain Lower Grade Glioma,1.468368016527049,0,
+EPHB2,Rectum Adenocarcinoma,1.3686553067904184,0,
+LYPD1,Ovarian Serous Cystadenocarcinoma,1.348786079280308,0,
+EPHB2,Colon Adenocarcinoma,1.334105606790418,0,
+BACE2,Skin Cutaneous Melanoma,1.322070079180908,0,
+BCAM,Ovarian Serous Cystadenocarcinoma,1.3011387043457034,0,
+DDR1,Glioblastoma Multiforme,1.23786141720581,0,
+CD63,Skin Cutaneous Melanoma,1.234957124531011,0,
+CLDN3,Ovarian Serous Cystadenocarcinoma,1.232351051544189,0,
+LY6E,Skin Cutaneous Melanoma,1.2285587445767463,0,
+FZD2,Uterine Carcinosarcoma,1.1795814284881594,0,
+CANT1,Prostate Adenocarcinoma,1.162146841767413,0,
+TREM2,Glioblastoma Multiforme,1.0830491342785695,0,
+TRPV2,Skin Cutaneous Melanoma,1.0603890306335453,0,
+CEACAM5,Rectum Adenocarcinoma,1.0452307971903316,0,
+MET,Thyroid Carcinoma,1.0234879112056792,0,
+LYPD1,Glioblastoma Multiforme,1.005871579280308,0,
+NKAIN4,Glioblastoma Multiforme,1.005247120922852,0,
+PLPP2,Cholangiocarcinoma,0.9880050050818356,0,
+TNFRSF12A,Cholangiocarcinoma,0.9877385647949222,0,
+CEACAM6,Pancreatic Adenocarcinoma,0.9514696970496496,0,
+CDH3,Lung Squamous Cell Carcinoma,0.8885891846008303,0,
+SLC39A6,Breast Invasive Carcinoma,0.8720438903451235,0,
+PIGX,Lung Squamous Cell Carcinoma,0.8619196628064802,0,
+TNFRSF12A,Thyroid Carcinoma,0.827320164794922,0,
+CEACAM6,Colon Adenocarcinoma,0.8121496970496498,0,
+LSR,Stomach Adenocarcinoma,0.7573583467102596,0,
+MSLN,Ovarian Serous Cystadenocarcinoma,0.7365253874465143,0,
+LSR,Pancreatic Adenocarcinoma,0.7341193467102594,0,
+CRIPTO,Rectum Adenocarcinoma,0.7076237373880376,0,
+LY6E,Testicular Germ Cell Tumor,0.7069487445767457,0,
+TRPM8,Prostate Adenocarcinoma,0.7031332668516139,0,
+CEACAM5,Colon Adenocarcinoma,0.6993367971903304,0,
+TSPAN1,Prostate Adenocarcinoma,0.6568718077835545,0,
+LY6E,Pancreatic Adenocarcinoma,0.6261967445767453,0,
+GGT1,Cholangiocarcinoma,0.6032920620853233,0,
+FAT1,Esophageal Carcinoma,0.5444257373880372,0,
+NOX1,Rectum Adenocarcinoma,0.4896115800014646,0,
+LY6E,Stomach Adenocarcinoma,0.4728047445767451,0,
+PTPRK,Esophageal Carcinoma,0.4547627811224934,0,
+NECTIN2,Pancreatic Adenocarcinoma,0.4281057821588252,0,
+CELSR1,Breast Invasive Carcinoma,0.413216554192461,0,
+EPHB4,Testicular Germ Cell Tumor,0.3962371744995119,0,
+DDR1,Lung Squamous Cell Carcinoma,0.3523507172058107,0,
+LSR,Lung Squamous Cell Carcinoma,0.3391889467102595,0,
+LSR,Lung Adenocarcinoma,0.3069938467102595,0,
+PCDH1,Pancreatic Adenocarcinoma,0.2950077197998046,0,
+SLC12A2,Colon Adenocarcinoma,0.2936240680001916,0,
+TNFRSF12A,Pancreatic Adenocarcinoma,0.2837401647949216,0,
+F11R,Stomach Adenocarcinoma,0.2621644747009277,0,
+SPINT2,Uterine Corpus Endometrioid Carcinoma,0.2621450923461914,0,
+ADAM10,Stomach Adenocarcinoma,0.2541789641784664,0,
+EFNA4,Uterine Carcinosarcoma,0.2362394145141602,0,
+LGR5,Rectum Adenocarcinoma,0.2302076706662896,0,
+SDC4,Thyroid Carcinoma,0.1696421390765241,0,
+CDH3,Thyroid Carcinoma,0.1506466846008303,0,
+PLPP2,Uterine Corpus Endometrioid Carcinoma,0.1111395050818355,0,
+TGFA,Thyroid Carcinoma,0.0607538102252753,0,
+SPINT2,Breast Invasive Carcinoma,0.052263092346191,0,
+TMPRSS4,Lung Squamous Cell Carcinoma,0.051980486663818,0,
+SLC6A8,Lung Squamous Cell Carcinoma,0.0515950107076976,0,
+LSR,Uterine Corpus Endometrioid Carcinoma,0.0473240467102593,0,
+CLDN3,Uterine Corpus Endometrioid Carcinoma,0.0450550515441898,0,
+TMC5,Stomach Adenocarcinoma,0.0100853792803086,0,
+TNFRSF12A,Head & Neck Squamous Cell Carcinoma,-0.011557135205078,0,
+CLDN4,Lung Adenocarcinoma,-0.0124883403869979,0,
+TNFRSF12A,Adrenocortical Cancer,-0.0234108352050776,0,
+CRIPTO,Colon Adenocarcinoma,-0.0359970626119627,0,
+HLA-A,Head & Neck Squamous Cell Carcinoma,-0.0614517279052737,0,
+ITGA6,Head & Neck Squamous Cell Carcinoma,-0.0625900919799802,0,
+ERBB3,Breast Invasive Carcinoma,-0.0877600068725588,0,
+LY6K,Head & Neck Squamous Cell Carcinoma,-0.1014848958435061,0,
+LRP5,Esophageal Carcinoma,-0.1238714169449659,0,
+CDH3,Colon Adenocarcinoma,-0.1591153153991698,0,
+CELSR1,Uterine Corpus Endometrioid Carcinoma,-0.1902550458075396,0,
+CANT1,Breast Invasive Carcinoma,-0.2026460582325873,0,
+PLPP2,Lung Adenocarcinoma,-0.2334444949181646,0,
+ITGB4,Esophageal Carcinoma,-0.2369153171386724,0,
+ANO1,Esophageal Carcinoma,-0.2583794421874996,0,
+LRP4,Thyroid Carcinoma,-0.2640157937622067,0,
+MET,Lung Adenocarcinoma,-0.3642078887943203,0,
+CDH3,Lung Adenocarcinoma,-0.4070308153991702,0,
+ITM2C,Uterine Carcinosarcoma,-0.4403374640054593,0,
+STRA6,Uterine Carcinosarcoma,-0.6678085645385741,0,
+SLC39A4,Uterine Carcinosarcoma,-0.7315960758056637,0,
+HLA-A,Liver Hepatocellular Carcinoma,-0.8455637279052741,0,
+GPC3,Liver Hepatocellular Carcinoma,-2.1113248786769834,0,
+HLA-DPB1,Liver Hepatocellular Carcinoma,-2.5238705454711914,0,
+CD74,Liver Hepatocellular Carcinoma,-2.7049797718845667,0,
+HLA-DRA,Liver Hepatocellular Carcinoma,-2.7957494111710544,0,
