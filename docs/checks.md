@@ -33,6 +33,7 @@ step scripts listed below.
 | 3.8 | 3 | Every GPI call records its source | `python src/step3_check.py` | 0 GPI calls without `gpi_source`; predictor-only count reported (D22) |
 | 3.9 | 3 | Predictor gaps flagged, never silently negative | `python src/step3_check.py` | No protein reaches S1 without a prediction |
 | 3.10 | 3 | Compartment filter applied and reported (D31) | `python src/step3_build_candidates.py` | Internal-membrane-only candidates excluded with evidence; unannotated kept |
+| 3.11 | 3 | A curated GPI anchor is not overridden by a predicted TM helix (D32) | `python src/step3_check.py` | Every curated-GPI protein with no UniProt TM is S3; CEACAM5, CD48, FCGR3B, TNFRSF10C, ART1 named explicitly |
 
 ## Pending — owned by later steps
 

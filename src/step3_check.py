@@ -137,6 +137,27 @@ def main() -> int:
     if len(missing_src):
         failures.append(f"{len(missing_src)} GPI calls carry no source (D22)")
 
+    # 3.10 D32: a curated GPI anchor must not be overridden by a predicted TM
+    # helix. This is the CEACAM5 regression — it sat in S2 on a predicted helix
+    # UniProt does not annotate, which is the classic GPI-signal-as-TM error.
+    checks += 1
+    gpi_pred_only = df[df.gpi_any & (df.n_tm_segments == 0)]
+    wrong = gpi_pred_only[gpi_pred_only.tier != "S3"]
+    print(f"3.10 curated-GPI, no UniProt TM -> must be S3: "
+          f"{len(gpi_pred_only)} proteins, {len(wrong)} misrouted")
+    if len(wrong):
+        failures.append(
+            f"{len(wrong)} curated-GPI proteins not in S3 "
+            f"(e.g. {list(wrong.symbol.head(5))}) — a predicted TM helix is "
+            "overriding a curated anchor (D32)")
+    for sym in ["CEACAM5", "CD48", "FCGR3B", "TNFRSF10C", "ART1"]:
+        checks += 1
+        r = df[df.symbol == sym]
+        if r.empty or r.iloc[0].tier != "S3":
+            failures.append(
+                f"{sym} must be S3 (curated GPI, no UniProt TM) — got "
+                f"{r.iloc[0].tier if not r.empty else 'absent'}")
+
     # 3.9 predictor coverage, or every gap flagged
     checks += 1
     miss = int(df.predictor_missing.sum())

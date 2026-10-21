@@ -153,18 +153,26 @@ def main() -> int:
     df["length_unknown"] = (df.extracellular_source == "none") & (df.tm_sources > 0)
     long_enough = df["longest_extracellular"] >= args.min_extracellular
 
+    # D32: a curated GPI anchor outranks a predictor-ONLY transmembrane call.
+    # The C-terminal GPI attachment signal is a hydrophobic stretch, and reading
+    # it as a TM helix is a documented failure of TM predictors — it is why the
+    # runbook insisted on a separate GPI route. Without this, CEACAM5 (a
+    # GPI-anchored ADC target) lands in S2 on a predicted helix UniProt does not
+    # annotate. Where UniProt ITSELF annotates a TM alongside the GPI anchor
+    # (BST2, RAET1G), that is real dual anchoring and the TM tier stands.
+    gpi_beats_tm = df.gpi_curated & (df.n_tm_segments == 0)
+
     df["tier"] = np.select(
         [
+            df.gpi_any & gpi_beats_tm,
             (df.tm_sources == 2) & long_enough,
             (df.tm_sources == 1) & long_enough,
             df.gpi_any & (df.tm_sources == 0),
             (df.tm_sources >= 1) & ~long_enough,
         ],
-        ["S1", "S2", "S3", "Flagged"],
+        ["S3", "S1", "S2", "S3", "Flagged"],
         default="-",
     )
-    # A GPI protein that also crosses the membrane keeps its TM tier; the GPI
-    # flag still travels with it.
     df["is_candidate"] = df.tier.isin(["S1", "S2", "S3", "Flagged"])
 
     # D21, enforced rather than left to emerge: S1 means two independent
@@ -190,7 +198,10 @@ def main() -> int:
     # Excluded only on POSITIVE evidence of being unreachable. A protein with no
     # compartment annotation is kept: dropping it would penalise it for being
     # under-studied, which is where a novel target is most likely to be.
-    excluded = (df.compartment == "internal_only") & df.is_candidate
+    # D32: a curated cell-surface GPI protein is not excluded by compartment
+    # text that happens to mention an internal membrane (this was dropping ART1).
+    excluded = ((df.compartment == "internal_only") & df.is_candidate
+                & ~df.gpi_curated)
     df.loc[excluded, "tier"] = "internal"
     df.loc[excluded, "is_candidate"] = False
     n_internal = int(excluded.sum())
