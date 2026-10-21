@@ -68,12 +68,36 @@ def main() -> int:
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(html)
 
+    # A second, STANDALONE copy with a real document shell.
+    #
+    # The published artifact is wrapped in <!doctype><head><body> at publish
+    # time, so the file above must NOT carry those tags. But that makes it an
+    # HTML fragment: opened straight from disk or sent as an attachment it has
+    # no <meta viewport>, so phones assume a ~980px screen, never fire the
+    # responsive breakpoints, and render the whole page zoomed out. This copy
+    # is the one to download, email or open locally.
+    standalone = (
+        "<!doctype html>\n<html lang=\"en\">\n<head>\n"
+        "<meta charset=\"utf-8\">\n"
+        "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n"
+        + html.replace("<header class=\"top\">",
+                       "</head>\n<body>\n<header class=\"top\">", 1)
+        + "\n</body>\n</html>\n"
+    )
+    assert "</head>" in standalone and "<body>" in standalone, \
+        "could not place the document shell — did the header markup change?"
+    assert standalone.count("<!doctype html>") == 1
+    sa = out.with_name(out.stem + "_standalone" + out.suffix)
+    sa.write_text(standalone)
+
     d = json.loads(data)
     print(f"built {out.relative_to(ROOT) if out.is_relative_to(ROOT) else out}"
           f"  ({len(html)/1024:.0f} KB)")
     print(f"  tabs            : {' '.join(sorted(tabs))}")
     print(f"  robustness runs : {d['robust']['n_runs']}")
     print(f"  genes charted   : {len(d['robust']['symbols'])}")
+    print(f"  standalone copy : {sa.relative_to(ROOT)}  "
+          f"({len(standalone)/1024:.0f} KB, opens on a phone)")
     return 0
 
 

@@ -80,7 +80,42 @@ nav.tabs button[aria-selected="true"]{color:var(--accent);border-bottom-color:va
 /* ---------- two-pane ---------- */
 .panes{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);
   gap:22px;margin-top:22px;align-items:start}
-@media (max-width:1040px){.panes{grid-template-columns:1fr}}
+.panes-even{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+@media (max-width:1040px){.panes,.panes-even{grid-template-columns:1fr}}
+
+/* ---------- narrow screens ----------
+   Phones report a ~390px viewport. Everything below is laid out in two or
+   three columns at desktop width and has to collapse to one, and the sticky
+   header has to stop eating the screen. */
+@media (max-width:720px){
+  body{font-size:14px}
+  .wrap{padding:0 13px 48px}
+  .top-in{padding:14px 13px 0;gap:11px}
+  .brand h1{font-size:17px}
+  .brand p{font-size:12.5px}
+  header.top{position:static}          /* a sticky header costs too much height */
+  .stat-row{gap:16px}
+  .stat .k{font-size:16px}
+  nav.tabs{padding:10px 13px 0;overflow-x:auto;gap:1px;
+    scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  nav.tabs::-webkit-scrollbar{display:none}
+  nav.tabs button{padding:8px 11px;font-size:12.5px;white-space:nowrap;flex:0 0 auto}
+  .card-h{flex-wrap:wrap;gap:7px;padding:11px 13px}
+  .rank-by{padding:7px 13px}
+  .row{grid-template-columns:20px 1fr auto;gap:8px;padding:9px 13px}
+  .d-head,.d-body{padding-left:13px;padding-right:13px}
+  .kv{grid-template-columns:1fr;gap:1px 0}
+  .kv dt{color:var(--ink-3);margin-top:7px}
+  .lab-links{grid-template-columns:1fr}
+  .knob{grid-template-columns:1fr;gap:7px}
+  .knobs{padding:13px}
+  .rb-head{padding:11px 13px}
+  .sbars,.sens{padding-left:13px;padding-right:13px}
+  .sbar{grid-template-columns:62px minmax(0,1fr) 34px;gap:7px}
+  .bar{grid-template-columns:1fr 46px;gap:7px}
+  .d-chips{gap:4px}
+  .chip{font-size:10.5px}
+}
 
 .card{background:var(--surface);border:1px solid var(--line);border-radius:10px;
   box-shadow:var(--shadow)}
@@ -394,7 +429,7 @@ table.fun td.b{width:46%}
   </section>
 
   <section id="tab-method" class="hidden">
-    <div class="panes" style="grid-template-columns:minmax(0,1fr) minmax(0,1fr)">
+    <div class="panes panes-even">
       <div class="card">
         <div class="card-h"><h2>Funnel</h2><span class="sub">what survived each stage</span></div>
         <div style="padding:13px 16px" class="scroll-x"><table class="fun" id="funnel"></table></div>
