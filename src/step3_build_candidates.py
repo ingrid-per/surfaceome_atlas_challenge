@@ -46,6 +46,31 @@ MIN_EXTRA_DEFAULT = 20   # D20; a parameter, never hard-coded into the tiers
 NOT_APPLICABLE = "not_applicable"
 
 
+# D31. A topology predictor says "outside" relative to whichever membrane the
+# protein sits in, not relative to the cell. For a mitochondrial protein
+# "outside" is the intermembrane space, which no drug reaches. These patterns
+# identify compartment claims in UniProt's subcellular-location text.
+PLASMA_PAT = r"cell membrane|plasma membrane|cell surface"
+INTERNAL_PAT = (r"mitochondri|endoplasmic reticulum|golgi|lysosom|peroxisom|"
+                r"nuclear membrane|endosom|sarcoplasmic|melanosom|vacuol|"
+                r"autophagosom|phagosom")
+
+
+def hpa_plasma_membrane_genes() -> set[str]:
+    """Ensembl genes HPA places on the plasma membrane — the independent second
+    opinion on compartment (resource H4, downloaded in Step 1 for this)."""
+    import io
+    import zipfile
+    path = RAW / "subcellular_location.tsv.zip"
+    if not path.exists():
+        return set()
+    with zipfile.ZipFile(path) as z, z.open(z.namelist()[0]) as fh:
+        hpa = pd.read_csv(io.TextIOWrapper(fh, encoding="utf8"), sep="\t")
+    cols = [c for c in hpa.columns if "location" in c.lower()]
+    text = hpa[cols].fillna("").agg(";".join, axis=1).str.lower()
+    return set(hpa.loc[text.str.contains("plasma membrane"), "Gene"])
+
+
 def load_netgpi() -> tuple[dict[str, bool], str]:
     """NetGPI output, if I has submitted it yet (D25).
 
@@ -149,6 +174,27 @@ def main() -> int:
     df.loc[impossible_s1, "tier"] = "S2"
     n_demoted = int(impossible_s1.sum())
 
+    # ---- D31: compartment filter ----
+    loc = df["subcellular_location"].fillna("").str.lower()
+    df["pm_uniprot"] = loc.str.contains(PLASMA_PAT, regex=True)
+    df["internal_uniprot"] = loc.str.contains(INTERNAL_PAT, regex=True)
+    pm_genes = hpa_plasma_membrane_genes()
+    df["pm_hpa"] = df["accession"].map(
+        gmap.drop_duplicates("accession").set_index("accession")["ensembl_gene"]
+    ).isin(pm_genes)
+    df["plasma_membrane_evidence"] = df.pm_uniprot | df.pm_hpa
+    df["compartment"] = np.select(
+        [df.plasma_membrane_evidence, df.internal_uniprot],
+        ["plasma_membrane", "internal_only"], default="unannotated")
+
+    # Excluded only on POSITIVE evidence of being unreachable. A protein with no
+    # compartment annotation is kept: dropping it would penalise it for being
+    # under-studied, which is where a novel target is most likely to be.
+    excluded = (df.compartment == "internal_only") & df.is_candidate
+    df.loc[excluded, "tier"] = "internal"
+    df.loc[excluded, "is_candidate"] = False
+    n_internal = int(excluded.sum())
+
     # D20: length is meaningless for a GPI-only protein.
     df["extracellular_reported"] = np.where(
         df.tier == "S3", NOT_APPLICABLE, df.longest_extracellular.fillna(0).astype(int).astype(str))
@@ -166,7 +212,8 @@ def main() -> int:
         "tm_sources", "n_tm_segments", "dtm_n_tm", "dtm_type",
         "longest_extracellular", "extracellular_reported", "extracellular_source",
         "gpi_any", "gpi_source", "has_signal_peptide", "dtm_has_signal",
-        "predictor_missing", "length_unknown", "cspa", "surfy", "is_candidate",
+        "predictor_missing", "length_unknown", "compartment",
+        "plasma_membrane_evidence", "cspa", "surfy", "is_candidate",
     ]].sort_values(["tier", "accession"], kind="mergesort")
     out.to_csv(PROC / "surface_candidates.csv", index=False)
 
@@ -188,6 +235,16 @@ def main() -> int:
         label = {"-": "not a candidate"}.get(tier, tier)
         lines.append(f"  {label:<38} : {int(counts.get(tier, 0)):,}")
 
+    lines += [
+        "",
+        f"excluded by the compartment filter (D31)  : {n_internal:,}",
+        "  (positive evidence of an internal membrane only; no plasma-membrane",
+        "   evidence from UniProt or HPA. Unannotated proteins are kept.)",
+        "",
+        "compartment of surviving candidates:",
+    ]
+    for comp, n in cand.compartment.value_counts().items():
+        lines.append(f"  {comp:<38} : {n:,}")
     lines += [
         "",
         "source agreement on transmembrane:",

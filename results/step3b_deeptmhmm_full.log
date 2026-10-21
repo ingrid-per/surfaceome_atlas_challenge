@@ -1,0 +1,122 @@
+20,431 sequences in 103 batches of 200 (full)
+  batch 1/103  200 proteins  437s  |  200/20,431  27.5 seq/min  eta 12.3 h
+  batch 2/103  200 proteins  439s  |  400/20,431  27.4 seq/min  eta 12.2 h
+  batch 3/103  200 proteins  6418s  |  600/20,431  4.9 seq/min  eta 67.0 h
+  batch 4/103  200 proteins  408s  |  800/20,431  6.2 seq/min  eta 52.5 h
+  batch 5/103  200 proteins  445s  |  1,000/20,431  7.4 seq/min  eta 44.0 h
+  batch 6/103  200 proteins  494s  |  1,200/20,431  8.3 seq/min  eta 38.5 h
+  batch 7/103  200 proteins  414s  |  1,400/20,431  9.3 seq/min  eta 34.2 h
+  batch 8/103  200 proteins  541s  |  1,600/20,431  10.0 seq/min  eta 31.4 h
+  batch 9/103  200 proteins  422s  |  1,800/20,431  10.8 seq/min  eta 28.8 h
+  batch 10/103  200 proteins  302s  |  2,000/20,431  11.6 seq/min  eta 26.4 h
+  batch 11/103  200 proteins  315s  |  2,200/20,431  12.4 seq/min  eta 24.5 h
+  batch 12/103  200 proteins  384s  |  2,400/20,431  13.1 seq/min  eta 23.0 h
+  batch 13/103  200 proteins  351s  |  2,600/20,431  13.7 seq/min  eta 21.7 h
+  batch 14/103  200 proteins  419s  |  2,800/20,431  14.3 seq/min  eta 20.6 h
+  batch 15/103  200 proteins  381s  |  3,000/20,431  14.8 seq/min  eta 19.6 h
+  batch 16/103  200 proteins  463s  |  3,200/20,431  15.2 seq/min  eta 18.9 h
+  batch 17/103  200 proteins  390s  |  3,400/20,431  15.7 seq/min  eta 18.1 h
+  batch 18/103  200 proteins  385s  |  3,600/20,431  16.1 seq/min  eta 17.4 h
+  batch 19/103  200 proteins  396s  |  3,800/20,431  16.5 seq/min  eta 16.8 h
+  batch 20/103  200 proteins  429s  |  4,000/20,431  16.9 seq/min  eta 16.2 h
+  batch 21/103  200 proteins  403s  |  4,200/20,431  17.2 seq/min  eta 15.7 h
+  batch 22/103  200 proteins  386s  |  4,400/20,431  17.6 seq/min  eta 15.2 h
+  batch 23/103  200 proteins  415s  |  4,600/20,431  17.9 seq/min  eta 14.8 h
+  batch 24/103  200 proteins  417s  |  4,800/20,431  18.2 seq/min  eta 14.3 h
+  batch 25/103  200 proteins  270s  |  5,000/20,431  18.6 seq/min  eta 13.8 h
+  batch 26/103  200 proteins  291s  |  5,200/20,431  19.0 seq/min  eta 13.4 h
+  batch 27/103  200 proteins  499s  |  5,400/20,431  19.2 seq/min  eta 13.1 h
+  batch 28/103  200 proteins  539s  |  5,600/20,431  19.3 seq/min  eta 12.8 h
+  batch 29/103  200 proteins  604s  |  5,800/20,431  19.3 seq/min  eta 12.7 h
+  batch 30/103  200 proteins  478s  |  6,000/20,431  19.4 seq/min  eta 12.4 h
+  batch 31/103  200 proteins  527s  |  6,200/20,431  19.5 seq/min  eta 12.2 h
+  batch 32/103  200 proteins  577s  |  6,400/20,431  19.6 seq/min  eta 12.0 h
+  batch 33/103  200 proteins  492s  |  6,600/20,431  19.7 seq/min  eta 11.7 h
+  batch 34/103  200 proteins  467s  |  6,800/20,431  19.8 seq/min  eta 11.5 h
+  batch 35/103  200 proteins  490s  |  7,000/20,431  19.9 seq/min  eta 11.2 h
+  batch 36/103  200 proteins  620s  |  7,200/20,431  19.9 seq/min  eta 11.1 h
+  batch 37/103  200 proteins  682s  |  7,400/20,431  19.8 seq/min  eta 11.0 h
+  batch 38/103  200 proteins  638s  |  7,600/20,431  19.8 seq/min  eta 10.8 h
+  batch 39/103  200 proteins  563s  |  7,800/20,431  19.8 seq/min  eta 10.6 h
+  batch 40/103  200 proteins  536s  |  8,000/20,431  19.9 seq/min  eta 10.4 h
+  batch 41/103  200 proteins  557s  |  8,200/20,431  19.9 seq/min  eta 10.2 h
+  batch 42/103  200 proteins  586s  |  8,400/20,431  19.9 seq/min  eta 10.1 h
+  batch 43/103  200 proteins  470s  |  8,600/20,431  20.0 seq/min  eta 9.8 h
+  batch 44/103  200 proteins  541s  |  8,800/20,431  20.1 seq/min  eta 9.6 h
+  batch 45/103  200 proteins  604s  |  9,000/20,431  20.1 seq/min  eta 9.5 h
+  batch 46/103  200 proteins  404s  |  9,200/20,431  20.2 seq/min  eta 9.3 h
+  batch 47/103  200 proteins  539s  |  9,400/20,431  20.3 seq/min  eta 9.1 h
+  batch 48/103  200 proteins  427s  |  9,600/20,431  20.4 seq/min  eta 8.9 h
+  batch 49/103  200 proteins  596s  |  9,800/20,431  20.4 seq/min  eta 8.7 h
+  batch 50/103  200 proteins  650s  |  10,000/20,431  20.3 seq/min  eta 8.5 h
+  batch 51/103  200 proteins  571s  |  10,200/20,431  20.4 seq/min  eta 8.4 h
+  batch 52/103  200 proteins  343s  |  10,400/20,431  20.5 seq/min  eta 8.1 h
+  batch 53/103  200 proteins  338s  |  10,600/20,431  20.7 seq/min  eta 7.9 h
+  batch 54/103  200 proteins  516s  |  10,800/20,431  20.7 seq/min  eta 7.7 h
+  batch 55/103  200 proteins  606s  |  11,000/20,431  20.7 seq/min  eta 7.6 h
+  batch 56/103  200 proteins  501s  |  11,200/20,431  20.8 seq/min  eta 7.4 h
+  batch 57/103  200 proteins  382s  |  11,400/20,431  20.9 seq/min  eta 7.2 h
+  batch 58/103  200 proteins  328s  |  11,600/20,431  21.0 seq/min  eta 7.0 h
+  batch 59/103  200 proteins  452s  |  11,800/20,431  21.1 seq/min  eta 6.8 h
+  batch 60/103  200 proteins  491s  |  12,000/20,431  21.2 seq/min  eta 6.6 h
+  batch 61/103  200 proteins  479s  |  12,200/20,431  21.2 seq/min  eta 6.5 h
+  batch 62/103  200 proteins  398s  |  12,400/20,431  21.3 seq/min  eta 6.3 h
+  batch 63/103  200 proteins  507s  |  12,600/20,431  21.3 seq/min  eta 6.1 h
+  batch 64/103  200 proteins  448s  |  12,800/20,431  21.4 seq/min  eta 5.9 h
+  batch 65/103  200 proteins  440s  |  13,000/20,431  21.5 seq/min  eta 5.8 h
+  batch 66/103  200 proteins  398s  |  13,200/20,431  21.6 seq/min  eta 5.6 h
+  batch 67/103  200 proteins  597s  |  13,400/20,431  21.6 seq/min  eta 5.4 h
+  batch 68/103  200 proteins  443s  |  13,600/20,431  21.6 seq/min  eta 5.3 h
+  batch 69/103  200 proteins  449s  |  13,800/20,431  21.7 seq/min  eta 5.1 h
+  batch 70/103  200 proteins  569s  |  14,000/20,431  21.7 seq/min  eta 4.9 h
+  batch 71/103  200 proteins  505s  |  14,200/20,431  21.7 seq/min  eta 4.8 h
+  batch 72/103  200 proteins  490s  |  14,400/20,431  21.7 seq/min  eta 4.6 h
+  batch 73/103  200 proteins  446s  |  14,600/20,431  21.8 seq/min  eta 4.5 h
+  batch 74/103  200 proteins  475s  |  14,800/20,431  21.8 seq/min  eta 4.3 h
+  batch 75/103  200 proteins  293s  |  15,000/20,431  22.0 seq/min  eta 4.1 h
+  batch 76/103  200 proteins  321s  |  15,200/20,431  22.1 seq/min  eta 3.9 h
+  batch 77/103  200 proteins  392s  |  15,400/20,431  22.2 seq/min  eta 3.8 h
+  batch 78/103  200 proteins  386s  |  15,600/20,431  22.3 seq/min  eta 3.6 h
+  batch 79/103  200 proteins  384s  |  15,800/20,431  22.3 seq/min  eta 3.5 h
+  batch 80/103  200 proteins  349s  |  16,000/20,431  22.4 seq/min  eta 3.3 h
+  batch 81/103  200 proteins  342s  |  16,200/20,431  22.5 seq/min  eta 3.1 h
+  batch 82/103  200 proteins  352s  |  16,400/20,431  22.6 seq/min  eta 3.0 h
+  batch 83/103  200 proteins  459s  |  16,600/20,431  22.7 seq/min  eta 2.8 h
+  batch 84/103  200 proteins  134s  |  16,800/20,431  22.9 seq/min  eta 2.6 h
+  batch 85/103  200 proteins  403s  |  17,000/20,431  22.9 seq/min  eta 2.5 h
+  batch 86/103  200 proteins  311s  |  17,200/20,431  23.0 seq/min  eta 2.3 h
+  batch 87/103  200 proteins  299s  |  17,400/20,431  23.2 seq/min  eta 2.2 h
+  batch 88/103  200 proteins  414s  |  17,600/20,431  23.2 seq/min  eta 2.0 h
+  batch 89/103  200 proteins  396s  |  17,800/20,431  23.3 seq/min  eta 1.9 h
+  batch 90/103  200 proteins  366s  |  18,000/20,431  23.3 seq/min  eta 1.7 h
+  batch 91/103  200 proteins  238s  |  18,200/20,431  23.5 seq/min  eta 1.6 h
+  batch 92/103  200 proteins  294s  |  18,400/20,431  23.6 seq/min  eta 1.4 h
+  batch 93/103  200 proteins  294s  |  18,600/20,431  23.7 seq/min  eta 1.3 h
+  batch 94/103  200 proteins  332s  |  18,800/20,431  23.8 seq/min  eta 1.1 h
+  batch 95/103  200 proteins  277s  |  19,000/20,431  23.9 seq/min  eta 1.0 h
+  batch 96/103  200 proteins  294s  |  19,200/20,431  24.0 seq/min  eta 0.9 h
+  batch 97/103  200 proteins  223s  |  19,400/20,431  24.1 seq/min  eta 0.7 h
+  batch 98/103  200 proteins  303s  |  19,600/20,431  24.2 seq/min  eta 0.6 h
+  batch 99/103  200 proteins  265s  |  19,800/20,431  24.3 seq/min  eta 0.4 h
+  batch 100/103  200 proteins  246s  |  20,000/20,431  24.5 seq/min  eta 0.3 h
+  batch 101/103  200 proteins  193s  |  20,200/20,431  24.6 seq/min  eta 0.2 h
+  batch 102/103  200 proteins  135s  |  20,400/20,431  24.8 seq/min  eta 0.0 h
+  batch 103/103  31 proteins  14s  |  20,431/20,431  24.8 seq/min  eta 0.0 h
+
+STEP 3b — DeepTMHMM (full)
+Generated by src/step3_run_deeptmhmm.py — do not edit by hand.
+
+sequences submitted                      : 20,431
+proteins with a prediction               : 20,431
+missing (no prediction, must be flagged) : 0
+
+called transmembrane                     : 4,961
+predicted type counts                    : {'GLOB': 13336, 'TM': 3414, 'SP': 2134, 'SP+TM': 1543, 'BETA': 4}
+with a predicted signal peptide          : 3,681
+
+longest extracellular segment, TM proteins:
+  median                                 : 53 aa
+  >= 20 aa (D20 default)                 : 4,076
+  <  20 aa (Flagged)                     : 885
+
+Wrote /Users/REDACTED/Documents/bioinfo_tools/surface_prot_challenge/data/processed/step3_deeptmhmm_full.csv

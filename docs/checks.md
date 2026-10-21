@@ -32,6 +32,7 @@ step scripts listed below.
 | 3.7 | 3 | S1 always has two independent sources | `python src/step3_check.py` | 0 S1 rows with `tm_sources < 2` or a missing prediction |
 | 3.8 | 3 | Every GPI call records its source | `python src/step3_check.py` | 0 GPI calls without `gpi_source`; predictor-only count reported (D22) |
 | 3.9 | 3 | Predictor gaps flagged, never silently negative | `python src/step3_check.py` | No protein reaches S1 without a prediction |
+| 3.10 | 3 | Compartment filter applied and reported (D31) | `python src/step3_build_candidates.py` | Internal-membrane-only candidates excluded with evidence; unannotated kept |
 
 ## Pending — owned by later steps
 
