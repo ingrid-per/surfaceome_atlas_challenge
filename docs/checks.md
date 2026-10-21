@@ -48,12 +48,17 @@ step scripts listed below.
 | 5.4 | 5 | Known targets characterised, never used to tune the score (D45) | `python src/step5_check.py` | All 11 reported with S and S_relaxed; no pass/fail applied |
 | 5.5 | 5 | Tissue-exclusion variants ordered S ≤ S_nobrain ≤ S_relaxed (D46) | `python src/step5_check.py` | 0 violations |
 | 5.6 | 5 | Step 5 results are deterministic | `python src/step5_check.py` | Two runs byte-identical |
+| 6.1 | 6 | All 8 CPTAC cohorts with matched normals ran (D12) | `python src/step6_check.py` | 8 of 8 |
+| 6.2 | 6 | No cohort below the sample minimum (D37) | `python src/step6_check.py` | 0 violations |
+| 6.3 | 6 | Protein analysis ran unbiased, not only on candidates (D48) | `python src/step6_check.py` | 13,839 proteins tested vs 2,060 candidates |
+| 6.4 | 6 | No global directional shift in protein log2FC (D51) | `python src/step6_check.py` | median ≈ 0; significant split near 50/50 |
+| 6.5 | 6 | Concordance measured against the matched adjacent-normal arm (D49) | `python src/step6_check.py` | ρ ≥ 0.2; GTEx arm carried alongside |
+| 6.6 | 6 | Nothing filtered on protein evidence (D48) | `python src/step6_check.py` | `rna_not_tested` present as a label, not a deletion |
 
 ## Pending — owned by later steps
 
 | # | Step | Check |
 | --- | --- | --- |
-| 6.x | 6 | Funnel counts monotone; 5 tier-1 genes hand-verified; unmeasured genes counted as RNA-only |
 | 7.x | 7 | Output deterministic across two runs; three near-miss genes explained; rule dated before the first ranking file |
 | 8.x | 8 | Every control accounted for; blood-cancer-only targets listed separately |
 | 9.x | 9 | Default run reproduces Step 7 exactly; run count matches grid size; stability values in [0, 1] |

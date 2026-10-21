@@ -1,0 +1,9 @@
+cohort,tcga_cancer_type,n_tumour,n_normal,genes_in_file,status,genes_tested,up,down
+CCRCC,Kidney Clear Cell Carcinoma,103,80,11236,ok,10847,216,762
+COAD,Colon Adenocarcinoma,97,100,9151,ok,8785,43,501
+HNSCC,Head & Neck Squamous Cell Carcinoma,108,62,11561,ok,11213,131,501
+LSCC,Lung Squamous Cell Carcinoma,108,99,12760,ok,12593,309,879
+LUAD,Lung Adenocarcinoma,110,101,12431,ok,12128,80,538
+OV,Ovarian Serous Cystadenocarcinoma,83,19,10587,ok,9255,45,562
+PDAC,Pancreatic Adenocarcinoma,105,44,11404,ok,10760,260,446
+UCEC,Uterine Corpus Endometrioid Carcinoma,95,18,11404,ok,10649,108,289
