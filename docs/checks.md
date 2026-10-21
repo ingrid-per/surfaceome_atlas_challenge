@@ -54,11 +54,15 @@ step scripts listed below.
 | 6.4 | 6 | No global directional shift in protein log2FC (D51) | `python src/step6_check.py` | median ≈ 0; significant split near 50/50 |
 | 6.5 | 6 | Concordance measured against the matched adjacent-normal arm (D49) | `python src/step6_check.py` | ρ ≥ 0.2; GTEx arm carried alongside |
 | 6.6 | 6 | Nothing filtered on protein evidence (D48) | `python src/step6_check.py` | `rna_not_tested` present as a label, not a deletion |
+| 7.1 | 7 | Eligibility rule honoured (D52) | `python src/step7_check.py` | No Flagged tier, all pass RNA, all ≥5 TPM |
+| 7.2 | 7 | Ranked by S descending (D52) | `python src/step7_check.py` | Monotone |
+| 7.3 | 7 | At most 2 genes per HGNC gene group (D52) | `python src/step7_check.py` | Max 1 observed |
+| 7.4 | 7 | Selection rule recorded before the ranking existed (runbook rule 3) | `python src/step7_check.py` | D52 present in `docs/decisions.md`, dated 2026-10-21 before the first ranking run |
+| 7.5 | 7 | Exported JSON matches the committed results | `python src/step7_check.py` | Same genes, same order |
 
 ## Pending — owned by later steps
 
 | # | Step | Check |
 | --- | --- | --- |
-| 7.x | 7 | Output deterministic across two runs; three near-miss genes explained; rule dated before the first ranking file |
 | 8.x | 8 | Every control accounted for; blood-cancer-only targets listed separately |
 | 9.x | 9 | Default run reproduces Step 7 exactly; run count matches grid size; stability values in [0, 1] |

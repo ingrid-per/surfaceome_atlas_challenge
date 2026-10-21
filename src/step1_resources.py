@@ -140,6 +140,14 @@ def _build() -> list[Resource]:
             f"{_CPTAC}/{c}/{c}_meta.txt", None, "text",
             f"{c} sample metadata", cptac))
 
+    r.append(Resource(
+        "H5", "HGNC", "hgnc_complete_set.txt",
+        "https://storage.googleapis.com/public-download-files/hgnc/tsv/tsv/"
+        "hgnc_complete_set.txt",
+        17_000_000, "text",
+        "Gene groups (families) for the D52 per-family limit",
+        "HGNC current release"))
+
     r += [
         Resource("G1", "GTEx proteome", "Jiang2020_mmc3.xlsx",
                  f"{_ELS}-mmc3.xlsx", 122_974_000, "zip",

@@ -54,26 +54,12 @@ shasum -a 256 data/raw/<file>
 | `UCEC_proteomics_gene_abundance_log2_reference_intensity_normalized_Tumor.txt` | CPTAC | LinkedOmicsKB Release 1 (2023-05-08), freeze v1.2_reorganized | 2026-10-20 | <https://cptac-pancancer-data.s3.us-west-2.amazonaws.com/data_freeze_v1.2_reorganized/UCEC/UCEC_proteomics_gene_abundance_log2_reference_intensity_normalized_Tumor.txt> | `aea5d956b3496530faf86052886de19e857e96294a2dbcb3adb9702457865d36` | 15.79 MB |
 | `UCEC_proteomics_gene_abundance_log2_reference_intensity_normalized_Normal.txt` | CPTAC | LinkedOmicsKB Release 1 (2023-05-08), freeze v1.2_reorganized | 2026-10-20 | <https://cptac-pancancer-data.s3.us-west-2.amazonaws.com/data_freeze_v1.2_reorganized/UCEC/UCEC_proteomics_gene_abundance_log2_reference_intensity_normalized_Normal.txt> | `225df3e7827fbeec499deba3d773828935dbe722559730a902c66f9dabe1d229` | 3.20 MB |
 | `UCEC_meta.txt` | CPTAC | LinkedOmicsKB Release 1 (2023-05-08), freeze v1.2_reorganized | 2026-10-20 | <https://cptac-pancancer-data.s3.us-west-2.amazonaws.com/data_freeze_v1.2_reorganized/UCEC/UCEC_meta.txt> | `4058a8420129dd37f4d9035e1d87beb70a800ce9cb42754f74e7ad3d35f3020b` | 14 KB |
+| `hgnc_complete_set.txt` | HGNC | HGNC current release | 2026-10-21 | <https://storage.googleapis.com/public-download-files/hgnc/tsv/tsv/hgnc_complete_set.txt> | `12363916be36f8f6f91879b0faade4eeaac973722de7136ec61329b77f2c2f91` | 16.20 MB |
 | `Jiang2020_mmc3.xlsx` | GTEx proteome | Jiang et al., Cell 2020, 183(1):269-283 | 2026-10-20 | <https://ars.els-cdn.com/content/image/1-s2.0-S0092867420310783-mmc3.xlsx> | `f278d406990059a625cb0d5c4c29e56dd8634052138a38bd053bc0d61124af80` | 117.28 MB |
 | `CSPA_S2_File.xlsx` | CSPA | CSPA, 2015 | 2026-10-20 | <https://wollscheidlab.org/CSPA/data/S2_File.xlsx> | `9b02c85d4c1d49847cf37e23755f07e57ea65b79cc0ebcdaeef1752dab8b5c8a` | 1.36 MB |
 | `SURFY_table_S3_surfaceome.xlsx` | SURFY | SURFY, 2018 | 2026-10-20 | <https://wollscheidlab.org/SURFY/table_S3_surfaceome.xlsx> | `2f1b8262463ce1c59a1f945d22f0e9638cb3bfbf5aabe197f43b562a62fb055a` | 6.55 MB |
 
-**41 files, 1676.50 MB total.**
-
-### Third-party tool packages
-
-Not datasets, but inputs to a result, so they are versioned the same way. Kept in
-`tools/` and gitignored: the DeepTMHMM licence is academic and does not permit
-redistribution.
-
-| Package | Version | Date retrieved | Source | SHA-256 | Size |
-| --- | --- | --- | --- | --- | --- |
-| `DeepTMHMM-Academic-License-v1.0.zip` | 1.0 (academic) | 2026-10-20 | BioLib non-commercial request form, linked from <https://dtu.biolib.com/DeepTMHMM/> | `0a7a6c5d009e928c2e09bd0f225ad290166c6e67ebff5fb59145639484fcbd82` | 1640.1 MB |
-
-Contents: five cross-validation models, the embedded ESM-1b language model
-(2.6 GB state dict), `predict.py`, and an embedded copy of pytorch-crf. Run
-unmodified from the `deeptmhmm` conda environment
-(`environment.deeptmhmm.lock.yml`).
+**42 files, 1692.69 MB total.**
 
 ### Deliberately not downloaded
 

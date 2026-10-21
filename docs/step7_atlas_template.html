@@ -1,0 +1,512 @@
+<title>Surfaceome Target Atlas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;450;500;600&display=swap">
+
+<style>
+:root{
+  --ground:#FAFBFB; --surface:#FFFFFF; --surface-2:#F2F5F5; --sunken:#EAEEEF;
+  --line:#DCE3E4; --line-soft:#E8EDED;
+  --ink:#15201F; --ink-2:#44585A; --ink-3:#71888A;
+  --accent:#2D7D74; --accent-soft:#E3F0ED; --accent-deep:#1F5A54;
+  --good:#4F7A52; --good-soft:#E6EFE6;
+  --warn:#B5822E; --warn-soft:#F7EEDC;
+  --bad:#A14F58; --bad-soft:#F6E7E8;
+  --shadow:0 1px 2px rgba(21,32,31,.05),0 6px 20px -12px rgba(21,32,31,.18);
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --sans:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --display:"Archivo","IBM Plex Sans",-apple-system,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ground:#10151A; --surface:#161D23; --surface-2:#1C252C; --sunken:#0C1116;
+    --line:#2A363E; --line-soft:#222C34;
+    --ink:#E6EDEC; --ink-2:#A2B5B6; --ink-3:#73898C;
+    --accent:#5FB3A6; --accent-soft:#17312F; --accent-deep:#8FD0C4;
+    --good:#7FAE80; --good-soft:#1A2A1C;
+    --warn:#D6A85A; --warn-soft:#2E2416;
+    --bad:#C98289; --bad-soft:#2E1C1F;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 6px 22px -12px rgba(0,0,0,.7);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#10151A; --surface:#161D23; --surface-2:#1C252C; --sunken:#0C1116;
+  --line:#2A363E; --line-soft:#222C34;
+  --ink:#E6EDEC; --ink-2:#A2B5B6; --ink-3:#73898C;
+  --accent:#5FB3A6; --accent-soft:#17312F; --accent-deep:#8FD0C4;
+  --good:#7FAE80; --good-soft:#1A2A1C;
+  --warn:#D6A85A; --warn-soft:#2E2416;
+  --bad:#C98289; --bad-soft:#2E1C1F;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 6px 22px -12px rgba(0,0,0,.7);
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;background:var(--ground);color:var(--ink);
+  font-family:var(--sans);font-size:15px;line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{font-family:var(--display);margin:0;text-wrap:balance;letter-spacing:-.011em}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums;font-size:.92em}
+button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:3px}
+
+/* ---------- shell ---------- */
+.wrap{max-width:1340px;margin:0 auto;padding:0 24px 72px}
+header.top{
+  border-bottom:1px solid var(--line);background:var(--surface);
+  position:sticky;top:0;z-index:20;
+}
+.top-in{max-width:1340px;margin:0 auto;padding:18px 24px 0;display:flex;
+  flex-wrap:wrap;gap:20px;align-items:flex-start;justify-content:space-between}
+.brand h1{font-size:19px;font-weight:700}
+.brand p{margin:3px 0 0;font-size:13px;color:var(--ink-2);max-width:62ch}
+.stat-row{display:flex;gap:26px;flex-wrap:wrap}
+.stat .k{font-family:var(--mono);font-size:19px;font-weight:600;
+  font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.stat .l{font-size:10.5px;text-transform:uppercase;letter-spacing:.09em;
+  color:var(--ink-3);margin-top:1px}
+nav.tabs{max-width:1340px;margin:0 auto;padding:14px 24px 0;display:flex;gap:2px}
+nav.tabs button{
+  padding:9px 15px;font-size:13.5px;font-weight:500;color:var(--ink-2);
+  border-bottom:2px solid transparent;border-radius:4px 4px 0 0;
+}
+nav.tabs button:hover{color:var(--ink);background:var(--surface-2)}
+nav.tabs button[aria-selected="true"]{color:var(--accent);border-bottom-color:var(--accent);font-weight:600}
+
+/* ---------- two-pane ---------- */
+.panes{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);
+  gap:22px;margin-top:22px;align-items:start}
+@media (max-width:1040px){.panes{grid-template-columns:1fr}}
+
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;
+  box-shadow:var(--shadow)}
+.card-h{padding:13px 16px;border-bottom:1px solid var(--line-soft);
+  display:flex;align-items:center;justify-content:space-between;gap:12px}
+.card-h h2{font-size:13px;font-weight:600;letter-spacing:.02em}
+.card-h .sub{font-size:11.5px;color:var(--ink-3)}
+
+select{
+  font:inherit;font-size:13.5px;padding:7px 11px;border-radius:7px;
+  border:1px solid var(--line);background:var(--surface-2);color:var(--ink);
+  max-width:100%;
+}
+
+/* ---------- candidate list ---------- */
+.list{max-height:none}
+.row{
+  display:grid;grid-template-columns:22px 1fr auto;gap:11px;align-items:center;
+  width:100%;text-align:left;padding:10px 15px;border-bottom:1px solid var(--line-soft);
+  transition:background .12s;
+}
+.row:last-child{border-bottom:none}
+.row:hover{background:var(--surface-2)}
+.row[aria-current="true"]{background:var(--accent-soft);
+  box-shadow:inset 3px 0 0 var(--accent)}
+.rank{font-family:var(--mono);font-size:11.5px;color:var(--ink-3);
+  font-variant-numeric:tabular-nums}
+.row .sym{font-family:var(--mono);font-size:14.5px;font-weight:600;letter-spacing:-.01em}
+.row .meta{font-size:11.5px;color:var(--ink-3);margin-top:1px;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.row .score{font-family:var(--mono);font-size:15px;font-weight:600;
+  font-variant-numeric:tabular-nums;text-align:right}
+.row .score small{display:block;font-size:9.5px;font-weight:500;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);
+  font-family:var(--sans)}
+
+/* ---------- chips ---------- */
+.chip{display:inline-flex;align-items:center;gap:4px;padding:2px 7px;
+  border-radius:4px;font-size:10.5px;font-weight:600;letter-spacing:.03em;
+  white-space:nowrap;border:1px solid transparent}
+.chip.t1{background:var(--accent-soft);color:var(--accent-deep)}
+.chip.ok{background:var(--good-soft);color:var(--good)}
+.chip.warn{background:var(--warn-soft);color:var(--warn)}
+.chip.bad{background:var(--bad-soft);color:var(--bad)}
+.chip.mute{background:var(--sunken);color:var(--ink-3);border-color:var(--line-soft)}
+
+/* ---------- detail ---------- */
+.detail{position:sticky;top:122px}
+.d-head{padding:17px 19px 15px;border-bottom:1px solid var(--line-soft)}
+.d-sym{font-family:var(--mono);font-size:25px;font-weight:600;letter-spacing:-.025em}
+.d-sub{font-size:13px;color:var(--ink-2);margin-top:2px}
+.d-chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:11px}
+.d-body{padding:17px 19px}
+.sec{margin-bottom:21px}
+.sec:last-child{margin-bottom:0}
+.sec > h3{font-size:10.5px;text-transform:uppercase;letter-spacing:.1em;
+  color:var(--ink-3);font-weight:600;margin-bottom:9px;font-family:var(--sans)}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:5px 15px;font-size:13px}
+.kv dt{color:var(--ink-2)}
+.kv dd{margin:0;font-family:var(--mono);font-variant-numeric:tabular-nums;
+  text-align:right;font-size:12.5px}
+
+.bars{display:flex;flex-direction:column;gap:6px}
+.bar{display:grid;grid-template-columns:1fr 54px;gap:10px;align-items:center;font-size:12px}
+.bar .t{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--ink-2)}
+.bar .track{grid-column:1/-1;height:5px;background:var(--sunken);
+  border-radius:3px;overflow:hidden;margin-top:-3px}
+.bar .fill{height:100%;background:var(--accent);border-radius:3px}
+.bar .fill.hot{background:var(--bad)}
+.bar .v{font-family:var(--mono);font-size:11.5px;text-align:right;
+  font-variant-numeric:tabular-nums;color:var(--ink-2)}
+
+.note{font-size:12.5px;color:var(--ink-2);background:var(--surface-2);
+  border-left:2px solid var(--line);padding:9px 12px;border-radius:0 6px 6px 0}
+.note.warn{border-left-color:var(--warn);background:var(--warn-soft);color:var(--ink)}
+.note.good{border-left-color:var(--good);background:var(--good-soft);color:var(--ink)}
+.note.mute{border-left-color:var(--ink-3)}
+.note b{font-weight:600}
+
+/* homogeneity meter */
+.homog{display:flex;align-items:center;gap:11px}
+.homog .meter{flex:1;height:7px;background:var(--sunken);border-radius:4px;
+  overflow:hidden;position:relative}
+.homog .meter i{display:block;height:100%;background:var(--accent)}
+.homog .pct{font-family:var(--mono);font-size:13px;font-weight:600;
+  font-variant-numeric:tabular-nums}
+
+/* lab button */
+.lab{margin-top:7px}
+.lab-btn{
+  width:100%;display:flex;align-items:center;justify-content:center;gap:8px;
+  padding:11px 14px;border-radius:8px;background:var(--accent);color:#fff;
+  font-weight:600;font-size:13.5px;transition:background .14s,transform .08s;
+}
+:root[data-theme="dark"] .lab-btn,
+:root:not([data-theme="light"]) .lab-btn{color:#0C1116}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]) .lab-btn{color:#fff}}
+.lab-btn:hover{background:var(--accent-deep)}
+.lab-btn:active{transform:translateY(1px)}
+.lab-links{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:8px}
+.lab-links a{
+  display:flex;flex-direction:column;gap:1px;padding:9px 11px;border-radius:7px;
+  border:1px solid var(--line);background:var(--surface-2);text-decoration:none;
+}
+.lab-links a:hover{border-color:var(--accent);background:var(--accent-soft);text-decoration:none}
+.lab-links .n{font-size:12.5px;font-weight:600;color:var(--ink)}
+.lab-links .d{font-size:10.5px;color:var(--ink-3)}
+
+/* funnel + method */
+table.fun{width:100%;border-collapse:collapse;font-size:13.5px}
+table.fun td{padding:8px 10px;border-bottom:1px solid var(--line-soft)}
+table.fun tr:last-child td{border-bottom:none}
+table.fun td.n{font-family:var(--mono);text-align:right;font-weight:600;
+  font-variant-numeric:tabular-nums;width:96px}
+table.fun td.b{width:46%}
+.funbar{height:7px;background:var(--accent);border-radius:4px;opacity:.75}
+.prose{font-size:14px;color:var(--ink-2);max-width:68ch}
+.prose h3{font-size:14.5px;color:var(--ink);margin:21px 0 7px;font-family:var(--display)}
+.prose p{margin:0 0 11px}
+.prose ul{margin:0 0 11px;padding-left:19px}
+.prose li{margin-bottom:5px}
+.prose code{font-family:var(--mono);font-size:12.5px;background:var(--surface-2);
+  padding:1px 5px;border-radius:4px}
+.hidden{display:none}
+.scroll-x{overflow-x:auto}
+</style>
+
+<header class="top">
+  <div class="top-in">
+    <div class="brand">
+      <h1>Surfaceome Target Atlas</h1>
+      <p>Cell-surface proteins raised in tumours and scarce in healthy tissue, ranked per cancer type. Every figure traces to a script; the selection rule was fixed before the ranking ran.</p>
+    </div>
+    <div class="stat-row" id="stats"></div>
+  </div>
+  <nav class="tabs" role="tablist">
+    <button role="tab" aria-selected="true" data-tab="bycancer">By cancer type</button>
+    <button role="tab" aria-selected="false" data-tab="global">Global top 10</button>
+    <button role="tab" aria-selected="false" data-tab="method">Method &amp; limits</button>
+  </nav>
+</header>
+
+<div class="wrap">
+  <section id="tab-bycancer">
+    <div class="panes">
+      <div class="card">
+        <div class="card-h">
+          <h2>Ranked candidates</h2>
+          <select id="cancerSel" aria-label="Cancer type"></select>
+        </div>
+        <div class="list" id="listA"></div>
+      </div>
+      <div class="card detail" id="detailA"></div>
+    </div>
+  </section>
+
+  <section id="tab-global" class="hidden">
+    <div class="panes">
+      <div class="card">
+        <div class="card-h">
+          <h2>Global top 10 &amp; reserve</h2>
+          <span class="sub">best cancer type per gene</span>
+        </div>
+        <div class="list" id="listB"></div>
+      </div>
+      <div class="card detail" id="detailB"></div>
+    </div>
+  </section>
+
+  <section id="tab-method" class="hidden">
+    <div class="panes" style="grid-template-columns:minmax(0,1fr) minmax(0,1fr)">
+      <div class="card">
+        <div class="card-h"><h2>Funnel</h2><span class="sub">what survived each stage</span></div>
+        <div style="padding:13px 16px" class="scroll-x"><table class="fun" id="funnel"></table></div>
+      </div>
+      <div class="card">
+        <div class="card-h"><h2>How to read this</h2></div>
+        <div class="d-body prose" id="method"></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script>
+const D = __DATA__;
+
+const fmt = n => n==null ? "—" : n.toLocaleString();
+const sci = p => p==null ? "—" : (p===0 ? "<1e-300" : (p<1e-4 ? p.toExponential(1) : p.toFixed(4)));
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+const GRADE = {
+  direct:{cls:"ok",label:"direct comparator",why:"Compared against the same organ and tissue layer the tumour arises from."},
+  imperfect:{cls:"warn",label:"imperfect comparator",why:"Right organ, but the healthy sample is a different compartment or the tumour cell is a minority of it."},
+  lineage_only:{cls:"warn",label:"lineage-only comparator",why:"No matching tissue exists in GTEx. Compared against a different site of the same cell lineage."}
+};
+const PROTEIN = {
+  both_up:{cls:"ok",label:"protein agrees",why:"Mass spectrometry also finds this protein raised in tumour versus adjacent normal tissue."},
+  rna_only_up:{cls:"warn",label:"protein does not move",why:"RNA is raised but the protein is not significantly different. Weak evidence either way — mass spectrometry misses hydrophobic membrane proteins, so this is not a refutation."},
+  protein_only:{cls:"ok",label:"protein moves, RNA does not",why:"Detected at protein level in this cancer type without a matching RNA change."},
+  both_down:{cls:"bad",label:"protein lower in tumour",why:"Protein is significantly reduced in tumour versus adjacent normal."},
+  rna_only_down:{cls:"mute",label:"protein not moving",why:""},
+  neither:{cls:"mute",label:"measured, no change",why:"Protein was measured in this cancer type but did not change significantly."},
+  opposite:{cls:"bad",label:"layers disagree",why:"RNA and protein move in opposite directions."},
+  rna_not_tested:{cls:"mute",label:"no matched RNA arm",why:""},
+  protein_not_measured:{cls:"mute",label:"no protein data",why:"This cancer type has no CPTAC proteomics cohort with matched normal tissue, so the protein layer is silent here."}
+};
+const TRAJ = {
+  tumour_specific_up:{cls:"ok",label:"tumour-specific",why:"Raised in the tumour but not in the patient's own neighbouring tissue — the cleaner safety profile."},
+  progressive_up:{cls:"warn",label:"field effect",why:"Already elevated in the histologically normal tissue beside the tumour, and higher still in the tumour."},
+  field_effect_up:{cls:"warn",label:"field effect",why:"The neighbouring normal tissue is already at tumour level. A drug would meet the target there too."},
+  nat_transient_up:{cls:"mute",label:"raised in adjacent tissue only",why:""}
+};
+
+function links(c){
+  const g = encodeURIComponent(c.symbol), ca = encodeURIComponent(c.cancer);
+  return [
+    ["PubMed", "literature on this target in this cancer",
+     `https://pubmed.ncbi.nlm.nih.gov/?term=${g}+AND+(${ca}+OR+cancer)+AND+(target+OR+therapy+OR+antibody)`],
+    ["ClinicalTrials.gov", "trials naming this target",
+     `https://clinicaltrials.gov/search?term=${g}&aggFilters=status:not%20rec`],
+    ["Open Targets", "tractability and competitive landscape",
+     `https://platform.opentargets.org/search?q=${g}`],
+    ["Human Protein Atlas", "antibody staining across tissues",
+     `https://www.proteinatlas.org/search/${g}`]
+  ];
+}
+
+function bars(c){
+  if(!c.healthy || !c.healthy.length) return "";
+  const max = Math.max(c.healthy[0].tpm, c.tumour_tpm, 1);
+  const rows = c.healthy.slice(0,6).map(h=>{
+    const w = Math.max(1.2, 100*h.tpm/max);
+    const hot = h.tissue === c.worst_tissue;
+    return `<div class="bar"><span class="t">${esc(h.tissue)}</span>
+      <span class="v">${h.tpm.toLocaleString()}</span>
+      <span class="track"><i class="fill ${hot?"hot":""}" style="width:${w}%"></i></span></div>`;
+  }).join("");
+  const tw = Math.max(1.2, 100*c.tumour_tpm/max);
+  return `<div class="bars">
+    <div class="bar"><span class="t" style="color:var(--ink);font-weight:600">Tumour (${esc(c.cancer)})</span>
+      <span class="v" style="color:var(--ink);font-weight:600">${c.tumour_tpm.toLocaleString()}</span>
+      <span class="track"><i class="fill" style="width:${tw}%;background:var(--accent-deep)"></i></span></div>
+    ${rows}</div>`;
+}
+
+function detail(c, host){
+  if(!c){ host.innerHTML = `<div class="d-body" style="color:var(--ink-3);font-size:13.5px">Select a target to see its evidence.</div>`; return; }
+  const gr = GRADE[c.grade] || GRADE.direct;
+  const pr = PROTEIN[c.protein] || PROTEIN.protein_not_measured;
+  const tr = c.trajectory ? TRAJ[c.trajectory] : null;
+  const homogPct = Math.round(c.frac10*100);
+  const homogCls = homogPct>=85 ? "ok" : homogPct>=70 ? "warn" : "bad";
+  const ectoNum = parseFloat(c.ecto);
+  const ectoWarn = Number.isFinite(ectoNum) && ectoNum < 50;
+
+  host.innerHTML = `
+  <div class="d-head">
+    <div class="d-sym">${esc(c.symbol)}</div>
+    <div class="d-sub">${esc(c.cancer)} · <span class="mono">${esc(c.gene)}</span>${c.family?` · ${esc(c.family)}`:""}</div>
+    <div class="d-chips">
+      <span class="chip t1">tier ${esc(c.tier)}</span>
+      <span class="chip ${gr.cls}">${gr.label}</span>
+      <span class="chip ${pr.cls}">${pr.label}</span>
+      ${tr?`<span class="chip ${tr.cls}">${tr.label}</span>`:""}
+      ${c.low_power?`<span class="chip warn">low power</span>`:""}
+      ${c.cspa?`<span class="chip ok">CSPA measured</span>`:""}
+      ${c.gpi?`<span class="chip t1">GPI-anchored</span>`:""}
+    </div>
+  </div>
+  <div class="d-body">
+
+    <div class="sec">
+      <h3>The case for it</h3>
+      <dl class="kv">
+        <dt>Specificity score S</dt><dd>${c.S.toFixed(2)}</dd>
+        <dt>Tumour median</dt><dd>${c.tumour_tpm.toLocaleString()} TPM</dd>
+        <dt>Fold change vs healthy</dt><dd>${c.log2fc.toFixed(2)} log2</dd>
+        <dt>FDR</dt><dd>${sci(c.fdr)}</dd>
+        <dt>Cancer types passing</dt><dd>${c.n_types ?? "—"}</dd>
+        <dt>Samples compared</dt><dd>${fmt(c.n_tumour)} vs ${fmt(c.n_normal)}</dd>
+      </dl>
+    </div>
+
+    <div class="sec">
+      <h3>How many tumours actually carry it</h3>
+      <div class="homog">
+        <span class="meter"><i style="width:${homogPct}%"></i></span>
+        <span class="pct">${homogPct}%</span>
+      </div>
+      <div style="font-size:12px;color:var(--ink-3);margin-top:6px">
+        above 10 TPM in ${homogPct}% of tumours · lower quartile ${c.tumour_q25.toLocaleString()} TPM
+      </div>
+      ${homogPct<70?`<div class="note warn" style="margin-top:9px">Expression is <b>heterogeneous</b>. A drug against this target would reach only part of the tumour population.</div>`:""}
+    </div>
+
+    <div class="sec">
+      <h3>Where it also appears in healthy tissue</h3>
+      ${bars(c)}
+      <div class="note ${c.worst_tpm > c.tumour_tpm ? "warn":"mute"}" style="margin-top:11px">
+        Worst healthy tissue is <b>${esc(c.worst_tissue)}</b> at ${c.worst_tpm.toLocaleString()} TPM
+        (from ${c.worst_source==="hpa"?"HPA":"GTEx"}).
+        ${c.S_relaxed > c.S + 0.3 ? `Excluding brain, testis and placenta the score would be <b>${c.S_relaxed.toFixed(2)}</b>.` : ""}
+      </div>
+    </div>
+
+    <div class="sec">
+      <h3>Surface evidence</h3>
+      <dl class="kv">
+        <dt>Transmembrane sources agreeing</dt><dd>${c.tm_sources ?? "—"} of 2</dd>
+        <dt>Transmembrane segments</dt><dd>${c.n_tm ?? "—"}</dd>
+        <dt>Longest extracellular segment</dt><dd>${esc(c.ecto ?? "—")}${Number.isFinite(ectoNum)?" aa":""}</dd>
+        <dt>Compartment evidence</dt><dd>${esc((c.compartment||"—").replace(/_/g," "))}</dd>
+        <dt>In predicted surfaceome (SURFY)</dt><dd>${c.surfy?"yes":"no"}</dd>
+      </dl>
+      ${ectoWarn?`<div class="note warn" style="margin-top:9px">The exposed region is only <b>${ectoNum} residues</b>. It clears our 20-residue minimum, but a short loop is a difficult epitope for an antibody in practice.</div>`:""}
+      ${c.compartment==="unannotated"?`<div class="note warn" style="margin-top:9px">No subcellular annotation in UniProt or HPA. We kept it rather than penalise an under-studied protein, but <b>nothing confirms it reaches the plasma membrane</b>.</div>`:""}
+    </div>
+
+    <div class="sec">
+      <h3>Proteomics</h3>
+      <div class="note ${pr.cls==="ok"?"good":pr.cls==="bad"?"warn":"mute"}">
+        <b>${pr.label}.</b> ${pr.why}
+        ${c.protein_log2fc!=null?` Protein log2FC ${c.protein_log2fc.toFixed(2)}, FDR ${sci(c.protein_fdr)}${c.cptac_cohort?` (CPTAC ${esc(c.cptac_cohort)})`:""}.`:""}
+      </div>
+      <div style="font-size:11.5px;color:var(--ink-3);margin-top:8px">
+        Protein evidence never changes the ranking. Mass spectrometry under-detects hydrophobic membrane proteins — about a third of our candidates were never seen in the GTEx proteome at all — so absence here is missing evidence, not evidence of absence.
+      </div>
+    </div>
+
+    ${tr && tr.why?`<div class="sec"><h3>Neighbouring tissue</h3>
+      <div class="note ${tr.cls==="ok"?"good":"warn"}"><b>${tr.label}.</b> ${tr.why}</div></div>`:""}
+
+    <div class="sec">
+      <h3>Comparator</h3>
+      <div class="note ${gr.cls==="ok"?"good":"warn"}"><b>${gr.label}.</b> ${gr.why}</div>
+    </div>
+
+    <div class="sec lab">
+      <h3>Send to the lab</h3>
+      <button class="lab-btn" onclick="openAll(${JSON.stringify(c.symbol)},${JSON.stringify(c.cancer)})">
+        Open literature &amp; market check for ${esc(c.symbol)}
+      </button>
+      <div class="lab-links">
+        ${links(c).map(([n,d,u])=>`<a href="${u}" target="_blank" rel="noopener"><span class="n">${n}</span><span class="d">${d}</span></a>`).join("")}
+      </div>
+    </div>
+  </div>`;
+}
+
+function openAll(sym, cancer){
+  links({symbol:sym,cancer}).forEach(([,,u]) => window.open(u, "_blank", "noopener"));
+}
+
+function renderList(items, host, detailHost, state){
+  host.innerHTML = items.map((c,i)=>{
+    const gr = GRADE[c.grade] || GRADE.direct;
+    return `<button class="row" data-i="${i}" aria-current="${i===state.i}">
+      <span class="rank">${i+1}</span>
+      <span>
+        <span class="sym">${esc(c.symbol)}</span>
+        <span class="meta">${esc(c.tier)} · ${esc(c.cancer)}${c.family?" · "+esc(c.family):""}</span>
+      </span>
+      <span class="score">${c.S.toFixed(2)}<small>score S</small></span>
+    </button>`;
+  }).join("");
+  host.querySelectorAll(".row").forEach(b=>{
+    b.onclick = () => { state.i = +b.dataset.i;
+      host.querySelectorAll(".row").forEach(x=>x.setAttribute("aria-current", x===b));
+      detail(items[state.i], detailHost); };
+  });
+  detail(items[state.i], detailHost);
+}
+
+/* ---- header stats ---- */
+document.getElementById("stats").innerHTML = [
+  ["Cancer types", D.counts.cancer_types],
+  ["Eligible targets", D.counts.eligible_genes],
+  ["Gene × cancer pairs", D.counts.eligible_rows]
+].map(([l,v])=>`<div class="stat"><div class="k">${v.toLocaleString()}</div><div class="l">${l}</div></div>`).join("");
+
+/* ---- by cancer type ---- */
+const sel = document.getElementById("cancerSel");
+sel.innerHTML = D.cancers.map(c=>`<option>${esc(c)}</option>`).join("");
+const stateA = {i:0};
+function drawA(){ stateA.i = 0; renderList(D.by_cancer[sel.value], document.getElementById("listA"), document.getElementById("detailA"), stateA); }
+sel.onchange = drawA;
+sel.value = D.cancers.includes("Kidney Clear Cell Carcinoma") ? "Kidney Clear Cell Carcinoma" : D.cancers[0];
+drawA();
+
+/* ---- global ---- */
+const globalList = D.top10.concat(D.reserve);
+renderList(globalList, document.getElementById("listB"), document.getElementById("detailB"), {i:0});
+
+/* ---- funnel ---- */
+const fmax = D.funnel[0].n;
+document.getElementById("funnel").innerHTML = D.funnel.map(f=>
+  `<tr><td>${esc(f.stage)}</td>
+   <td class="b"><div class="funbar" style="width:${Math.max(1.5,100*f.n/fmax)}%"></div></td>
+   <td class="n">${f.n.toLocaleString()}</td></tr>`).join("");
+
+/* ---- method ---- */
+document.getElementById("method").innerHTML = `
+<p>Candidates are ranked on the <b>specificity score S</b> — tumour expression minus the single highest healthy tissue, on a log2 scale. S&nbsp;=&nbsp;0 means the tumour and the worst healthy tissue carry equal amounts.</p>
+<h3>What ranks, and what does not</h3>
+<p>Ranking uses the RNA evidence and the surface call only. Proteomics, comparator quality, neighbouring-tissue behaviour and expression homogeneity are all shown on each target but <b>never move it up or down</b>. They are there for whoever decides the next experiment.</p>
+<h3>Why the worst tissue, not an average</h3>
+<p>One exposed organ is enough to make a target unsafe. Using a 90th percentile across ~50 tissues discards the top five — for mesothelin those five include lung, which is exactly where mesothelin-directed drugs show toxicity.</p>
+<h3>There is no pass mark on S</h3>
+<p>Requiring S&nbsp;&gt;&nbsp;0 rejects every approved target we tested, including FOLR1, GPC3, NECTIN4 and TACSTD2. The score is not wrong — it recovers their real documented toxicities — but a target needs a usable therapeutic window, not absence from every tissue. Calibrating a cut-off on known drugs was rejected as circular. S travels as a number.</p>
+<h3>Known limits</h3>
+<ul>
+<li>RNA is a proxy for protein, and mass spectrometry under-detects membrane proteins — a third of candidates were never seen in the GTEx proteome.</li>
+<li>Bulk tissue mixes tumour, stroma and immune cells, so a gene can look tumour-high because of its neighbours.</li>
+<li>TCGA tumours come from surgery, GTEx tissue largely post-mortem. Uniform reprocessing removes software differences, not collection differences.</li>
+<li>Four cancer types have no matching healthy tissue in GTEx and are compared against the same cell lineage at a different site. Those carry a <b>lineage-only</b> chip.</li>
+<li>Nothing here is validated at the bench.</li>
+</ul>
+<h3>Sources</h3>
+<p>UniProt 2026_03 · Human Protein Atlas 25.1 · UCSC Xena Toil (TCGA + GTEx, GENCODE v23) · CPTAC via LinkedOmicsKB · GTEx proteome (Jiang et&nbsp;al., <i>Cell</i> 2020) · CSPA · SURFY · DeepTMHMM 1.0 under its academic licence.</p>`;
+
+/* ---- tabs ---- */
+document.querySelectorAll("nav.tabs button").forEach(b=>{
+  b.onclick = () => {
+    document.querySelectorAll("nav.tabs button").forEach(x=>x.setAttribute("aria-selected", x===b));
+    ["bycancer","global","method"].forEach(t=>
+      document.getElementById("tab-"+t).classList.toggle("hidden", t!==b.dataset.tab));
+  };
+});
+</script>
