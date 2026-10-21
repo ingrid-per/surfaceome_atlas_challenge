@@ -321,6 +321,15 @@ table.fun td.b{width:46%}
 </header>
 
 <div class="wrap">
+  <noscript>
+    <div class="note warn" style="margin:17px 0">
+      <b>This page needs JavaScript.</b> Every table and chart is built from
+      data embedded in the file. Some file-preview windows block scripts &mdash;
+      open it in a browser (Safari, Chrome) instead and it will load.
+    </div>
+  </noscript>
+  <div id="jsfail" class="note warn hidden" style="margin:17px 0"></div>
+
   <section id="tab-bycancer">
     <div class="panes">
       <div class="card">
@@ -443,6 +452,18 @@ table.fun td.b{width:46%}
 </div>
 
 <script>
+// If anything below throws, the page would otherwise render as an empty
+// shell with no indication why. Surface it instead.
+window.onerror = function(msg, src, line){
+  var el = document.getElementById("jsfail");
+  if (!el) return false;
+  el.className = "note warn";
+  el.innerHTML = "<b>This page did not finish loading.</b> " +
+    String(msg) + " (line " + line + "). If you opened it from a file preview, " +
+    "try a browser instead.";
+  return false;
+};
+
 const D = __DATA__;
 
 const fmt = n => n==null ? "—" : n.toLocaleString();
