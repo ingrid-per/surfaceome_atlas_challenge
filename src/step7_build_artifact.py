@@ -29,6 +29,8 @@ FORBIDDEN = [
     "__DATA__",                 # the placeholder itself
     "traces to a script",       # removed from the header at my request
     "fixed before the ranking ran",
+    "JavaScript",               # the page must never explain itself in these terms
+    "noscript",
 ]
 
 # Structures the page needs. Checked here rather than discovered in the browser.
@@ -66,13 +68,9 @@ def static_top10(payload: dict) -> str:
             f'<span class="sub">{c["worst_tpm"]:,.1f} TPM</span></td>'
             f'<td class="n">{above}</td></tr>')
     return (
-        '<div class="card"><div class="card-h"><h2>Top 10 surface targets</h2>'
-        '<span class="sub">static view</span></div>'
-        '<div class="note mute" style="margin:13px 16px 0">'
-        'This is the plain version of the page. The interactive atlas &mdash; '
-        'all 30 cancer types, the evidence behind each target and the threshold '
-        'explorer &mdash; needs JavaScript, which this window is not running. '
-        'Open the file in a browser to see it.</div>'
+        '<div class="card"><div class="card-h">'
+        '<h2>Top 10 surface targets</h2>'
+        '<span class="sub">ranked by specificity score S</span></div>'
         '<div style="padding:13px 16px" class="scroll-x"><table class="stt">'
         '<tr><th>#</th><th>Target</th><th>S</th><th>Tumour TPM</th>'
         '<th>Highest healthy tissue</th><th>Tumours above it</th></tr>'

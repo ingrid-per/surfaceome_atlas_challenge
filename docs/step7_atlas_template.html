@@ -334,18 +334,8 @@ table.fun td.b{width:46%}
 </header>
 
 <div class="wrap">
-  <noscript>
-    <div class="note warn" style="margin:17px 0">
-      <b>This page needs JavaScript.</b> Every table and chart is built from
-      data embedded in the file. Some file-preview windows block scripts &mdash;
-      open it in a browser (Safari, Chrome) instead and it will load.
-    </div>
-  </noscript>
-  <div id="jsfail" class="note warn hidden" style="margin:17px 0"></div>
-
-  <!-- Rendered into the file at build time and visible by default. The script
-       hides it on boot, so a reader whose browser or preview window does not
-       run scripts still gets the answer instead of an empty page. -->
+  <!-- Rendered at build time, visible by default, hidden once the page's own
+       rendering takes over. Carries the answer in plain markup. -->
   <div id="static-fallback">__STATIC_TOP10__</div>
 
   <section id="tab-bycancer">
@@ -470,18 +460,6 @@ table.fun td.b{width:46%}
 </div>
 
 <script>
-// If anything below throws, the page would otherwise render as an empty
-// shell with no indication why. Surface it instead.
-window.onerror = function(msg, src, line){
-  var el = document.getElementById("jsfail");
-  if (!el) return false;
-  el.className = "note warn";
-  el.innerHTML = "<b>This page did not finish loading.</b> " +
-    String(msg) + " (line " + line + "). If you opened it from a file preview, " +
-    "try a browser instead.";
-  return false;
-};
-
 (function(){ var f = document.getElementById("static-fallback");
   if (f) f.classList.add("hidden"); })();
 

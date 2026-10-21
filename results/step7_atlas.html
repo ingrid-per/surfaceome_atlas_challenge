@@ -334,19 +334,9 @@ table.fun td.b{width:46%}
 </header>
 
 <div class="wrap">
-  <noscript>
-    <div class="note warn" style="margin:17px 0">
-      <b>This page needs JavaScript.</b> Every table and chart is built from
-      data embedded in the file. Some file-preview windows block scripts &mdash;
-      open it in a browser (Safari, Chrome) instead and it will load.
-    </div>
-  </noscript>
-  <div id="jsfail" class="note warn hidden" style="margin:17px 0"></div>
-
-  <!-- Rendered into the file at build time and visible by default. The script
-       hides it on boot, so a reader whose browser or preview window does not
-       run scripts still gets the answer instead of an empty page. -->
-  <div id="static-fallback"><div class="card"><div class="card-h"><h2>Top 10 surface targets</h2><span class="sub">static view</span></div><div class="note mute" style="margin:13px 16px 0">This is the plain version of the page. The interactive atlas &mdash; all 30 cancer types, the evidence behind each target and the threshold explorer &mdash; needs JavaScript, which this window is not running. Open the file in a browser to see it.</div><div style="padding:13px 16px" class="scroll-x"><table class="stt"><tr><th>#</th><th>Target</th><th>S</th><th>Tumour TPM</th><th>Highest healthy tissue</th><th>Tumours above it</th></tr><tr><td class="n">1</td><td><span class="g">CLDN6</span><span class="sub">Testicular Germ Cell Tumor</span></td><td class="n">6.40</td><td class="n">158</td><td>Brain - Cerebellum<span class="sub">0.9 TPM</span></td><td class="n">99%</td></tr><tr><td class="n">2</td><td><span class="g">TSPAN10</span><span class="sub">Uveal Melanoma</span></td><td class="n">6.20</td><td class="n">221</td><td>Testis<span class="sub">2.0 TPM</span></td><td class="n">100%</td></tr><tr><td class="n">3</td><td><span class="g">OR2I1</span><span class="sub">Cholangiocarcinoma</span><span class="sub"><b>protein existence uncertain</b> · survives 62% of threshold settings</span></td><td class="n">4.98</td><td class="n">95</td><td>Spleen<span class="sub">2.1 TPM</span></td><td class="n">94%</td></tr><tr><td class="n">4</td><td><span class="g">ALPG</span><span class="sub">Testicular Germ Cell Tumor</span></td><td class="n">4.71</td><td class="n">49</td><td>fallopian tube<span class="sub">0.9 TPM</span></td><td class="n">87%</td></tr><tr><td class="n">5</td><td><span class="g">DCSTAMP</span><span class="sub">Thyroid Carcinoma</span><span class="sub">present in only 66% of tumours</span></td><td class="n">4.32</td><td class="n">94</td><td>Brain - Amygdala<span class="sub">3.8 TPM</span></td><td class="n">69%</td></tr><tr><td class="n">6</td><td><span class="g">TRPM1</span><span class="sub">Uveal Melanoma</span></td><td class="n">4.08</td><td class="n">94</td><td>skin<span class="sub">4.6 TPM</span></td><td class="n">100%</td></tr><tr><td class="n">7</td><td><span class="g">UPK3B</span><span class="sub">Mesothelioma</span></td><td class="n">3.98</td><td class="n">707</td><td>Adipose - Visceral (Omentum)<span class="sub">43.9 TPM</span></td><td class="n">88%</td></tr><tr><td class="n">8</td><td><span class="g">LY6G6D</span><span class="sub">Rectum Adenocarcinoma</span></td><td class="n">3.80</td><td class="n">101</td><td>seminal vesicle<span class="sub">6.3 TPM</span></td><td class="n">88%</td></tr><tr><td class="n">9</td><td><span class="g">CD70</span><span class="sub">Kidney Clear Cell Carcinoma</span><span class="sub">survives 50% of threshold settings</span></td><td class="n">3.65</td><td class="n">52</td><td>lymph node<span class="sub">3.2 TPM</span></td><td class="n">88%</td></tr><tr><td class="n">10</td><td><span class="g">DBH</span><span class="sub">Pheochromocytoma &amp; Paraganglioma</span><span class="sub">survives 75% of threshold settings</span></td><td class="n">3.47</td><td class="n">2,859</td><td>adrenal gland<span class="sub">257.4 TPM</span></td><td class="n">93%</td></tr></table></div></div></div>
+  <!-- Rendered at build time, visible by default, hidden once the page's own
+       rendering takes over. Carries the answer in plain markup. -->
+  <div id="static-fallback"><div class="card"><div class="card-h"><h2>Top 10 surface targets</h2><span class="sub">ranked by specificity score S</span></div><div style="padding:13px 16px" class="scroll-x"><table class="stt"><tr><th>#</th><th>Target</th><th>S</th><th>Tumour TPM</th><th>Highest healthy tissue</th><th>Tumours above it</th></tr><tr><td class="n">1</td><td><span class="g">CLDN6</span><span class="sub">Testicular Germ Cell Tumor</span></td><td class="n">6.40</td><td class="n">158</td><td>Brain - Cerebellum<span class="sub">0.9 TPM</span></td><td class="n">99%</td></tr><tr><td class="n">2</td><td><span class="g">TSPAN10</span><span class="sub">Uveal Melanoma</span></td><td class="n">6.20</td><td class="n">221</td><td>Testis<span class="sub">2.0 TPM</span></td><td class="n">100%</td></tr><tr><td class="n">3</td><td><span class="g">OR2I1</span><span class="sub">Cholangiocarcinoma</span><span class="sub"><b>protein existence uncertain</b> · survives 62% of threshold settings</span></td><td class="n">4.98</td><td class="n">95</td><td>Spleen<span class="sub">2.1 TPM</span></td><td class="n">94%</td></tr><tr><td class="n">4</td><td><span class="g">ALPG</span><span class="sub">Testicular Germ Cell Tumor</span></td><td class="n">4.71</td><td class="n">49</td><td>fallopian tube<span class="sub">0.9 TPM</span></td><td class="n">87%</td></tr><tr><td class="n">5</td><td><span class="g">DCSTAMP</span><span class="sub">Thyroid Carcinoma</span><span class="sub">present in only 66% of tumours</span></td><td class="n">4.32</td><td class="n">94</td><td>Brain - Amygdala<span class="sub">3.8 TPM</span></td><td class="n">69%</td></tr><tr><td class="n">6</td><td><span class="g">TRPM1</span><span class="sub">Uveal Melanoma</span></td><td class="n">4.08</td><td class="n">94</td><td>skin<span class="sub">4.6 TPM</span></td><td class="n">100%</td></tr><tr><td class="n">7</td><td><span class="g">UPK3B</span><span class="sub">Mesothelioma</span></td><td class="n">3.98</td><td class="n">707</td><td>Adipose - Visceral (Omentum)<span class="sub">43.9 TPM</span></td><td class="n">88%</td></tr><tr><td class="n">8</td><td><span class="g">LY6G6D</span><span class="sub">Rectum Adenocarcinoma</span></td><td class="n">3.80</td><td class="n">101</td><td>seminal vesicle<span class="sub">6.3 TPM</span></td><td class="n">88%</td></tr><tr><td class="n">9</td><td><span class="g">CD70</span><span class="sub">Kidney Clear Cell Carcinoma</span><span class="sub">survives 50% of threshold settings</span></td><td class="n">3.65</td><td class="n">52</td><td>lymph node<span class="sub">3.2 TPM</span></td><td class="n">88%</td></tr><tr><td class="n">10</td><td><span class="g">DBH</span><span class="sub">Pheochromocytoma &amp; Paraganglioma</span><span class="sub">survives 75% of threshold settings</span></td><td class="n">3.47</td><td class="n">2,859</td><td>adrenal gland<span class="sub">257.4 TPM</span></td><td class="n">93%</td></tr></table></div></div></div>
 
   <section id="tab-bycancer">
     <div class="panes">
@@ -470,18 +460,6 @@ table.fun td.b{width:46%}
 </div>
 
 <script>
-// If anything below throws, the page would otherwise render as an empty
-// shell with no indication why. Surface it instead.
-window.onerror = function(msg, src, line){
-  var el = document.getElementById("jsfail");
-  if (!el) return false;
-  el.className = "note warn";
-  el.innerHTML = "<b>This page did not finish loading.</b> " +
-    String(msg) + " (line " + line + "). If you opened it from a file preview, " +
-    "try a browser instead.";
-  return false;
-};
-
 (function(){ var f = document.getElementById("static-fallback");
   if (f) f.classList.add("hidden"); })();
 
