@@ -46,13 +46,10 @@ def healthy_profiles(genes: set[str]) -> dict[str, list]:
 
 
 def lineage() -> pd.DataFrame:
-    """D59: microenvironment call from published tumour purity (Aran 2015)."""
-    try:
-        return (pd.read_csv(RESULTS / "step7_purity_correlation.csv")
-                [["ensembl_gene", "r_purity", "microenv_purity"]]
-                .set_index("ensembl_gene"))
-    except FileNotFoundError:
-        return pd.DataFrame()
+    """D61: no microenvironment call is produced. Tumour purity is not
+    accounted for, and that is stated as a limitation rather than guessed at
+    with a flag. Kept as a stub so the row builder stays unchanged."""
+    return pd.DataFrame()
 
 
 def surface_detail() -> pd.DataFrame:
@@ -110,17 +107,6 @@ def row_to_dict(r, surf, prof, cohort_of, counts, lin=None) -> dict:
         "healthy": prof.get(r.ensembl_gene, []),
         "disease_term": DISEASE_TERM.get(r.cancer_type, r.cancer_type),
     }
-    if lin is not None and r.ensembl_gene in lin.index:
-        L = lin.loc[r.ensembl_gene]
-        rp = L.get("r_purity")
-        flagged = bool(L.get("microenv_purity")) if pd.notna(L.get("microenv_purity")) else False
-        d["r_purity"] = None if pd.isna(rp) else round(float(rp), 2)
-        d["micro_flag"] = flagged
-        d["micro"] = "microenvironment" if flagged else "tumour cell"
-    else:
-        d["micro"] = None
-        d["micro_flag"] = False
-        d["r_purity"] = None
     if s is not None:
         d.update({
             "ecto": str(s.extracellular_reported),

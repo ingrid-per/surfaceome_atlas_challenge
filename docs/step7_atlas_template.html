@@ -377,7 +377,6 @@ function detail(c, host){
       ${c.low_power?`<span class="chip warn">low power</span>`:""}
       ${c.cspa?`<span class="chip ok">CSPA measured</span>`:""}
       ${c.gpi?`<span class="chip t1">GPI-anchored</span>`:""}
-      ${c.micro_flag?`<span class="chip bad">${esc(c.micro)}</span>`:""}
     </div>
   </div>
   <div class="d-body">
@@ -443,26 +442,19 @@ function detail(c, host){
     ${tr && tr.why?`<div class="sec"><h3>Neighbouring tissue</h3>
       <div class="note ${tr.cls==="ok"?"good":"warn"}"><b>${tr.label}.</b> ${tr.why}</div></div>`:""}
 
-    ${c.r_purity!=null?`<div class="sec">
-      <h3>Tumour cells, or what surrounds them?</h3>
-      <div class="note ${(c.micro&&c.micro!=="tumour cell")?"warn":"good"}">
-        ${c.micro_flag
-          ? `<b>${esc(c.micro)}.</b> Expression falls as the tumour sample gets purer (r = ${c.r_purity!=null?c.r_purity.toFixed(2):"\u2014"} against published purity), so the signal likely comes from infiltrating immune or stromal cells rather than the tumour. A drug may meet the target on the patient's own leukocytes or fibroblasts. Not disqualifying on its own \u2014 AbbVie's ABBV-085 targets the fibroblast protein LRRC15 deliberately.`
-          : `<b>Tumour-cell pattern.</b> Expression does not fall as the sample gets purer (r = ${c.r_purity!=null?c.r_purity.toFixed(2):"\u2014"}), so the signal is unlikely to come from the microenvironment.`}
-        <div style="margin-top:7px;font-size:11.5px;color:var(--ink-3)">
-          Purity fractions published by Aran et&nbsp;al., <i>Nat Commun</i>
-          6:8971 (2015) &mdash; one number per tumour, derived by them from copy
-          number, methylation and pathologist review. We hold none of that
-          underlying data; we use their estimates because they were produced
-          <i>without</i> RNA, so correlating our expression against them is not
-          circular. Their expression-based estimate is excluded for that reason.
-          Coverage leans on the histology figure (7,434 tumours) more than copy
-          number (3,286). Cut-off r&nbsp;&le;&nbsp;&minus;0.23, set by separating
-          12 known microenvironment genes from 10 known tumour-cell genes
-          (92% / 100%).
-        </div>
+    <div class="sec">
+      <h3>What this number cannot tell you</h3>
+      <div class="note warn">
+        <b>Tumour purity is not accounted for.</b> These values come from bulk
+        tissue, which is never pure tumour. A gene can look tumour-high because
+        it is carried by cells that infiltrate the tumour rather than by the
+        tumour itself. Commonly: tumour-associated macrophages, infiltrating
+        T&nbsp;cells, B&nbsp;and plasma cells, cancer-associated fibroblasts,
+        the tumour's own blood vessels, adipocytes in breast tissue, and
+        residual normal epithelium. Separating those needs single-cell data or
+        antibody staining, neither of which is in this analysis.
       </div>
-    </div>`:""}
+    </div>
 
     <div class="sec">
       <h3>Comparator</h3>
@@ -573,7 +565,7 @@ document.getElementById("method").innerHTML = `
 <h3>Known limits</h3>
 <ul>
 <li>RNA is a proxy for protein, and mass spectrometry under-detects membrane proteins — a third of candidates were never seen in the GTEx proteome.</li>
-<li>Bulk tissue mixes tumour, stroma and immune cells, so a gene can look tumour-high because of its neighbours.</li>
+<li><b>Tumour purity is not accounted for.</b> Bulk tissue mixes tumour cells with macrophages, T cells, plasma cells, cancer-associated fibroblasts, blood vessels and residual normal epithelium. A gene can look tumour-high because of any of them. We tried three ways to call this computationally and withdrew all three as weaker than they appeared — stating the limitation is more honest than a flag that implies a measurement we did not make. Resolving it needs single-cell data or antibody staining.</li>
 <li>TCGA tumours come from surgery, GTEx tissue largely post-mortem. Uniform reprocessing removes software differences, not collection differences.</li>
 <li>Four cancer types have no matching healthy tissue in GTEx and are compared against the same cell lineage at a different site. Those carry a <b>lineage-only</b> chip.</li>
 <li>Nothing here is validated at the bench.</li>
