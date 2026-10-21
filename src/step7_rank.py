@@ -77,7 +77,14 @@ def apply_family_limit(df: pd.DataFrame, n: int) -> pd.DataFrame:
 
 
 def add_homogeneity(elig: pd.DataFrame) -> pd.DataFrame:
-    """Fraction of tumours expressing the gene above 1 and 10 TPM."""
+    """Fraction of tumours expressing the gene above 1 and 10 TPM, and above
+    the gene's own worst healthy tissue.
+
+    The 10 TPM line is a convention. The worst healthy tissue is the bar a drug
+    actually has to clear, and it differs per gene, so the last column answers
+    "in what share of patients would this target have any therapeutic window at
+    all". Reported only — it never enters the ranking (D52 is pre-registered).
+    """
     mat = pd.read_parquet(ROOT / "data" / "processed" / "step4_candidate_tpm.parquet")
     samp = pd.read_parquet(ROOT / "data" / "processed" / "step4_samples.parquet")
     tum = samp[(samp.study == "TCGA") & (samp.sample_type == "Primary Tumor")]
@@ -85,21 +92,27 @@ def add_homogeneity(elig: pd.DataFrame) -> pd.DataFrame:
     V = mat.to_numpy(dtype=np.float32)
     gidx = {g: i for i, g in enumerate(mat.index)}
 
-    f1, f10, q25 = [], [], []
+    f1, f10, q25, fh = [], [], [], []
     ids_by_cancer = {c: [cols[s] for s in g["sample"] if s in cols]
                      for c, g in tum.groupby("disease")}
-    for gene, cancer in zip(elig.ensembl_gene, elig.cancer_type):
+    for gene, cancer, h in zip(elig.ensembl_gene, elig.cancer_type,
+                               elig.healthy_max_log2):
         ids = ids_by_cancer.get(cancer, [])
         gi = gidx.get(gene)
         if gi is None or not ids:
-            f1.append(np.nan); f10.append(np.nan); q25.append(np.nan); continue
-        tpm = np.power(2.0, V[gi, ids]) - 1.0
+            f1.append(np.nan); f10.append(np.nan); q25.append(np.nan)
+            fh.append(np.nan); continue
+        vals = V[gi, ids]                      # log2(TPM+1), per tumour
+        tpm = np.power(2.0, vals) - 1.0
         f1.append(float((tpm > 1).mean()))
         f10.append(float((tpm > 10).mean()))
         q25.append(float(np.percentile(tpm, 25)))
+        # compared on the same log2(TPM+1) scale the healthy maximum is stored on
+        fh.append(float((vals > h).mean()) if np.isfinite(h) else np.nan)
     elig["frac_tumours_above_1tpm"] = f1
     elig["frac_tumours_above_10tpm"] = f10
     elig["tumour_tpm_q25"] = q25
+    elig["frac_tumours_above_worst_healthy"] = fh
     return elig
 
 

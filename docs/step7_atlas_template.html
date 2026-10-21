@@ -533,6 +533,11 @@ function detail(c, host){
       <div style="font-size:12px;color:var(--ink-3);margin-top:6px">
         above 10 TPM in ${homogPct}% of tumours · lower quartile ${c.tumour_q25.toLocaleString()} TPM
       </div>
+      ${c.frac_above_healthy!=null?`<div class="note ${c.frac_above_healthy>=0.85?"good":c.frac_above_healthy>=0.7?"mute":"warn"}" style="margin-top:9px">
+        <b>${Math.round(c.frac_above_healthy*100)}% of these tumours sit above
+        ${esc(c.worst_tissue)}</b>, the worst healthy tissue for this gene.
+        The 10 TPM line above is a convention; this is the bar a drug actually
+        has to clear, and it is different for every target.</div>`:""}
       ${homogPct<70?`<div class="note warn" style="margin-top:9px">Expression is <b>heterogeneous</b>. A drug against this target would reach only part of the tumour population.</div>`:""}
     </div>
 

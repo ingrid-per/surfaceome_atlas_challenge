@@ -85,6 +85,9 @@ def row_to_dict(r, surf, prof, cohort_of, counts, lin=None) -> dict:
         "tumour_q25": round(float(r.tumour_tpm_q25), 1),
         "frac1": round(float(r.frac_tumours_above_1tpm), 3),
         "frac10": round(float(r.frac_tumours_above_10tpm), 3),
+        "frac_above_healthy": None if pd.isna(
+            r.get("frac_tumours_above_worst_healthy", np.nan))
+        else round(float(r.frac_tumours_above_worst_healthy), 3),
         "worst_tissue": str(r.healthy_max_tissue),
         "worst_tpm": round(float(2 ** r.healthy_max_log2 - 1), 1),
         "worst_source": str(r.healthy_max_source),
