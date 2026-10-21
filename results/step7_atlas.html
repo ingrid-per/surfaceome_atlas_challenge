@@ -205,6 +205,10 @@ table.fun td.b{width:46%}
 .prose li{margin-bottom:5px}
 .prose code{font-family:var(--mono);font-size:12.5px;background:var(--surface-2);
   padding:1px 5px;border-radius:4px}
+.rank-by{padding:7px 16px;border-bottom:1px solid var(--line-soft);
+  background:var(--surface-2);font-size:11.5px;color:var(--ink-3);line-height:1.45}
+.rank-by b{color:var(--ink-2);font-weight:600}
+
 /* ---------- robustness ---------- */
 .knobs{display:grid;gap:13px;padding:15px 17px}
 .knob{display:grid;grid-template-columns:minmax(0,232px) minmax(0,1fr);gap:14px;
@@ -289,6 +293,9 @@ table.fun td.b{width:46%}
           <h2>Ranked candidates</h2>
           <select id="cancerSel" aria-label="Cancer type"></select>
         </div>
+        <div class="rank-by">Ordered by <b>specificity score S</b> &mdash; how far
+          tumour expression sits above the single highest healthy tissue, on a
+          log2 scale. Top 10 within this cancer type.</div>
         <div class="list" id="listA"></div>
       </div>
       <div class="card detail" id="detailA"></div>
@@ -300,8 +307,12 @@ table.fun td.b{width:46%}
       <div class="card">
         <div class="card-h">
           <h2>Global top 10 &amp; reserve</h2>
-          <span class="sub">best cancer type per gene</span>
+          <span class="sub">ranks 11&ndash;15 are the reserve</span>
         </div>
+        <div class="rank-by">Each gene enters once, through its <b>best cancer
+          type</b>, and the list is ordered by <b>specificity score S</b>. At most
+          two genes per protein family, so one large family cannot fill the
+          list.</div>
         <div class="list" id="listB"></div>
       </div>
       <div class="card detail" id="detailB"></div>
@@ -313,8 +324,12 @@ table.fun td.b{width:46%}
       <div class="card">
         <div class="card-h">
           <h2>Raised across many cancer types</h2>
-          <span class="sub">ranked by breadth, not by score</span>
+          <span class="sub">breadth, not score</span>
         </div>
+        <div class="rank-by">Ordered by the <b>number of cancer types</b> the gene
+          passes in, then by its median S across them. This is the one list that
+          does not rank on S &mdash; a gene can lead it without being the most
+          specific anywhere.</div>
         <div class="note warn" style="margin:13px 16px 0">
           <b>Treat this list with particular caution.</b> Immune infiltration and
           stromal content are present in tumours of every kind, so ranking by
@@ -347,7 +362,7 @@ table.fun td.b{width:46%}
       <div class="knobs" id="knobs"></div>
       <div class="rb-head">
         <span class="msg" id="rbMsg"></span>
-        <button class="reset" id="rbReset">Back to the decided settings</button>
+        <button class="reset" id="rbReset">Back to the baseline settings</button>
       </div>
     </div>
     <div class="panes">
@@ -356,6 +371,9 @@ table.fun td.b{width:46%}
           <h2>Top 20 under these settings</h2>
           <span class="sub" id="rbElig"></span>
         </div>
+        <div class="rank-by">Ordered by <b>specificity score S recomputed under
+          these settings</b> &mdash; changing the healthy reference or its summary
+          changes S itself, not just who qualifies.</div>
         <div class="list rb-list" id="listR"></div>
         <div class="gone hidden" id="rbGone"></div>
       </div>
@@ -364,6 +382,8 @@ table.fun td.b{width:46%}
           <h2>How often each gene survives</h2>
           <span class="sub">share of all <span id="rbN2">—</span> settings</span>
         </div>
+        <div class="rank-by">Ordered by <b>stability</b>, not by score. Highlighted
+          bars are the genes in the list on the left.</div>
         <div class="sbars" id="sbars"></div>
         <div class="card-h" style="border-top:1px solid var(--line)">
           <h2 style="font-size:14px">Which choice moves the answer most</h2>
@@ -497,7 +517,7 @@ function detail(c, host){
       ${c.stab!=null && c.stab < 0.75 ? `<div class="note warn" style="margin-top:9px">
         This target reaches the top 20 in only <b>${Math.round(c.stab*100)}%</b> of the
         ${D.robust.n_runs} threshold settings we tested. It is a real finding under the settings
-        we decided on, but it depends on them more than the others do &mdash; see
+        the baseline uses, but it depends on them more than the others do &mdash; see
         the Robustness tab for which choice moves it.</div>` : ""}
       ${c.stab!=null && c.stab >= 0.95 ? `<div class="note good" style="margin-top:9px">
         Reaches the top 20 under <b>${Math.round(c.stab*100)}%</b> of the
@@ -717,7 +737,7 @@ document.getElementById("knobs").innerHTML = R.axes.map(a => `
     <div class="segs" role="group" aria-label="${esc(a.label)}">
       ${a.values.map((v,i) => `<button class="seg" data-ax="${esc(a.key)}" data-v="${esc(v)}"
         aria-pressed="${v===rstate[a.key]}"
-        title="${v===a.default ? "the value we decided on" : ""}">${esc(a.labels[i])}${a.unit&&!isNaN(parseFloat(v))?esc(a.unit):""}${v===a.default?'<span class="mark"></span>':""}</button>`).join("")}
+        title="${v===a.default ? "the baseline value" : ""}">${esc(a.labels[i])}${a.unit&&!isNaN(parseFloat(v))?esc(a.unit):""}${v===a.default?'<span class="mark"></span>':""}</button>`).join("")}
     </div>
   </div>`).join("");
 
@@ -744,19 +764,19 @@ function drawRobust(){
     </div>`;
   }).join("");
 
-  /* what the decided list loses under this setting */
+  /* what the baseline list loses under this setting */
   const lost = base.filter(sym => !cur.has(sym));
   const gone = document.getElementById("rbGone");
   gone.classList.toggle("hidden", lost.length === 0);
-  if(lost.length) gone.innerHTML = `Drops out compared with the decided
+  if(lost.length) gone.innerHTML = `Drops out compared with the baseline
     settings: ${lost.map(x=>`<span class="g">${esc(x)}</span>`).join(", ")}`;
 
   /* headline */
   const same = items.filter(x => baseSet.has(x)).length;
   const msg = document.getElementById("rbMsg");
   msg.innerHTML = defaultSet()
-    ? `These are <b>the settings we decided on</b>. This list is the one the rest of the atlas is built from.`
-    : `<b>${same} of 20</b> genes are shared with the decided settings &mdash;
+    ? `These are <b>the baseline settings</b> &mdash; the ones the rest of the atlas is built from.`
+    : `<b>${same} of 20</b> genes are shared with the baseline settings &mdash;
        ${20-same} ${20-same===1?"gene is":"genes are"} different.`;
   document.getElementById("rbReset").disabled = defaultSet();
   document.getElementById("rbElig").textContent =
@@ -794,7 +814,7 @@ document.getElementById("rbReset").onclick = () => {
   document.getElementById("sens").innerHTML =
     `<div style="font-size:12px;color:var(--ink-3);line-height:1.5;margin-top:9px">
       How much each choice shifts the answer: the share of the top 20 it keeps
-      in common with the decided settings, averaged over every run at that value.
+      in common with the baseline settings, averaged over every run at that value.
       A wide spread means the choice matters.
      </div>` +
     order.map(ax => `
