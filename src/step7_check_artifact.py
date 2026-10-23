@@ -97,6 +97,40 @@ ok(method.indexOf("undefined") < 0, "no 'undefined' leaked into the method text"
 var fb = document.getElementById("static-fallback");
 ok(fb.cls.indexOf("hidden") >= 0, "static fallback is hidden once the script runs");
 
+/* --- Step 13 --- */
+/* 7.13 every payload row carries surface evidence (the MHC-region join bug) */
+var allRows = D.top10.concat(D.reserve, D.pan);
+Object.keys(D.by_cancer).forEach(function(c){ allRows = allRows.concat(D.by_cancer[c]); });
+var noSurface = allRows.filter(function(r){ return r.tm_sources === undefined; });
+ok(noSurface.length === 0, "every payload row carries surface evidence",
+   noSurface.length ? noSurface.slice(0,5).map(function(r){return r.symbol;}).join(",") : "");
+
+/* 7.14 no finalist shows an unresolved field in the surface panel */
+var dashes = 0;
+D.top10.forEach(function(c, i){
+  var r = document.getElementById("listB").querySelectorAll(".row").filter(
+    function(x){ return +x.dataset.i === i; })[0];
+  if (r && r.onclick) r.onclick();
+  if (document.getElementById("detailB").innerHTML.indexOf("not recorded") >= 0) dashes++;
+});
+ok(dashes === 0, "no finalist has an unrecorded surface field", dashes + " affected");
+
+/* 7.15 the page opens on Global top 10, and on exactly one tab */
+var visible = ["bycancer","global","pan","robust","method"].filter(function(t){
+  return document.getElementById("tab-"+t).cls.indexOf("hidden") < 0; });
+ok(visible.length === 1 && visible[0] === "global",
+   "opens on Global top 10 and nothing else", visible.join(","));
+
+/* 7.17 the lineage-confound count in the prose matches the payload */
+var mth = document.getElementById("method").innerHTML;
+var expect = D.top10.filter(function(c){ return c.grade !== "direct"; }).length;
+ok(mth.indexOf("<b>" + expect + " of the ten finalists</b>") >= 0,
+   "non-direct finalist count in the prose matches the payload", "expected " + expect);
+ok(mth.indexOf("When a high score means something else") >= 0
+   && mth.indexOf("What I tried and could not make work") >= 0
+   && mth.indexOf("Prior work") >= 0, "the three Step 13 sections are present");
+ok(mth.indexOf("NaN") < 0, "no NaN leaked into the method text");
+
 /* tab buttons must not have had their handlers overwritten by each other */
 var tabBtns = document.querySelectorAll("nav.tabs button");
 ok(tabBtns.length === 5, "five tabs wired");

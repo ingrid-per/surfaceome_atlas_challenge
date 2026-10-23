@@ -325,8 +325,8 @@ table.fun td.b{width:46%}
     <div class="stat-row" id="stats"></div>
   </div>
   <nav class="tabs" role="tablist">
-    <button role="tab" aria-selected="true" data-tab="bycancer">By cancer type</button>
-    <button role="tab" aria-selected="false" data-tab="global">Global top 10</button>
+    <button role="tab" aria-selected="false" data-tab="bycancer">By cancer type</button>
+    <button role="tab" aria-selected="true" data-tab="global">Global top 10</button>
     <button role="tab" aria-selected="false" data-tab="pan">Pan-cancer</button>
     <button role="tab" aria-selected="false" data-tab="robust">Robustness</button>
     <button role="tab" aria-selected="false" data-tab="method">Method &amp; limits</button>
@@ -338,7 +338,7 @@ table.fun td.b{width:46%}
        rendering takes over. Carries the answer in plain markup. -->
   <div id="static-fallback">__STATIC_TOP10__</div>
 
-  <section id="tab-bycancer">
+  <section id="tab-bycancer" class="hidden">
     <div class="panes">
       <div class="card">
         <div class="card-h">
@@ -354,7 +354,7 @@ table.fun td.b{width:46%}
     </div>
   </section>
 
-  <section id="tab-global" class="hidden">
+  <section id="tab-global">
     <div class="panes">
       <div class="card">
         <div class="card-h">
@@ -634,10 +634,12 @@ function detail(c, host){
     <div class="sec">
       <h3>Surface evidence</h3>
       <dl class="kv">
-        <dt>Transmembrane sources agreeing</dt><dd>${c.tm_sources ?? "—"} of 2</dd>
-        <dt>Transmembrane segments</dt><dd>${c.n_tm ?? "—"}</dd>
-        <dt>Longest extracellular segment</dt><dd>${esc(c.ecto ?? "—")}${Number.isFinite(ectoNum)?" aa":""}</dd>
-        <dt>Compartment evidence</dt><dd>${esc((c.compartment||"—").replace(/_/g," "))}</dd>
+        <dt>Transmembrane sources agreeing</dt><dd>${c.tm_sources != null ? c.tm_sources + " of 2" : "not recorded"}</dd>
+        <dt>Transmembrane segments</dt><dd>${c.n_tm != null ? c.n_tm : "not recorded"}</dd>
+        <dt>Longest extracellular segment</dt><dd>${c.ecto == null ? "not recorded"
+          : Number.isFinite(ectoNum) ? esc(c.ecto) + " aa"
+          : esc(c.ecto.replace(/_/g," ")) + (c.gpi ? " (GPI-anchored)" : "")}</dd>
+        <dt>Compartment evidence</dt><dd>${c.compartment ? esc(c.compartment.replace(/_/g," ")) : "not recorded"}</dd>
         <dt>In predicted surfaceome (SURFY)</dt><dd>${c.surfy?"yes":"no"}</dd>
       </dl>
       ${ectoWarn?`<div class="note warn" style="margin-top:9px">The exposed region is only <b>${ectoNum} residues</b>. It clears our 20-residue minimum, but a short loop is a difficult epitope for an antibody in practice.</div>`:""}
@@ -778,6 +780,15 @@ const axisSpread = {};
 D.robust.sensitivity.forEach(r => axisSpread[r.axis] = r.spread);
 const axisLabel = k => (D.robust.axes.find(a => a.key === k) || {}).label || k;
 const ranked = Object.keys(axisSpread).sort((a,b) => axisSpread[b] - axisSpread[a]);
+// Lineage-confound figures. Counted from the payload so the prose cannot drift
+// from the data: how many finalists rest on a non-direct comparator, and how
+// many cancer types would vanish if lineage-only comparators were dropped.
+const nonDirect = D.top10.filter(c => c.grade !== "direct");
+const lineageOnlyTypes = Object.keys(D.by_cancer).filter(
+  ct => D.by_cancer[ct].length && D.by_cancer[ct].every(c => c.grade === "lineage_only"));
+const S12 = D.step12 || {};
+const nameList = a => a.length < 2 ? (a[0] || "")
+  : a.slice(0, -1).join(", ") + " and " + a[a.length - 1];
 const mostAxis = axisLabel(ranked[0]);
 const leastAxis = axisLabel(ranked[ranked.length-1]);
 document.getElementById("method").innerHTML = `
@@ -792,6 +803,23 @@ document.getElementById("method").innerHTML = `
 <p>Requiring S&nbsp;&gt;&nbsp;0 rejects every approved target we tested, including FOLR1, GPC3, NECTIN4 and TACSTD2. The score is not wrong — it recovers their real documented toxicities — but a target needs a usable therapeutic window, not absence from every tissue. Calibrating a cut-off on known drugs was rejected as circular. S travels as a number.</p>
 <h3>How much of this depends on our thresholds</h3>
 <p>Five of the six numbers behind this ranking are conventions we chose. The whole selection was re-run under all <b>${D.robust.n_runs}</b> combinations of reasonable alternatives, and each gene scored on the share of runs in which it reaches the top 20. ${nRobust} of the ten finalists survive at least three quarters of them. The choice that moves the answer most is <b>${mostAxis.toLowerCase()}</b>; ${leastAxis.toLowerCase()} changes the answer least, because the fold-change requirement is already doing that work. The Robustness tab lets you move each threshold and see the list it produces.</p>
+<h3>When a high score means something else</h3>
+<p>S cannot tell two different things apart. A gene can score highly because tumour cells genuinely carry more of it, or because the cell the tumour came from is <b>rare in the healthy tissue we compared against</b>. Both produce a large fold change, and nothing in the number distinguishes them.</p>
+<p>TSPAN10 and TRPM1 are the clearest example here. Both are melanocyte genes, and uveal melanoma is compared against skin, where melanocytes are a small minority of the cells present. An individual melanocyte may carry much the same amount in a tumour and in healthy skin; the tumour sample looks higher because it is almost entirely melanocytes and the skin sample is not.</p>
+<p>This is the mirror image of the tumour-purity limitation above. There, cells that are not tumour inflate the tumour sample. Here, cells that are not the target dilute the healthy sample. Both widen the apparent gap, from opposite directions.</p>
+<p><b>${nonDirect.length} of the ten finalists</b> rest on a comparator that is not a direct tissue match${nonDirect.length ? ": " + nameList(nonDirect.map(c => esc(c.symbol) + " (" + esc(c.cancer) + ")")) : ""}. Each carries its comparator grade on its own page.</p>
+<p>The flag is not a rejection. CD19 is a B-cell lineage marker; CD19 CAR-T causes B-cell aplasia by design, and it is one of the clear successes in oncology. The question a lineage target raises is <i>which healthy cells are put at risk and whether that is survivable</i> — a clinical judgment about a specific tissue, not a threshold a script can apply.</p>
+<p>These targets were not excluded, and the reason is arithmetic: dropping lineage-only comparators removes <b>${lineageOnlyTypes.length} cancer types</b> from the analysis outright${lineageOnlyTypes.length ? " (" + nameList(lineageOnlyTypes.map(esc)) + ")" : ""}, and mesothelioma has no other kind of row at all. A stated limitation is more informative than a shorter list.</p>
+
+<h3>What I tried and could not make work</h3>
+<p>I tried to separate the two cases above by normalising each candidate against a composite of marker genes for its own cell of origin, taken from CellMarker 2.0. If a gene merely rides its lineage, it should sit the same distance above those markers in the tumour as in healthy tissue.</p>
+<p><b>The method does not work.</b> A marker composite measures how <i>differentiated</i> a lineage is, not how much of it is present, and tumours dedifferentiate. The colonocyte markers ALPI, FABP1 and FABP2 are lower in colon tumour than in healthy colon — which the method reads as "fewer colonocytes" when it is really "less differentiated colonocytes". Two things move the denominator and only one of them is cell fraction. The positive control confirms it: a canonical melanocyte gene held out of its own composite should score near zero and does not.</p>
+<p>The enrichment figure this produced is therefore a lineage-composition artifact, and is not reported. With more time I would ask instead whether a gene's expression <i>tracks</i> the composite across samples within each group, since a correlation is immune to the absolute-level shift that breaks the comparison of medians.</p>
+<p>Worth recording either way: curated markers were thin or missing for the chromaffin, germ-cell and thyroid-follicular lineages, and <b>${S12.n_lineages_no_multi} of ${S12.n_lineages} lineages</b> (covering ${(S12.cancer_types_no_multi||[]).length} of ${S12.n_cancer_types} cancer types) had no marker cited by more than one paper. Those gaps are <b>not</b> in the same places as the comparator gaps — only ${(S12.in_both||[]).length} cancer types fall in both groups, and the lineages the marker database covers worst are common cancers with perfectly good comparators. So the two weaknesses are largely independent rather than compounding.</p>
+
+<h3>Prior work</h3>
+<p>This follows the approach of published surface-target work, including the Cancer Surfaceome Atlas and ImmunoTar (<i>Bioinformatics</i>, 2025), which combine tumour and normal expression with a surface-localisation filter. What is added here is the robustness grid, the evidence tiers that deliberately keep protein data out of the ranking, and the finalist review.</p>
+
 <h3>Known limits</h3>
 <ul>
 <li>RNA is a proxy for protein, and mass spectrometry under-detects membrane proteins — a third of candidates were never seen in the GTEx proteome.</li>

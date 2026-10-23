@@ -359,8 +359,18 @@ def main() -> int:
     sm += ["",
            f"  in both groups ({len(both)}): {', '.join(both) if both else 'none'}",
            ""]
-    sm.append("  They are largely NOT the same lineages." if len(both) <= 1 else
+    # Judge the overlap as a SHARE, not a raw count: 2 of 7 is a small overlap
+    # and the earlier "<= 1" test called it substantial, which was wrong.
+    frac = len(both) / len(ct_no_multi) if ct_no_multi else 0.0
+    sm.append(f"  {len(both)} of {len(ct_no_multi)} ({frac:.0%}) overlap.")
+    sm.append("  They are largely NOT the same cancer types: the lineages the"
+              if frac < 0.5 else
               "  They overlap substantially — read both limitations together.")
+    if frac < 0.5:
+        sm += ["  marker database covers worst are common cancers that have",
+               "  perfectly good comparators, while the rare cancers at the top",
+               "  of this list have usable markers and weak comparators. The two",
+               "  weaknesses are largely independent rather than compounding."]
     sm += [
         "",
         "CONTROLS",

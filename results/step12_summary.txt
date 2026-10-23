@@ -57,7 +57,12 @@ MARKER COVERAGE AGAINST COMPARATOR QUALITY
 
   in both groups (2): Uterine Carcinosarcoma, Uterine Corpus Endometrioid Carcinoma
 
-  They overlap substantially — read both limitations together.
+  2 of 7 (29%) overlap.
+  They are largely NOT the same cancer types: the lineages the
+  marker database covers worst are common cancers that have
+  perfectly good comparators, while the rare cancers at the top
+  of this list have usable markers and weak comparators. The two
+  weaknesses are largely independent rather than compounding.
 
 CONTROLS
 

@@ -99,3 +99,13 @@ step scripts listed below.
 | E.5 | Stability recomputes from `extra_metric_runs.csv` | `src/extra_metric_check.py` |
 | E.6 | Every ranking returned between 1 and 20 genes | `src/extra_metric_check.py` |
 | E.7 | The strictest prevalence gate actually changes each list | `src/extra_metric_check.py` |
+
+## Step 13 — final page changes
+
+| # | Check | Script |
+| --- | --- | --- |
+| 7.13 | Every payload row carries surface evidence (the MHC-region join) | `src/step7_check_artifact.py` |
+| 7.14 | No finalist shows an unrecorded surface field | `src/step7_check_artifact.py` |
+| 7.15 | The page opens on Global top 10, and on exactly one tab | `src/step7_check_artifact.py` |
+| 7.16 | No unresolved template expression, `undefined` or `NaN` in the method text | `src/step7_check_artifact.py` |
+| 7.17 | The non-direct finalist count in the prose equals the payload's | `src/step7_check_artifact.py` |
