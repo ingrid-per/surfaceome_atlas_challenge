@@ -1,0 +1,31 @@
+cancer_type,cell_of_origin,cellmarker_name,home_tissue,lineage_share_of_home,confidence,rationale,home_n_samples,scorable,in_enrichment_test
+Adrenocortical Cancer,adrenal cortical cell,Adrenal cortical cell,Adrenal Gland,majority,clear,"Cortex is the bulk of the adrenal gland, so little dilution expected.",128,True,True
+Breast Invasive Carcinoma,luminal epithelial cell,Luminal epithelial cell,Breast - Mammary Tissue,minority,clear,Breast tissue is largely adipose and stroma; luminal epithelium is a small fraction.,179,True,True
+Cholangiocarcinoma,cholangiocyte,Cholangiocyte,Liver,minority,clear,Cholangiocytes line bile ducts inside liver but are a small percentage of liver cells. Strong dilution expected.,110,True,True
+Colon Adenocarcinoma,colonocyte,Enterocyte,Colon - Transverse,majority,clear,Transverse colon is mucosa-bearing (D40); epithelium is well represented.,167,True,True
+Head & Neck Squamous Cell Carcinoma,squamous epithelial cell,Squamous epithelial cell,Esophagus - Mucosa,majority,clear,"Stratified squamous mucosa, matched to oesophageal mucosa as in the Step 4 map.",273,True,True
+Kidney Clear Cell Carcinoma,proximal tubule epithelial cell,Proximal tubule cell,Kidney - Cortex,majority,clear,Proximal tubule dominates renal cortex.,28,True,True
+Kidney Papillary Cell Carcinoma,proximal tubule epithelial cell,Proximal tubule cell,Kidney - Cortex,majority,clear,Same lineage and tissue as clear cell.,28,True,True
+Liver Hepatocellular Carcinoma,hepatocyte,Hepatocyte,Liver,majority,clear,Hepatocytes are the bulk of liver; minimal dilution expected.,110,True,True
+Lung Adenocarcinoma,alveolar type II cell,Alveolar type II cell,Lung,minority,clear,AT2 cells are a minority of lung tissue by cell count.,288,True,True
+Lung Squamous Cell Carcinoma,bronchial basal cell,Basal cell,Lung,minority,clear,Airway basal cells are a small fraction of whole lung.,288,True,True
+Pancreatic Adenocarcinoma,ductal epithelial cell,Ductal cell,Pancreas,minority,clear,Pancreas is overwhelmingly acinar; ductal cells are a few percent. Strong dilution expected.,167,True,True
+Pheochromocytoma & Paraganglioma,chromaffin cell,Chromaffin cell,Adrenal Gland,minority,clear,"Chromaffin cells sit in the medulla, a minority of the adrenal gland. Strong dilution expected.",128,True,True
+Prostate Adenocarcinoma,luminal epithelial cell,Luminal epithelial cell,Prostate,majority,clear,Glandular epithelium is well represented in prostate tissue.,100,True,True
+Rectum Adenocarcinoma,colonocyte,Enterocyte,Colon - Transverse,majority,clear,Same lineage as colon; transverse colon used for the mucosal layer (D40).,167,True,True
+Skin Cutaneous Melanoma,melanocyte,Melanocyte,Skin - Sun Exposed (Lower Leg),minority,clear,"Melanocytes are a small fraction of skin, which is mostly keratinocytes.",324,True,True
+Stomach Adenocarcinoma,gastric epithelial cell,Gastric epithelial cell,Stomach,majority,clear,Gastric mucosa is well represented in the GTEx stomach sample.,175,True,True
+Testicular Germ Cell Tumor,germ cell,Germ cell,Testis,majority,clear,Germ cells at various stages dominate adult testis.,165,True,True
+Thyroid Carcinoma,thyroid follicular cell,Follicular cell,Thyroid,majority,clear,Follicular cells are the bulk of thyroid.,279,True,True
+Uterine Corpus Endometrioid Carcinoma,endometrial epithelial cell,Endometrial epithelial cell,Uterus,minority,clear,GTEx uterus is whole myometrium-dominated wall; endometrium is a minority. Dilution expected.,78,True,True
+Uveal Melanoma,melanocyte,Melanocyte,Skin - Sun Exposed (Lower Leg),minority,clear,"Uveal melanocytes have no GTEx tissue; cutaneous melanocytes in skin are the closest available lineage match, as in the Step 4 map.",324,True,True
+Brain Lower Grade Glioma,astrocyte / oligodendrocyte,Astrocyte,Brain - Cortex,minority,mixed,LGG spans astrocytoma and oligodendroglioma; a single origin would be a forced choice.,105,True,False
+Cervical & Endocervical Cancer,squamous and glandular epithelium,Squamous epithelial cell,Esophagus - Mucosa,majority,mixed,"Squamous and adenocarcinoma are both common. GTEx cervix has 4-6 samples, so oesophageal mucosa stands in as stratified squamous epithelium, as in D40.",273,True,False
+Esophageal Carcinoma,squamous and glandular epithelium,Squamous epithelial cell,Esophagus - Mucosa,majority,mixed,"TCGA ESCA pools squamous carcinoma and Barrett-associated adenocarcinoma, which have different origins.",273,True,False
+Glioblastoma Multiforme,astrocyte / OPC / neural stem cell,Astrocyte,Brain - Cortex,minority,mixed,"The cell of origin is actively contested between astrocyte, oligodendrocyte precursor and neural stem cell.",105,True,False
+Sarcoma,multiple mesenchymal lineages,,,minority,mixed,"TCGA SARC pools leiomyosarcoma, liposarcoma, UPS and others with different origins. No single lineage applies.",0,False,False
+Uterine Carcinosarcoma,endometrial epithelium + mesenchymal,Endometrial epithelial cell,Uterus,minority,mixed,"Biphasic by definition, with both epithelial and mesenchymal components.",78,True,False
+Diffuse Large B-Cell Lymphoma,B cell,B cell,,minority,uncertain,"DLBCL arises in lymph node, which GTEx does not sample. Spleen was considered and rejected by me: it is a lymphoid organ but not the tissue this tumour comes from, so a shift measured against it would not mean what the column says it means.",0,False,False
+Kidney Chromophobe,collecting-duct intercalated cell,Intercalated cell,Kidney - Cortex,minority,uncertain,"Origin in the distal nephron is accepted, but collecting ducts are largely medullary and GTEx samples cortex only.",28,True,False
+Mesothelioma,mesothelial cell,Mesothelial cell,,minority,uncertain,Mesothelium is a single cell layer on serosal surfaces. No GTEx tissue represents it; visceral adipose contains some but is not mesothelium.,0,False,False
+Ovarian Serous Cystadenocarcinoma,fallopian tube secretory cell,Secretory cell,,minority,uncertain,"Current consensus places the origin in fallopian tube epithelium. GTEx Fallopian Tube has 5 samples, below the 10-sample floor (D37).",0,False,False

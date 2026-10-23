@@ -58,15 +58,10 @@ shasum -a 256 data/raw/<file>
 | `Jiang2020_mmc3.xlsx` | GTEx proteome | Jiang et al., Cell 2020, 183(1):269-283 | 2026-10-20 | <https://ars.els-cdn.com/content/image/1-s2.0-S0092867420310783-mmc3.xlsx> | `f278d406990059a625cb0d5c4c29e56dd8634052138a38bd053bc0d61124af80` | 117.28 MB |
 | `CSPA_S2_File.xlsx` | CSPA | CSPA, 2015 | 2026-10-20 | <https://wollscheidlab.org/CSPA/data/S2_File.xlsx> | `9b02c85d4c1d49847cf37e23755f07e57ea65b79cc0ebcdaeef1752dab8b5c8a` | 1.36 MB |
 | `SURFY_table_S3_surfaceome.xlsx` | SURFY | SURFY, 2018 | 2026-10-20 | <https://wollscheidlab.org/SURFY/table_S3_surfaceome.xlsx> | `2f1b8262463ce1c59a1f945d22f0e9638cb3bfbf5aabe197f43b562a62fb055a` | 6.55 MB |
+| `aran2015_tumour_purity.xlsx` | Tumour purity (withdrawn, see D61) | Aran et al., Nat Commun 6:8971 (2015), Supplementary Data 1 | 2026-10-21 | <https://static-content.springer.com/esm/art%3A10.1038%2Fncomms9971/MediaObjects/41467_2015_BFncomms9971_MOESM1236_ESM.xlsx> | `fce1ba13ff3a6432b7e4f260eb516e407c967d615ca87bc8dffa7765baf97529` | 540 KB |
+| `CellMarker2_Cell_marker_Human.xlsx` | CellMarker 2.0 | CellMarker 2.0 (mirror host) | 2026-10-22 | <http://117.50.127.228/CellMarker/CellMarker_download_files/file/Cell_marker_Human.xlsx> | `bf52b8cd60df60f17a7c6b8a59d0bbb74ec78612f11cd11990f15e4eedb7d842` | 7.61 MB |
 
-**42 files, 1692.69 MB total.**
-
-### Added later
-
-| File | Resource | Version | Date | Source | SHA-256 | Size |
-| --- | --- | --- | --- | --- | --- | --- |
-| `hgnc_complete_set.txt` | HGNC gene groups | current | 2026-10-21 | <https://storage.googleapis.com/public-download-files/hgnc/tsv/tsv/hgnc_complete_set.txt> | see `results/step1_manifest.csv` | 16.2 MB |
-| `aran2015_tumour_purity.xlsx` | Tumour purity, 4 methods + consensus | Aran et al., Nat Commun 6:8971 (2015), Supplementary Data 1 | 2026-10-21 | <https://static-content.springer.com/esm/art%3A10.1038%2Fncomms9971/MediaObjects/41467_2015_BFncomms9971_MOESM1236_ESM.xlsx> | `fce1ba13ff3a6432b7e4f260eb516e407c967d615ca87bc8dffa7765baf97529` | 0.53 MB |
+**44 files, 1700.83 MB total.**
 
 ### Deliberately not downloaded
 

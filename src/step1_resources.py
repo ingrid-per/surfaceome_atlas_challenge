@@ -160,6 +160,29 @@ def _build() -> list[Resource]:
         Resource("S2", "SURFY", "SURFY_table_S3_surfaceome.xlsx",
                  f"{_WOLL}/SURFY/table_S3_surfaceome.xlsx", 6_870_000, "zip",
                  "2,886-protein predicted surfaceome", "SURFY, 2018"),
+        # Downloaded for the tumour-purity analysis that D61 withdrew. The
+        # ANALYSIS is gone; the FILE is still in data/raw, so it still needs a
+        # manifest row. It is declared here rather than hand-written into the
+        # manifest because write_manifest() rebuilds that file from this list,
+        # and anything not declared here gets silently dropped the next time a
+        # download runs — which is exactly what happened to it.
+        Resource("A1", "Tumour purity (withdrawn, see D61)",
+                 "aran2015_tumour_purity.xlsx",
+                 "https://static-content.springer.com/esm/art%3A10.1038%2F"
+                 "ncomms9971/MediaObjects/41467_2015_BFncomms9971_MOESM1236_ESM.xlsx",
+                 553_082, "zip",
+                 "Aran et al. Supplementary Data 1. Kept on disk and recorded; "
+                 "no step reads it (D61)",
+                 "Aran et al., Nat Commun 6:8971 (2015), Supplementary Data 1"),
+        # Step 12. The documented host bio-bigdata.hrbmu.edu.cn answers 301 and
+        # then 403; this mirror serves the same file and is what was actually
+        # fetched, so it is what the manifest records.
+        Resource("M1", "CellMarker 2.0", "CellMarker2_Cell_marker_Human.xlsx",
+                 "http://117.50.127.228/CellMarker/CellMarker_download_files"
+                 "/file/Cell_marker_Human.xlsx", 7_982_475, "zip",
+                 "Curated human cell-type marker genes, used in Step 12 to "
+                 "build the lineage composite",
+                 "CellMarker 2.0 (mirror host)"),
     ]
     return r
 

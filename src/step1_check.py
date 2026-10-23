@@ -90,6 +90,22 @@ def main() -> int:
         if cohort in CPTAC_NO_NORMAL:
             failures.append(f"{cohort} is listed as having no normal but one was pinned")
 
+    # 1.5 data/MANIFEST.md itself lists every file on disk.
+    #
+    # Check 1.1 verifies the CSV. The rule in CLAUDE.md names the MARKDOWN
+    # file, and the two are written by the same function from the same list —
+    # so a file recorded by hand in the markdown only is invisible to that
+    # function and disappears the next time any download runs. That happened to
+    # aran2015_tumour_purity.xlsx on 2026-10-22: it sat in data/raw with no
+    # manifest row until this check was written.
+    checks += 1
+    md = (ROOT / "data" / "MANIFEST.md").read_text()
+    for p_raw in sorted(RAW.iterdir()):
+        if p_raw.name == ".gitkeep" or p_raw.name.endswith(".part"):
+            continue
+        if f"`{p_raw.name}`" not in md:
+            failures.append(f"file on disk but not in data/MANIFEST.md: {p_raw.name}")
+
     # 1.4 data/raw is read-only
     checks += 1
     if os.access(RAW, os.W_OK):
