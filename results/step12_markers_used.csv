@@ -1,0 +1,137 @@
+lineage_id,cell_of_origin,symbol,ensembl_gene,n_papers,cell_names,tissue_filter,used
+adrenal_cortical,adrenal cortical cell,NCAM1,ENSG00000149294,1,Definitive zone cell,Adrenal,False
+luminal_breast,luminal epithelial cell,ANKRD30A,ENSG00000148513,1,Luminal cell | Luminal epithelial cell | Mature luminal cell,Breast,False
+luminal_breast,luminal epithelial cell,EPCAM,ENSG00000119888,1,Luminal cell | Luminal epithelial cell | Mature luminal cell,Breast,False
+luminal_breast,luminal epithelial cell,ESR1,ENSG00000091831,1,Luminal cell | Luminal epithelial cell | Mature luminal cell,Breast,False
+luminal_breast,luminal epithelial cell,ETFA,ENSG00000140374,1,Luminal cell | Luminal epithelial cell | Mature luminal cell,Breast,False
+luminal_breast,luminal epithelial cell,FLOT2,ENSG00000132589,1,Luminal cell | Luminal epithelial cell | Mature luminal cell,Breast,False
+luminal_breast,luminal epithelial cell,FOXA1,ENSG00000129514,1,Luminal cell | Luminal epithelial cell | Mature luminal cell,Breast,False
+luminal_breast,luminal epithelial cell,KRT18,ENSG00000111057,1,Luminal cell | Luminal epithelial cell | Mature luminal cell,Breast,False
+luminal_breast,luminal epithelial cell,KRT19,ENSG00000171345,1,Luminal cell | Luminal epithelial cell | Mature luminal cell,Breast,False
+cholangiocyte,cholangiocyte,KRT19,ENSG00000171345,4,Cholangiocyte,,True
+cholangiocyte,cholangiocyte,KRT7,ENSG00000135480,4,Cholangiocyte,,True
+cholangiocyte,cholangiocyte,SOX9,ENSG00000125398,3,Cholangiocyte,,True
+cholangiocyte,cholangiocyte,CFTR,ENSG00000001626,2,Cholangiocyte,,True
+cholangiocyte,cholangiocyte,EPCAM,ENSG00000119888,2,Cholangiocyte,,True
+cholangiocyte,cholangiocyte,ACE2,ENSG00000130234,1,Cholangiocyte,,True
+cholangiocyte,cholangiocyte,ELF3,ENSG00000163435,1,Cholangiocyte,,True
+cholangiocyte,cholangiocyte,FXYD2,ENSG00000137731,1,Cholangiocyte,,True
+colonocyte,colonocyte,ALPI,ENSG00000163295,2,Enterocyte,Intestine|Colon,True
+colonocyte,colonocyte,ANPEP,ENSG00000166825,2,Enterocyte,Intestine|Colon,True
+colonocyte,colonocyte,FABP1,ENSG00000163586,2,Enterocyte,Intestine|Colon,True
+colonocyte,colonocyte,FABP2,ENSG00000145384,2,Enterocyte,Intestine|Colon,True
+colonocyte,colonocyte,AOC1,ENSG00000002726,1,Enterocyte,Intestine|Colon,True
+colonocyte,colonocyte,APOA1,ENSG00000118137,1,Enterocyte,Intestine|Colon,True
+colonocyte,colonocyte,AQP8,ENSG00000103375,1,Enterocyte,Intestine|Colon,True
+colonocyte,colonocyte,BEST4,ENSG00000142959,1,Enterocyte,Intestine|Colon,True
+squamous,squamous epithelial cell,CLCA2,ENSG00000137975,1,Squamous epithelial cell | Squamous cell,,False
+squamous,squamous epithelial cell,CTSA,ENSG00000064601,1,Squamous epithelial cell | Squamous cell,,False
+squamous,squamous epithelial cell,KRT13,ENSG00000171401,1,Squamous epithelial cell | Squamous cell,,False
+squamous,squamous epithelial cell,KRT5,ENSG00000186081,1,Squamous epithelial cell | Squamous cell,,False
+squamous,squamous epithelial cell,LGALS7,,1,Squamous epithelial cell | Squamous cell,,False
+squamous,squamous epithelial cell,SERPINB5,ENSG00000206075,1,Squamous epithelial cell | Squamous cell,,False
+squamous,squamous epithelial cell,SPRR3,ENSG00000163209,1,Squamous epithelial cell | Squamous cell,,False
+squamous,squamous epithelial cell,VEGFA,ENSG00000112715,1,Squamous epithelial cell | Squamous cell,,False
+proximal_tubule,proximal tubule epithelial cell,ALDOB,ENSG00000136872,4,Proximal tubular cell | Pan Proximal tubular cell | Proximal convoluted tubular cell | Proximal straight tubular cell | Proximal tubule cell,Kidney,True
+proximal_tubule,proximal tubule epithelial cell,LRP2,ENSG00000081479,4,Proximal tubular cell | Pan Proximal tubular cell | Proximal convoluted tubular cell | Proximal straight tubular cell | Proximal tubule cell,Kidney,True
+proximal_tubule,proximal tubule epithelial cell,CUBN,ENSG00000107611,3,Proximal tubular cell | Pan Proximal tubular cell | Proximal convoluted tubular cell | Proximal straight tubular cell | Proximal tubule cell,Kidney,True
+proximal_tubule,proximal tubule epithelial cell,SLC22A8,ENSG00000149452,2,Proximal tubular cell | Pan Proximal tubular cell | Proximal convoluted tubular cell | Proximal straight tubular cell | Proximal tubule cell,Kidney,True
+proximal_tubule,proximal tubule epithelial cell,ABCC4,ENSG00000125257,1,Proximal tubular cell | Pan Proximal tubular cell | Proximal convoluted tubular cell | Proximal straight tubular cell | Proximal tubule cell,Kidney,True
+proximal_tubule,proximal tubule epithelial cell,ACE2,ENSG00000130234,1,Proximal tubular cell | Pan Proximal tubular cell | Proximal convoluted tubular cell | Proximal straight tubular cell | Proximal tubule cell,Kidney,True
+proximal_tubule,proximal tubule epithelial cell,DCXR,ENSG00000169738,1,Proximal tubular cell | Pan Proximal tubular cell | Proximal convoluted tubular cell | Proximal straight tubular cell | Proximal tubule cell,Kidney,True
+proximal_tubule,proximal tubule epithelial cell,EPCAM,ENSG00000119888,1,Proximal tubular cell | Pan Proximal tubular cell | Proximal convoluted tubular cell | Proximal straight tubular cell | Proximal tubule cell,Kidney,True
+hepatocyte,hepatocyte,ALB,ENSG00000163631,12,Hepatocyte,Liver,True
+hepatocyte,hepatocyte,AFP,ENSG00000081051,5,Hepatocyte,Liver,True
+hepatocyte,hepatocyte,TTR,ENSG00000118271,3,Hepatocyte,Liver,True
+hepatocyte,hepatocyte,ASGR1,ENSG00000141505,2,Hepatocyte,Liver,True
+hepatocyte,hepatocyte,CYP3A4,ENSG00000160868,2,Hepatocyte,Liver,True
+hepatocyte,hepatocyte,HNF4A,ENSG00000101076,2,Hepatocyte,Liver,True
+hepatocyte,hepatocyte,SERPINA1,ENSG00000197249,2,Hepatocyte,Liver,True
+hepatocyte,hepatocyte,A2M,ENSG00000175899,1,Hepatocyte,Liver,True
+alveolar_type2,alveolar type II cell,SFTPC,ENSG00000168484,4,Alveolar type II (ATII) cell | Type II pneumocyte | Alveolar cell Type 2 | Alveolar pneumocyte Type II | Pulmonary alveolar cell Type 2,Lung,True
+alveolar_type2,alveolar type II cell,ABCA3,ENSG00000167972,2,Alveolar type II (ATII) cell | Type II pneumocyte | Alveolar cell Type 2 | Alveolar pneumocyte Type II | Pulmonary alveolar cell Type 2,Lung,True
+alveolar_type2,alveolar type II cell,ACE2,ENSG00000130234,1,Alveolar type II (ATII) cell | Type II pneumocyte | Alveolar cell Type 2 | Alveolar pneumocyte Type II | Pulmonary alveolar cell Type 2,Lung,True
+alveolar_type2,alveolar type II cell,AGER,ENSG00000204305,1,Alveolar type II (ATII) cell | Type II pneumocyte | Alveolar cell Type 2 | Alveolar pneumocyte Type II | Pulmonary alveolar cell Type 2,Lung,True
+alveolar_type2,alveolar type II cell,EPCAM,ENSG00000119888,1,Alveolar type II (ATII) cell | Type II pneumocyte | Alveolar cell Type 2 | Alveolar pneumocyte Type II | Pulmonary alveolar cell Type 2,Lung,True
+alveolar_type2,alveolar type II cell,LAMP3,ENSG00000078081,1,Alveolar type II (ATII) cell | Type II pneumocyte | Alveolar cell Type 2 | Alveolar pneumocyte Type II | Pulmonary alveolar cell Type 2,Lung,True
+alveolar_type2,alveolar type II cell,MUC1,ENSG00000185499,1,Alveolar type II (ATII) cell | Type II pneumocyte | Alveolar cell Type 2 | Alveolar pneumocyte Type II | Pulmonary alveolar cell Type 2,Lung,True
+alveolar_type2,alveolar type II cell,PGC,ENSG00000096088,1,Alveolar type II (ATII) cell | Type II pneumocyte | Alveolar cell Type 2 | Alveolar pneumocyte Type II | Pulmonary alveolar cell Type 2,Lung,True
+bronchial_basal,bronchial basal cell,KRT5,ENSG00000186081,8,Basal cell,Lung,True
+bronchial_basal,bronchial basal cell,ACKR3,ENSG00000144476,1,Basal cell,Lung,True
+bronchial_basal,bronchial basal cell,ADH7,ENSG00000196344,1,Basal cell,Lung,True
+bronchial_basal,bronchial basal cell,ANXA8,ENSG00000265190,1,Basal cell,Lung,True
+bronchial_basal,bronchial basal cell,ANXA8L1,ENSG00000264230,1,Basal cell,Lung,True
+bronchial_basal,bronchial basal cell,AQP3,ENSG00000165272,1,Basal cell,Lung,True
+bronchial_basal,bronchial basal cell,ARL4D,ENSG00000175906,1,Basal cell,Lung,True
+bronchial_basal,bronchial basal cell,ATP1B3,ENSG00000069849,1,Basal cell,Lung,True
+pancreatic_ductal,ductal epithelial cell,KRT19,ENSG00000171345,4,Ductal cell,Pancreas,True
+pancreatic_ductal,ductal epithelial cell,SOX9,ENSG00000125398,3,Ductal cell,Pancreas,True
+pancreatic_ductal,ductal epithelial cell,KRT7,ENSG00000135480,2,Ductal cell,Pancreas,True
+pancreatic_ductal,ductal epithelial cell,PDX1,ENSG00000139515,2,Ductal cell,Pancreas,True
+pancreatic_ductal,ductal epithelial cell,ACE2,ENSG00000130234,1,Ductal cell,Pancreas,True
+pancreatic_ductal,ductal epithelial cell,ANXA4,ENSG00000196975,1,Ductal cell,Pancreas,True
+pancreatic_ductal,ductal epithelial cell,BICC1,ENSG00000122870,1,Ductal cell,Pancreas,True
+pancreatic_ductal,ductal epithelial cell,BMPR1A,ENSG00000107779,1,Ductal cell,Pancreas,True
+chromaffin,chromaffin cell,NCAM1,ENSG00000149294,1,Chromaffin cell,Adrenal,False
+melanocyte,melanocyte,MLANA,ENSG00000120215,8,Melanocyte,,True
+melanocyte,melanocyte,PMEL,ENSG00000185664,7,Melanocyte,,True
+melanocyte,melanocyte,DCT,ENSG00000080166,6,Melanocyte,,True
+melanocyte,melanocyte,MITF,ENSG00000187098,2,Melanocyte,,True
+melanocyte,melanocyte,TYR,ENSG00000077498,2,Melanocyte,,True
+melanocyte,melanocyte,TYRP1,ENSG00000107165,2,Melanocyte,,True
+melanocyte,melanocyte,ALCAM,ENSG00000170017,1,Melanocyte,,True
+melanocyte,melanocyte,APOD,ENSG00000189058,1,Melanocyte,,True
+gastric_epithelial,gastric epithelial cell,ACTC1,ENSG00000159251,1,Pit cell | Pit progenitor cell | Parietal cell | Chief cell | Zymogenic chief cell | Epithelial cell,Stomach,False
+gastric_epithelial,gastric epithelial cell,ADAMTS6,ENSG00000049192,1,Pit cell | Pit progenitor cell | Parietal cell | Chief cell | Zymogenic chief cell | Epithelial cell,Stomach,False
+gastric_epithelial,gastric epithelial cell,ADRA1D,ENSG00000171873,1,Pit cell | Pit progenitor cell | Parietal cell | Chief cell | Zymogenic chief cell | Epithelial cell,Stomach,False
+gastric_epithelial,gastric epithelial cell,AK4,ENSG00000162433,1,Pit cell | Pit progenitor cell | Parietal cell | Chief cell | Zymogenic chief cell | Epithelial cell,Stomach,False
+gastric_epithelial,gastric epithelial cell,ALDH1B1,ENSG00000137124,1,Pit cell | Pit progenitor cell | Parietal cell | Chief cell | Zymogenic chief cell | Epithelial cell,Stomach,False
+gastric_epithelial,gastric epithelial cell,ANPEP,ENSG00000166825,1,Pit cell | Pit progenitor cell | Parietal cell | Chief cell | Zymogenic chief cell | Epithelial cell,Stomach,False
+gastric_epithelial,gastric epithelial cell,ATP4A,ENSG00000105675,1,Pit cell | Pit progenitor cell | Parietal cell | Chief cell | Zymogenic chief cell | Epithelial cell,Stomach,False
+gastric_epithelial,gastric epithelial cell,BARX1,ENSG00000131668,1,Pit cell | Pit progenitor cell | Parietal cell | Chief cell | Zymogenic chief cell | Epithelial cell,Stomach,False
+germ_cell,germ cell,FGFR3,ENSG00000068078,2,Germ cell,Gonad|Testis,True
+germ_cell,germ cell,SYCP3,ENSG00000139351,2,Germ cell,Gonad|Testis,True
+germ_cell,germ cell,ACRV1,ENSG00000134940,1,Germ cell,Gonad|Testis,True
+germ_cell,germ cell,ACTL7B,ENSG00000148156,1,Germ cell,Gonad|Testis,True
+germ_cell,germ cell,DDX4,ENSG00000152670,1,Germ cell,Gonad|Testis,True
+germ_cell,germ cell,DMRT1,ENSG00000137090,1,Germ cell,Gonad|Testis,True
+germ_cell,germ cell,H1-9P,,1,Germ cell,Gonad|Testis,True
+germ_cell,germ cell,POU5F1,ENSG00000204531,1,Germ cell,Gonad|Testis,True
+thyroid_follicular,thyroid follicular cell,NKX2-1,ENSG00000136352,1,Follicular cell,Thyroid,False
+thyroid_follicular,thyroid follicular cell,PAX8,ENSG00000125618,1,Follicular cell,Thyroid,False
+endometrial_epithelial,endometrial epithelial cell,CDH1,ENSG00000039068,1,Epithelial cell | Ciliated cell,Uterus|Endometrium,False
+endometrial_epithelial,endometrial epithelial cell,CTH,ENSG00000116761,1,Epithelial cell | Ciliated cell,Uterus|Endometrium,False
+endometrial_epithelial,endometrial epithelial cell,EPCAM,ENSG00000119888,1,Epithelial cell | Ciliated cell,Uterus|Endometrium,False
+endometrial_epithelial,endometrial epithelial cell,FOLR1,ENSG00000110195,1,Epithelial cell | Ciliated cell,Uterus|Endometrium,False
+endometrial_epithelial,endometrial epithelial cell,FUT4,ENSG00000196371,1,Epithelial cell | Ciliated cell,Uterus|Endometrium,False
+endometrial_epithelial,endometrial epithelial cell,KRT5,ENSG00000186081,1,Epithelial cell | Ciliated cell,Uterus|Endometrium,False
+endometrial_epithelial,endometrial epithelial cell,KRT7,ENSG00000135480,1,Epithelial cell | Ciliated cell,Uterus|Endometrium,False
+endometrial_epithelial,endometrial epithelial cell,RSPH4A,ENSG00000111834,1,Epithelial cell | Ciliated cell,Uterus|Endometrium,False
+astrocyte,astrocyte / oligodendrocyte,GFAP,ENSG00000131095,49,Astrocyte,,True
+astrocyte,astrocyte / oligodendrocyte,AQP4,ENSG00000171885,29,Astrocyte,,True
+astrocyte,astrocyte / oligodendrocyte,S100B,ENSG00000160307,12,Astrocyte,,True
+astrocyte,astrocyte / oligodendrocyte,SLC1A3,ENSG00000079215,12,Astrocyte,,True
+astrocyte,astrocyte / oligodendrocyte,ALDH1L1,ENSG00000144908,11,Astrocyte,,True
+astrocyte,astrocyte / oligodendrocyte,SLC1A2,ENSG00000110436,9,Astrocyte,,True
+astrocyte,astrocyte / oligodendrocyte,GLUL,ENSG00000135821,8,Astrocyte,,True
+astrocyte,astrocyte / oligodendrocyte,SOX9,ENSG00000125398,8,Astrocyte,,True
+b_cell,B cell,CD19,ENSG00000177455,128,B cell,,True
+b_cell,B cell,MS4A1,ENSG00000156738,123,B cell,,True
+b_cell,B cell,CD79A,ENSG00000105369,63,B cell,,True
+b_cell,B cell,CD79B,ENSG00000007312,22,B cell,,True
+b_cell,B cell,CD27,ENSG00000139193,18,B cell,,True
+b_cell,B cell,CR2,ENSG00000117322,13,B cell,,True
+b_cell,B cell,PTPRC,ENSG00000081237,13,B cell,,True
+b_cell,B cell,CD38,ENSG00000004468,11,B cell,,True
+intercalated,collecting-duct intercalated cell,SLC4A1,ENSG00000004939,4,Intercalated cell | Pan-Collecting duct-intercalated cell | Collecting duct-intercalated cell (type A) | Collecting duct-intercalated cell (type B) | Type A intercalated cell,Kidney,True
+intercalated,collecting-duct intercalated cell,AQP6,ENSG00000086159,1,Intercalated cell | Pan-Collecting duct-intercalated cell | Collecting duct-intercalated cell (type A) | Collecting duct-intercalated cell (type B) | Type A intercalated cell,Kidney,True
+intercalated,collecting-duct intercalated cell,ATP6V1G3,ENSG00000151418,1,Intercalated cell | Pan-Collecting duct-intercalated cell | Collecting duct-intercalated cell (type A) | Collecting duct-intercalated cell (type B) | Type A intercalated cell,Kidney,True
+intercalated,collecting-duct intercalated cell,SLC26A7,ENSG00000147606,1,Intercalated cell | Pan-Collecting duct-intercalated cell | Collecting duct-intercalated cell (type A) | Collecting duct-intercalated cell (type B) | Type A intercalated cell,Kidney,True
+mesothelial,mesothelial cell,UPK3B,ENSG00000243566,4,Mesothelial cell,,True
+mesothelial,mesothelial cell,MSLN,ENSG00000102854,2,Mesothelial cell,,True
+mesothelial,mesothelial cell,ACTA2,ENSG00000107796,1,Mesothelial cell,,True
+mesothelial,mesothelial cell,ADAM28,ENSG00000042980,1,Mesothelial cell,,True
+mesothelial,mesothelial cell,ADAMDEC1,ENSG00000134028,1,Mesothelial cell,,True
+mesothelial,mesothelial cell,CDH2,ENSG00000170558,1,Mesothelial cell,,True
+mesothelial,mesothelial cell,CENPF,ENSG00000117724,1,Mesothelial cell,,True
+mesothelial,mesothelial cell,GATA6,ENSG00000141448,1,Mesothelial cell,,True

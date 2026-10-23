@@ -1,0 +1,11 @@
+gene,kind,cancer_type,n_markers_used,median_tumour,median_home,shift,tracks_lineage
+TYR,"positive, held out of its own composite",Uveal Melanoma,7,7.912,2.645,2.521,False
+TYR,"positive, held out of its own composite",Skin Cutaneous Melanoma,7,8.792,2.645,2.247,False
+SOX10,"positive, canonical but never selected",Uveal Melanoma,8,8.493,4.01,1.086,False
+SOX10,"positive, canonical but never selected",Skin Cutaneous Melanoma,8,8.283,4.01,0.001,True
+MLANA,"positive, held out of its own composite",Uveal Melanoma,7,10.69,3.779,4.222,False
+MLANA,"positive, held out of its own composite",Skin Cutaneous Melanoma,7,9.716,3.779,2.218,False
+KRT5,"negative, keratinocyte",Uveal Melanoma,8,0.014,11.899,-15.282,False
+KRT5,"negative, keratinocyte",Skin Cutaneous Melanoma,8,6.306,11.899,-9.864,False
+ALB,"negative, hepatocyte",Uveal Melanoma,8,0.057,1.067,-4.407,False
+ALB,"negative, hepatocyte",Skin Cutaneous Melanoma,8,0.029,1.067,-5.31,False

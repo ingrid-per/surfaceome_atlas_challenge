@@ -1,0 +1,24 @@
+lineage_id,cell_of_origin,n_markers,n_multi_paper,status,thin_markers,reason,cancer_types
+adrenal_cortical,adrenal cortical cell,1,0,not_scored,False,only 1 marker(s) in CellMarker,Adrenocortical Cancer
+chromaffin,chromaffin cell,1,0,not_scored,False,only 1 marker(s) in CellMarker,Pheochromocytoma & Paraganglioma
+endometrial_epithelial,endometrial epithelial cell,8,0,not_scored,False,no marker cited by 2 or more papers (D77),Uterine Carcinosarcoma; Uterine Corpus Endometrioid Carcinoma
+gastric_epithelial,gastric epithelial cell,8,0,not_scored,False,no marker cited by 2 or more papers (D77),Stomach Adenocarcinoma
+luminal_breast,luminal epithelial cell,8,0,not_scored,False,no marker cited by 2 or more papers (D77),Breast Invasive Carcinoma
+luminal_prostate,luminal epithelial cell,0,0,not_scored,False,only 0 marker(s) in CellMarker,Prostate Adenocarcinoma
+none,multiple mesenchymal lineages,0,0,not_scored,False,no single lineage applies,Sarcoma
+squamous,squamous epithelial cell,8,0,not_scored,False,no marker cited by 2 or more papers (D77),Cervical & Endocervical Cancer; Esophageal Carcinoma; Head & Neck Squamous Cell Carcinoma
+thyroid_follicular,thyroid follicular cell,2,0,not_scored,False,only 2 marker(s) in CellMarker,Thyroid Carcinoma
+tubal_secretory,fallopian tube secretory cell,0,0,not_scored,False,only 0 marker(s) in CellMarker,Ovarian Serous Cystadenocarcinoma
+astrocyte,astrocyte / oligodendrocyte,8,8,scored,False,,Brain Lower Grade Glioma; Glioblastoma Multiforme
+b_cell,B cell,8,8,scored,False,,Diffuse Large B-Cell Lymphoma
+cholangiocyte,cholangiocyte,8,5,scored,False,,Cholangiocarcinoma
+colonocyte,colonocyte,8,4,scored,False,,Colon Adenocarcinoma; Rectum Adenocarcinoma
+hepatocyte,hepatocyte,8,7,scored,False,,Liver Hepatocellular Carcinoma
+melanocyte,melanocyte,8,6,scored,False,,Skin Cutaneous Melanoma; Uveal Melanoma
+pancreatic_ductal,ductal epithelial cell,8,4,scored,False,,Pancreatic Adenocarcinoma
+proximal_tubule,proximal tubule epithelial cell,8,4,scored,False,,Kidney Clear Cell Carcinoma; Kidney Papillary Cell Carcinoma
+alveolar_type2,alveolar type II cell,8,2,scored,True,only 2 of 8 markers cited twice,Lung Adenocarcinoma
+bronchial_basal,bronchial basal cell,8,1,scored,True,only 1 of 8 markers cited twice,Lung Squamous Cell Carcinoma
+germ_cell,germ cell,8,2,scored,True,"override: canonical germ-cell markers (SYCP3, DDX4, DMRT1); single citations reflect CellMarker's curation depth, not the biology",Testicular Germ Cell Tumor
+intercalated,collecting-duct intercalated cell,4,1,scored,True,only 1 of 4 markers cited twice,Kidney Chromophobe
+mesothelial,mesothelial cell,8,2,scored,True,only 2 of 8 markers cited twice,Mesothelioma
