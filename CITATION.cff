@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+title: >-
+  Surface protein targets in cancer: a reproducible pipeline for
+  identifying cell-surface proteins over-expressed in tumours and
+  absent from healthy tissue
+message: If you use this software, please cite it as below.
+type: software
+authors:
+  - alias: ingrid-per
+repository-code: https://github.com/ingrid-per/surfaceome_atlas_challenge
+url: https://ingrid-per.github.io/surfaceome_atlas_challenge/
+abstract: >-
+  A pipeline that narrows the 20,431 reviewed human proteins to ten candidate
+  cell-surface cancer targets, by combining curated and predicted membrane
+  topology (UniProt and DeepTMHMM, with a separate route for GPI-anchored
+  proteins), differential expression between TCGA tumours and GTEx healthy
+  tissue reprocessed through a single pipeline, and a specificity score against
+  the highest-expressing healthy tissue across two independent atlases. The
+  selection rule is recorded before the ranking is produced, and the whole
+  selection is re-run under 270 threshold combinations to report how much each
+  candidate depends on the thresholds chosen.
+keywords:
+  - cancer
+  - surfaceome
+  - target discovery
+  - transcriptomics
+  - TCGA
+  - GTEx
+  - reproducible research
+license: Apache-2.0
+version: 1.0.0
+date-released: 2026-11-06

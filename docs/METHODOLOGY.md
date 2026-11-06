@@ -17,7 +17,7 @@ Work one step per Claude Code session, and never let it choose a threshold or a 
 
 **Where this runs:** on your own computer. My workspace here cannot reach the data hosts (they returned errors), and Claude Code runs wherever you start it, so start it in a terminal on your machine.
 
-**File 1: `CLAUDE.md` in the project root.** Claude Code reads it at the start of every session, so these rules apply without repeating them.
+**File 1: `docs/CLAUDE.md`.** Claude Code reads it at the start of every session, so these rules apply without repeating them.
 
 ```markdown
 # Project: surface-protein targets in cancer
@@ -55,7 +55,7 @@ Set up a clean, versioned folder with a decision log, so every later result can 
 **What to do**
 
 1. Create a project folder with this layout: `data/raw/`, `data/processed/`, `src/`, `results/`, `docs/`.
-2. Create `CLAUDE.md` (from the section above), `docs/decisions.md`, `docs/checks.md` and `data/MANIFEST.md`.
+2. Create `docs/CLAUDE.md` (from the section above), `docs/decisions.md`, `docs/checks.md` and `data/MANIFEST.md`.
 3. Run `git init` and make a first commit.
 4. Create a Python environment with an environment manager (conda or uv). Packages to start with: pandas, numpy, scipy, statsmodels, matplotlib, biopython, requests.
 5. Start Claude Code in that folder and ask it to check the machine: free disk space, Python version, and whether it has internet access.

@@ -92,7 +92,7 @@ def main() -> int:
 
     # 1.5 data/MANIFEST.md itself lists every file on disk.
     #
-    # Check 1.1 verifies the CSV. The rule in CLAUDE.md names the MARKDOWN
+    # Check 1.1 verifies the CSV. The rule in docs/CLAUDE.md names the MARKDOWN
     # file, and the two are written by the same function from the same list —
     # so a file recorded by hand in the markdown only is invisible to that
     # function and disappears the next time any download runs. That happened to

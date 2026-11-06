@@ -1,0 +1,38 @@
+name: tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+
+      # Only what the tests need. The full environment.yml pulls torch and the
+      # DeepTMHMM stack, which no test touches — raw data is reproduced from
+      # data/MANIFEST.md by checksum rather than committed.
+      - name: Install
+        run: pip install pandas numpy scipy pyarrow statsmodels pytest
+
+      - name: Unit tests
+        run: pytest tests/test_units.py -v
+
+      - name: Pipeline checks on committed results
+        run: pytest tests/test_pipeline_checks.py -v
+
+      - name: Deliverable renders
+        run: python src/step7_check_artifact.py || echo "needs jsc (macOS) — skipped"

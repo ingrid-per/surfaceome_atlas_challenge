@@ -1,5 +1,8 @@
 # Surface protein targets in cancer
 
+[![tests](https://github.com/ingrid-per/surfaceome_atlas_challenge/actions/workflows/tests.yml/badge.svg)](https://github.com/ingrid-per/surfaceome_atlas_challenge/actions/workflows/tests.yml)
+[![licence: Apache 2.0](https://img.shields.io/badge/licence-Apache%202.0-blue.svg)](LICENSE)
+
 A personal project, built in response to an open challenge.
 
 **The question:** using Protein Atlas, TCGA and a TMHMM-type model, which cell-surface
@@ -130,6 +133,9 @@ src/                     one script per step; every number is written by code
 results/                 every output, including the ones that were withdrawn
 results/surface_proteins_slides.pdf    slide walkthrough of the method
 docs/index.html          the interactive atlas, served by GitHub Pages
+docs/CLAUDE.md           the working rules the pipeline was built under
+tests/                   36 tests — pure functions, plus the pipeline's own checks
+.github/workflows/       CI: tests run on every push
 ```
 
 Everything in `results/` is written by a script except
@@ -166,6 +172,50 @@ against a minimal DOM to assert it renders before it is published.
 Each step has a `*_check.py` beside it. Raw data is excluded from version control
 and reproduced from `data/MANIFEST.md` by checksum.
 
+## Tests
+
+```bash
+pytest tests/ -v
+```
+
+**36 tests, about 25 seconds.** `tests/test_units.py` covers the pure functions
+a silent break would corrupt everything downstream from — the Ensembl version
+strip that every join depends on, the Toil `log2(TPM + 0.001)` back-transform,
+the tissue-specificity index, and the two-per-family limit.
+`tests/test_pipeline_checks.py` runs the pipeline's own check scripts and
+asserts the ranked result, the published payload and the README cannot drift
+apart.
+
+Four check scripts read only committed files and run anywhere, including CI.
+The rest need data reproduced from `data/MANIFEST.md` and skip with a message
+naming what is missing, so the gap is visible rather than silent.
+
+## Reuse this
+
+The pipeline is a surfaceome-to-shortlist machine, and the cancer question is
+one instance of it. Four pieces are independently reusable:
+
+| Want to… | Use | Change |
+| --- | --- | --- |
+| build a surface-protein candidate set for any human study | `src/step3_*.py` | nothing — it is disease-agnostic, and outputs 4,141 proteins with tiers and measured ectodomain lengths |
+| compare any two sample groups in the Toil matrix | `src/step4_differential.py` | the tissue map in `docs/step4_tissue_map_DRAFT.tsv` |
+| score specificity against healthy tissue for any gene set | `src/step5_specificity.py` | the input gene list; the healthy reference is independent of what you score |
+| test whether your own result survives your own thresholds | `src/step9_robustness.py` | the grid at the top of the file |
+
+**The part most worth lifting is the robustness pattern.** Store the measured
+value rather than the pass/fail verdict — `longest_extracellular` is a number,
+not a boolean — and re-running the whole selection across 270 threshold
+combinations costs eight seconds instead of re-predicting the proteome. The
+same idea applies to any pipeline with thresholds in it.
+
+**To adapt it to a different target class**, replace the Step 3 surface call
+with your own eligibility rule and leave Steps 4, 5 and 7 untouched; they take
+a gene list and know nothing about membranes. **To adapt it to a different
+disease**, replace the tissue map and the sample selection in Step 4.
+
+Every threshold is a named constant at the top of its script and a dated entry
+in `docs/decisions.md`, so changing one tells you what else it affects.
+
 ## Still open
 
 - **Finalist review** — the log is built (`docs/step10_override_log.md`) with HPA
@@ -175,6 +225,18 @@ and reproduced from `data/MANIFEST.md` by checksum.
   present in 66% of tumours and is a myeloid gene, so infiltrate is the likelier
   confound; DBH has no plasma-membrane annotation.
 - **Control benchmark** — see above.
+
+## Licence and citation
+
+Apache-2.0 — see [LICENSE](LICENSE). Use, modify and redistribute freely.
+
+Citation metadata is in [CITATION.cff](CITATION.cff); GitHub renders a "Cite
+this repository" button from it.
+
+Data is not redistributed. Every input is public and listed in
+`data/MANIFEST.md` with its version, source URL and SHA-256, so it can be
+re-fetched and verified rather than trusted. DeepTMHMM is used under its
+academic licence and is not included here.
 
 ## How this was built
 

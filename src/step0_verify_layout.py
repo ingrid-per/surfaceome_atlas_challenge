@@ -1,7 +1,7 @@
 """Step 0 check: is the project scaffold complete and are the rules actually present?
 
 Re-runnable in any later session as a regression test — if someone deletes a rule
-from CLAUDE.md or starts committing raw data, this fails.
+from docs/CLAUDE.md or starts committing raw data, this fails.
 
 Exits non-zero on the first set of failures, listing all of them.
 """
@@ -16,7 +16,7 @@ ROOT = Path(__file__).resolve().parent.parent
 REQUIRED_DIRS = ["data/raw", "data/processed", "src", "results", "docs"]
 
 REQUIRED_FILES = [
-    "CLAUDE.md",
+    "docs/CLAUDE.md",
     ".gitignore",
     "environment.yml",
     "docs/decisions.md",
@@ -54,13 +54,13 @@ def main() -> int:
         elif p.stat().st_size == 0:
             failures.append(f"empty file: {f}")
 
-    claude = ROOT / "CLAUDE.md"
+    claude = ROOT / "docs" / "CLAUDE.md"
     if claude.is_file():
         text = claude.read_text()
         missing = [r for r in REQUIRED_RULE_FRAGMENTS if r not in text]
         if missing:
             failures.append(
-                f"CLAUDE.md is missing {len(missing)} of "
+                f"docs/CLAUDE.md is missing {len(missing)} of "
                 f"{len(REQUIRED_RULE_FRAGMENTS)} rules: {missing}"
             )
 
@@ -85,7 +85,7 @@ def main() -> int:
 
     print(f"OK: project layout complete, {checked} checks passed")
     print(f"  {len(REQUIRED_DIRS)} directories, {len(REQUIRED_FILES)} files, "
-          f"{len(REQUIRED_RULE_FRAGMENTS)} rules present in CLAUDE.md, "
+          f"{len(REQUIRED_RULE_FRAGMENTS)} rules present in docs/CLAUDE.md, "
           "data/raw excluded from git")
     return 0
 

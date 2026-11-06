@@ -86,7 +86,7 @@ def validate(path: Path, res: Resource) -> str | None:
 
 
 def unwritable(path: Path) -> None:
-    """Strip write bits. data/raw is read-only, per the rules in CLAUDE.md."""
+    """Strip write bits. data/raw is read-only, per the rules in docs/CLAUDE.md."""
     mode = path.stat().st_mode
     path.chmod(mode & ~(stat.S_IWUSR | stat.S_IWGRP | stat.S_IWOTH))
 

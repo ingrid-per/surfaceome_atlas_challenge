@@ -18,3 +18,5 @@ __pycache__/
 # Versioned by checksum in data/MANIFEST.md, like the datasets.
 tools/
 DeepTMHMM-Academic-License-*.zip
+
+.pytest_cache/
