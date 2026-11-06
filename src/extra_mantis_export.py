@@ -44,6 +44,9 @@ RAW = ROOT / "data" / "raw"
 PROC = ROOT / "data" / "processed"
 RESULTS = ROOT / "results"
 
+MAX_DESC = 400   # the upload endpoint rejects bodies over ~1 MB (nginx default)
+ROUND = 3        # full float64 text is ~17 chars a value; 3 dp is plenty here
+
 # UniProt location strings carry evidence codes like {ECO:0000250|...} that
 # add nothing to an embedding and a lot of tokens.
 ECO = re.compile(r"\{[^}]*\}")
@@ -87,26 +90,24 @@ def build_description(r) -> str:
     where it lives, then the clinical context. Empty fields are dropped rather
     than leaving 'nan' in the text.
     """
+    # Four fields only, and the omissions are deliberate rather than purely
+    # for size:
+    #   HPA "Protein class" is near-identical across rows ("Predicted membrane
+    #     proteins"), so it adds length without separating anything.
+    #   "Raised in <cancer type>" and the healthy tissue are already categoric
+    #     columns; repeating them here would make the embedding cluster by
+    #     cancer type instead of by protein biology, which is the one thing the
+    #     map can show that the existing figures cannot.
+    txt = lambda k: r[k] if isinstance(r.get(k), str) and r[k].strip() else None
     bits = [
-        # guard every field the same way: a missing protein name was writing
-        # the literal string "nan" into the text that gets embedded
-        r["protein_name"] if isinstance(r.get("protein_name"), str) else None,
-        f"Gene family: {r['gene_group']}" if isinstance(r.get("gene_group"), str) else None,
-        f"Molecular function: {r['Molecular function']}"
-        if isinstance(r.get("Molecular function"), str) else None,
-        f"Biological process: {r['Biological process']}"
-        if isinstance(r.get("Biological process"), str) else None,
-        f"Protein class: {r['Protein class']}"
-        if isinstance(r.get("Protein class"), str) else None,
-        f"Subcellular location: {r['location_clean']}"
-        if r.get("location_clean") else None,
-        f"Disease involvement: {r['Disease involvement']}"
-        if isinstance(r.get("Disease involvement"), str) else None,
-        f"Raised in {r['cancer_type']}.",
-        f"Highest healthy tissue: {r['healthy_max_tissue']}."
-        if isinstance(r.get("healthy_max_tissue"), str) else None,
+        txt("protein_name"),
+        f"Family: {r['gene_group']}" if txt("gene_group") else None,
+        f"Function: {r['Molecular function']}" if txt("Molecular function") else None,
+        f"Process: {r['Biological process']}" if txt("Biological process") else None,
+        f"Location: {r['location_clean']}" if txt("location_clean") else None,
     ]
-    return " ".join(str(b).strip().rstrip(".") + "." for b in bits if b)
+    out = " ".join(str(b).strip().rstrip(".") + "." for b in bits if b)
+    return out[:MAX_DESC].rsplit(" ", 1)[0] if len(out) > MAX_DESC else out
 
 
 def main() -> int:
@@ -178,6 +179,9 @@ def main() -> int:
         "median_tumour_log2tpm1": "coordinate1_tumour_log2tpm",
         "healthy_max_log2": "coordinate2_healthy_log2tpm"})
 
+    num = out.select_dtypes("number").columns
+    out[num] = out[num].round(ROUND)
+
     p1 = RESULTS / "mantis_candidates.csv"
     out.to_csv(p1, index=False)
 
@@ -187,14 +191,34 @@ def main() -> int:
     p2 = RESULTS / "mantis_genes.csv"
     best.to_csv(p2, index=False)
 
+    # The full gene x cancer-type file is ~2.3 MB and the upload endpoint
+    # refuses bodies over roughly 1 MB, so ship the per-cancer-type shortlist
+    # as well: the top 10 by S within each of the 30 cancer types. Small, and
+    # it is the more interesting map anyway — the best candidate in every
+    # indication rather than a long tail of genes that merely cleared the bar.
+    per = (out.sort_values("S", ascending=False, kind="mergesort")
+           .groupby("cancer_type", sort=True).head(10))
+    p3 = RESULTS / "mantis_per_cancer.csv"
+    per.to_csv(p3, index=False)
+
     leaked = out.description.str.contains(r"\bnan\b", case=False, na=False)
     assert not leaked.any(), \
         f"{int(leaked.sum())} descriptions contain a literal 'nan'"
     assert out.description.notna().all() and (out.description.str.len() > 20).all()
 
     n_txt = int((out.description.str.len() > 80).sum())
-    print(f"wrote {p1.relative_to(ROOT)}   {len(out):,} rows x {out.shape[1]} cols")
-    print(f"wrote {p2.relative_to(ROOT)}        {len(best):,} rows")
+    mb = lambda p: p.stat().st_size / 1048576
+    print(f"wrote {p1.relative_to(ROOT)}   {len(out):,} rows x "
+          f"{out.shape[1]} cols   {mb(p1):.2f} MB")
+    print(f"wrote {p2.relative_to(ROOT)}        {len(best):,} rows"
+          f"{'':>14}{mb(p2):.2f} MB")
+    print(f"wrote {p3.relative_to(ROOT)}  {len(per):,} rows"
+          f"{'':>16}{mb(p3):.2f} MB")
+    for p in (p2, p3):
+        if mb(p) > 0.95:
+            print(f"  WARNING: {p.name} is over the ~1 MB upload limit")
+    print(f"\n  {p1.name} is {mb(p1):.1f} MB and will be refused on upload; "
+          f"use {p2.name} or {p3.name}")
     print(f"\ndescription column: median {int(out.description.str.len().median())} chars, "
           f"{n_txt:,} rows over 80 chars ({n_txt/len(out):.0%})")
     print(f"selection breakdown: {out.selection.value_counts().to_dict()}")
