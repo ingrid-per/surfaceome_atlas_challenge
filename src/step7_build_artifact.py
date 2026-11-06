@@ -149,6 +149,10 @@ def main() -> int:
     # the published page cannot drift from the one in results/.
     pages = ROOT / "docs" / "index.html"
     pages.write_text(standalone)
+    # Tell Pages to serve docs/ as static files. Without this, Jekyll tries to
+    # process every markdown file in the folder — decisions.md and
+    # METHODOLOGY.md are long, and none of them is meant to be a web page.
+    (ROOT / "docs" / ".nojekyll").touch()
 
     d = json.loads(data)
     print(f"built {out.relative_to(ROOT) if out.is_relative_to(ROOT) else out}"
