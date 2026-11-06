@@ -71,7 +71,7 @@ ROWS = [
     ("Diffuse Large B-Cell Lymphoma", "B cell", "B cell",
      "", "minority", "uncertain",
      "DLBCL arises in lymph node, which GTEx does not sample. Spleen was "
-     "considered and rejected by me: it is a lymphoid organ but not the "
+     "considered and rejected: it is a lymphoid organ but not the "
      "tissue this tumour comes from, so a shift measured against it would not "
      "mean what the column says it means."),
     ("Esophageal Carcinoma", "squamous and glandular epithelium",

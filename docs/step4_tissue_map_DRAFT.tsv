@@ -1,7 +1,7 @@
 tcga_cancer_type	n_tumor	n_tcga_adjacent_normal	gtex_tissues	n_gtex_normal	comparator_grade	gtex_alt_tissues	n_gtex_alt	source	label_error	my_verdict	rationale
 Breast Invasive Carcinoma	1092	113	Breast - Mammary Tissue	179	direct		0	Wang2018			Direct tissue of origin.
 Kidney Clear Cell Carcinoma	530	72	Kidney - Cortex	28	direct		0	Wang2018			Direct, but only 28 GTEx samples - the thinnest well-matched normal.
-Head & Neck Squamous Cell Carcinoma	518	44	Esophagus - Mucosa | Minor Salivary Gland	328	direct		0	extended			DEPARTS FROM Wang2018, which pairs HNSC to salivary gland alone. HNSC is mostly squamous mucosa; oesophageal mucosa is stratified squamous epithelium and the closest match. Salivary gland retained as well. Confirmed by me 2026-10-21.
+Head & Neck Squamous Cell Carcinoma	518	44	Esophagus - Mucosa | Minor Salivary Gland	328	direct		0	extended			DEPARTS FROM Wang2018, which pairs HNSC to salivary gland alone. HNSC is mostly squamous mucosa; oesophageal mucosa is stratified squamous epithelium and the closest match. Salivary gland retained as well. Confirmed 2026-10-21.
 Lung Adenocarcinoma	513	59	Lung	288	direct		0	Wang2018			Direct.
 Brain Lower Grade Glioma	509	0	Brain - Cortex | Brain - Frontal Cortex (Ba9)	207	direct		0	extended			Not in Wang2018. LGG arises in the cerebral hemispheres, so cortex is the right compartment; pooling all 13 GTEx brain regions would mix in cerebellum and basal ganglia, which differ sharply.
 Thyroid Carcinoma	504	59	Thyroid	279	direct		0	Wang2018			Direct.

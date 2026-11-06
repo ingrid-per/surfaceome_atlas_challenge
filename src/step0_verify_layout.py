@@ -22,7 +22,7 @@ REQUIRED_FILES = [
     "docs/decisions.md",
     "docs/checks.md",
     "data/MANIFEST.md",
-    "Surface Target Pipeline Claude Code Runbook.md",
+    "docs/METHODOLOGY.md",
 ]
 
 # Distinctive fragments of the eight rules from the runbook's "File 1" block. Matching

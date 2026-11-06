@@ -91,7 +91,7 @@ protein is reported but never ranked on (D48). Already stated as limitations;
 unchanged by this review.
 
 **6. We deliberately dropped the critical-tissue list that both ADC papers
-use** (D42). That remains defensible — I judged she could not author such
+use** (D42). That remains defensible — I judged I was not in a position to author such
 a list — but it is a divergence from published practice, not an alignment with
 it, and the report should say so.
 

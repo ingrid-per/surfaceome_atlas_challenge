@@ -27,7 +27,7 @@ FORBIDDEN = [
     "infiltrate flag",          # withdrawn with D61
     "38% of genes",             # withdrawn with D61
     "__DATA__",                 # the placeholder itself
-    "traces to a script",       # removed from the header at my request
+    "traces to a script",       # removed from the header at My request
     "fixed before the ranking ran",
     "JavaScript",               # the page must never explain itself in these terms
     "noscript",

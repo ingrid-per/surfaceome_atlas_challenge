@@ -31,20 +31,19 @@ remove. I found it, not the tooling.
 
 **Do not add new analysis without asking first (D60).** If something you notice
 suggests a new check, metric, flag or classification, describe the observation
-and what could be built, then wait for a recorded decision. Reporting what the
+and what could be built, then wait for an explicit decision, recorded here. Reporting what the
 existing data shows is always fine; adding a new column, filter or score to the
 pipeline is not something to do unilaterally. This is rule 3 of the runbook
 applied to your own ideas, not just to thresholds.
 
 
-The governing document is `Surface Target Pipeline Claude Code Runbook.md` in this
-folder. Work one numbered step per session. Start every step in plan mode. Commit
+The governing document is `docs/METHODOLOGY.md`. Work one numbered step per session. Start every step in plan mode. Commit
 after each step.
 
 Thresholds listed in the runbook (20-residue extracellular minimum, FDR < 0.01,
 log2FC >= 2, 5 TPM floor, vital-organ list, two-per-family limit) are the author's
 proposals, NOT yet decided. They sit in the "Proposed, not yet decided" section of
-docs/decisions.md and must be confirmed by me before any code uses them.
+docs/decisions.md and must be confirmed before any code uses them.
 
 Note for Step 1: rest.uniprot.org returns 403 to requests with no User-Agent header.
 Always send one.

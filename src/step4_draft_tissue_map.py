@@ -1,6 +1,6 @@
 """Step 4, prerequisite: draft the TCGA cancer type -> GTEx normal tissue map.
 
-This is a DRAFT for review and correct by hand. Proposal P3 states the
+This is a DRAFT to review and correct by hand. Proposal P3 states the
 mapping is a scientific judgment and must not be silently generated — so this
 script supplies the counts and the literature precedent, and the verdict column
 is hers.
@@ -130,7 +130,7 @@ MAP: dict[str, dict] = {
         why="DEPARTS FROM Wang2018, which pairs HNSC to salivary gland alone. HNSC "
             "is mostly squamous mucosa; oesophageal mucosa is stratified squamous "
             "epithelium and the closest match. Salivary gland retained as well. "
-            "Confirmed by me 2026-10-21."),
+            "Confirmed 2026-10-21."),
 
     # ---- imperfect: right organ, wrong compartment or minority cell -------
     "Cholangiocarcinoma": dict(

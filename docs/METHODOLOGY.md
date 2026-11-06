@@ -1,10 +1,10 @@
-# Surface Target Pipeline: Claude Code Runbook
+# Surface Target Pipeline — Methodology
 
 Oct 20, 2026
 
 ## How to use this runbook
 
-Work one step per Claude Code session, and never let it choose a threshold or a list silently. This runbook covers the classic core the brief asked for: surface proteins up in tumors, absent from healthy tissue, using Protein Atlas, TCGA and a TMHMM-type model. Extensions come after the core is done.
+Work one step per Claude Code session, and never let it choose a threshold or a list silently. This runbook covers the core of the brief: surface proteins up in tumors, absent from healthy tissue, using Protein Atlas, TCGA and a TMHMM-type model. Extensions come after the core is done.
 
 **Six working rules, and why each exists**
 
@@ -80,7 +80,7 @@ Set up a clean, versioned folder with a decision log, so every later result can 
 | Healthy reference | HPA normal tissue plus GTEx | He named HPA; GTEx adds samples and shares a pipeline with TCGA (see Step 1) |
 | Scope | Pan-cancer, reporting the best cancer type per gene | His wording says "in cancer" without naming one |
 
-Tell the brief that GTEx is an addition to what he listed. It is better to say so than to let him find out.
+Tell in the write-up that GTEx is an addition to the sources the brief listed. It is better to say so than to let him find out.
 
 ## Step 1: Get and version the datasets
 
@@ -164,7 +164,7 @@ First: enter plan mode and show me the plan.
 
 Keep proteins that have a part outside the cell, using two independent sources (curated annotation and a predictor) plus a separate route for lipid-anchored proteins, and label how confident each call is.
 
-**What a topology tool does.** TMHMM and its newer deep-learning version DeepTMHMM read a protein's amino acid sequence and predict which stretches cross the cell membrane and which parts sit inside or outside the cell. the brief wrote "TMHMM-type", so DeepTMHMM is a fair choice. It predicts from sequence alone, so it cannot prove a protein actually reaches the surface.
+**What a topology tool does.** TMHMM and its newer deep-learning version DeepTMHMM read a protein's amino acid sequence and predict which stretches cross the cell membrane and which parts sit inside or outside the cell. The brief said "TMHMM-type", so DeepTMHMM is a fair choice. It predicts from sequence alone, so it cannot prove a protein actually reaches the surface.
 
 **What to do**
 
@@ -542,23 +542,21 @@ Produce a short report that gives the answer first, shows how far to trust it, a
 
 **Why this shape**
 
-- **Answer first** because he asked a direct question, and he is a busy reader.
-- **Limitations stated by you** read as judgment. The same limits found by him read as gaps.
-- **The AI paragraph is there because he will assume you used AI.** Describing how you controlled it turns that into evidence of how you work.
+- **Answer first.** The question was direct; the answer should be too.
+- **Limitations stated by the author read as judgment.** The same limits found
+  by the reader read as gaps.
+- **Say how AI was used.** A reader will assume it was. Describing how it was
+  controlled turns that assumption into evidence of method.
 
-**What to send the brief**
-
-- The report, with your CV attached, as he asked.
-- A short cover note with the top 10, one sentence on method, and one sentence on what surprised you.
-- If you used GTEx, say that you added it to the sources he listed.
-
-**Build later, only after all of this is done:** the interactive website, the state-gated single-cell map for the finalists, and the AlphaFold structure cards. The core above is a complete answer without them.
+**Build later, only after all of this is done:** the interactive deliverable,
+the state-gated single-cell map for the finalists, and the AlphaFold structure
+cards. The core above is a complete answer without them.
 
 **Checks that must pass**
 
 - Every number in the report traces to a file in `results/`.
-- A friend who is not in the field can say, in one sentence, what the report found and what its main weakness is.
-- The CV is attached and the delivery date you promised is met.
+- A reader outside the field can say, in one sentence, what the report found
+  and what its main weakness is.
 
 ## Glossary
 
