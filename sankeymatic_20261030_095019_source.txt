@@ -1,0 +1,74 @@
+// SankeyMATIC diagram inputs - Saved: 10/30/2026, 9:50:19 AM
+// https://sankeymatic.com/build/
+
+// === Nodes and Flows ===
+
+// Sample Job Search diagram:
+
+
+Human Proteome (UniProt) [19400] Mapped to ENSEMBL gene (UniProt, HPA)
+Human Proteome (UniProt) [1031] Not Mapped to ENSEMBL gene (UniProt, HPA)
+Mapped to ENSEMBL gene (UniProt, HPA) [4141] Surface candidates (UniProt, DeepTMHMM)
+
+Surface candidates (UniProt, DeepTMHMM) [3912] Present in the expression matrix (Xena Toil)
+
+// === Settings ===
+
+size w 1500
+  h 608
+margin l 12
+  r 12
+  t 18
+  b 20
+bg color #ffffff
+  transparent Y
+node w 25
+  h 36
+  spacing 49
+  border 0
+  theme b
+  color #888888
+  opacity 1
+flow curvature 0.5
+  inheritfrom target
+  color #999999
+  opacity 0.45
+layout order automatic
+  justifyorigins N
+  justifyends N
+  reversegraph N
+  attachincompletesto nearest
+labels color #000000
+  hide N
+  highlight 0.5
+  fontface sans-serif
+  linespacing 0.2
+  relativesize 130
+  magnify 100
+labelname appears Y
+  size 18.5
+  weight 400
+labelvalue appears Y
+  fullprecision Y
+  position above
+  weight 400
+labelposition autoalign 1
+  scheme auto
+  first before
+  breakpoint 5
+value format ',.'
+  prefix ''
+  suffix ''
+themeoffset a 6
+  b 9
+  c 0
+  d 0
+meta mentionsankeymatic N
+  listimbalances Y
+
+// === Moved Nodes ===
+
+move Human Proteome (UniProt) 0.00231, 0.20081
+move Mapped to ENSEMBL gene (UniProt, HPA) -0.09477, 0
+move Surface candidates (UniProt, DeepTMHMM) -0.3051, 0
+move Present in the expression matrix (Xena Toil) -0.30395, -0.00566

@@ -1,0 +1,207 @@
+"""EXTRA: export the candidate set for Mantis (mantis.csail.mit.edu).
+
+Not a runbook step and nothing downstream reads it. Mantis embeds a text
+column, projects to 2D and draws a map where proximity means similarity, so
+the export has to supply something worth embedding.
+
+That is the whole difficulty. Every result file in this project is numbers and
+short labels; embedding `symbol` would cluster CLDN6 beside CLDN3 because the
+strings look alike, which is a map of gene naming, not biology. So the
+descriptive text is joined back in from the raw sources — UniProt protein
+names and subcellular location, HPA's process/function/class annotations — and
+concatenated into one `description` column.
+
+Two files, because they answer different questions:
+
+  mantis_candidates.csv   one row per eligible gene x cancer type (3,442).
+                          The same gene appears once per cancer type it passes
+                          in, so CLDN6 shows up as both a testicular and an
+                          ovarian candidate and you can see them separately.
+
+  mantis_genes.csv        one row per eligible gene (1,272), through its best
+                          cancer type. One point per gene, which is the
+                          cleaner map when the question is "where does my top
+                          10 sit in the surfaceome".
+
+Both carry coordinate1/coordinate2 (tumour and worst-healthy expression), so
+the same file can also drive the explicit scatter the runbook asks for in
+Step 11 instead of an embedding layout.
+
+Every value is read from the committed results; nothing is typed.
+"""
+
+from __future__ import annotations
+
+import io
+import re
+import zipfile
+from pathlib import Path
+
+import pandas as pd
+
+ROOT = Path(__file__).resolve().parent.parent
+RAW = ROOT / "data" / "raw"
+PROC = ROOT / "data" / "processed"
+RESULTS = ROOT / "results"
+
+# UniProt location strings carry evidence codes like {ECO:0000250|...} that
+# add nothing to an embedding and a lot of tokens.
+ECO = re.compile(r"\{[^}]*\}")
+NOTE = re.compile(r"\s*Note=.*$", re.S)
+
+
+def clean_location(s: str) -> str:
+    if not isinstance(s, str):
+        return ""
+    s = s.replace("SUBCELLULAR LOCATION:", "")
+    s = ECO.sub("", s)
+    s = NOTE.sub("", s)
+    return re.sub(r"\s+", " ", s).strip(" .;")
+
+
+def uniprot_names() -> pd.DataFrame:
+    """Protein names live only in the raw download, not the processed table."""
+    import gzip
+    with gzip.open(RAW / "uniprot_human_reviewed_topology.tsv.gz", "rt",
+                   encoding="utf8") as fh:
+        u = pd.read_csv(fh, sep="\t", usecols=["Entry", "Protein names"])
+    return u.rename(columns={"Entry": "accession",
+                             "Protein names": "protein_name"})
+
+
+def hpa_text() -> pd.DataFrame:
+    with zipfile.ZipFile(RAW / "proteinatlas.tsv.zip") as z, \
+            z.open(z.namelist()[0]) as fh:
+        h = pd.read_csv(io.TextIOWrapper(fh, encoding="utf8"), sep="\t",
+                        low_memory=False)
+    keep = ["Ensembl", "Gene description", "Protein class",
+            "Biological process", "Molecular function", "Disease involvement"]
+    h = h[[c for c in keep if c in h.columns]].copy()
+    return h.rename(columns={"Ensembl": "ensembl_gene"}).drop_duplicates("ensembl_gene")
+
+
+def build_description(r) -> str:
+    """One readable sentence-ish blob per row — this is what gets embedded.
+
+    Ordered most-specific first: what the protein is, then what it does, then
+    where it lives, then the clinical context. Empty fields are dropped rather
+    than leaving 'nan' in the text.
+    """
+    bits = [
+        # guard every field the same way: a missing protein name was writing
+        # the literal string "nan" into the text that gets embedded
+        r["protein_name"] if isinstance(r.get("protein_name"), str) else None,
+        f"Gene family: {r['gene_group']}" if isinstance(r.get("gene_group"), str) else None,
+        f"Molecular function: {r['Molecular function']}"
+        if isinstance(r.get("Molecular function"), str) else None,
+        f"Biological process: {r['Biological process']}"
+        if isinstance(r.get("Biological process"), str) else None,
+        f"Protein class: {r['Protein class']}"
+        if isinstance(r.get("Protein class"), str) else None,
+        f"Subcellular location: {r['location_clean']}"
+        if r.get("location_clean") else None,
+        f"Disease involvement: {r['Disease involvement']}"
+        if isinstance(r.get("Disease involvement"), str) else None,
+        f"Raised in {r['cancer_type']}.",
+        f"Highest healthy tissue: {r['healthy_max_tissue']}."
+        if isinstance(r.get("healthy_max_tissue"), str) else None,
+    ]
+    return " ".join(str(b).strip().rstrip(".") + "." for b in bits if b)
+
+
+def main() -> int:
+    elig = pd.read_csv(RESULTS / "step7_ranking_full.csv")
+    uni = pd.read_csv(PROC / "step3_uniprot_topology.csv")
+    cand = pd.read_csv(PROC / "surface_candidates.csv")
+    gmap = pd.read_csv(PROC / "gene_map.csv", low_memory=False)
+
+    # --- UniProt text, reached through every Ensembl id an accession maps to
+    #     (the MHC-region problem from D81: one accession, many ids) ---
+    c = cand[cand.is_candidate].drop(columns=["ensembl_gene"])
+    link = (gmap[gmap.accession.isin(set(c.accession))][["accession", "ensembl_gene"]]
+            .dropna().drop_duplicates())
+    j = (link.merge(c, on="accession")
+         .merge(uni[["accession", "subcellular_location"]], on="accession")
+         .merge(uniprot_names(), on="accession", how="left"))
+    j["_rank"] = j.tier.map({"S1": 0, "S2": 1, "S3": 2, "Flagged": 3})
+    j = (j.sort_values(["ensembl_gene", "_rank"], kind="mergesort")
+         .drop_duplicates("ensembl_gene"))
+    j["location_clean"] = j.subcellular_location.map(clean_location)
+
+    d = elig.merge(
+        j[["ensembl_gene", "accession", "protein_name", "location_clean",
+           "protein_existence", "extracellular_reported", "compartment"]],
+        on="ensembl_gene", how="left")
+    d = d.merge(hpa_text(), on="ensembl_gene", how="left")
+
+    # --- stability from the robustness grid, where it exists ---
+    try:
+        st = pd.read_csv(RESULTS / "step9_stability.csv").set_index("symbol").stability
+        d["threshold_stability"] = d.symbol.map(st).fillna(0.0).round(3)
+    except FileNotFoundError:
+        d["threshold_stability"] = pd.NA
+
+    # --- where each row sits in the published output ---
+    top = pd.read_csv(RESULTS / "step7_top10.csv")[["ensembl_gene", "cancer_type"]]
+    res = pd.read_csv(RESULTS / "step7_reserve.csv")[["ensembl_gene", "cancer_type"]]
+    key = lambda f: set(zip(f.ensembl_gene, f.cancer_type))
+    tk, rk = key(top), key(res)
+    d["selection"] = [
+        "top 10" if k in tk else "reserve" if k in rk else "eligible"
+        for k in zip(d.ensembl_gene, d.cancer_type)]
+
+    d["description"] = d.apply(build_description, axis=1)
+    d["healthy_max_tpm"] = (2 ** d.healthy_max_log2 - 1).round(2)
+    d["hpa_link"] = ("https://www.proteinatlas.org/" + d.ensembl_gene
+                     + "-" + d.symbol.astype(str))
+    d["uniprot_link"] = "https://www.uniprot.org/uniprotkb/" + d.accession.astype(str)
+    d["label"] = d.symbol.astype(str) + " — " + d.cancer_type.astype(str)
+
+    cols = [
+        # title / semantic / links
+        "label", "symbol", "description", "hpa_link", "uniprot_link",
+        # coordinates for the explicit scatter
+        "median_tumour_log2tpm1", "healthy_max_log2",
+        # numerics
+        "S", "S_relaxed", "log2fc", "fdr", "tumour_tpm", "healthy_max_tpm",
+        "frac_tumours_above_10tpm", "tumour_tpm_q25",
+        "healthy_breadth_above_10tpm", "gtex_tau", "threshold_stability",
+        # categoricals
+        "selection", "cancer_type", "tier", "comparator_grade", "compartment",
+        "protein_existence", "agreement", "trajectory", "gene_group",
+        "healthy_max_tissue", "healthy_max_source", "extracellular_reported",
+        "low_power", "gpi", "cspa", "surfy",
+        # keys
+        "ensembl_gene", "accession",
+    ]
+    out = d[[c for c in cols if c in d.columns]].rename(columns={
+        "median_tumour_log2tpm1": "coordinate1_tumour_log2tpm",
+        "healthy_max_log2": "coordinate2_healthy_log2tpm"})
+
+    p1 = RESULTS / "mantis_candidates.csv"
+    out.to_csv(p1, index=False)
+
+    # one row per gene, through its best cancer type
+    best = out.loc[out.groupby("ensembl_gene").S.idxmax()].sort_values(
+        "S", ascending=False)
+    p2 = RESULTS / "mantis_genes.csv"
+    best.to_csv(p2, index=False)
+
+    leaked = out.description.str.contains(r"\bnan\b", case=False, na=False)
+    assert not leaked.any(), \
+        f"{int(leaked.sum())} descriptions contain a literal 'nan'"
+    assert out.description.notna().all() and (out.description.str.len() > 20).all()
+
+    n_txt = int((out.description.str.len() > 80).sum())
+    print(f"wrote {p1.relative_to(ROOT)}   {len(out):,} rows x {out.shape[1]} cols")
+    print(f"wrote {p2.relative_to(ROOT)}        {len(best):,} rows")
+    print(f"\ndescription column: median {int(out.description.str.len().median())} chars, "
+          f"{n_txt:,} rows over 80 chars ({n_txt/len(out):.0%})")
+    print(f"selection breakdown: {out.selection.value_counts().to_dict()}")
+    print("\nexample description:")
+    print("  " + out.loc[out.selection == "top 10", "description"].iloc[0][:300])
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
