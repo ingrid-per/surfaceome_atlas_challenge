@@ -21,12 +21,10 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
           cache: pip
+          cache-dependency-path: requirements-test.txt
 
-      # Only what the tests need. The full environment.yml pulls torch and the
-      # DeepTMHMM stack, which no test touches — raw data is reproduced from
-      # data/MANIFEST.md by checksum rather than committed.
       - name: Install
-        run: pip install pandas numpy scipy pyarrow statsmodels pytest
+        run: pip install -r requirements-test.txt
 
       - name: Unit tests
         run: pytest tests/test_units.py -v

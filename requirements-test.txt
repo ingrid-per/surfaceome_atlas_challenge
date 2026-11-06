@@ -1,0 +1,9 @@
+# Just what the tests import. The full environment (environment.yml) also pulls
+# torch and the DeepTMHMM stack, which no test touches — raw data is reproduced
+# from data/MANIFEST.md by checksum rather than committed.
+pandas
+numpy
+scipy
+pyarrow
+statsmodels
+pytest
