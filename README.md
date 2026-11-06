@@ -10,6 +10,10 @@ by asking three things in order — **can a drug reach it**, **is it raised in
 tumour**, **is it absent from healthy tissue everywhere else** — and then reports
 how much the answer depends on the thresholds I chose.
 
+**[→ Open the interactive atlas](https://ingrid-per.github.io/surfaceome_atlas_challenge/)**
+— all 30 cancer types, the evidence behind every candidate, and a panel that
+re-runs the selection under any of 270 threshold combinations.
+
 ## The answer
 
 | Gene | Cancer type | S | Tumour TPM | Highest healthy tissue | TPM | Survives thresholds |
@@ -125,6 +129,7 @@ data/MANIFEST.md         44 files with version, URL and SHA-256
 src/                     one script per step; every number is written by code
 results/                 every output, including the ones that were withdrawn
 results/surface_proteins_slides.pdf    slide walkthrough of the method
+docs/index.html          the interactive atlas, served by GitHub Pages
 ```
 
 Everything in `results/` is written by a script except
@@ -150,7 +155,13 @@ python src/step5_specificity.py
 python src/step6_protein_differential.py && python src/step6_concordance.py
 python src/step7_rank.py
 python src/step9_robustness.py
+python src/step7_export_json.py && python src/step7_build_artifact.py
 ```
+
+The last line rebuilds the interactive atlas into `docs/index.html`, which is
+what GitHub Pages serves. It is a single self-contained file — no build step, no
+external requests — and `src/step7_check_artifact.py` executes its JavaScript
+against a minimal DOM to assert it renders before it is published.
 
 Each step has a `*_check.py` beside it. Raw data is excluded from version control
 and reproduced from `data/MANIFEST.md` by checksum.

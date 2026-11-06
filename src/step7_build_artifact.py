@@ -144,6 +144,12 @@ def main() -> int:
     sa = out.with_name(out.stem + "_standalone" + out.suffix)
     sa.write_text(standalone)
 
+    # GitHub Pages serves docs/ as a site root, so the same standalone document
+    # is written there as index.html. Generated rather than copied by hand, so
+    # the published page cannot drift from the one in results/.
+    pages = ROOT / "docs" / "index.html"
+    pages.write_text(standalone)
+
     d = json.loads(data)
     print(f"built {out.relative_to(ROOT) if out.is_relative_to(ROOT) else out}"
           f"  ({len(html)/1024:.0f} KB)")
@@ -152,6 +158,7 @@ def main() -> int:
     print(f"  genes charted   : {len(d['robust']['symbols'])}")
     print(f"  standalone copy : {sa.relative_to(ROOT)}  "
           f"({len(standalone)/1024:.0f} KB, opens on a phone)")
+    print(f"  github pages    : {pages.relative_to(ROOT)}")
     return 0
 
 
