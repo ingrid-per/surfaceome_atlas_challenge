@@ -1,5 +1,7 @@
 # Surface protein targets in cancer
 
+A personal project, built in response to an open challenge.
+
 **The question:** using Protein Atlas, TCGA and a TMHMM-type model, which cell-surface
 proteins are significantly over-expressed in cancer and absent from healthy tissue?
 
@@ -122,7 +124,12 @@ docs/checks.md           74 automated checks, one per claim
 data/MANIFEST.md         44 files with version, URL and SHA-256
 src/                     one script per step; every number is written by code
 results/                 every output, including the ones that were withdrawn
+results/surface_proteins_slides.pdf    slide walkthrough of the method
 ```
+
+Everything in `results/` is written by a script except
+[`surface_proteins_slides.pdf`](results/surface_proteins_slides.pdf), which is a
+hand-made walkthrough of how the pipeline was built.
 
 **`docs/decisions.md` is the file to read.** Every threshold, gene list and scope
 choice is recorded with what, the value, why, and the date — written *before* the
@@ -159,6 +166,10 @@ and reproduced from `data/MANIFEST.md` by checksum.
 - **Control benchmark** — see above.
 
 ## How this was built
+
+A personal project, done on my own time and not on behalf of any institution.
+No patient data was accessed — every dataset is public and listed with its
+version and checksum in `data/MANIFEST.md`.
 
 Written with Claude Code under my direction. Every threshold, gene list and scope
 decision was proposed to me, decided by me, and recorded in `docs/decisions.md`
