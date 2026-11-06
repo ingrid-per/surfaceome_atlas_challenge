@@ -151,6 +151,24 @@ def main() -> int:
         "top 10" if k in tk else "reserve" if k in rk else "eligible"
         for k in zip(d.ensembl_gene, d.cancer_type)]
 
+    # Mantis's Color / Size / Opacity controls only accept NUMERIC columns, so
+    # the categoricals worth colouring by are also exported as numbers. Without
+    # these you cannot find the finalists on the map at all.
+    d["is_finalist"] = d.selection.map(
+        {"top 10": 2, "reserve": 1, "eligible": 0}).astype(int)
+    d["global_rank"] = pd.NA
+    order = (pd.read_csv(RESULTS / "step7_top10.csv").symbol.tolist()
+             + pd.read_csv(RESULTS / "step7_reserve.csv").symbol.tolist())
+    rank = {sym: i + 1 for i, sym in enumerate(order)}
+    d.loc[d.selection != "eligible", "global_rank"] = (
+        d.loc[d.selection != "eligible", "symbol"].map(rank))
+    d["tier_num"] = d.tier.map({"S1": 1, "S2": 2, "S3": 3})
+    d["comparator_num"] = d.comparator_grade.map(
+        {"direct": 2, "imperfect": 1, "lineage_only": 0})
+    d["is_low_power"] = d.low_power.astype(bool).astype(int)
+    d["protein_unconfirmed"] = (
+        d.protein_existence != "Evidence at protein level").astype(int)
+
     d["description"] = d.apply(build_description, axis=1)
     d["healthy_max_tpm"] = (2 ** d.healthy_max_log2 - 1).round(2)
     d["hpa_link"] = ("https://www.proteinatlas.org/" + d.ensembl_gene
@@ -167,6 +185,9 @@ def main() -> int:
         "S", "S_relaxed", "log2fc", "fdr", "tumour_tpm", "healthy_max_tpm",
         "frac_tumours_above_10tpm", "tumour_tpm_q25",
         "healthy_breadth_above_10tpm", "gtex_tau", "threshold_stability",
+        # numeric encodings of the categoricals, for Color / Size / Opacity
+        "is_finalist", "global_rank", "tier_num", "comparator_num",
+        "is_low_power", "protein_unconfirmed",
         # categoricals
         "selection", "cancer_type", "tier", "comparator_grade", "compartment",
         "protein_existence", "agreement", "trajectory", "gene_group",
