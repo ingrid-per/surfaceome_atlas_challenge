@@ -27,7 +27,9 @@ COMMITTED = ["step6_check", "step7_check", "step9_check", "extra_metric_check"]
 
 # checks that need data reproduced from the manifest first
 NEEDS_DATA = {
-    "step1_check": ROOT / "data" / "raw",
+    # data/raw/.gitkeep is committed, so the DIRECTORY always exists;
+    # key on a file that only appears after the manifest download
+    "step1_check": ROOT / "data" / "raw" / "hgnc_complete_set.txt",
     "step2_check": ROOT / "data" / "processed" / "gene_map.csv",
     "step3_check": ROOT / "data" / "processed" / "surface_candidates.csv",
     "step4_check": ROOT / "data" / "processed" / "step4_candidate_tpm.parquet",

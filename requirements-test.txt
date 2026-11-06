@@ -6,4 +6,7 @@ numpy
 scipy
 pyarrow
 statsmodels
+# the step9 / metric checks import their analysis module, which pulls plot_style
+matplotlib
+seaborn
 pytest
